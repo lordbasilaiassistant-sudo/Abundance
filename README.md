@@ -67,6 +67,31 @@ Standards for additions:
    knowing if it's primary energy, final energy, or just electricity.
 4. **No projections, only published figures.** If a number is modeled, say so.
 
+## Translations
+
+The data is universal; the language barrier isn't. Current state:
+
+| Language | Status | Path |
+|---|---|---|
+| English | full (canonical) | [`/`](index.html) |
+| Español | summary version | [`/lang/es/`](lang/es/index.html) |
+| 中文 (Mandarin) | not started | help wanted |
+| हिन्दी (Hindi) | not started | help wanted |
+| العربية (Arabic) | not started | help wanted (RTL) |
+| Français | not started | help wanted |
+| Português | not started | help wanted |
+
+**How to contribute a translation:**
+1. Fork the repo.
+2. Copy `lang/es/index.html` as `lang/{your-code}/index.html`.
+3. Translate the prose. Leave the numbers, source URLs, and `<code>` blocks alone — those are language-independent.
+4. Add `<link rel="alternate" hreflang="{your-code}" href="...">` to both your new file and the main `index.html`.
+5. Add a `<url>` block to `sitemap.xml` for your file, with the appropriate `<xhtml:link rel="alternate" hreflang>` entries on the root `<url>`.
+6. Add yourself to the eyebrow language switcher on the main `index.html`.
+7. Open a pull request. You will be credited in `CITATION.cff` as a translator.
+
+Machine translation is acceptable if labeled clearly. Native-speaker review is preferred. Either is better than English-only.
+
 ## License
 
 Public domain — [CC0 1.0](LICENSE). Take it, fork it, ship it, embed it,
