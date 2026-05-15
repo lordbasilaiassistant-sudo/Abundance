@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abundance — what humanity actually produces, per person</title>
-<meta name="description" content="A primary-sourced per-capita arithmetic of whether global production of food, water, energy, money, and shelter is enough for every person alive — and the empirical evidence on whether the underclass that subsidizes it is necessary. Every number is cited.">
-<meta name="keywords" content="abundance, scarcity, universal basic income, UBI, redistribution, per capita, world production, world GDP, hunger, poverty, primary source, omelas">
-<meta name="author" content="lordbasilaiassistant-sudo">
+<meta name="description" content="The world produces 1.4× the calories, 287× the water, 3.8× the electricity, and 12× the income per person that minimum needs require. A primary-sourced per-capita arithmetic of global production — anchored by Amartya Sen's Nobel-winning entitlement theory, six peer-reviewed UBI pilots, and meta-analyses across 279 studies. Every number cited. CC0.">
+<meta name="keywords" content="abundance, scarcity, universal basic income, UBI, per capita arithmetic, redistribution, world production, world GDP, global hunger, poverty line, primary source, Omelas, Amartya Sen, entitlement theory, Bengal famine, cash transfer, GiveDirectly, Alaska Permanent Fund, Bolsa Familia, Stockton SEED, World Inequality Lab, Piketty, Wilkinson Pickett, Spirit Level, Acemoglu inclusive institutions, Ostrom commons, demographic transition, food waste, freshwater scarcity, Modern Energy Minimum">
+<meta name="author" content="Eli Vargas (lordbasilaiassistant-sudo)">
+<meta name="theme-color" content="#0a0b0e">
+<meta name="format-detection" content="telephone=no">
 <link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/">
 <link rel="alternate" hreflang="en" href="https://lordbasilaiassistant-sudo.github.io/Abundance/">
 <link rel="alternate" hreflang="es" href="https://lordbasilaiassistant-sudo.github.io/Abundance/lang/es/">
@@ -36,7 +38,7 @@
 
 <link rel="stylesheet" href="style.css">
 
-<!-- Structured data for search and AI assistants -->
+<!-- Structured data for search engines and AI assistants -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,15 +46,59 @@
     {
       "@type": "Article",
       "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/#article",
-      "headline": "Abundance: a primary-sourced per-capita arithmetic of global production",
-      "description": "A single-page, fully-cited arithmetic check of whether aggregate global production of food, water, electricity, and economic output is sufficient to meet every human's documented minimum needs, with references to four peer-reviewed cash-transfer evaluations.",
-      "image": "https://lordbasilaiassistant-sudo.github.io/Abundance/og.png",
+      "headline": "The world already produces enough. The question is whether we admit it.",
+      "alternativeHeadline": "Abundance: a primary-sourced per-capita arithmetic of global production",
+      "description": "A single-page, fully-cited arithmetic check of whether aggregate global production of food, water, electricity, and economic output is sufficient to meet every human's documented minimum needs. Includes Sen's entitlement framing, the Omelas question, six peer-reviewed cash-transfer pilots, a 114-study Bayesian meta-analysis (Crosta et al 2024), and a 165-study ODI systematic review (Bastagli et al 2016).",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/og.png",
+        "width": 1200,
+        "height": 630
+      },
       "datePublished": "2026-05-15",
       "dateModified": "2026-05-15",
       "author": { "@type": "Person", "name": "Eli Vargas (lordbasilaiassistant-sudo)" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Abundance",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/apple-touch-icon.png",
+          "width": 180,
+          "height": 180
+        }
+      },
       "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "isAccessibleForFree": true,
       "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/",
+      "inLanguage": ["en", "es"],
+      "wordCount": 7400,
+      "articleSection": [
+        "Per-capita arithmetic",
+        "Money / UBI feasibility",
+        "Kinds of scarcity",
+        "Omelas question",
+        "Cash-transfer pilots",
+        "Redistribution calculator",
+        "Historical context",
+        "FAQ",
+        "Methodology and sources"
+      ],
+      "keywords": "abundance, scarcity, universal basic income, UBI, redistribution, per capita, world production, world GDP, hunger, poverty, Amartya Sen, Bengal famine, entitlement failure, Omelas, GiveDirectly, Alaska Permanent Fund, Bolsa Familia, cash transfer evidence",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["#thesis", ".lede", ".hero-stats"]
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/"
+      },
+      "hasPart": [
+        { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/countries.html", "name": "Per-country drill-down" },
+        { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/case-studies.html", "name": "Country case studies" },
+        { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/embed/calculator.html", "name": "Embeddable calculator" },
+        { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/bibliography.md", "name": "Academic bibliography" }
+      ],
       "citation": [
         "UN World Population Prospects 2024",
         "IMF World Economic Outlook April 2026",
@@ -82,6 +128,54 @@
         "Acemoglu, Johnson, Robinson — Why Nations Fail (2024 Nobel)",
         "Ostrom (1990) Governing the Commons (2009 Nobel)",
         "Banerjee & Duflo (2011) Poor Economics (2019 Nobel)"
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/essentials.json#dataset",
+      "name": "Abundance — global per-capita essentials, with primary-source citations",
+      "description": "Structured JSON dataset of global production figures (food, water, electricity, GDP) and documented minimum-need thresholds, each with primary-source citation, year, and unit. Every ratio on the main page is computed live from these values.",
+      "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/essentials.json",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": { "@type": "Person", "name": "Eli Vargas (lordbasilaiassistant-sudo)" },
+      "datePublished": "2026-05-15",
+      "isAccessibleForFree": true,
+      "encodingFormat": "application/json",
+      "keywords": "world population, world GDP, food calorie supply, freshwater, electricity, poverty line, military spending"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/countries.json#dataset",
+      "name": "Abundance — 30 countries × 10 World Bank indicators",
+      "description": "Per-country indicator dataset: population, GDP, GDP per capita, military spending, health spending, poverty headcount, electricity, broadband, life expectancy, renewable freshwater. Fetched live from the World Bank Open Data API.",
+      "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/countries.json",
+      "license": "https://datacatalog.worldbank.org/public-licenses",
+      "creator": { "@type": "Organization", "name": "World Bank Open Data" },
+      "datePublished": "2026-05-15",
+      "isAccessibleForFree": true,
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/pilots.json#dataset",
+      "name": "Abundance — cash-transfer pilot evaluations",
+      "description": "Structured citations for six peer-reviewed cash-transfer evaluations: GiveDirectly Kenya RCT, Alaska Permanent Fund, Iran 2011, Stockton SEED, Brazil Bolsa Familia, Cherokee casino dividend.",
+      "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/pilots.json",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "datePublished": "2026-05-15",
+      "isAccessibleForFree": true,
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Abundance",
+          "item": "https://lordbasilaiassistant-sudo.github.io/Abundance/"
+        }
       ]
     },
     {
@@ -159,7 +253,7 @@
 </script>
 </head>
 <body>
-<div class="container">
+<main class="container" role="main" itemscope itemtype="https://schema.org/Article">
 
 <header class="masthead">
   <div class="eyebrow">
@@ -171,12 +265,34 @@
   </div>
   <h1>The world already produces enough. <em>The question is whether we admit it.</em></h1>
   <p class="lede">
-    This page divides verified global production figures by the verified global
-    population. Nothing more. Every number links to its primary source — FAO,
-    IEA, IMF, WHO, World Bank, UN-Habitat, SIPRI, UBS — and every redistribution
-    claim links to a peer-reviewed study or government program that did it. If a
-    claim has no link, it is not on this page.
+    Below: four numbers. Each is global production divided by the documented
+    minimum need, per person. Every number links to a primary source —
+    FAO, IEA, IMF, WHO, World Bank, UN-Habitat, SIPRI, UBS — and every
+    redistribution claim cites a peer-reviewed study.
   </p>
+
+  <div class="hero-stats" role="region" aria-label="Headline per-capita ratios">
+    <div class="hero-stat">
+      <div class="label">Food</div>
+      <div class="ratio" id="hero-food">1.4<span class="x">×</span></div>
+      <div class="vs">supply ÷ daily<br>caloric need</div>
+    </div>
+    <div class="hero-stat">
+      <div class="label">Water</div>
+      <div class="ratio" id="hero-water">287<span class="x">×</span></div>
+      <div class="vs">renewable ÷ WHO<br>basic L/day</div>
+    </div>
+    <div class="hero-stat">
+      <div class="label">Electricity</div>
+      <div class="ratio" id="hero-energy">3.8<span class="x">×</span></div>
+      <div class="vs">generation ÷ Modern<br>Energy Minimum</div>
+    </div>
+    <div class="hero-stat">
+      <div class="label">Output (GDP)</div>
+      <div class="ratio" id="hero-gdp">12<span class="x">×</span></div>
+      <div class="vs">per capita ÷ World<br>Bank poverty line</div>
+    </div>
+  </div>
 </header>
 
 <nav class="toc" aria-label="Contents">
@@ -1377,7 +1493,7 @@
 </p>
 </section>
 
-<footer>
+<footer role="contentinfo">
   Public domain (CC0). No tracking, no analytics, no ads. The code, the data,
   and the math are
   <a href="https://github.com/lordbasilaiassistant-sudo/Abundance">on GitHub</a>.
@@ -1385,7 +1501,7 @@
   Made because someone had to do the division.
 </footer>
 
-</div>
+</main>
 
 <script>
 // ---- Source-of-truth raw data (kept in sync with data/essentials.json) ----
@@ -1449,6 +1565,12 @@ const setHTML = (id, v) => { const el = document.getElementById(id); if (el) el.
   setHTML('gdp-ratio',   fmtRatio(gdpRatio) + '<span class="x">×</span>');
   setText('ubi-cost',    fmtUSD(ubiCost) + ' / year');
   setText('ubi-share',   fmtPct(ubiShare));
+
+  // Hero stat banner — same numbers as the cards below, kept in sync.
+  setHTML('hero-food',   fmtRatio(foodRatio)       + '<span class="x">×</span>');
+  setHTML('hero-water',  fmtRatio(waterRatio)      + '<span class="x">×</span>');
+  setHTML('hero-energy', fmtRatio(energyRatioHigh) + '<span class="x">×</span>');
+  setHTML('hero-gdp',    fmtRatio(gdpRatio)        + '<span class="x">×</span>');
 })();
 
 // ---- Interactive dials ----
