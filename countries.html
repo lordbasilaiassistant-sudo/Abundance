@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abundance · by country</title>
+<meta name="description" content="Per-country arithmetic from World Bank Open Data. GDP per capita, military spend, electricity, poverty, life expectancy, broadband — sortable, with primary-source citation on every cell.">
+<link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/countries.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:title" content="Abundance · by country">
+<meta property="og:description" content="Per-country breakdown of the Abundance arithmetic. World Bank Open Data, primary sources, CC0.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/countries.html">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  table.countries {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--mono);
+    font-size: 13.5px;
+    margin-top: 16px;
+  }
+  table.countries th,
+  table.countries td {
+    padding: 7px 10px;
+    text-align: right;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  table.countries th:first-child,
+  table.countries td:first-child { text-align: left; }
+  table.countries th {
+    cursor: pointer;
+    user-select: none;
+    color: var(--fg-3);
+    text-transform: uppercase;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0;
+    background: var(--bg);
+    z-index: 1;
+  }
+  table.countries th:hover { color: var(--fg); }
+  table.countries th.sort-asc::after  { content: " ▲"; color: var(--accent); }
+  table.countries th.sort-desc::after { content: " ▼"; color: var(--accent); }
+  table.countries tbody tr { cursor: pointer; }
+  table.countries tbody tr:hover { background: var(--bg-2); }
+  table.countries tbody tr.selected { background: rgba(95, 208, 161, 0.08); }
+  table.countries td.dim { color: var(--fg-3); }
+  .country-detail {
+    margin-top: 32px;
+    padding: 24px 28px;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+  }
+  .country-detail h3 {
+    margin: 0 0 4px;
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--fg);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .country-detail .where {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--fg-3);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+  .country-detail .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 32px;
+    margin: 16px 0 20px;
+  }
+  @media (max-width: 640px) {
+    .country-detail .grid { grid-template-columns: 1fr; }
+    table.countries { font-size: 12px; }
+    table.countries th, table.countries td { padding: 5px 6px; }
+  }
+  .country-detail .grid .label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fg-3);
+  }
+  .country-detail .grid .value {
+    font-family: var(--mono);
+    font-size: 17px;
+    color: var(--fg);
+  }
+  .country-detail .grid .value .y {
+    color: var(--fg-3);
+    font-size: 11px;
+    margin-left: 6px;
+  }
+  .narrative { color: var(--fg-2); font-size: 15px; }
+  .narrative .num { color: var(--fg); }
+  .table-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: var(--fg-3);
+  }
+  .table-controls input[type="search"] {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    color: var(--fg);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 13px;
+    min-width: 220px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="masthead">
+  <div class="eyebrow">Abundance · by country  ·  source: World Bank Open Data</div>
+  <h1>What the global average looks like, <em>per country</em>.</h1>
+  <p class="lede">
+    The objection that "global averages hide everything" is fair. So here is
+    the same arithmetic, by country. Every cell is a World Bank indicator
+    refreshed automatically. Click any country to see its specific abundance
+    or deficit, narrated.
+  </p>
+  <p class="small" style="margin-top: 8px;">
+    ← <a href="index.html">Back to the global page</a>
+  </p>
+</header>
+
+<section>
+  <div class="table-controls">
+    <input type="search" id="filter" placeholder="filter by name or ISO code">
+    <span id="row-count">30 countries</span>
+  </div>
+  <div style="overflow-x: auto;">
+    <table class="countries" id="t">
+      <thead>
+        <tr>
+          <th data-col="name"                data-fmt="text">Country</th>
+          <th data-col="population"          data-fmt="int_b">Population</th>
+          <th data-col="gdp_per_capita_usd"  data-fmt="usd">GDP/capita</th>
+          <th data-col="poverty_pct_3usd"    data-fmt="pct">%poor</th>
+          <th data-col="military_pct_gdp"    data-fmt="pct">%mil/GDP</th>
+          <th data-col="health_pct_gdp"      data-fmt="pct">%health/GDP</th>
+          <th data-col="electricity_kwh_per_cap" data-fmt="int">kWh/yr</th>
+          <th data-col="broadband_per_100"   data-fmt="num1">BB/100</th>
+          <th data-col="life_expectancy"     data-fmt="num1">life</th>
+          <th data-col="renewable_water_m3_pc" data-fmt="int">m³water/yr</th>
+        </tr>
+      </thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+  <p class="src" style="margin-top: 14px;">
+    Source for every cell:
+    <a href="https://data.worldbank.org/">World Bank Open Data API</a> ·
+    raw JSON at <a href="data/countries.json"><code>data/countries.json</code></a> ·
+    fetch script at <a href="refs/build_countries.py"><code>refs/build_countries.py</code></a> ·
+    license <a href="https://datacatalog.worldbank.org/public-licenses">CC-BY-4.0</a>.
+    Year shown per indicator is the most recent World Bank publication;
+    some indicators lag others by up to 2 years.
+  </p>
+</section>
+
+<section id="detail">
+  <h2>2 · Detail view</h2>
+  <p class="small">Click any row above to load the narrative for that country here.</p>
+  <div class="country-detail" id="detail-card" hidden></div>
+</section>
+
+<section>
+  <h2>3 · How to read this table</h2>
+  <div class="card">
+    <ul>
+      <li>
+        <strong>%poor</strong> is the World Bank's poverty headcount ratio at
+        the upper-middle-income line ($6.85/day, 2017 PPP). It captures the
+        broader "not yet comfortably out of poverty" population, not just
+        extreme poverty.
+      </li>
+      <li>
+        <strong>%mil/GDP</strong> vs <strong>%health/GDP</strong> are the
+        clearest single comparison for national priorities. Countries that
+        spend more on health than on military are the rule, not the exception
+        — but the ratio varies by an order of magnitude.
+      </li>
+      <li>
+        <strong>m³ water/yr</strong> is per-capita internal renewable
+        freshwater. The Sahara is genuinely different from the Amazon.
+      </li>
+      <li>
+        <strong>kWh/yr</strong> is electric power consumption per capita.
+        The Modern Energy Minimum (Energy for Growth Hub) for productive use
+        is 1,000 kWh/year/person. Many countries on this list are still
+        below it.
+      </li>
+      <li>
+        <strong>BB/100</strong> is fixed broadband subscriptions per 100
+        people. Mobile broadband (much higher in most countries) is not
+        included here; it is a different indicator.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>4 · Honest limits, per country</h2>
+  <div class="disclaim">
+    <ul>
+      <li>
+        Country-level data has more gaps and lag than aggregate global data.
+        Some cells will say <em>not available</em> when the World Bank has no
+        recent observation. Honest blank beats guessed value.
+      </li>
+      <li>
+        World Bank publication dates vary by country and by indicator.
+        Each cell shows its year on hover (and in the JSON).
+      </li>
+      <li>
+        Per-capita figures hide internal distribution. A country with high
+        per-capita GDP can still have ~10% of its population below $6.85/day.
+        That is the table's point, not a flaw.
+      </li>
+      <li>
+        Sovereign-wealth countries (Norway, Saudi Arabia, Iceland) have
+        large state assets that GDP does not capture. The methodology section
+        of the main page notes that GDP is not income.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  Public domain (CC0) on the code and prose. Data is World Bank's, used under
+  <a href="https://datacatalog.worldbank.org/public-licenses">CC-BY-4.0</a>.
+  Code at
+  <a href="https://github.com/lordbasilaiassistant-sudo/Abundance">GitHub</a>.
+  <br>
+  ← <a href="index.html">Back to the global page</a>
+</footer>
+
+</div>
+
+<script>
+const FMT = {
+  text:   v => v == null ? "—" : v,
+  int:    v => v == null ? "—" : Math.round(v).toLocaleString(),
+  int_b:  v => v == null ? "—" :
+              v >= 1e9 ? (v/1e9).toFixed(2) + 'B' :
+              v >= 1e6 ? (v/1e6).toFixed(1) + 'M' : Math.round(v).toLocaleString(),
+  usd:    v => v == null ? "—" : '$' + Math.round(v).toLocaleString(),
+  pct:    v => v == null ? "—" : v.toFixed(1) + '%',
+  num1:   v => v == null ? "—" : v.toFixed(1),
+};
+
+let DATA = null;
+let SORT = { col: 'gdp_per_capita_usd', dir: 'desc' };
+let SELECTED = null;
+
+const $ = sel => document.querySelector(sel);
+const $$ = sel => document.querySelectorAll(sel);
+
+function load() {
+  fetch('data/countries.json')
+    .then(r => r.json())
+    .then(d => { DATA = d; render(); })
+    .catch(e => {
+      $('#tb').innerHTML = '<tr><td colspan="10" style="color:var(--danger);padding:24px">Failed to load data/countries.json — try refresh, or view raw at <a href="data/countries.json">data/countries.json</a></td></tr>';
+    });
+}
+
+function rows() {
+  if (!DATA) return [];
+  const f = ($('#filter').value || '').toLowerCase().trim();
+  let arr = Object.values(DATA.countries).map(c => {
+    const r = { iso3: c.iso3, name: c.name || c.iso3, region: c.region || '', _d: c.data };
+    for (const [k, p] of Object.entries(c.data)) r[k] = p.value;
+    return r;
+  });
+  if (f) arr = arr.filter(r =>
+    r.name.toLowerCase().includes(f) ||
+    r.iso3.toLowerCase().includes(f) ||
+    (r.region || '').toLowerCase().includes(f));
+  arr.sort((a, b) => {
+    const av = a[SORT.col], bv = b[SORT.col];
+    if (av == null && bv == null) return 0;
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    if (typeof av === 'string') return SORT.dir === 'asc'
+      ? av.localeCompare(bv)
+      : bv.localeCompare(av);
+    return SORT.dir === 'asc' ? av - bv : bv - av;
+  });
+  return arr;
+}
+
+function render() {
+  const cols = Array.from($$('#t th')).map(th => ({
+    col: th.dataset.col,
+    fmt: FMT[th.dataset.fmt],
+  }));
+  // Mark sort header
+  $$('#t th').forEach(th => {
+    th.classList.remove('sort-asc', 'sort-desc');
+    if (th.dataset.col === SORT.col) {
+      th.classList.add('sort-' + SORT.dir);
+    }
+  });
+  const r = rows();
+  $('#row-count').textContent = `${r.length} countries`;
+  const tb = $('#tb');
+  tb.innerHTML = r.map(row =>
+    `<tr data-iso="${row.iso3}" ${SELECTED === row.iso3 ? 'class="selected"' : ''}>` +
+    cols.map(c => {
+      const v = row[c.col];
+      const cls = v == null ? ' class="dim"' : '';
+      return `<td${cls}>${c.fmt(v)}</td>`;
+    }).join('') +
+    `</tr>`
+  ).join('');
+  // Click handlers
+  tb.querySelectorAll('tr').forEach(tr => {
+    tr.addEventListener('click', () => {
+      SELECTED = tr.dataset.iso;
+      render();
+      renderDetail();
+    });
+  });
+}
+
+function renderDetail() {
+  if (!SELECTED || !DATA) return;
+  const c = DATA.countries[SELECTED];
+  const d = c.data;
+  const card = $('#detail-card');
+  const get = k => d[k] ? d[k].value : null;
+  const yr  = k => d[k] ? d[k].year : null;
+
+  const pop  = get('population');
+  const gdp  = get('gdp_usd');
+  const gpc  = get('gdp_per_capita_usd');
+  const mil  = get('military_pct_gdp');
+  const hth  = get('health_pct_gdp');
+  const pov  = get('poverty_pct_3usd');
+  const elec = get('electricity_kwh_per_cap');
+  const water= get('renewable_water_m3_pc');
+  const life = get('life_expectancy');
+  const bb   = get('broadband_per_100');
+
+  // Narrative — facts only, all from the same JSON.
+  const bits = [];
+  if (gpc != null) {
+    const ratio = gpc / 1095; // $3/day * 365
+    bits.push(`<strong>${c.name}'s</strong> GDP per capita is <span class="num">$${Math.round(gpc).toLocaleString()}</span> — <span class="num">${ratio.toFixed(1)}×</span> the World Bank extreme-poverty line of $1,095/year.`);
+  }
+  if (mil != null && hth != null) {
+    if (mil > hth) {
+      bits.push(`It spends <span class="num">${mil.toFixed(1)}%</span> of GDP on military vs <span class="num">${hth.toFixed(1)}%</span> on health — military &gt; health.`);
+    } else {
+      bits.push(`It spends <span class="num">${mil.toFixed(1)}%</span> of GDP on military vs <span class="num">${hth.toFixed(1)}%</span> on health — health &gt; military, the typical case.`);
+    }
+  }
+  if (pov != null) {
+    bits.push(`<span class="num">${pov.toFixed(1)}%</span> of its population lives below the upper-middle-income poverty line ($6.85/day, 2017 PPP).`);
+  }
+  if (elec != null) {
+    if (elec < 1000) {
+      bits.push(`Per-capita electricity consumption is <span class="num">${Math.round(elec).toLocaleString()} kWh/yr</span> — below the Modern Energy Minimum of 1,000 kWh.`);
+    } else {
+      bits.push(`Per-capita electricity is <span class="num">${Math.round(elec).toLocaleString()} kWh/yr</span> — <span class="num">${(elec/1000).toFixed(1)}×</span> the Modern Energy Minimum.`);
+    }
+  }
+  if (water != null) {
+    if (water < 1700) {
+      bits.push(`Renewable freshwater per capita is <span class="num">${Math.round(water).toLocaleString()} m³/yr</span> — below the UN water-stress threshold of 1,700 m³.`);
+    } else {
+      bits.push(`Renewable freshwater per capita is <span class="num">${Math.round(water).toLocaleString()} m³/yr</span>, above the UN water-stress threshold.`);
+    }
+  }
+  if (life != null) {
+    bits.push(`Life expectancy at birth is <span class="num">${life.toFixed(1)}</span> years.`);
+  }
+
+  const yearOf = k => yr(k) ? `<span class="y">${yr(k)}</span>` : '';
+  card.hidden = false;
+  card.innerHTML = `
+    <h3>${c.name}</h3>
+    <div class="where">${c.region || ''}${c.capital ? ' · ' + c.capital : ''} · ISO3: ${c.iso3}</div>
+    <div class="grid">
+      <div><div class="label">Population</div><div class="value">${FMT.int_b(pop)} ${yearOf('population')}</div></div>
+      <div><div class="label">GDP / capita</div><div class="value">${FMT.usd(gpc)} ${yearOf('gdp_per_capita_usd')}</div></div>
+      <div><div class="label">Military spend</div><div class="value">${FMT.pct(mil)} of GDP ${yearOf('military_pct_gdp')}</div></div>
+      <div><div class="label">Health spend</div><div class="value">${FMT.pct(hth)} of GDP ${yearOf('health_pct_gdp')}</div></div>
+      <div><div class="label">% in poverty ($6.85/day)</div><div class="value">${FMT.pct(pov)} ${yearOf('poverty_pct_3usd')}</div></div>
+      <div><div class="label">Life expectancy</div><div class="value">${FMT.num1(life)} years ${yearOf('life_expectancy')}</div></div>
+      <div><div class="label">Electricity / capita</div><div class="value">${FMT.int(elec)} kWh/yr ${yearOf('electricity_kwh_per_cap')}</div></div>
+      <div><div class="label">Renewable water / capita</div><div class="value">${FMT.int(water)} m³/yr ${yearOf('renewable_water_m3_pc')}</div></div>
+    </div>
+    <p class="narrative">${bits.join(' ')}</p>
+    <p class="src">Raw record: <a href="data/countries.json"><code>data/countries.json#countries.${SELECTED}</code></a></p>
+  `;
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Sort header clicks
+document.addEventListener('click', e => {
+  const th = e.target.closest('#t th');
+  if (!th) return;
+  const col = th.dataset.col;
+  if (SORT.col === col) {
+    SORT.dir = SORT.dir === 'asc' ? 'desc' : 'asc';
+  } else {
+    SORT.col = col;
+    SORT.dir = (th.dataset.fmt === 'text') ? 'asc' : 'desc';
+  }
+  render();
+});
+
+// Filter input
+document.addEventListener('input', e => {
+  if (e.target.id === 'filter') render();
+});
+
+load();
+</script>
+
+</body>
+</html>
