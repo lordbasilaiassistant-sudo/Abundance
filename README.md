@@ -43,28 +43,55 @@ the empirical question: is the suffering load-bearing? The evidence base says no
 
 ## Structure
 
-| File | What it is |
-|---|---|
-| [`index.html`](index.html) | The site itself — one page, no framework. |
-| [`style.css`](style.css) | Dark, sober typography. No JS animations. |
-| [`data/essentials.json`](data/essentials.json) | Every raw production / population / need number, with source URL, year, and note. |
-| [`data/pilots.json`](data/pilots.json) | Real-world cash-transfer programs and their evaluations (GiveDirectly Kenya, Alaska PFD, Iran 2011, Stockton SEED). |
-| [`methodology.md`](methodology.md) | What was included, excluded, and known limits. |
-| [`refs/historical-context.md`](refs/historical-context.md) | Source notes for the anthropological / historical section (Lee, Wiessner, Ekirch, Conard, Larsen). |
-| [`.github/workflows/pages.yml`](.github/workflows/pages.yml) | Auto-deploys to GitHub Pages on push to `main`. |
+The project is intentionally vanilla — static HTML/CSS/JS plus JSON. No framework, no build step. You can edit a file in the GitHub web UI and the deploy happens automatically.
+
+```
+Abundance/
+├── index.html              # main page (commented sections)
+├── countries.html          # per-country drill-down
+├── case-studies.html       # country-scale precedents
+├── style.css               # imports styles/*.css — don't edit directly
+│
+├── styles/                 # MODULAR CSS — edit here
+│   ├── tokens.css          # colors, fonts, sizes
+│   ├── base.css            # resets, typography, links, headings
+│   ├── layout.css          # container, masthead, sections, hero, TOC, footer
+│   ├── components.css      # cards, pilots, stats, dials, FAQ
+│   └── print.css           # print/PDF override
+│
+├── data/                   # every number on the site lives here
+│   ├── README.md           # schemas + how to add an entry
+│   ├── essentials.json     # food / water / electricity / GDP / etc.
+│   ├── pilots.json         # 6 cash-transfer evaluations
+│   ├── case-studies.json   # 5 country precedents
+│   └── countries.json      # 30 countries × 10 World Bank indicators
+│
+├── embed/calculator.html   # standalone iframe-able calculator
+├── lang/es/index.html      # Spanish; pattern for other languages
+│
+├── papers/                 # deep notes on specific scholarly works
+├── scripts/                # regeneration utilities (Python)
+├── transcripts/            # raw research material (auto-VTT downloads)
+│
+├── bibliography.md         # ~60 academic references organized by topic
+├── methodology.md          # how each number was derived + honest limits
+├── CONTRIBUTING.md         # full contributor guide ← start here
+├── CITATION.cff            # how to cite the project
+└── README.md
+```
+
+For "where do I add X?" see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Contributing
 
-This page exists to be corrected. If you find a number that conflicts with
-its cited source, that has been superseded, or that lacks a primary-source
-citation, please open an issue or PR.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the full guide. The single rule:
 
-Standards for additions:
-1. **Primary source or no source.** Wikipedia, news articles, advocacy orgs,
-   and AI chatbots do not count.
+> **Primary sources or it didn't happen.** Wikipedia, news articles, advocacy orgs, AI chatbots, "as everyone knows" — none of these qualify.
+
+Quick standards:
+1. **Primary source required.** Peer-reviewed journal, government statistical agency, or institutional publication.
 2. **Year of publication required.** Stale numbers get retired.
-3. **Unit and methodology required.** "Global energy" is meaningless without
-   knowing if it's primary energy, final energy, or just electricity.
+3. **Unit and methodology required.** "Global energy" is meaningless without knowing if it's primary energy, final energy, or just electricity.
 4. **No projections, only published figures.** If a number is modeled, say so.
 
 ## Translations

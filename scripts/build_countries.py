@@ -72,7 +72,7 @@ def fetch_indicator(code: str, country_list: list[str]) -> dict[str, dict]:
 
 def main():
     out: dict = {
-        "$schema": "Per-country primary-source data. Source: World Bank Open Data API. Re-fetched by refs/build_countries.py.",
+        "$schema": "Per-country primary-source data. Source: World Bank Open Data API. Re-fetched by scripts/build_countries.py.",
         "fetched_at": "2026-05-15",
         "source": "World Bank Open Data API (api.worldbank.org/v2)",
         "license": "CC-BY-4.0 (World Bank Open Data terms)",

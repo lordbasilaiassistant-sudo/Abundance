@@ -309,6 +309,11 @@
   <a href="#sources">11 · Sources &amp; methodology</a>
 </nav>
 
+<!-- ============================================================
+     SECTION 1 — Thesis
+     Single-paragraph statement of the page's argument, anchored
+     to Sen (1981). To edit: update prose + the Sen citation.
+     ============================================================ -->
 <section id="thesis">
 <h2>1 · The thesis, in one sentence</h2>
 <p>
@@ -334,6 +339,14 @@
 </p>
 </section>
 
+<!-- ============================================================
+     SECTION 2 — Per-capita arithmetic
+     Cards for food, water, electricity, GDP, housing, plus new
+     essentials (insulin, internet, vaccines).
+     Each value is read from data/essentials.json AND recomputed
+     in the inline <script> at the bottom of this file.
+     To add a new essential: see CONTRIBUTING.md
+     ============================================================ -->
 <section id="math">
 <h2>2 · The per-capita arithmetic</h2>
 <p class="small">
@@ -651,6 +664,11 @@
 </div>
 </section>
 
+<!-- ============================================================
+     SECTION 3 — Money question (UBI cost math)
+     Cost of universal $3/day floor; where the money is.
+     World Inequality Lab cross-confirmation added 2026-05-15.
+     ============================================================ -->
 <section id="money">
 <h2>3 · The money question</h2>
 <p>
@@ -718,6 +736,11 @@
 </div>
 </section>
 
+<!-- ============================================================
+     SECTION 4 — Three kinds of scarcity
+     Physical (real) vs distribution (solvable) vs manufactured.
+     Pure prose, no data dependencies.
+     ============================================================ -->
 <section id="scarcity">
 <h2>4 · Three kinds of scarcity</h2>
 <p>
@@ -778,6 +801,11 @@
 </p>
 </section>
 
+<!-- ============================================================
+     SECTION 5 — Omelas question
+     Le Guin frame + empirical answer (suffering is contingent,
+     not load-bearing). Pivot into pilot evidence in § 6.
+     ============================================================ -->
 <section id="omelas">
 <h2>5 · The Omelas question</h2>
 <p>
@@ -848,6 +876,13 @@
 </p>
 </section>
 
+<!-- ============================================================
+     SECTION 6 — Cash-transfer pilots
+     Six programs + two meta-analyses. Each .pilot block reads
+     from data/pilots.json. Update both when adding/removing.
+     Also update FAQPage schema in <head> and the JSON-LD article
+     `citation` list.
+     ============================================================ -->
 <section id="pilots">
 <h2>6 · Where this has already been done</h2>
 <p>
@@ -1060,6 +1095,12 @@
 </p>
 </section>
 
+<!-- ============================================================
+     SECTION 7 — Interactive redistribution calculator
+     Vanilla JS sliders. Math is in the bottom <script> in the
+     `dials()` IIFE. Same code is duplicated, simplified, in
+     embed/calculator.html (the iframe widget).
+     ============================================================ -->
 <section id="dials">
 <h2>7 · Move the dials yourself</h2>
 <p>
@@ -1169,6 +1210,12 @@
 </p>
 </section>
 
+<!-- ============================================================
+     SECTION 8 — Historical context
+     Lee, Wiessner, Ekirch, Conard, Larsen. Full source notes at
+     papers/historical-context.md. Includes the honest correction
+     to Lee's 17 hrs/week figure (full labor closer to 40 hrs).
+     ============================================================ -->
 <section id="history">
 <h2>8 · Historical context — work as a recent system</h2>
 <p>
@@ -1239,13 +1286,17 @@
   how much of that system is currently required, and how much is inherited.
 </p>
 <p class="src">
-  See <a href="refs/historical-context.md"><code>refs/historical-context.md</code></a>
+  See <a href="papers/historical-context.md"><code>papers/historical-context.md</code></a>
   for the full source notes, including the substantial revision to Lee's
   numbers, the Sahlins "original affluent society" debate, and what
   evidence we deliberately excluded.
 </p>
 </section>
 
+<!-- ============================================================
+     SECTION 9 — Honest limits
+     What the page does NOT prove. Pure prose.
+     ============================================================ -->
 <section id="limits">
 <h2>9 · Honest limits of this page</h2>
 <div class="disclaim">
@@ -1290,6 +1341,11 @@
 </div>
 </section>
 
+<!-- ============================================================
+     SECTION 10 — FAQ / common objections
+     Each <details> entry mirrors a Q in the FAQPage JSON-LD
+     schema in <head>. Add to both when adding a new entry.
+     ============================================================ -->
 <section id="faq">
 <h2>10 · Common objections, answered</h2>
 <p>
@@ -1456,6 +1512,10 @@
 </details>
 </section>
 
+<!-- ============================================================
+     SECTION 11 — Sources & methodology
+     Pointers to data/*.json, methodology.md, bibliography.md.
+     ============================================================ -->
 <section id="sources">
 <h2>11 · Sources &amp; methodology</h2>
 <p>

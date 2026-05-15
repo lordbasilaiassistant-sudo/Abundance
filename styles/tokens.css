@@ -1,0 +1,35 @@
+/* Design tokens — the single source of truth for colors, fonts, spacing.
+ * Change a value here and it propagates everywhere.
+ * If you're adding a new color, add a token; don't hardcode hex elsewhere.
+ */
+:root {
+  /* Backgrounds: progressively lighter tints on a near-black base */
+  --bg:        #0a0b0e;
+  --bg-2:      #13151a;
+  --bg-3:      #1c1f26;
+  --bg-warm:   #1a1612;
+
+  /* Foreground: high-contrast off-white to dim grey */
+  --fg:        #f0f3f7;
+  --fg-2:      #b5bdca;
+  --fg-3:      #717885;
+  --fg-4:      #4a4f59;
+
+  /* Semantic accents — meaning, not decoration */
+  --accent:    #6ee0b0;   /* abundance / supply >= need */
+  --accent-2:  #4abf8a;   /* abundance darker */
+  --warn:      #f8c574;   /* uneven distribution */
+  --danger:    #ef8b8b;   /* real scarcity / shortfall */
+
+  /* Lines: only used where structure cannot be conveyed by whitespace */
+  --line:      #1f232c;
+  --line-2:    #2b3140;
+
+  /* Link */
+  --link:      #9fc1ff;
+
+  /* Type stacks */
+  --mono:      ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --sans:      ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, "Helvetica Neue", sans-serif;
+  --serif:     "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}

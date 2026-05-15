@@ -1,0 +1,34 @@
+/* Print — high-contrast B&W layout for paper / PDF export.
+ * Override the dark tokens to white. Hide interactive chrome.
+ * Force <details> open via JS in the page (beforeprint listener).
+ */
+@media print {
+  :root {
+    --bg: #ffffff; --bg-2: #f7f7f7; --bg-3: #efefef; --bg-warm: #fafaf8;
+    --fg: #111111; --fg-2: #333333; --fg-3: #666666; --fg-4: #888888;
+    --line: #cccccc; --line-2: #dddddd;
+    --accent: #0a7f5a; --accent-2: #0a7f5a;
+    --warn: #a86c0a; --danger: #9b3030;
+    --link: #003e7e;
+  }
+  body { font-size: 11pt; line-height: 1.45; background: white; color: black; }
+  .container { padding: 0; max-width: none; }
+  .toc, .dials input[type="range"], footer { display: none; }
+  .card, .pilot, .disclaim, details.card { page-break-inside: avoid; box-shadow: none; }
+  .hero-stats { page-break-inside: avoid; }
+  h1 { font-size: 22pt; }
+  h2 { font-size: 16pt; page-break-after: avoid; }
+  h3 { font-size: 11pt; page-break-after: avoid; }
+  h4 { font-size: 13pt; }
+  .ratio { font-size: 28pt; }
+  .hero-stat .ratio { font-size: 22pt; color: black; }
+  details.card { display: block; }
+  details.card > summary { font-weight: 600; }
+  details.card > summary::after { display: none; }
+  details.card > p, details.card > ul { display: block !important; }
+  a { color: black; text-decoration: underline; border: none; }
+  a[href]:after { content: " (" attr(href) ")"; font-size: 8pt; color: #555; }
+  a[href^="#"]:after, a[href^="data/"]:after, a[href^="scripts/"]:after,
+  a[href^="papers/"]:after, a[href^="transcripts/"]:after,
+  a[href^="methodology"]:after, a[href^="bibliography"]:after { content: ""; }
+}
