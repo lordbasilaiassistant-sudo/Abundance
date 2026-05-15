@@ -1,0 +1,80 @@
+{
+  "$schema": "Real-world programs that delivered cash directly to people. Each entry has primary-source citation. We only include programs with peer-reviewed or official-source evaluation.",
+  "givedirectly_kenya_ubi": {
+    "name": "GiveDirectly Universal Basic Income RCT — Kenya",
+    "start_year": 2017,
+    "ongoing": true,
+    "population": 23000,
+    "villages_treatment": 195,
+    "villages_control": 100,
+    "design": "Three-arm RCT: lump sum $500, 2-year UBI ~$0.75/day, 12-year UBI commitment with same monthly amount. Total transfer over study window: $3,000.",
+    "investigators": "Suri (MIT Sloan), Banerjee (MIT, Nobel 2019), Niehaus (UCSD), Faye, Krueger (Princeton)",
+    "key_findings": [
+      "No reduction in labor supply across any arm.",
+      "Substantial reallocation of labor toward entrepreneurship.",
+      "Lump-sum arm produced the largest income gain (~50% over control).",
+      "Long-term commitment arm produced behavior change (saving, investment) absent from short-term arm."
+    ],
+    "primary_source_name": "Banerjee, Faye, Krueger, Niehaus, Suri (2023). 'Universal Basic Income: Short-Term Results from a Long-Term Experiment in Kenya.'",
+    "primary_source_url": "https://www.povertyactionlab.org/sites/default/files/research-paper/Universal-Basic-Income-Short-Term-Results-from-a-Long-Term-Experiment-in-Kenya_BFKNS_December2023.pdf",
+    "registry": "https://www.socialscienceregistry.org/trials/1952",
+    "givedirectly_summary": "https://www.givedirectly.org/2023-ubi-results"
+  },
+  "alaska_permanent_fund": {
+    "name": "Alaska Permanent Fund Dividend",
+    "start_year": 1982,
+    "ongoing": true,
+    "design": "Sovereign-wealth dividend. Each Alaska resident, including children, receives an annual cash payment funded by oil-extraction royalties invested in a $80B+ trust.",
+    "coverage": "Every Alaska resident regardless of income, employment, or means test.",
+    "recent_amounts": {
+      "2022": 3284,
+      "2023": 1312,
+      "2024": 1702,
+      "long_run_inflation_adjusted_avg_per_year": 1600
+    },
+    "currency": "USD",
+    "annual_program_cost_usd": 1200000000,
+    "key_findings": [
+      "No measurable reduction in aggregate labor supply over 40+ years (Jones & Marinescu 2022, AEJ:EP).",
+      "Alaska maintains the lowest poverty rate among comparable rural-heavy US states.",
+      "The dividend has survived four decades, multiple party transitions, and major oil-price downturns."
+    ],
+    "primary_source_name": "Alaska Department of Revenue, Permanent Fund Dividend Division",
+    "primary_source_url": "https://pfd.alaska.gov/",
+    "labor_evaluation_url": "https://www.aeaweb.org/articles?id=10.1257/pol.20190299"
+  },
+  "iran_2011_universal_cash_transfer": {
+    "name": "Iran Universal Cash Transfer (subsidy reform)",
+    "start_year": 2011,
+    "design": "Replaced energy and bread subsidies (~$50–70B/yr) with universal monthly cash deposits into individual accounts.",
+    "coverage": ">70 million people — essentially universal national coverage.",
+    "transfer_size": "~28% of median per-capita household income initially.",
+    "first_year_disbursed_usd": 30000000000,
+    "key_findings": [
+      "Headcount poverty fell from 22.5% to 10.6% as a direct effect of the transfer.",
+      "No reduction in labor supply (Salehi-Isfahani & Mostafavi-Dehzooei 2018) — positive effects on women's and self-employed men's labor supply.",
+      "Inflation eroded ~50% of real transfer value over five years because the nominal amount was not indexed. The poverty-reduction effect declined by ~40% as a result.",
+      "Lesson: a fixed-nominal transfer is fragile. Indexing matters."
+    ],
+    "primary_source_name": "Salehi-Isfahani, D. & Mostafavi-Dehzooei, M. (2018). 'Cash transfers and labor supply: Evidence from a large-scale program in Iran.' Journal of Development Economics 135:349–367.",
+    "primary_source_url": "https://www.sciencedirect.com/science/article/abs/pii/S0304387818306084",
+    "imf_chronicle_url": "https://www.imf.org/external/pubs/ft/wp/2011/wp11167.pdf"
+  },
+  "stockton_seed": {
+    "name": "Stockton Economic Empowerment Demonstration (SEED)",
+    "country": "United States",
+    "start_year": 2019,
+    "end_year": 2021,
+    "design": "Randomized controlled trial: $500/month for 24 months, unconditional, no work requirement. 125 treatment + 200 control.",
+    "evaluating_institutions": "University of Pennsylvania Center for Guaranteed Income Research, Stanford Center for Advanced Study in the Behavioral Sciences, Jain Family Institute",
+    "key_findings": [
+      "Full-time employment among recipients rose from 28% to 40% over 12 months (treatment); control group rose from 32% to 37%. Net employment effect: +7 percentage points.",
+      "Reduced anxiety and depression scores.",
+      "Reduced month-to-month income volatility.",
+      "Most recipients used funds for essentials (food, utilities, auto repair, transit), not 'temptation goods.'"
+    ],
+    "primary_source_name": "West, S., Castro, A., Samra, S. & Coltrera, E. (2023). 'Impact of Guaranteed Income on Health, Finances, and Agency: Findings from the Stockton Randomized Controlled Trial.' Journal of Urban Health 100:1184–1198.",
+    "primary_source_url": "https://link.springer.com/article/10.1007/s11524-023-00723-0",
+    "first_year_report_url": "https://static1.squarespace.com/static/6039d612b17d055cac14070f/t/603ef1194c474b329f33c329/1614737690661/SEED_Preliminary+Analysis-SEEDs+First+Year_Final+Report_Individual+Pages+-2.pdf"
+  }
+}

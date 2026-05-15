@@ -16,12 +16,21 @@ UN-Habitat, SIPRI, UBS). If a claim has no link, it is not in the repo.
 
 In 2026, the world produces enough food, water, electricity, and output to meet
 every human's basic needs. Hunger, homelessness, and energy poverty are
-**distribution outcomes**, not **production outcomes**.
+**distribution outcomes**, not **production outcomes**. And the standard
+objection — "if you give people money, they'll stop working / waste it / it
+isn't sustainable" — fails in every well-designed pilot we have on record
+(Kenya RCT, Alaska 1982-present, Iran 2011, Stockton SEED).
 
-This is a factual claim, not a political program. The page makes that claim
-and shows the arithmetic. It does not argue that money can be abolished, that
-UBI is politically feasible, or that redistribution is costless. See
+This is a factual claim, not a political program. The page makes that claim,
+shows the arithmetic, cites the empirical pilots, and includes an interactive
+calculator so readers can stress-test their own redistribution scenarios. It
+does not argue that money can be abolished, that universal rollout is
+politically feasible, or that transition is costless. See
 [`methodology.md`](methodology.md) for the limits.
+
+The page also names what Le Guin called the *Omelas* bargain — the implicit
+claim that some people's suffering is the price of others' comfort — and asks
+the empirical question: is the suffering load-bearing? The evidence base says no.
 
 ## What this is *not*
 
@@ -38,7 +47,8 @@ UBI is politically feasible, or that redistribution is costless. See
 |---|---|
 | [`index.html`](index.html) | The site itself — one page, no framework. |
 | [`style.css`](style.css) | Dark, sober typography. No JS animations. |
-| [`data/essentials.json`](data/essentials.json) | Every raw number, with source URL, year, and note. |
+| [`data/essentials.json`](data/essentials.json) | Every raw production / population / need number, with source URL, year, and note. |
+| [`data/pilots.json`](data/pilots.json) | Real-world cash-transfer programs and their evaluations (GiveDirectly Kenya, Alaska PFD, Iran 2011, Stockton SEED). |
 | [`methodology.md`](methodology.md) | What was included, excluded, and known limits. |
 | [`refs/historical-context.md`](refs/historical-context.md) | Source notes for the anthropological / historical section (Lee, Wiessner, Ekirch, Conard, Larsen). |
 | [`.github/workflows/pages.yml`](.github/workflows/pages.yml) | Auto-deploys to GitHub Pages on push to `main`. |
