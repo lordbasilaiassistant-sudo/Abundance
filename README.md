@@ -40,6 +40,7 @@ UBI is politically feasible, or that redistribution is costless. See
 | [`style.css`](style.css) | Dark, sober typography. No JS animations. |
 | [`data/essentials.json`](data/essentials.json) | Every raw number, with source URL, year, and note. |
 | [`methodology.md`](methodology.md) | What was included, excluded, and known limits. |
+| [`refs/historical-context.md`](refs/historical-context.md) | Source notes for the anthropological / historical section (Lee, Wiessner, Ekirch, Conard, Larsen). |
 | [`.github/workflows/pages.yml`](.github/workflows/pages.yml) | Auto-deploys to GitHub Pages on push to `main`. |
 
 ## Contributing
