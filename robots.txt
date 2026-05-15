@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Specific guidance for the AI crawlers that actually parse and cite content.
+# This site exists to be cited. Crawl freely.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+Sitemap: https://lordbasilaiassistant-sudo.github.io/Abundance/sitemap.xml

@@ -345,3 +345,65 @@ input[type="range"]::-moz-range-thumb {
 .verdict.over {
   border-left-color: var(--accent);
 }
+
+/* ---------- FAQ disclosure cards ---------- */
+details.card {
+  padding: 18px 24px;
+  cursor: pointer;
+}
+details.card > summary {
+  list-style: none;
+  font-family: var(--sans);
+  font-size: 16px;
+  color: var(--fg);
+  padding: 4px 0;
+  outline: none;
+  position: relative;
+  padding-right: 28px;
+}
+details.card > summary::-webkit-details-marker { display: none; }
+details.card > summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 4px;
+  font-family: var(--mono);
+  font-size: 20px;
+  color: var(--fg-3);
+  transition: transform 120ms ease;
+}
+details.card[open] > summary::after { content: "−"; color: var(--accent); }
+details.card[open] > summary { margin-bottom: 12px; }
+details.card > p,
+details.card > ul {
+  color: var(--fg-2);
+  font-size: 15px;
+}
+
+/* ---------- print ---------- */
+@media print {
+  :root {
+    --bg: #ffffff; --bg-2: #f7f7f7; --bg-3: #efefef;
+    --fg: #111111; --fg-2: #333333; --fg-3: #666666;
+    --line: #cccccc; --accent: #0a7f5a; --link: #003e7e;
+  }
+  body { font-size: 11pt; line-height: 1.4; background: white; color: black; }
+  .container { padding: 0; max-width: none; }
+  .toc, .dials input[type="range"], footer { display: none; }
+  .card, .pilot { page-break-inside: avoid; box-shadow: none; }
+  h1 { font-size: 22pt; }
+  h2 { font-size: 16pt; page-break-after: avoid; }
+  h3 { font-size: 12pt; page-break-after: avoid; }
+  .ratio { font-size: 28pt; }
+  details.card { display: block; }
+  details.card > summary { font-weight: 600; }
+  details.card > summary::after { display: none; }
+  details.card > p, details.card > ul { display: block !important; }
+  a { color: black; text-decoration: underline; border: none; }
+  a[href]:after { content: " (" attr(href) ")"; font-size: 8pt; color: #555; }
+  /* But not for in-page or relative-only anchors */
+  a[href^="#"]:after,
+  a[href^="data/"]:after,
+  a[href^="refs/"]:after,
+  a[href^="methodology"]:after { content: ""; }
+}

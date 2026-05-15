@@ -5,10 +5,143 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abundance — what humanity actually produces, per person</title>
 <meta name="description" content="A primary-sourced per-capita arithmetic of whether global production of food, water, energy, money, and shelter is enough for every person alive — and the empirical evidence on whether the underclass that subsidizes it is necessary. Every number is cited.">
-<meta property="og:title" content="Abundance — per-capita reality, with citations">
-<meta property="og:description" content="A primary-sourced arithmetic of what the world actually produces, divided by the people in it.">
-<meta property="og:type" content="website">
+<meta name="keywords" content="abundance, scarcity, universal basic income, UBI, redistribution, per capita, world production, world GDP, hunger, poverty, primary source, omelas">
+<meta name="author" content="lordbasilaiassistant-sudo">
+<link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/">
+
+<!-- OpenGraph -->
+<meta property="og:title" content="Abundance — the world already produces enough.">
+<meta property="og:description" content="Primary-sourced per-capita arithmetic. Food 1.4×, water 287×, electricity 3.8×, GDP 12× their respective minimum-need thresholds. Every number cited. CC0.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The world already produces enough. Food 1.4x, water 287x, electricity 3.8x, GDP 12x their respective minimum-need thresholds.">
+<meta property="og:site_name" content="Abundance">
+<meta property="article:published_time" content="2026-05-15T00:00:00Z">
+<meta property="article:modified_time" content="2026-05-15T00:00:00Z">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Abundance — the world already produces enough.">
+<meta name="twitter:description" content="Per-capita arithmetic with primary-source citations. Food 1.4×, water 287×, electricity 3.8×, GDP 12× their thresholds.">
+<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta name="twitter:image:alt" content="Headline arithmetic from the Abundance site.">
+
 <link rel="stylesheet" href="style.css">
+
+<!-- Structured data for search and AI assistants -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/#article",
+      "headline": "Abundance: a primary-sourced per-capita arithmetic of global production",
+      "description": "A single-page, fully-cited arithmetic check of whether aggregate global production of food, water, electricity, and economic output is sufficient to meet every human's documented minimum needs, with references to four peer-reviewed cash-transfer evaluations.",
+      "image": "https://lordbasilaiassistant-sudo.github.io/Abundance/og.png",
+      "datePublished": "2026-05-15",
+      "dateModified": "2026-05-15",
+      "author": { "@type": "Person", "name": "Eli Vargas (lordbasilaiassistant-sudo)" },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "isAccessibleForFree": true,
+      "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/",
+      "citation": [
+        "UN World Population Prospects 2024",
+        "IMF World Economic Outlook April 2026",
+        "FAO Food Outlook 2024",
+        "FAO State of Food Security and Nutrition in the World 2025",
+        "IEA Electricity 2024",
+        "WHO Global Health Expenditure Report 2024",
+        "World Bank June 2025 Update to Global Poverty Lines",
+        "UN-Habitat 2024 / UN DESA",
+        "SIPRI Trends in World Military Expenditure 2024",
+        "UBS Global Wealth Report 2024",
+        "Banerjee, Faye, Krueger, Niehaus, Suri (2023) Universal Basic Income RCT, Kenya",
+        "Jones & Marinescu (2022) American Economic Journal: Economic Policy 14(2):315",
+        "Salehi-Isfahani & Mostafavi-Dehzooei (2018) Journal of Development Economics 135:349",
+        "West, Castro, Samra, Coltrera (2023) Journal of Urban Health 100:1184",
+        "Wiessner (2014) PNAS 111(39):14027",
+        "Ekirch (2024) Medical History, Cambridge Core",
+        "Conard, Malina, Münzel (2009) Nature 460:737",
+        "Larsen (1995) Annual Review of Anthropology 24:185"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "If we give people a universal income, won't they stop working?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Every well-designed evaluation finds either no labor-supply effect or a positive one. GiveDirectly's Kenya RCT (Banerjee, Faye, Krueger, Niehaus, Suri 2023) found no labor reduction across three transfer designs. Jones & Marinescu's 2022 study of Alaska's 40+ year Permanent Fund Dividend found no aggregate labor-supply reduction. Salehi-Isfahani & Mostafavi-Dehzooei (2018, J. Dev. Econ.) found Iran's 2011 universal transfer had no negative effect on labor and positive effects on women's and self-employed men's labor supply. Stockton SEED (West et al 2023, J. Urban Health) found full-time employment in the treatment group rose 12 percentage points vs 5 in the control group."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where would the money actually come from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A universal $3/day floor for every human costs $8.98 trillion/year, or 8.2% of world GDP. Existing reservoirs from which it could be drawn include: global household wealth $449.9T (UBS 2024), of which $213.8T is held by ~58 million people with net worth above $1M; global military spending $2.7T/year (SIPRI 2024); and an estimated $480-700B/year lost to multinational profit-shifting to tax havens (Zucman, Tørsløv, Wier 2018+). The site's interactive calculator lets readers stress-test their own assumptions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Doesn't inflation just eat any universal transfer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can, if the transfer is not indexed. Iran's 2011 cash transfer demonstrated this empirically: cumulative 136.5% inflation over five years halved the real value of the transfer and erased ~40% of its poverty-reduction effect (Salehi-Isfahani 2018). The lesson is that indexing matters; it is not a refutation of the concept."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Doesn't a wealth tax cause capital flight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some flight occurs, but the empirical literature finds the magnitude is often much smaller than predicted because most wealth is in illiquid assets (real estate, business ownership, retirement accounts) that cannot be moved as easily as cash. Gabriel Zucman's work (UC Berkeley) on tax-haven leakage estimates that roughly $7.6T of household wealth is offshore — this can be partly recovered through coordinated tax-haven enforcement, an active item on the OECD agenda. The site's redistribution calculator is honest about not modeling flight; the limits section says so."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Isn't GDP-per-capita just an average that hides distribution?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The site says exactly this in its methodology and limits sections. GDP is not income; it includes capital depreciation, government spending, and net exports. Average per-capita figures show that the aggregate physical resource is sufficient, which is a necessary precondition for distribution. It is not a sufficient condition. The point of the page is to refute 'we cannot produce enough,' not to argue 'distribution is solved.'"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Won't lifting people out of poverty cause a population explosion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The opposite is observed empirically. Fertility rates fall as women gain education, healthcare access, and income — the demographic transition. The UN's medium-variant projection (WPP 2024) is that global population peaks around 10.3B in the 2080s and then declines. Lifting people out of poverty accelerates fertility decline, not population growth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Doesn't innovation require inequality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The empirical literature on long-run growth (Acemoglu, Johnson, Robinson — 2024 Nobel) finds that inclusive institutions, characterized by broad property rights, broad political voice, and broad access to opportunity, outperform extractive institutions over decades. Nordic countries combine high innovation output per capita with low inequality. The argument 'extreme inequality is the price of innovation' is not supported by cross-country evidence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Isn't this just communism / Marxism?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tax-and-transfer is what every modern developed country already does. The arithmetic on this page is independent of any political ideology — it asks whether physical production exceeds physical need, and quantifies what redistribution would cost in dollars. Universal basic income proposals span the political spectrum: Milton Friedman (negative income tax), F.A. Hayek (a minimum income), Martin Luther King Jr., Richard Nixon, Andrew Yang, the GiveDirectly study (Banerjee et al), and Alaska's bipartisan Permanent Fund. The site does not advocate a political program; it shows the math and the pilot evidence."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="container">
@@ -35,7 +168,8 @@
   <a href="#dials">7 · Move the dials yourself</a>
   <a href="#history">8 · Historical context — work as a recent system</a>
   <a href="#limits">9 · Honest limits of this page</a>
-  <a href="#sources">10 · Sources &amp; methodology</a>
+  <a href="#faq">10 · Common objections, answered</a>
+  <a href="#sources">11 · Sources &amp; methodology</a>
 </nav>
 
 <section id="thesis">
@@ -769,8 +903,156 @@
 </div>
 </section>
 
+<section id="faq">
+<h2>10 · Common objections, answered</h2>
+<p>
+  The objections to "we already produce enough" tend to recur. Each of the
+  following has been raised in good faith and has an empirical answer.
+</p>
+
+<details class="card" open>
+  <summary><strong>"If we give people a universal income, won't they stop working?"</strong></summary>
+  <p>
+    No. Every well-designed evaluation finds either no labor-supply effect or
+    a positive one.
+  </p>
+  <ul>
+    <li>GiveDirectly's Kenya RCT (~23k people, three transfer designs) —
+      <em>no</em> labor reduction in any arm
+      (<a href="https://www.povertyactionlab.org/sites/default/files/research-paper/Universal-Basic-Income-Short-Term-Results-from-a-Long-Term-Experiment-in-Kenya_BFKNS_December2023.pdf">Banerjee et al 2023</a>).</li>
+    <li>Alaska Permanent Fund Dividend (every Alaskan, 40+ years) — no
+      aggregate labor reduction
+      (<a href="https://www.aeaweb.org/articles?id=10.1257/pol.20190299">Jones &amp; Marinescu 2022, AEJ:EP</a>).</li>
+    <li>Iran 2011 universal cash transfer (&gt;70M people) — no labor reduction,
+      positive effects on women and self-employed men
+      (<a href="https://www.sciencedirect.com/science/article/abs/pii/S0304387818306084">Salehi-Isfahani &amp; Mostafavi-Dehzooei 2018, JDE</a>).</li>
+    <li>Stockton SEED (125 treatment vs 200 control, RCT) — full-time employment
+      <em>rose</em> 12pp in treatment vs 5pp in control
+      (<a href="https://link.springer.com/article/10.1007/s11524-023-00723-0">West et al 2023, J. Urban Health</a>).</li>
+  </ul>
+</details>
+
+<details class="card">
+  <summary><strong>"Where would the money actually come from?"</strong></summary>
+  <p>
+    A universal $3/day floor for every human is $8.98T/year, or 8.2% of world
+    GDP. Reservoirs from which it could be drawn:
+  </p>
+  <ul>
+    <li>Global household wealth: <span class="num">$449.9T</span> (UBS 2024);
+      <span class="num">$213.8T</span> held by ~58M people with net worth &gt;$1M.
+      A 2% annual tax on this top tier alone yields ~$4.3T.</li>
+    <li>Global military spending: <span class="num">$2.7T/year</span>
+      (<a href="https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024">SIPRI 2024</a>);
+      10% redirection = $270B/year.</li>
+    <li>Profit-shifting to tax havens: estimated $480–700B/year of corporate
+      profit relocated to evade tax
+      (<a href="https://gabriel-zucman.eu/files/TWZ2018.pdf">Tørsløv, Wier &amp; Zucman 2018</a>;
+      OECD has the Pillar Two minimum-tax framework partially live).</li>
+    <li>Closing the actual <em>poverty gap</em> for the 847M below the line
+      costs well under $1T/year — comparable to a single year's growth in
+      global military spending.</li>
+  </ul>
+  <p>The site's §7 calculator lets you stress-test any combination.</p>
+</details>
+
+<details class="card">
+  <summary><strong>"Wouldn't inflation just eat any universal transfer?"</strong></summary>
+  <p>
+    It can, if the transfer is not indexed. Iran 2011 demonstrated this
+    empirically: cumulative 136.5% inflation over five years halved the real
+    value of the transfer and erased ~40% of its poverty-reduction effect
+    (Salehi-Isfahani 2018). The lesson is that indexing matters; it is not
+    a refutation of the concept. The Alaska Permanent Fund Dividend, which
+    fluctuates with fund performance rather than being fixed in nominal terms,
+    has held real value over 40+ years.
+  </p>
+</details>
+
+<details class="card">
+  <summary><strong>"Doesn't a wealth tax cause capital flight?"</strong></summary>
+  <p>
+    Some, but typically much less than predicted, because most wealth is in
+    illiquid assets (real estate, business ownership, retirement accounts)
+    that cannot be moved as easily as cash. Gabriel Zucman's
+    <a href="https://gabriel-zucman.eu/">research</a> estimates ~$7.6T of
+    household wealth is offshore — recoverable through coordinated tax-haven
+    enforcement, an active item on the OECD/G20 agenda (Pillar Two minimum
+    tax took partial effect 2024). The site's §7 calculator does not model
+    capital flight, and the limits section explicitly notes this.
+  </p>
+</details>
+
+<details class="card">
+  <summary><strong>"Isn't GDP-per-capita just an average that hides distribution?"</strong></summary>
+  <p>
+    Yes — and the site says so in §6 of the methodology and §9 of the limits.
+    GDP is not income. It includes capital depreciation, government spending,
+    and net exports. Average per-capita figures show that the aggregate
+    physical resource is sufficient, which is a necessary precondition for
+    distribution. It is not a sufficient condition. The page exists to refute
+    "we cannot produce enough," not to claim "distribution is solved."
+  </p>
+</details>
+
+<details class="card">
+  <summary><strong>"Won't lifting people out of poverty cause a population explosion?"</strong></summary>
+  <p>
+    The opposite is empirically observed. Fertility rates fall as women gain
+    education, healthcare access, and income — the demographic transition.
+    The UN's medium-variant projection
+    (<a href="https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf">WPP 2024</a>)
+    is that global population peaks around 10.3B in the mid-2080s and
+    declines thereafter. Lifting people out of poverty accelerates fertility
+    decline, not population growth.
+  </p>
+</details>
+
+<details class="card">
+  <summary><strong>"Doesn't innovation require inequality?"</strong></summary>
+  <p>
+    The empirical literature on long-run growth — most notably Acemoglu,
+    Johnson, and Robinson (2024 Nobel) — finds that <em>inclusive</em>
+    institutions (broad property rights, broad political voice, broad
+    opportunity) outperform <em>extractive</em> ones over decades. The
+    Nordic countries combine top-quintile innovation output per capita
+    with low inequality. The argument that extreme inequality is required
+    for innovation is not supported by cross-country evidence.
+  </p>
+</details>
+
+<details class="card">
+  <summary><strong>"Isn't this communism?"</strong></summary>
+  <p>
+    Tax-and-transfer is what every modern developed country already does.
+    The arithmetic on this page is independent of political ideology — it
+    asks whether physical production exceeds physical need, then quantifies
+    redistribution costs. Universal basic income proposals span the
+    political spectrum: Milton Friedman (negative income tax), F.A. Hayek
+    (a minimum income), Martin Luther King Jr., Richard Nixon (1969 Family
+    Assistance Plan), Andrew Yang, GiveDirectly's RCT, and Alaska's
+    bipartisan Permanent Fund. The site shows the math and the pilots; it
+    does not advocate a political program.
+  </p>
+</details>
+
+<details class="card">
+  <summary><strong>"Geographic distribution makes the global average meaningless. Water in the Sahara is not water in the Amazon."</strong></summary>
+  <p>
+    True, and the site says exactly this — water gets the
+    <span class="tag uneven">geographically uneven</span> tag in §2 and
+    transport/refrigeration is the first item in §9 (limits). The 287× water
+    ratio is an aggregate-supply claim, not a local-supply claim. The food
+    ratio (1.4×) and electricity ratio (3.8×) are less geographically locked
+    because both can move at reasonable cost. The Omelas argument (§5) is
+    even narrower: the resources exist physically; the question is whether
+    institutions move them.
+  </p>
+</details>
+</section>
+
 <section id="sources">
-<h2>10 · Sources &amp; methodology</h2>
+<h2>11 · Sources &amp; methodology</h2>
 <p>
   All raw values live in
   <a href="data/essentials.json"><code>data/essentials.json</code></a>
@@ -943,6 +1225,19 @@ const setHTML = (id, v) => { const el = document.getElementById(id); if (el) el.
   Object.values(inputs).forEach(inp => inp.addEventListener('input', recalc));
   recalc();
 })();
+
+// Auto-expand all FAQ disclosures for printing / PDF, then restore.
+window.addEventListener('beforeprint', () => {
+  document.querySelectorAll('details').forEach(d => {
+    d.dataset.wasOpen = d.open ? '1' : '0';
+    d.open = true;
+  });
+});
+window.addEventListener('afterprint', () => {
+  document.querySelectorAll('details').forEach(d => {
+    d.open = d.dataset.wasOpen === '1';
+  });
+});
 </script>
 
 </body>

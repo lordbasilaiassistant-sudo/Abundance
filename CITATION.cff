@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+title: "Abundance: a primary-sourced per-capita arithmetic of global production"
+abstract: >
+  A single-page, fully-cited arithmetic check of whether aggregate global
+  production of food, water, electricity, and economic output is sufficient
+  to meet every human's documented minimum needs. Includes redistribution
+  math and references to four peer-reviewed cash-transfer evaluations
+  (GiveDirectly Kenya, Alaska Permanent Fund, Iran 2011, Stockton SEED).
+type: dataset
+authors:
+  - name: "Eli Vargas (lordbasilaiassistant-sudo)"
+license: CC0-1.0
+url: "https://lordbasilaiassistant-sudo.github.io/Abundance/"
+repository-code: "https://github.com/lordbasilaiassistant-sudo/Abundance"
+date-released: "2026-05-15"
+keywords:
+  - abundance
+  - per-capita arithmetic
+  - universal basic income
+  - cash transfer
+  - poverty
+  - distribution
+  - inequality
+  - scarcity
+  - omelas
+preferred-citation:
+  type: dataset
+  title: "Abundance: a primary-sourced per-capita arithmetic of global production"
+  authors:
+    - name: "Eli Vargas"
+  year: 2026
+  url: "https://lordbasilaiassistant-sudo.github.io/Abundance/"
