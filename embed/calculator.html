@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abundance calculator — embeddable widget</title>
+<meta name="description" content="Embeddable redistribution calculator. Move four dials, see live per-capita arithmetic. From the Abundance project, CC0.">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" href="../favicon.png">
+<style>
+  :root {
+    --bg: #0e0f12;
+    --bg-2: #15171c;
+    --bg-3: #1b1e25;
+    --fg: #e9ecf1;
+    --fg-2: #aab1bd;
+    --fg-3: #6b7280;
+    --accent: #5fd0a1;
+    --warn: #f5b96b;
+    --danger: #e07b7b;
+    --line: #262932;
+    --link: #8fb7ff;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
+    --serif: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--bg);
+    color: var(--fg); font-family: var(--sans);
+    font-size: 15px; line-height: 1.5;
+  }
+  a { color: var(--link); text-decoration: none; border-bottom: 1px solid rgba(143, 183, 255, 0.25); }
+  a:hover { border-bottom-color: var(--link); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 24px 20px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--fg-3); margin-bottom: 8px;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 500; font-size: 24px;
+    margin: 0 0 6px; line-height: 1.2;
+  }
+  .lede { color: var(--fg-2); font-size: 14px; margin: 0 0 18px; }
+  .num { font-family: var(--mono); font-size: 0.95em;
+         background: var(--bg-2); padding: 1px 5px; border-radius: 4px; }
+  .dials {
+    background: var(--bg-2); border: 1px solid var(--line);
+    border-radius: 8px; padding: 18px 20px;
+  }
+  .dial { margin-bottom: 18px; }
+  .dial:last-of-type { margin-bottom: 6px; }
+  .dial-label {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .dial-name { font-weight: 600; font-size: 13.5px; color: var(--fg); }
+  .dial-value { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+  .dial-note { font-size: 11.5px; color: var(--fg-3); margin-top: 2px; }
+  input[type="range"] {
+    -webkit-appearance: none; appearance: none; width: 100%; height: 4px;
+    background: var(--bg-3); border-radius: 2px; outline: none; margin-top: 2px;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none; width: 16px; height: 16px;
+    border-radius: 50%; background: var(--accent); cursor: pointer;
+    border: 2px solid var(--bg-2);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 16px; height: 16px; border-radius: 50%; background: var(--accent);
+    cursor: pointer; border: 2px solid var(--bg-2);
+  }
+  .results { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 4px 0; }
+  @media (max-width: 480px) { .row { grid-template-columns: 1fr; gap: 8px; } }
+  .stat .label {
+    font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--fg-3); margin-bottom: 2px;
+  }
+  .stat .value { font-family: var(--mono); font-size: 18px; color: var(--fg); }
+  .stat .sub { font-size: 11.5px; color: var(--fg-3); margin-top: 1px; }
+  .verdict {
+    margin-top: 14px; padding: 10px 14px; border-radius: 5px;
+    font-size: 12.5px; font-family: var(--mono);
+    background: var(--bg-3); border-left: 3px solid var(--accent); color: var(--fg);
+  }
+  .verdict.short { border-left-color: var(--warn); }
+  .verdict.over  { border-left-color: var(--accent); }
+  footer {
+    margin-top: 16px; font-size: 11.5px; color: var(--fg-3); text-align: center;
+  }
+  footer a { color: var(--fg-2); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="eyebrow">ABUNDANCE · REDISTRIBUTION CALCULATOR · CC0</div>
+<h1>Move the dials.</h1>
+<p class="lede">
+  Cost of a universal income floor vs. revenue from selected redistribution
+  sources. Every input is a real primary-source number
+  (<a href="https://lordbasilaiassistant-sudo.github.io/Abundance/#sources" target="_blank">UBS, SIPRI, IMF, World Bank</a>).
+</p>
+
+<div class="dials" id="dials">
+
+  <div class="dial">
+    <div class="dial-label">
+      <span class="dial-name">Income floor — daily, per person, every human</span>
+      <span class="dial-value"><span id="d-floor">$3.00</span> / day</span>
+    </div>
+    <input type="range" id="i-floor" min="0" max="30" step="0.25" value="3.00">
+    <div class="dial-note">$3 = World Bank extreme-poverty line. $15 ≈ "no developed-country household lives in poverty."</div>
+  </div>
+
+  <div class="dial">
+    <div class="dial-label">
+      <span class="dial-name">Annual wealth tax above $1M net worth</span>
+      <span class="dial-value"><span id="d-wealth">2.0</span> %</span>
+    </div>
+    <input type="range" id="i-wealth" min="0" max="10" step="0.25" value="2.0">
+    <div class="dial-note">Applied to $213.8T held by ~58M people (UBS 2024). Flight not modeled.</div>
+  </div>
+
+  <div class="dial">
+    <div class="dial-label">
+      <span class="dial-name">Share of global military spending redirected</span>
+      <span class="dial-value"><span id="d-mil">10</span> %</span>
+    </div>
+    <input type="range" id="i-mil" min="0" max="100" step="5" value="10">
+    <div class="dial-note">Applied to $2.7T (SIPRI 2024).</div>
+  </div>
+
+  <div class="dial">
+    <div class="dial-label">
+      <span class="dial-name">Share of food waste/loss recovered</span>
+      <span class="dial-value"><span id="d-food">20</span> %</span>
+    </div>
+    <input type="range" id="i-food" min="0" max="100" step="5" value="20">
+    <div class="dial-note">Applied to the 32% of global food production lost or wasted (FAO+UNEP 2024).</div>
+  </div>
+
+  <div class="results">
+    <div class="row">
+      <div class="stat">
+        <div class="label">Annual cost of universal floor</div>
+        <div class="value" id="r-cost">$8.98T</div>
+        <div class="sub" id="r-cost-share">8.2% of world GDP</div>
+      </div>
+      <div class="stat">
+        <div class="label">Revenue from selected sources</div>
+        <div class="value" id="r-revenue">$4.55T</div>
+        <div class="sub" id="r-revenue-mix">wealth tax + military redirect</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="stat">
+        <div class="label">Food calories recovered</div>
+        <div class="value" id="r-cal">~278 kcal / person / day</div>
+        <div class="sub">enough for everyone above the 2,100 kcal floor without producing more</div>
+      </div>
+      <div class="stat">
+        <div class="label">Net funding gap</div>
+        <div class="value" id="r-gap">$4.43T</div>
+        <div class="sub" id="r-gap-share">4.0% of world GDP</div>
+      </div>
+    </div>
+    <div class="verdict" id="r-verdict">
+      At these dials, redirected flows cover about half the cost.
+    </div>
+  </div>
+</div>
+
+<footer>
+  Calculator from
+  <a href="https://lordbasilaiassistant-sudo.github.io/Abundance/" target="_blank">Abundance</a>.
+  CC0. Read the full math and sources at the main page.
+</footer>
+
+</div>
+
+<script>
+const D = {
+  pop: 8200000000,
+  gdp_usd: 110060000000000,
+  wealth_above_1m_usd: 213800000000000,
+  military_usd: 2700000000000,
+  kcal_supply: 2950,
+  food_waste_share: 0.32,
+};
+
+const fmtUSD = n => {
+  if (n >= 1e12) return '$' + (n/1e12).toFixed(2) + 'T';
+  if (n >= 1e9)  return '$' + (n/1e9).toFixed(1) + 'B';
+  if (n >= 1e6)  return '$' + (n/1e6).toFixed(1) + 'M';
+  return '$' + Math.round(n).toLocaleString();
+};
+const fmtPct = n => (n * 100).toFixed(1) + '%';
+const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+
+const inputs = {
+  floor:  document.getElementById('i-floor'),
+  wealth: document.getElementById('i-wealth'),
+  mil:    document.getElementById('i-mil'),
+  food:   document.getElementById('i-food'),
+};
+
+function recalc() {
+  const floor  = parseFloat(inputs.floor.value);
+  const wealth = parseFloat(inputs.wealth.value) / 100;
+  const mil    = parseFloat(inputs.mil.value)    / 100;
+  const food   = parseFloat(inputs.food.value)   / 100;
+
+  const cost      = floor * D.pop * 365;
+  const costShare = cost / D.gdp_usd;
+  const wealthRev = wealth * D.wealth_above_1m_usd;
+  const milRev    = mil    * D.military_usd;
+  const totalRev  = wealthRev + milRev;
+  const wastedKcalPerPerson = D.kcal_supply * (D.food_waste_share / (1 - D.food_waste_share));
+  const recovered = food * wastedKcalPerPerson;
+  const gap       = cost - totalRev;
+  const gapShare  = gap / D.gdp_usd;
+
+  setText('d-floor',  '$' + floor.toFixed(2));
+  setText('d-wealth', wealth * 100);
+  setText('d-mil',    mil * 100);
+  setText('d-food',   food * 100);
+
+  setText('r-cost',       fmtUSD(cost));
+  setText('r-cost-share', fmtPct(costShare) + ' of world GDP');
+  setText('r-revenue',    fmtUSD(totalRev));
+  setText('r-revenue-mix', 'wealth tax ' + fmtUSD(wealthRev) + ' · military ' + fmtUSD(milRev));
+  setText('r-cal', '~' + Math.round(recovered).toLocaleString() + ' kcal / person / day');
+  setText('r-gap', (gap >= 0 ? '' : '−') + fmtUSD(Math.abs(gap)));
+  setText('r-gap-share',
+    (gap >= 0 ? '' : 'surplus of ') + fmtPct(Math.abs(gapShare)) + ' of world GDP');
+
+  const verdictEl = document.getElementById('r-verdict');
+  let verdict, klass;
+  if (gap <= 0) {
+    verdict = 'Redirected flows fully cover the floor — ' + fmtUSD(-gap) +
+              ' / year left over for healthcare, infrastructure, or debt relief.';
+    klass = 'verdict over';
+  } else if (gap < cost * 0.25) {
+    verdict = 'Redirected flows cover most of the floor. The remaining ' +
+              fmtUSD(gap) + ' is within range of additional sources (FTT, carbon pricing, closing tax-haven leakage).';
+    klass = 'verdict';
+  } else {
+    verdict = 'Redirected flows cover ' +
+              fmtPct(Math.min(1, totalRev/cost)) +
+              ' of the floor cost. The remainder needs further sources or a lower floor.';
+    klass = 'verdict short';
+  }
+  verdictEl.textContent = verdict;
+  verdictEl.className = klass;
+}
+
+Object.values(inputs).forEach(inp => inp.addEventListener('input', recalc));
+recalc();
+</script>
+</body>
+</html>

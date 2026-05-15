@@ -1,0 +1,82 @@
+{
+  "$schema": "Country-scale precedents for 'lifting the child out' (Le Guin / Omelas frame). Every claim cited to a primary or near-primary source.",
+  "costa_rica_demilitarization": {
+    "title": "Costa Rica — military abolition (1948–present)",
+    "date_event": "1948-12-01",
+    "date_codified": "1949-11-07",
+    "actor": "José Figueres Ferrer (President of the Founding Junta of the Second Republic) + Constituent Assembly",
+    "core_action": "Permanent abolition of the army; budget redirected to education and healthcare. Article 12 of the 1949 Constitution: 'The Army as a permanent institution is abolished. There shall be the necessary police forces for surveillance and the preservation of public order.'",
+    "measurable_outcomes": [
+      "Education spending: 6.3% of GDP (2009 reference point).",
+      "Health spending: 7.0% of GDP (2009).",
+      "Life expectancy 2024: ~81 years — higher than the United States — at roughly one-fifth the US GDP per capita.",
+      "Only Latin American country to never experience a successful military coup after 1948."
+    ],
+    "primary_source_name": "Constitution of Costa Rica, Article 12 (1949).",
+    "primary_source_url": "https://www.unesco.org/en/memory-world/abolition-army-costa-rica",
+    "supporting_source": "UNESCO Memory of the World: 'Proclamation of the Abolition of the Army' (2017 inscription)."
+  },
+  "norway_pension_fund_global": {
+    "title": "Norway — Government Pension Fund Global (1990–present)",
+    "date_started": "1990",
+    "first_deposit": "1996",
+    "actor": "Norwegian Parliament + Ministry of Finance + Norges Bank Investment Management (NBIM)",
+    "core_action": "All petroleum revenue is invested in a sovereign-wealth fund held in international assets. Strict fiscal rule: only the expected real return (~3% per year) may be drawn into the national budget. Citizens do not receive direct cash dividends, but the fund insulates the welfare state from oil-price volatility and from Dutch-disease effects.",
+    "measurable_outcomes": [
+      "Fund value end-2024: ~NOK 19.7 trillion (~$1.75 trillion USD).",
+      "Owns roughly 1.5% of all listed equities globally (April 2025).",
+      "Norway has had life expectancy 83+ years for over a decade, ~0.4% of population in poverty.",
+      "Demonstrates that resource wealth can be saved on behalf of a population rather than captured by elites."
+    ],
+    "primary_source_name": "Norges Bank Investment Management Annual Report 2024.",
+    "primary_source_url": "https://www.nbim.no/contentassets/490f9f062cfc4694b12c45f4d04ab0a5/annual_report_2024.pdf",
+    "supporting_source": "Ministry of Finance of Norway, Annual White Paper on the Government Pension Fund."
+  },
+  "iceland_post_crisis": {
+    "title": "Iceland — prosecuting bankers instead of bailing them out (2008–2015)",
+    "date_start": "2008-10",
+    "date_resolution": "2015-02",
+    "actor": "Special Investigation Commission (Hreinsson Report, 2010) + Office of the Special Prosecutor",
+    "core_action": "After the 2008 collapse of all three major Icelandic banks, Iceland (a) let the banks fail rather than fully bail them out, (b) commissioned a 9-volume independent investigation, and (c) established a Special Prosecutor's office to pursue criminal charges. Investors took losses; depositors were protected up to a limit.",
+    "measurable_outcomes": [
+      "806 cases handled by the Special Prosecutor's Office 2009–2015; 208 directly tied to the 2008 crisis.",
+      "Convictions including the CEO and Chairman of Kaupthing Bank (Supreme Court 2015), sentenced 4 to 5.5 years for market manipulation.",
+      "Six of seven banker cases reaching the Supreme Court were upheld.",
+      "Iceland's GDP recovered to pre-crisis levels by 2014 — faster than the eurozone average.",
+      "Unemployment fell from a peak of ~9.3% (2010) back to ~4% by 2015."
+    ],
+    "primary_source_name": "Special Investigation Commission of Iceland (Hreinsson Report), 2010.",
+    "primary_source_url": "https://www.rna.is/eldri-nefndir/addragandi-og-orsakir-falls-islensku-bankanna-2008/skyrsla-nefndarinnar/english/",
+    "supporting_source": "Library of Congress, 'Iceland: Icelandic Bankers Jailed for Fraud' (2014); RTÉ, 'Iceland's Supreme Court upholds banker convictions' (Feb 2015)."
+  },
+  "bhutan_gnh": {
+    "title": "Bhutan — Gross National Happiness as constitutional goal (2008–present)",
+    "date_constitution": "2008-07-18",
+    "actor": "King Jigme Khesar Namgyel Wangchuck + Constituent Assembly",
+    "core_action": "GNH established as a constitutional commitment under Article 9. The Planning Commission renamed the GNH Commission in 2008. Policy proposals are screened against a GNH framework — 4 pillars, 9 domains, 33 cluster indicators, 124 variables.",
+    "measurable_outcomes": [
+      "Public-policy decisions screened through a measurable wellbeing index, not GDP alone.",
+      "Constitutionally protected forest cover (Article 5(3): never below 60% — currently ~70%+).",
+      "First country to be carbon-negative (more CO₂ sequestered by its forests than emitted).",
+      "Demonstrates that an alternative national objective function is institutionally feasible, not just rhetorical."
+    ],
+    "primary_source_name": "Constitution of the Kingdom of Bhutan, 2008, Articles 9 and 20.",
+    "primary_source_url": "https://www.nab.gov.bt/assets/uploads/docs/acts/2014/Constitution_of_Bhutan_2008.pdf",
+    "supporting_source": "Centre for Bhutan Studies + GNH Research; Ura, Alkire, Zangmo (2012) 'GNH and GNH Index' (OPHI working paper)."
+  },
+  "mauritius_diversification": {
+    "title": "Mauritius — from sugar monoculture to upper-middle-income (1968–present)",
+    "date_independence": "1968-03-12",
+    "actor": "Successive Mauritian governments + IMF/World Bank policy support",
+    "core_action": "After independence, deliberate diversification away from sugar into textiles, tourism, financial services, and ICT. Universal free education, free healthcare, and a welfare state were maintained throughout. No coup, no civil war, no debt crisis.",
+    "measurable_outcomes": [
+      "GDP per capita: ~$240 in 1968 → ~$10,400 in 2024 (current USD). Upper-middle-income status since the 1990s.",
+      "Life expectancy: ~62 (1968) → ~74+ (2024).",
+      "Literacy: ~60% (1968) → ~95% (2024).",
+      "Maintained universal education and healthcare while diversifying — i.e., the welfare state was not traded for growth."
+    ],
+    "primary_source_name": "Subramanian, A. & Roy, D. (2003). 'Who Can Explain the Mauritian Miracle? Meade, Romer, Sachs, or Rodrik?' IMF Working Paper 01/116.",
+    "primary_source_url": "https://www.imf.org/external/pubs/ft/wp/2001/wp01116.pdf",
+    "supporting_source": "World Bank Open Data (mauritius indicators); Frankel, J. (2010) 'Mauritius: African Success Story', NBER WP 16569."
+  }
+}
