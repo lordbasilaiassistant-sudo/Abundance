@@ -1,0 +1,157 @@
+{
+  "$schema": "Each entry is a primary-source-cited fact. If you cannot link a primary source, do not add it.",
+  "world_population": {
+    "value": 8200000000,
+    "unit": "people",
+    "year": 2024,
+    "as_of": "mid-2024",
+    "source_name": "UN World Population Prospects 2024",
+    "source_url": "https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf",
+    "note": "Used as the divisor for every per-capita calculation on this site."
+  },
+  "world_gdp_nominal_usd": {
+    "value": 110060000000000,
+    "unit": "USD",
+    "year": 2024,
+    "source_name": "IMF World Economic Outlook, April 2026",
+    "source_url": "https://www.imf.org/external/datamapper/NGDPD@WEO/WEOWORLD",
+    "note": "Nominal, current prices. PPP totals run higher (~$185T)."
+  },
+  "world_household_wealth_usd": {
+    "value": 449900000000000,
+    "unit": "USD",
+    "year": 2023,
+    "source_name": "UBS Global Wealth Report 2024",
+    "source_url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20240710-gwr-2024.html",
+    "note": "47.5% of this wealth is held by the 58 million people worth >$1M."
+  },
+  "global_military_spending_usd": {
+    "value": 2700000000000,
+    "unit": "USD",
+    "year": 2024,
+    "source_name": "SIPRI, Trends in World Military Expenditure 2024",
+    "source_url": "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024",
+    "note": "10th consecutive annual increase; 2.5% of world GDP."
+  },
+  "global_health_spending_usd": {
+    "value": 9800000000000,
+    "unit": "USD",
+    "year": 2022,
+    "source_name": "WHO Global Health Expenditure Report 2024",
+    "source_url": "https://www.who.int/teams/health-financing-and-economics/global-spending-on-health-report",
+    "note": "9.9% of GDP. High-income countries account for 79%; the US alone is 43%."
+  },
+  "world_cereal_production_tonnes": {
+    "value": 2853000000,
+    "unit": "tonnes",
+    "year": 2024,
+    "as_of": "2024/25 marketing year",
+    "source_name": "FAO Cereal Supply and Demand Brief",
+    "source_url": "https://www.fao.org/worldfoodsituation/csdb",
+    "note": "Cereals alone — does not include legumes, tubers, vegetables, fruit, meat, dairy, fish, oil crops."
+  },
+  "daily_food_supply_kcal_per_capita": {
+    "value": 2950,
+    "unit": "kcal/person/day",
+    "year": 2021,
+    "source_name": "FAOSTAT Food Balance Sheets / Our World in Data",
+    "source_url": "https://ourworldindata.org/food-supply",
+    "note": "Total dietary energy available for human consumption. Excludes feed, seed, industrial use, and post-harvest loss."
+  },
+  "people_in_hunger": {
+    "value": 673000000,
+    "unit": "people",
+    "year": 2024,
+    "source_name": "FAO State of Food Security and Nutrition in the World 2025",
+    "source_url": "https://openknowledge.fao.org/handle/20.500.14283/cd6008en",
+    "note": "Point estimate (range 638–720M). Hunger is rising in Africa and Western Asia even as it declined globally."
+  },
+  "food_loss_and_waste_share": {
+    "value": 0.32,
+    "unit": "fraction of global food production",
+    "year": 2023,
+    "source_name": "FAO + UNEP Food Waste Index Report 2024",
+    "source_url": "https://www.fao.org/family-farming/detail/en/c/1681058/",
+    "note": "~13% lost post-harvest before retail; ~19% wasted at retail/food-service/household."
+  },
+  "global_electricity_generation_twh": {
+    "value": 30856,
+    "unit": "TWh/year",
+    "year": 2024,
+    "source_name": "IEA Electricity 2024 + 2024 growth estimate",
+    "source_url": "https://www.iea.org/reports/electricity-2024/executive-summary",
+    "note": "IEA reports 2024 generation grew ~1,200 TWh (4%) over 2023's 29,471 TWh. Renewables + nuclear covered 40% in 2024."
+  },
+  "renewable_freshwater_km3": {
+    "value": 43000,
+    "unit": "km³/year",
+    "year": 2020,
+    "source_name": "FAO AQUASTAT",
+    "source_url": "https://www.fao.org/aquastat/en/overview/methodology/water-resources/",
+    "note": "Total long-term renewable internal freshwater resources globally. Distribution is geographically uneven."
+  },
+  "homeless_people": {
+    "value": 318000000,
+    "unit": "people",
+    "year": 2024,
+    "source_name": "UN-Habitat / UN DESA, World Social Summit 2025 background",
+    "source_url": "https://social.desa.un.org/world-summit-2025/blog/300million-people-homeless-worldwide",
+    "note": "UN-Habitat acknowledges global homelessness data is incomplete and likely understated."
+  },
+  "inadequate_housing_people": {
+    "value": 2800000000,
+    "unit": "people",
+    "year": 2024,
+    "source_name": "UN-Habitat / UN DESA",
+    "source_url": "https://social.desa.un.org/world-summit-2025/blog/300million-people-homeless-worldwide",
+    "note": "Lacks access to adequate housing, secure land tenure, or basic water/sanitation services. ~40% of the global population."
+  },
+  "extreme_poverty_count": {
+    "value": 847000000,
+    "unit": "people",
+    "year": 2024,
+    "source_name": "World Bank, March 2026 Global Poverty Update",
+    "source_url": "https://blogs.worldbank.org/en/opendata/march-2026-global-poverty-update-from-the-world-bank--new-data-a",
+    "note": "Threshold raised from $2.15 (2017 PPP) to $3.00/day (2021 PPP) in June 2025."
+  },
+  "extreme_poverty_line_usd_per_day": {
+    "value": 3.00,
+    "unit": "USD/person/day (2021 PPP)",
+    "year": 2025,
+    "source_name": "World Bank, June 2025 Update to Global Poverty Lines",
+    "source_url": "https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines",
+    "note": "Replaces the prior $2.15/day (2017 PPP) International Poverty Line."
+  },
+  "minimum_calorie_need_kcal": {
+    "value": 2100,
+    "unit": "kcal/person/day",
+    "year": 2001,
+    "source_name": "FAO/WHO/UNU Joint Expert Consultation, Human Energy Requirements",
+    "source_url": "https://www.fao.org/4/y5686e/y5686e00.htm",
+    "note": "Standard reference for an average adult; varies by age, sex, body size, activity."
+  },
+  "minimum_water_need_l_per_day": {
+    "value": 50,
+    "unit": "L/person/day",
+    "year": 2003,
+    "source_name": "WHO, Domestic Water Quantity, Service Level and Health",
+    "source_url": "https://www.who.int/publications/i/item/WHO-SDE-WSH-03.02",
+    "note": "Intermediate access level: drinking, cooking, hygiene. Survival minimum is 7.5 L/day; full health protection ~100 L/day."
+  },
+  "tier1_electricity_kwh_per_year": {
+    "value": 100,
+    "unit": "kWh/person/year",
+    "year": 2020,
+    "source_name": "IEA, Defining Energy Access (2020 methodology)",
+    "source_url": "https://www.iea.org/articles/defining-energy-access-2020-methodology",
+    "note": "Urban household minimum (500 kWh/household ÷ 5). Lights, phone charging, radio, fan."
+  },
+  "modern_energy_minimum_kwh_per_year": {
+    "value": 1000,
+    "unit": "kWh/person/year",
+    "year": 2020,
+    "source_name": "Rockefeller Foundation / Energy for Growth Hub — Modern Energy Minimum",
+    "source_url": "https://www.rockefellerfoundation.org/wp-content/uploads/2020/12/Modern-Energy-Minimum-Sept30.pdf",
+    "note": "Proposed threshold including productive/commercial use, not just residential."
+  }
+}

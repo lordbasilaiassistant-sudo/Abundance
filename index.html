@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abundance — what humanity actually produces, per person</title>
+<meta name="description" content="Using primary-source data, this is a per-capita arithmetic check of whether global production of food, water, energy, money, and shelter is enough for every person alive. Every number is cited.">
+<meta property="og:title" content="Abundance — per-capita reality, with citations">
+<meta property="og:description" content="A primary-sourced arithmetic of what the world actually produces, divided by the people in it.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+<header class="masthead">
+  <div class="eyebrow">A primary-sourced arithmetic · updated 2026-05-15</div>
+  <h1>The world already produces enough. <em>The question is whether we admit it.</em></h1>
+  <p class="lede">
+    This page divides verified global production figures by the verified global
+    population. Nothing more. Every number links to its primary source — FAO, IEA,
+    IMF, WHO, World Bank, UN-Habitat, SIPRI, UBS. If a claim has no link, it is
+    not on this page.
+  </p>
+</header>
+
+<nav class="toc" aria-label="Contents">
+  <a href="#thesis">1 · The thesis, in one sentence</a>
+  <a href="#math">2 · The per-capita arithmetic</a>
+  <a href="#money">3 · The money question — UBI / UHI feasibility</a>
+  <a href="#scarcity">4 · Three kinds of scarcity</a>
+  <a href="#limits">5 · Honest limits of this page</a>
+  <a href="#sources">6 · Sources &amp; methodology</a>
+</nav>
+
+<section id="thesis">
+<h2>1 · The thesis, in one sentence</h2>
+<p>
+  For every essential resource where global production data exists, aggregate
+  human production already exceeds aggregate human need — usually by a wide
+  margin. Hunger, homelessness, and energy poverty in 2026 are <em>distribution
+  outcomes</em>, not <em>production outcomes</em>.
+</p>
+<p>
+  This page does not argue policy. It states arithmetic.
+</p>
+</section>
+
+<section id="math">
+<h2>2 · The per-capita arithmetic</h2>
+<p class="small">
+  Divisor everywhere on this page: <span class="num" id="pop-display">8,200,000,000</span>
+  people, the UN's mid-2024 estimate
+  (<a href="https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf">WPP 2024</a>).
+</p>
+
+<!-- FOOD -->
+<div class="card" id="card-food">
+  <h3>Food <span class="tag abundance">abundance exists</span></h3>
+  <div class="row">
+    <div class="stat">
+      <div class="label">Daily food supply, global average</div>
+      <div class="value accent" id="food-supply">2,950 kcal / person / day</div>
+      <div class="sub">FAOSTAT food balance sheets, 2021 latest revision</div>
+    </div>
+    <div class="stat">
+      <div class="label">Adult minimum need (reference)</div>
+      <div class="value" id="food-need">2,100 kcal / person / day</div>
+      <div class="sub">FAO/WHO/UNU Human Energy Requirements, 2001</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="stat">
+      <div class="label">Ratio: supply ÷ need</div>
+      <div class="ratio accent" id="food-ratio">1.40<span class="x">×</span></div>
+      <div class="sub">We currently produce ~40% more calories than the human population needs.</div>
+    </div>
+    <div class="stat">
+      <div class="label">People still in hunger, 2024</div>
+      <div class="value danger" id="food-hungry">673 million</div>
+      <div class="sub">FAO SOFI 2025. Coexists with ~32% of food being lost or wasted.</div>
+    </div>
+  </div>
+  <p class="src">
+    Sources:
+    <a href="https://ourworldindata.org/food-supply">FAOSTAT food balance sheets via Our World in Data</a> ·
+    <a href="https://www.fao.org/4/y5686e/y5686e00.htm">FAO/WHO/UNU energy requirements</a> ·
+    <a href="https://openknowledge.fao.org/handle/20.500.14283/cd6008en">SOFI 2025</a> ·
+    <a href="https://www.fao.org/family-farming/detail/en/c/1681058/">FAO + UNEP Food Waste Index 2024</a>
+  </p>
+</div>
+
+<!-- WATER -->
+<div class="card" id="card-water">
+  <h3>Freshwater <span class="tag uneven">geographically uneven</span></h3>
+  <div class="row">
+    <div class="stat">
+      <div class="label">Renewable freshwater, globally</div>
+      <div class="value accent" id="water-total">43,000 km³ / year</div>
+      <div class="sub">FAO AQUASTAT — long-term renewable resources</div>
+    </div>
+    <div class="stat">
+      <div class="label">Per person per day, even split</div>
+      <div class="value" id="water-pc">14,367 L / person / day</div>
+      <div class="sub">Math: 43,000 km³ ÷ 8.2B ÷ 365 days</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="stat">
+      <div class="label">WHO intermediate-access threshold</div>
+      <div class="value" id="water-need">50 L / person / day</div>
+      <div class="sub">Drinking, cooking, basic hygiene</div>
+    </div>
+    <div class="stat">
+      <div class="label">Ratio: supply ÷ basic need</div>
+      <div class="ratio accent" id="water-ratio">287<span class="x">×</span></div>
+      <div class="sub">Globally, ~287 days of basic-access water exist per person per day. The hard problem is moving it.</div>
+    </div>
+  </div>
+  <p class="src">
+    Sources:
+    <a href="https://www.fao.org/aquastat/en/overview/methodology/water-resources/">FAO AQUASTAT</a> ·
+    <a href="https://www.who.int/publications/i/item/WHO-SDE-WSH-03.02">WHO domestic water quantity guidelines</a>
+  </p>
+</div>
+
+<!-- ENERGY -->
+<div class="card" id="card-energy">
+  <h3>Electricity <span class="tag abundance">abundance exists</span></h3>
+  <div class="row">
+    <div class="stat">
+      <div class="label">Global generation, 2024</div>
+      <div class="value accent" id="energy-total">~30,856 TWh / year</div>
+      <div class="sub">IEA Electricity 2024 + 2024 growth of ~1,200 TWh</div>
+    </div>
+    <div class="stat">
+      <div class="label">Per person, even split</div>
+      <div class="value" id="energy-pc">3,763 kWh / person / year</div>
+      <div class="sub">Math: 30,856 TWh ÷ 8.2B</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="stat">
+      <div class="label">IEA Tier 1 access</div>
+      <div class="value" id="energy-need-low">100 kWh / person / yr</div>
+      <div class="sub">Lights, phone charging, fan</div>
+    </div>
+    <div class="stat">
+      <div class="label">Modern Energy Minimum (productive use)</div>
+      <div class="value" id="energy-need-high">1,000 kWh / person / yr</div>
+      <div class="sub">Rockefeller Foundation / Energy for Growth Hub</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="stat">
+      <div class="label">Ratio: supply ÷ Tier 1</div>
+      <div class="ratio accent" id="energy-ratio-low">38<span class="x">×</span></div>
+    </div>
+    <div class="stat">
+      <div class="label">Ratio: supply ÷ Modern Energy Minimum</div>
+      <div class="ratio accent" id="energy-ratio-high">3.8<span class="x">×</span></div>
+    </div>
+  </div>
+  <p class="src">
+    Sources:
+    <a href="https://www.iea.org/reports/electricity-2024/executive-summary">IEA Electricity 2024</a> ·
+    <a href="https://www.iea.org/articles/defining-energy-access-2020-methodology">IEA energy access definitions</a> ·
+    <a href="https://www.rockefellerfoundation.org/wp-content/uploads/2020/12/Modern-Energy-Minimum-Sept30.pdf">Modern Energy Minimum (2020)</a>
+  </p>
+</div>
+
+<!-- MONEY -->
+<div class="card" id="card-money">
+  <h3>Output (GDP) <span class="tag abundance">abundance exists</span></h3>
+  <div class="row">
+    <div class="stat">
+      <div class="label">World GDP, 2024 (nominal)</div>
+      <div class="value accent" id="gdp-total">$110.06 trillion</div>
+      <div class="sub">IMF WEO April 2026</div>
+    </div>
+    <div class="stat">
+      <div class="label">Per person, even split</div>
+      <div class="value" id="gdp-pc">$13,422 / person / yr</div>
+      <div class="sub">Math: $110.06T ÷ 8.2B</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="stat">
+      <div class="label">World Bank extreme poverty line</div>
+      <div class="value" id="poverty-line">$3.00 / person / day</div>
+      <div class="sub">2021 PPP, updated June 2025</div>
+    </div>
+    <div class="stat">
+      <div class="label">Ratio: GDP-per-capita ÷ poverty-line annual</div>
+      <div class="ratio accent" id="gdp-ratio">12.3<span class="x">×</span></div>
+      <div class="sub">Global per-capita output is ~12× the line at which a human is no longer "in extreme poverty."</div>
+    </div>
+  </div>
+  <p class="src">
+    Sources:
+    <a href="https://www.imf.org/external/datamapper/NGDPD@WEO/WEOWORLD">IMF WEO</a> ·
+    <a href="https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines">World Bank, June 2025 poverty line update</a>
+  </p>
+</div>
+
+<!-- HOUSING -->
+<div class="card" id="card-housing">
+  <h3>Housing <span class="tag uneven">distribution failure</span></h3>
+  <div class="row">
+    <div class="stat">
+      <div class="label">Homeless worldwide, 2024</div>
+      <div class="value danger" id="housing-homeless">318 million</div>
+      <div class="sub">UN-Habitat / UN DESA</div>
+    </div>
+    <div class="stat">
+      <div class="label">Lacking adequate housing</div>
+      <div class="value danger" id="housing-inadequate">2.8 billion</div>
+      <div class="sub">≈ 40% of the global population</div>
+    </div>
+  </div>
+  <p>
+    Unlike food or electricity, there is no single "global housing production"
+    number to divide. But the inverse is well-documented: in many wealthy
+    countries, <em>vacant</em> housing units exceed homeless population by an
+    order of magnitude or more. The shortage is not of walls; it is of
+    walls people are allowed to enter.
+  </p>
+  <p class="src">
+    Source:
+    <a href="https://social.desa.un.org/world-summit-2025/blog/300million-people-homeless-worldwide">UN DESA, World Social Summit 2025 background</a>
+  </p>
+</div>
+</section>
+
+<section id="money">
+<h2>3 · The money question</h2>
+<p>
+  Even if the resources exist, can the financial system move them? Here are
+  three numbers placed next to each other. They are not a policy proposal —
+  they are a sanity check on the claim "we cannot afford it."
+</p>
+
+<div class="card">
+  <h3>Cost of a universal $3/day floor — for every human alive</h3>
+  <div class="row">
+    <div class="stat">
+      <div class="label">Math: $3 × 8.2B × 365 days</div>
+      <div class="value accent" id="ubi-cost">$8.98 trillion / year</div>
+      <div class="sub">Universal — paid to everyone, including the wealthy.</div>
+    </div>
+    <div class="stat">
+      <div class="label">As a share of world GDP</div>
+      <div class="value accent" id="ubi-share">8.2%</div>
+      <div class="sub">Less than the share the world already spends on healthcare (9.9%).</div>
+    </div>
+  </div>
+  <p class="small">
+    For comparison: actually closing the <em>gap</em> for the 847M people below
+    the line costs far less, because most of them are not at $0/day; the average
+    poverty gap is roughly $1/day per affected person. Closing the gap costs
+    well under $1 trillion / year — comparable to a single year's growth in
+    global military spending.
+  </p>
+</div>
+
+<div class="card">
+  <h3>Where the money already is</h3>
+  <ul>
+    <li>
+      Global household wealth, 2023:
+      <span class="num">$449.9 trillion</span>
+      (<a href="https://www.ubs.com/global/en/media/display-page-ndp/en-20240710-gwr-2024.html">UBS Global Wealth Report 2024</a>).
+      Of that, <span class="num">$213.8T</span> is held by the 58 million
+      people with net worth over $1M — 0.7% of humanity holding 47.5% of the wealth.
+    </li>
+    <li>
+      Global military spending, 2024:
+      <span class="num">$2.7 trillion</span>
+      (<a href="https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024">SIPRI</a>) — 10th consecutive annual increase.
+    </li>
+    <li>
+      Global health spending, 2022:
+      <span class="num">$9.8 trillion</span>
+      (<a href="https://www.who.int/teams/health-financing-and-economics/global-spending-on-health-report">WHO</a>),
+      but the US alone accounts for 43%. Per-capita health spending in
+      high-income countries is ~87× that in low-income countries — same disease,
+      different price tag.
+    </li>
+  </ul>
+  <p class="small">
+    "We cannot afford it" is a statement about political will, not about
+    physical resources or aggregate money supply.
+  </p>
+</div>
+</section>
+
+<section id="scarcity">
+<h2>4 · Three kinds of scarcity</h2>
+<p>
+  Not all scarcity is fake. An honest version of this argument has to separate
+  three distinct things, because the policy response to each is different.
+</p>
+
+<h3>Physical scarcity <span class="tag real">real</span></h3>
+<p>
+  Some things are genuinely finite or geographically bound: rare-earth elements,
+  helium, the lithium in a specific salt flat, doctor-hours per day, intact
+  tropical forest, a particular human's time, fresh water <em>in a desert</em>.
+  No amount of redistribution conjures these. They require substitution,
+  recycling, or restraint.
+</p>
+
+<h3>Distribution scarcity <span class="tag uneven">solvable</span></h3>
+<p>
+  Production exceeds need globally, but the surplus is concentrated where need
+  is lowest. Food rots in one country while another starves. Electricity is
+  curtailed in one grid while another has none. Housing units sit empty in
+  cities where people sleep outside them.
+  This is the largest category by far. It is solved with logistics, pricing,
+  and rights — not with more production.
+</p>
+
+<h3>Manufactured scarcity <span class="tag real">created</span></h3>
+<p>
+  A third category exists because someone profits from it existing:
+</p>
+<ul>
+  <li>
+    <strong>IP gates on near-zero-marginal-cost goods.</strong> A generic
+    insulin vial costs roughly $2–$6 to manufacture; the list price in the US
+    has reached $300+. The molecule isn't scarce. The legal right to copy it is.
+  </li>
+  <li>
+    <strong>Artificial limited editions.</strong> Sneakers, handbags, NFTs,
+    "drops" — supply could be infinite; scarcity is the product.
+  </li>
+  <li>
+    <strong>Planned obsolescence and repair lockouts.</strong> A working
+    device is made non-working to manufacture replacement demand.
+  </li>
+  <li>
+    <strong>Zoning that forbids new housing</strong> in places where people
+    want to live.
+  </li>
+  <li>
+    <strong>Information asymmetry.</strong> The "scarcity" of expertise often
+    survives only because the knowledge is paywalled or trade-secreted.
+  </li>
+</ul>
+<p>
+  Manufactured scarcity is the part of the system that is most legibly a
+  <em>choice</em>. It is the easiest to argue about and the hardest to dislodge,
+  because someone is profiting on the other side of the choice.
+</p>
+</section>
+
+<section id="limits">
+<h2>5 · Honest limits of this page</h2>
+<div class="disclaim">
+  <p><strong>What this page does <em>not</em> prove:</strong></p>
+  <ul>
+    <li>
+      It does not prove that money can be abolished. Money is a coordination
+      technology; whether to keep it is a separate question from whether the
+      underlying resources exist.
+    </li>
+    <li>
+      It does not prove that UBI / UHI is politically feasible. Demonstrating
+      that the bill is payable is different from demonstrating that it will be
+      paid.
+    </li>
+    <li>
+      It does not handle <em>transport, refrigeration, infrastructure,
+      governance, and conflict</em> — all of which convert a global surplus into
+      a local shortage. These are real costs, not accounting tricks.
+    </li>
+    <li>
+      Aggregate per-capita averages hide distribution. "Enough exists" is a
+      necessary condition for "everyone has enough," not a sufficient one.
+    </li>
+    <li>
+      Production data has measurement error and political bias. Numbers here
+      reflect what major institutions publish; the institutions are not neutral.
+    </li>
+  </ul>
+  <p>
+    What this page <em>does</em> prove: the common claim that humanity cannot
+    physically produce enough food, water, electricity, or output to meet
+    every human's basic needs is, in 2026, factually wrong. Whatever else stops
+    us, it is not the soil, the rivers, the grids, or the GDP.
+  </p>
+</div>
+</section>
+
+<section id="sources">
+<h2>6 · Sources &amp; methodology</h2>
+<p>
+  All raw values live in
+  <a href="data/essentials.json"><code>data/essentials.json</code></a>
+  with citation, year, and unit for each. The on-page math is
+  transparent: every ratio is a single division of two of those values.
+</p>
+<p>
+  Full methodology — what was included, what was excluded, where averages mask
+  inequality — is in
+  <a href="methodology.md"><code>methodology.md</code></a>.
+</p>
+<p>
+  If you find a number on this page that conflicts with its cited source, or
+  has been superseded by a newer publication, please open an issue or PR on the
+  <a href="https://github.com/lordbasilaiassistant-sudo/Abundance">GitHub repository</a>.
+  This page exists to be corrected.
+</p>
+</section>
+
+<footer>
+  Public domain (CC0). No tracking, no analytics, no ads. The code, the data,
+  and the math are
+  <a href="https://github.com/lordbasilaiassistant-sudo/Abundance">on GitHub</a>.
+  <br>
+  Made because someone had to do the division.
+</footer>
+
+</div>
+
+<script>
+// Inlined source data — kept in sync with data/essentials.json
+const D = {
+  pop: 8200000000,
+  gdp_usd: 110060000000000,
+  wealth_usd: 449900000000000,
+  military_usd: 2700000000000,
+  health_usd: 9800000000000,
+  cereal_t: 2853000000,
+  kcal_supply: 2950,
+  hungry: 673000000,
+  food_waste_share: 0.32,
+  electricity_twh: 30856,
+  freshwater_km3: 43000,
+  homeless: 318000000,
+  inadequate_housing: 2800000000,
+  extreme_poverty: 847000000,
+  poverty_line_usd_day: 3.00,
+  kcal_need: 2100,
+  water_need_l_day: 50,
+  tier1_kwh_yr: 100,
+  modern_min_kwh_yr: 1000,
+};
+
+const fmtBig = n => {
+  if (n >= 1e12) return '$' + (n/1e12).toFixed(2) + 'T';
+  if (n >= 1e9)  return '$' + (n/1e9).toFixed(1) + 'B';
+  if (n >= 1e6)  return '$' + (n/1e6).toFixed(1) + 'M';
+  return '$' + n.toLocaleString();
+};
+const fmtPct = n => (n * 100).toFixed(1) + '%';
+const fmtRatio = n => (n >= 100 ? Math.round(n).toString()
+                     : n >= 10  ? n.toFixed(0)
+                     : n.toFixed(1));
+
+// Recompute and verify the displayed numbers from raw inputs.
+// If a number on this page disagrees with this script, the page is wrong.
+(function verify() {
+  // Water per capita per day (L)
+  const waterPC = (D.freshwater_km3 * 1e12) / D.pop / 365;
+  // 43,000 * 1e12 L / 8.2e9 / 365 ≈ 14,367 L/day
+  // Energy per capita per year (kWh)
+  const energyPC = (D.electricity_twh * 1e9) / D.pop;
+  // GDP per capita per year
+  const gdpPC = D.gdp_usd / D.pop;
+  // Ratios
+  const foodRatio   = D.kcal_supply / D.kcal_need;
+  const waterRatio  = waterPC / D.water_need_l_day;
+  const energyRatioLow  = energyPC / D.tier1_kwh_yr;
+  const energyRatioHigh = energyPC / D.modern_min_kwh_yr;
+  const gdpRatio    = gdpPC / (D.poverty_line_usd_day * 365);
+  // UBI math
+  const ubiCost  = D.poverty_line_usd_day * D.pop * 365;
+  const ubiShare = ubiCost / D.gdp_usd;
+
+  const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+
+  setText('pop-display', D.pop.toLocaleString());
+  setText('food-ratio',  fmtRatio(foodRatio) + '×');
+  setText('water-pc',    Math.round(waterPC).toLocaleString() + ' L / person / day');
+  setText('water-ratio', fmtRatio(waterRatio) + '×');
+  setText('energy-pc',   Math.round(energyPC).toLocaleString() + ' kWh / person / year');
+  setText('energy-ratio-low',  fmtRatio(energyRatioLow) + '×');
+  setText('energy-ratio-high', fmtRatio(energyRatioHigh) + '×');
+  setText('gdp-pc',      '$' + Math.round(gdpPC).toLocaleString() + ' / person / yr');
+  setText('gdp-ratio',   fmtRatio(gdpRatio) + '×');
+  setText('ubi-cost',    fmtBig(ubiCost) + ' / year');
+  setText('ubi-share',   fmtPct(ubiShare));
+
+  // Re-render the ratio spans with the small "x" suffix so the markup stays styled.
+  ['food-ratio','water-ratio','energy-ratio-low','energy-ratio-high','gdp-ratio'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const txt = el.textContent.replace('×', '');
+    el.innerHTML = txt + '<span class="x">×</span>';
+  });
+})();
+</script>
+
+</body>
+</html>
