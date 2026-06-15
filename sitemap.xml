@@ -107,15 +107,46 @@
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en"
-                href="https://lordbasilaiassistant-sudo.github.io/Abundance/letter.html"
-                xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
-    <xhtml:link rel="alternate" hreflang="es"
-                href="https://lordbasilaiassistant-sudo.github.io/Abundance/lang/es/letter.html"
-                xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lordbasilaiassistant-sudo.github.io/Abundance/letter.html" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lordbasilaiassistant-sudo.github.io/Abundance/lang/es/letter.html" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lordbasilaiassistant-sudo.github.io/Abundance/lang/fr/letter.html" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lordbasilaiassistant-sudo.github.io/Abundance/lang/pt/letter.html" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lordbasilaiassistant-sudo.github.io/Abundance/lang/ar/letter.html" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://lordbasilaiassistant-sudo.github.io/Abundance/lang/zh/letter.html" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://lordbasilaiassistant-sudo.github.io/Abundance/lang/hi/letter.html" xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
   </url>
   <url>
     <loc>https://lordbasilaiassistant-sudo.github.io/Abundance/lang/es/letter.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordbasilaiassistant-sudo.github.io/Abundance/lang/fr/letter.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordbasilaiassistant-sudo.github.io/Abundance/lang/pt/letter.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordbasilaiassistant-sudo.github.io/Abundance/lang/ar/letter.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordbasilaiassistant-sudo.github.io/Abundance/lang/zh/letter.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordbasilaiassistant-sudo.github.io/Abundance/lang/hi/letter.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -32,6 +32,15 @@ The page also names what Le Guin called the *Omelas* bargain — the implicit
 claim that some people's suffering is the price of others' comfort — and asks
 the empirical question: is the suffering load-bearing? The evidence base says no.
 
+## What's in here
+
+- **[The main page](index.html)** — the per-capita arithmetic for ~14 essentials, recomputed in JS from cited data.
+- **[An open letter](letter.html)** — the case made to anyone who can act on this, without attack; cited throughout. Also in [Español](lang/es/letter.html), [Français](lang/fr/letter.html), [Português](lang/pt/letter.html), [العربية](lang/ar/letter.html), [中文](lang/zh/letter.html), and [हिन्दी](lang/hi/letter.html).
+- **[Country case studies](case-studies.html)** — eleven nations that chose to lift underclass suffering, each with its honest counter-narrative.
+- **[By country](countries.html)** — a sortable drill-down of 91 countries × 10 World Bank indicators.
+- **[Free tools](tools/)** — an image editor, image compressor, and password generator that run entirely in your browser: no account, no upload, no tracking. The "manufactured scarcity" argument, demonstrated in code.
+- **[Deep notes](papers/)** and a **[~100-entry bibliography](bibliography.md)** — including a standing steelman of the [strongest case *against* this project](papers/counterarguments.md).
+
 ## What this is *not*
 
 - Not a manifesto. The tone is arithmetic, not advocacy.
