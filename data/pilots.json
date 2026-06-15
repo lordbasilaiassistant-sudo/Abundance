@@ -76,5 +76,139 @@
     "primary_source_name": "West, S., Castro, A., Samra, S. & Coltrera, E. (2023). 'Impact of Guaranteed Income on Health, Finances, and Agency: Findings from the Stockton Randomized Controlled Trial.' Journal of Urban Health 100:1184–1198.",
     "primary_source_url": "https://link.springer.com/article/10.1007/s11524-023-00723-0",
     "first_year_report_url": "https://static1.squarespace.com/static/6039d612b17d055cac14070f/t/603ef1194c474b329f33c329/1614737690661/SEED_Preliminary+Analysis-SEEDs+First+Year_Final+Report_Individual+Pages+-2.pdf"
+  },
+  "finland_basic_income_experiment":   {
+    "name": "Finland Basic Income Experiment",
+    "start_year": 2017,
+    "end_year": 2018,
+    "country": "Finland",
+    "design": "Government-mandated, statutory, nationwide randomized field experiment. 2,000 unemployed people aged 25-58, randomly selected from Kela's unemployment-benefit register, received a tax-free basic income of EUR 560 per month with no obligation to seek work or report income; a control group of ~173,000 continued on standard unemployment benefits.",
+    "coverage": "2000 treatment recipients vs national register control group; transfer EUR 560/month (~28% of median monthly disposable income).",
+    "transfer_size_eur_month": 560,
+    "investigators": "Kela (Social Insurance Institution of Finland), VATT Institute for Economic Research, Ministry of Social Affairs and Health; Kangas, Jauhiainen, Simanainen, Ylikanno, Hamalainen, Verho",
+    "key_findings": [
+      "Recipients worked on average a few more days over the year than the control group (about 78 vs 73 employment days) - a small but positive employment effect, contradicting the prediction that an unconditional payment would reduce work.",
+      "Recipients reported significantly better mental wellbeing, lower depression and stress, higher life satisfaction, and more trust in institutions and their own future.",
+      "The labour-market effect was modest and not statistically distinguishable in the first year; the experiment was limited to already-unemployed people, so it does not test a truly universal basic income."
+    ],
+    "primary_source_name": "Kangas, O., Jauhiainen, S., Simanainen, M. & Ylikanno, M. (eds.) (2020/2021). Evaluation of the Finnish basic income experiment. Reports and Memorandums of the Ministry of Social Affairs and Health 2020:15; book edition Edward Elgar 2021.",
+    "primary_source_url": "https://julkaisut.valtioneuvosto.fi/bitstreams/f2041c17-878d-490c-8c5f-f12ab5cbd70b/download",
+    "registry": "https://vatt.fi/en/-/results-of-the-basic-income-experiment-small-employment-effects-better-perceived-economic-security-and-mental-wellbeing"
+  },
+  "babys_first_years_us":   {
+    "name": "Baby's First Years",
+    "start_year": 2018,
+    "country": "United States",
+    "design": "Randomized controlled trial. 1,000 mothers of newborns with incomes below the federal poverty line in four US metro areas were randomly assigned to receive an unconditional USD 333/month (USD 3,996/year) or USD 20/month, by debit card, for the first several years of the child's life. Infant brain activity was measured by EEG around the first birthday.",
+    "coverage": "1000 low-income mother-infant pairs; high-cash arm USD 333/month vs low-cash arm USD 20/month.",
+    "transfer_size_usd_month": 333,
+    "investigators": "Troller-Renfree, Costanzo, Duncan, Magnuson, Gennetian, Yoshikawa, Halpern-Meekin, Fox, Noble (Columbia, NYU, UC Irvine, Maryland, Wisconsin)",
+    "key_findings": [
+      "Infants in families receiving USD 333/month showed greater high-frequency EEG brain activity (more high-frequency power) - patterns previously associated with later cognitive development - than infants in the USD 20/month group, the first experimental evidence that reducing poverty can causally change early brain activity.",
+      "The effect was causal because group assignment was randomized, distinguishing it from the long-known correlation between poverty and child development.",
+      "The pre-registered primary outcomes did not all reach significance, and EEG power is an indirect proxy: it is not itself a measure of cognition, IQ, or school outcomes, which the study did not yet measure at age one."
+    ],
+    "primary_source_name": "Troller-Renfree, S.V. et al. (2022). The impact of a poverty reduction intervention on infant brain activity. PNAS 119(5):e2115649119.",
+    "primary_source_url": "https://www.pnas.org/doi/10.1073/pnas.2115649119",
+    "registry": "https://www.babysfirstyears.com/publications"
+  },
+  "mincome_manitoba":   {
+    "name": "Mincome (Manitoba Basic Annual Income Experiment)",
+    "start_year": 1974,
+    "end_year": 1979,
+    "country": "Canada",
+    "design": "Federal-provincial guaranteed annual income field experiment. The town of Dauphin (~10,000 people) was a 'saturation site' where every resident was eligible for an income-tested guaranteed annual income; randomized samples elsewhere in Manitoba received varying guarantee levels and tax-back rates. Forget (2011) linked Dauphin participants to universal health-insurance administrative records and compared them to matched controls.",
+    "coverage": "Dauphin saturation site (~10,000 residents) plus dispersed randomized Manitoba sample; income-tested guaranteed annual income.",
+    "investigators": "Evelyn L. Forget (University of Manitoba); original program by Government of Canada and Province of Manitoba",
+    "key_findings": [
+      "Hospitalizations among Dauphin residents fell 8.5% relative to matched controls during the experiment, driven mainly by fewer accidents/injuries and mental-health admissions.",
+      "Work effort barely changed: only two groups reduced hours notably - new mothers (who took longer maternity leave) and teenagers (who stayed in school longer, raising high-school completion).",
+      "The original 1970s experiment was defunded before any final report and its data sat unanalyzed for decades; Forget's findings rest on a retrospective linkage of one saturation town, not a fresh randomized analysis, so causal attribution is weaker than in a modern RCT."
+    ],
+    "primary_source_name": "Forget, E. L. (2011). The Town with No Poverty: The Health Effects of a Canadian Guaranteed Annual Income Field Experiment. Canadian Public Policy 37(3):283-305.",
+    "primary_source_url": "https://utppublishing.com/doi/10.3138/cpp.37.3.283",
+    "registry": "https://uwo.scholaris.ca/bitstreams/fc04d1ec-b665-4f30-ab32-9cb1c9addc25/download"
+  },
+  "progresa_oportunidades_mexico":   {
+    "name": "PROGRESA / Oportunidades (later Prospera)",
+    "start_year": 1997,
+    "country": "Mexico",
+    "design": "Large-scale conditional cash transfer with a built-in randomized rollout. 506 rural communities were randomized: 320 received the program in 1998, 186 served as controls until 1999. Cash went to mothers, conditional on children's school attendance and family health-clinic visits. IFPRI was commissioned by the Mexican government to run the independent evaluation.",
+    "coverage": "506 randomized rural communities at evaluation; scaled to ~5 million households nationally. Transfers averaged ~20-30% of recipient household income.",
+    "investigators": "Emmanuel Skoufias and IFPRI (International Food Policy Research Institute) team; Mexican government (SEDESOL)",
+    "key_findings": [
+      "After two years the poverty headcount among participant households was 17.4% lower than controls and the poverty gap 36% smaller; secondary-school enrollment rose substantially, especially for girls.",
+      "Adult labour supply did not fall and consumption rose; the transfers did not displace work, and child illness and stunting declined.",
+      "Because the core transfer was conditional on school and clinic attendance, PROGRESA tests conditional, not unconditional, cash - so it cannot by itself separate the effect of money from the effect of the conditions, and later studies found much of the school gain survived even when conditions were relaxed."
+    ],
+    "primary_source_name": "Skoufias, E. (2005). PROGRESA and Its Impacts on the Welfare of Rural Households in Mexico. IFPRI Research Report 139.",
+    "primary_source_url": "https://cgspace.cgiar.org/items/748d73dd-53b8-4391-9f70-f7d3aa37f1e7",
+    "registry": "https://www.ifpri.org/publication/progresa-and-its-impacts-welfare-rural-households-mexico"
+  },
+  "malawi_zambia_social_cash_transfers":   {
+    "name": "Government Social Cash Transfer programs (Transfer Project)",
+    "start_year": 2010,
+    "country": "Malawi and Zambia",
+    "design": "Two government-run unconditional cash transfer programs evaluated by cluster-randomized controlled trials. Zambia's Child Grant Programme paid ~USD 12/month (flat, unconditional) to households with a child under five in three rural districts; Malawi's Social Cash Transfer Programme targeted ultra-poor, labour-constrained households. Evaluated by the Transfer Project (UNC Carolina Population Center, UNICEF, FAO, national governments).",
+    "coverage": "Cluster-RCTs in rural districts of each country; Zambia transfer ~USD 12/month flat per household, paid to the (99% female) primary caregiver.",
+    "investigators": "de Hoop, Groppo, Handa and the Transfer Project (UNC CPC, UNICEF Office of Research-Innocenti, FAO)",
+    "key_findings": [
+      "The transfers strongly expanded household productive and entrepreneurial activity - more non-farm enterprises and farm investment - and adults shifted toward family enterprise rather than working less, refuting the 'cash makes people lazy' claim. (Handa et al. 2018, World Bank Research Observer 'myth-busting'.)",
+      "School attendance and children's material wellbeing rose.",
+      "HONEST COUNTER-EVIDENCE: in both countries the same transfers also INCREASED children's involvement in household agricultural work, some of it potentially hazardous, because expanded family farms and enterprises drew on child labour - a real negative side-effect, not a null. (de Hoop, Groppo & Handa 2020, World Bank Economic Review.)"
+    ],
+    "primary_source_name": "de Hoop, J., Groppo, V. & Handa, S. (2020). Cash Transfers, Microentrepreneurial Activity, and Child Work: Evidence from Malawi and Zambia. The World Bank Economic Review 34(3):670-697.",
+    "primary_source_url": "https://academic.oup.com/wber/article/34/3/670/5611144",
+    "registry": "https://transfer.cpc.unc.edu/"
+  },
+  "india_sewa_madhya_pradesh_ubi":   {
+    "name": "SEWA / UNICEF Madhya Pradesh Unconditional Basic Income pilots",
+    "start_year": 2011,
+    "end_year": 2013,
+    "country": "India",
+    "design": "Two unconditional basic income pilots with randomized treatment/control villages, implemented by the Self-Employed Women's Association (SEWA) and funded by UNICEF. Every man, woman and child in eight treatment villages received a small monthly cash payment for 12-18 months (initially Rs 200/adult and Rs 100/child per month, later raised), paid individually with no conditions; twelve villages were controls. ~6,000 individuals received transfers.",
+    "coverage": "8 treatment + 12 control villages in Madhya Pradesh; ~6,000 recipients; Rs 200/adult + Rs 100/child per month (later Rs 300 / Rs 150).",
+    "investigators": "Davala, Jhabvala, Standing, Mehta; SEWA and UNICEF",
+    "key_findings": [
+      "Recipient households increased spending on food, healthcare and schooling, with improved nutrition (especially for girls) and higher school attendance and performance.",
+      "Economic activity rose rather than fell: more own-account work, livestock and small-business investment, and a shift from casual/bonded labour toward self-employment - women's economic activity rose most.",
+      "This is a scholarly monograph evaluation of a randomized-village pilot, not a peer-reviewed journal RCT; the pilots were short (12-18 months), small in scale, and the cash amount was modest, so durability and scalability remain untested."
+    ],
+    "primary_source_name": "Davala, S., Jhabvala, R., Standing, G. & Mehta, S. K. (2015). Basic Income: A Transformative Policy for India. Bloomsbury Academic (open access).",
+    "primary_source_url": "https://www.bloomsburycollections.com/book/basic-income-a-transformative-policy-for-india/",
+    "registry": "https://library.oapen.org/handle/20.500.12657/58784"
+  },
+  "bolsa_familia_brazil":   {
+    "name": "Bolsa Família — Brazil",
+    "start_year": 2003,
+    "ongoing": true,
+    "population": 48000000,
+    "families": 13800000,
+    "design": "The largest conditional cash transfer program ever implemented. Transfers are tied to school enrollment and health-clinic visits for children, at the scale of nearly a quarter of Brazil's population over more than two decades.",
+    "key_findings": [
+      "Extreme poverty in Brazil would be 33–50% higher without the program (World Bank evaluation).",
+      "Accounted for 12–21% of the recent sharp decline in Brazilian income inequality.",
+      "No measurable negative effect on labor force participation (Soares et al, multiple evaluations).",
+      "Survived three presidencies of opposing parties — including a government that publicly opposed it — and was reinstated in expanded form under Lula in 2023."
+    ],
+    "primary_source_name": "World Bank, 'Lifting Families out of Poverty in Brazil: Bolsa Família Program'",
+    "primary_source_url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/793761468015579565/lifting-families-out-of-poverty-in-brazil-bolsa-familia-program",
+    "imf_evaluation_url": "https://www.imf.org/-/media/Files/Publications/WP/2020/English/wpiea2020099-print-pdf.ashx"
+  },
+  "cherokee_casino_dividend":   {
+    "name": "Cherokee casino dividend — Eastern Band of Cherokee Indians, NC, USA",
+    "start_year": 1996,
+    "ongoing": true,
+    "population": 16000,
+    "transfer_size": "~$4,000–$6,000 / year / person, including children",
+    "design": "A naturally occurring quasi-experiment. From 1996 the Eastern Band of Cherokee distributed a per-capita share of casino profits to every enrolled member, including children. This intersected the ongoing Great Smoky Mountains Study of childhood mental health (1,420 children, 350 of them Cherokee), giving a randomized-by-tribal-membership comparison.",
+    "key_findings": [
+      "Cherokee child poverty fell by half by 2001; behavioral and emotional problems in formerly-poor children dropped 40% to match never-poor levels.",
+      "Each additional $4,000/year correlated with one extra year of educational attainment by age 21 and a 22% reduction in criminal record by age 16.",
+      "Effects were intergenerational: children whose families joined the dividend at younger ages showed lasting decade-plus benefits."
+    ],
+    "primary_source_name": "Costello, E.J. et al (2020). 'Income dividends and subjective survival in a Cherokee Indian cohort.' SSM-Population Health 10:100530",
+    "primary_source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7250001/",
+    "earlier_work": "Costello, Compton, Keeler, Angold (2003), JAMA 290(15):2023–9"
   }
 }

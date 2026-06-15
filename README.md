@@ -62,8 +62,8 @@ Abundance/
 ├── data/                   # every number on the site lives here
 │   ├── README.md           # schemas + how to add an entry
 │   ├── essentials.json     # food / water / electricity / GDP / etc.
-│   ├── pilots.json         # 6 cash-transfer evaluations
-│   ├── case-studies.json   # 5 country precedents
+│   ├── pilots.json         # 12 cash-transfer evaluations
+│   ├── case-studies.json   # 11 country precedents
 │   └── countries.json      # 91 countries × 10 World Bank indicators
 │
 ├── embed/calculator.html   # standalone iframe-able calculator
@@ -73,7 +73,7 @@ Abundance/
 ├── scripts/                # regeneration utilities (Python)
 ├── transcripts/            # raw research material (auto-VTT downloads)
 │
-├── bibliography.md         # ~60 academic references organized by topic
+├── bibliography.md         # ~100 academic references organized by topic
 ├── methodology.md          # how each number was derived + honest limits
 ├── CONTRIBUTING.md         # full contributor guide ← start here
 ├── CITATION.cff            # how to cite the project

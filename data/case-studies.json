@@ -78,5 +78,89 @@
     "primary_source_name": "Subramanian, A. & Roy, D. (2003). 'Who Can Explain the Mauritian Miracle? Meade, Romer, Sachs, or Rodrik?' IMF Working Paper 01/116.",
     "primary_source_url": "https://www.imf.org/external/pubs/ft/wp/2001/wp01116.pdf",
     "supporting_source": "World Bank Open Data (mauritius indicators); Frankel, J. (2010) 'Mauritius: African Success Story', NBER WP 16569."
+  },
+  "botswana_pula_fund":   {
+    "title": "Botswana — Pula Fund and diamond-revenue governance (1966–present)",
+    "date_event": "1994-01-01",
+    "actor": "Government of Botswana + Bank of Botswana (manages the Pula Fund) + Debswana (state/De Beers diamond joint venture)",
+    "core_action": "Rather than letting diamond rents be captured by elites or spent into a boom-bust cycle, Botswana channelled mineral surpluses into the Pula Fund, a sovereign wealth fund established in 1994 and managed by the Bank of Botswana, whose stated objective is to 'preserve part of the income from diamond exports for future generations.' Diamonds supply roughly 30% of government revenue and ~70% of foreign-exchange earnings; the fund is invested entirely outside Botswana to avoid overheating the domestic economy. Profits were also reinvested in healthcare, education and infrastructure under sustained civilian governance.",
+    "measurable_outcomes": [
+      "Pula Fund assets under management: ~3500000000 USD as of December 2024.",
+      "GDP per capita rose from ~70 USD in the late 1960s (one of the poorest countries on Earth) to upper-middle-income status; from 1965 to ~1995 Botswana had among the fastest sustained growth rates in the world.",
+      "Multi-decade record of uninterrupted civilian government and comparatively low corruption for the region, with mineral rents saved on behalf of the population."
+    ],
+    "primary_source_name": "Bank of Botswana, 'The Pula Fund' (official page) and Annual Report 2024.",
+    "primary_source_url": "https://www.bankofbotswana.bw/content/pula-fund",
+    "supporting_source": "Bank of Botswana Annual Report 2024 (https://www.bankofbotswana.bw/sites/default/files/publications/Annual%20Report%202024.pdf); World Bank, GDP per capita, Botswana (https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=BW)."
+  },
+  "south_korea_land_reform":   {
+    "title": "South Korea — land reform and the developmental state (1948–1965)",
+    "date_event": "1950-03-10",
+    "actor": "Republic of Korea government (Agricultural Land Reform Act, 1949/1950) under US occupation influence; later the developmental state apparatus",
+    "core_action": "Through the 1949 Agricultural Land Reform Act (implemented from 1950) and the earlier disposal of formerly Japanese-owned land, South Korea broke up a semi-feudal tenancy system, capping holdings and transferring land from absentee landlords to the tenants who farmed it. Owner-cultivation replaced tenancy as the dominant relation, equalising the rural asset base at the very start of the country's growth period and removing a landlord rentier class as a political-economic block.",
+    "measurable_outcomes": [
+      "Tenancy among farm households fell from ~49% in 1945 to ~7% by 1965; owner-cultivators rose from ~48% (1945) to ~93% (1965).",
+      "In 1950 roughly 577000 chungbo of land was distributed to more than 1600000 farming households (Shin, Land Reform in Korea, 1950).",
+      "South Korea entered its growth era with an unusually equal land/asset distribution, later associated with GDP per capita rising from ~USD 1027 (1960, current USD) to ~USD 31721 (2020) per World Bank data."
+    ],
+    "primary_source_name": "Yong-Ha Shin, 'Land Reform in Korea, 1950', Seoul National University (s-space repository).",
+    "primary_source_url": "https://s-space.snu.ac.kr/bitstream/10371/84988/1/2.LAND_REFORM_IN_KOREA__1950%5DYong-Ha%20Shin.pdf",
+    "supporting_source": "World Bank, GDP per capita (current US$), Korea Rep. (https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=KR); You, J. (2017) 'Demystifying the Park Chung-Hee Myth: Land Reform in the Evolution of Korea's Developmental State', Journal of Contemporary Asia 47(4)."
+  },
+  "finland_housing_first":   {
+    "title": "Finland — Housing First and the near-elimination of long-term homelessness (2008–present)",
+    "date_event": "2008-01-01",
+    "actor": "Government of Finland + Ministry of the Environment + Y-Foundation + municipalities; data compiled by ARA / Varke (Housing Finance and Development Centre of Finland)",
+    "core_action": "Finland inverted the standard 'staircase' model that requires people to get sober or treated before they earn housing. Under Housing First (launched 2008), a permanent, unconditional rental flat with a lease is provided first, with voluntary support services attached afterward. Shelters and dormitories were converted into permanent supported apartments; the Y-Foundation became one of Finland's largest landlords specifically to supply units to formerly homeless people.",
+    "measurable_outcomes": [
+      "Long-term homelessness fell roughly 70% between 2008 and 2023; about 1018 long-term homeless people remained in 2023, down from a ~2008 baseline of several thousand.",
+      "Total people experiencing homelessness in 2023: over 3400 (living alone), down ~260 from the prior year.",
+      "Finland is the only EU country where recorded homelessness has fallen consistently for over 15 years, including through the pandemic."
+    ],
+    "primary_source_name": "Varke (formerly ARA), Report 2/2024: 'Homeless people 2023 — Long-term homelessness in Finland 2008–2023'.",
+    "primary_source_url": "https://www.varke.fi/en/node/8/homelessness/homeless-people-2023",
+    "supporting_source": "Ministry of the Environment of Finland, 'Homelessness' (https://ym.fi/en/homelessness); Varke Report 2/2024 PDF (https://www.varke.fi/en/media/101)."
+  },
+  "portugal_drug_decriminalization":   {
+    "title": "Portugal — drug decriminalization and a health-led response (2001–present)",
+    "date_event": "2001-07-01",
+    "actor": "Government of Portugal (Law 30/2000); later SICAD (national drug agency) and EMCDDA/EUDA monitoring",
+    "core_action": "In 2001 Portugal became the first country to decriminalize personal possession and use of all illicit drugs. Possession below a threshold is an administrative offence handled by 'Commissions for the Dissuasion of Drug Addiction', not the criminal courts, with the explicit aim of treating drug use as a public-health issue and curbing injection-driven HIV transmission. Resources were shifted from incarceration toward prevention, harm reduction and treatment.",
+    "measurable_outcomes": [
+      "Drug-induced deaths fell from 369 in 1999 (~36.2 per million) to 54 in 2015 (~5.2 per million) — far below the EU average (~20 per million).",
+      "AIDS diagnoses among people who inject drugs fell from 518 in 2000 to 13 in 2019; new HIV diagnoses tied to injecting collapsed over 2000–2015.",
+      "Achieved without a substantial sustained rise in overall drug-use prevalence, alongside lower drug-related incarceration."
+    ],
+    "primary_source_name": "EMCDDA / EUDA, 'Portugal Country Drug Report'.",
+    "primary_source_url": "https://www.euda.europa.eu/publications/country-drug-reports/2019/portugal_en",
+    "supporting_source": "EMCDDA Portugal Country Drug Report 2017 PDF (https://www.euda.europa.eu/system/files/publications/4508/TD0116918ENN.pdf); SICAD (Serviço de Intervenção nos Comportamentos Aditivos e nas Dependências), Portugal national reports."
+  },
+  "kerala_model":   {
+    "title": "Kerala, India — high human development at low income (the 'Kerala model')",
+    "date_event": "2021-01-01",
+    "actor": "Government of Kerala (successive administrations); demographic data from the Office of the Registrar General of India, Sample Registration System (SRS)",
+    "core_action": "Since the 1970s Kerala has spent an unusually large share of its budget (roughly 20–25%) on public education, health and food/welfare distribution, decoupling human-development outcomes from per-capita income. The result is a state with the social indicators of an upper-middle-income country sitting on a low-income economic base — direct evidence that life expectancy and literacy can be 'purchased' through public provision rather than waiting on GDP growth.",
+    "measurable_outcomes": [
+      "Infant mortality rate: 5 per 1000 live births (SRS 2023) — the lowest of any large Indian state and comparable to high-income countries.",
+      "Life expectancy at birth around 75 years (SRS Abridged Life Tables 2017–2021), well above the Indian average of ~69.8 years.",
+      "Literacy over 94% — the highest among Indian states — achieved at a per-capita income far below that of upper-middle-income nations."
+    ],
+    "primary_source_name": "Office of the Registrar General of India, Sample Registration System (SRS) — Abridged Life Tables 2017–2021 and SRS reports.",
+    "primary_source_url": "https://censusindia.gov.in/nada/index.php/catalog/45558/download/49755/SRS-Abridged_Life_Tables_2017-2021.pdf",
+    "supporting_source": "Office of the Registrar General of India, SRS Statistical Reports (IMR); UNDP Human Development framework; Government of Kerala Economic Review."
+  },
+  "uruguay_plan_de_equidad":   {
+    "title": "Uruguay — Plan de Equidad and structural poverty reduction (2005–2019)",
+    "date_event": "2008-01-01",
+    "actor": "Government of Uruguay (Frente Amplio coalition from 2005) + Ministry of Social Development (MIDES); poverty measured by INE (Instituto Nacional de Estadística) and compiled by the World Bank",
+    "core_action": "From 2005 Uruguay created a dedicated Ministry of Social Development (MIDES), ran the PANES emergency programme (2005–2007), and institutionalised it as the permanent Plan de Equidad (from 2008) — combining non-contributory cash transfers (Tarjeta Uruguay Social, Asignaciones Familiares), a 2007 progressive tax reform, and expanded health coverage as a structural anti-poverty strategy rather than emergency relief.",
+    "measurable_outcomes": [
+      "National-poverty-line headcount fell from ~32.5% (2006) to ~8.8% (2019).",
+      "Child poverty (under 6) fell from ~43.1% (2008) to ~17.2% (2018).",
+      "Uruguay became the South American country with the lowest poverty and inequality on these measures over the period."
+    ],
+    "primary_source_name": "World Bank, Poverty & Equity Brief / Macro Poverty Outlook for Uruguay (national poverty line, INE source data).",
+    "primary_source_url": "https://databankfiles.worldbank.org/public/ddpext_download/poverty/987B9C90-CB9F-4D93-AE8C-750588BF00QA/AM2020/Global_POVEQ_URY.pdf",
+    "supporting_source": "Instituto Nacional de Estadística (INE) Uruguay, Línea de Pobreza (https://www.ine.gub.uy/linea-de-pobreza); World Bank, Uruguay Systematic Country Diagnostic Update (2022)."
   }
 }

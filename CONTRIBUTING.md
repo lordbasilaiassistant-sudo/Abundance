@@ -32,13 +32,13 @@ The project is intentionally vanilla — static HTML/CSS/JS plus JSON data files
 Abundance/
 ├── README.md, LICENSE, CITATION.cff, CONTRIBUTING.md
 ├── methodology.md            # how each number was derived
-├── bibliography.md           # ~60 academic references by topic
+├── bibliography.md           # ~100 academic references by topic
 ├── robots.txt, sitemap.xml   # crawler hints
 ├── favicon.png, apple-touch-icon.png, og.png   # branding (regen via scripts/)
 │
 ├── index.html                # main page (commented section markers, single file by intent)
 ├── countries.html            # per-country drill-down
-├── case-studies.html         # 5 country precedents
+├── case-studies.html         # 11 country precedents
 ├── style.css                 # imports from styles/ (do not edit directly)
 │
 ├── styles/                   # ← edit CSS here
@@ -51,8 +51,8 @@ Abundance/
 ├── data/                     # ← every number on the site lives here
 │   ├── README.md             # schemas + how to add an entry
 │   ├── essentials.json       # food / water / electricity / GDP / etc.
-│   ├── pilots.json           # 6 cash-transfer evaluations
-│   ├── case-studies.json     # Costa Rica, Norway, Iceland, Bhutan, Mauritius
+│   ├── pilots.json           # 12 cash-transfer evaluations
+│   ├── case-studies.json     # 11 precedents (Costa Rica … Uruguay)
 │   └── countries.json        # 91 countries × 10 World Bank indicators
 │
 ├── embed/

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abundance — what humanity actually produces, per person</title>
-<meta name="description" content="The world produces 1.4× the calories, 287× the water, 3.8× the electricity, and 12× the income per person that minimum needs require. A primary-sourced per-capita arithmetic of global production — anchored by Amartya Sen's Nobel-winning entitlement theory, six peer-reviewed UBI pilots, and meta-analyses across 279 studies. Every number cited. CC0.">
+<meta name="description" content="The world produces 1.4× the calories, 287× the water, 3.8× the electricity, and 12× the income per person that minimum needs require. A primary-sourced per-capita arithmetic of global production — anchored by Amartya Sen's Nobel-winning entitlement theory, twelve cash-transfer pilots, and meta-analyses across 279 studies. Every number cited. CC0.">
 <meta name="keywords" content="abundance, scarcity, universal basic income, UBI, per capita arithmetic, redistribution, world production, world GDP, global hunger, poverty line, primary source, Omelas, Amartya Sen, entitlement theory, Bengal famine, cash transfer, GiveDirectly, Alaska Permanent Fund, Bolsa Familia, Stockton SEED, World Inequality Lab, Piketty, Wilkinson Pickett, Spirit Level, Acemoglu inclusive institutions, Ostrom commons, demographic transition, food waste, freshwater scarcity, Modern Energy Minimum">
 <meta name="author" content="Eli Vargas (lordbasilaiassistant-sudo)">
 <meta name="theme-color" content="#0a0b0e">
@@ -48,7 +48,7 @@
       "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/#article",
       "headline": "The world already produces enough. The question is whether we admit it.",
       "alternativeHeadline": "Abundance: a primary-sourced per-capita arithmetic of global production",
-      "description": "A single-page, fully-cited arithmetic check of whether aggregate global production of food, water, electricity, and economic output is sufficient to meet every human's documented minimum needs. Includes Sen's entitlement framing, the Omelas question, six peer-reviewed cash-transfer pilots, a 114-study Bayesian meta-analysis (Crosta et al 2024), and a 165-study ODI systematic review (Bastagli et al 2016).",
+      "description": "A single-page, fully-cited arithmetic check of whether aggregate global production of food, water, electricity, and economic output is sufficient to meet every human's documented minimum needs. Includes Sen's entitlement framing, the Omelas question, twelve cash-transfer pilots, a 114-study Bayesian meta-analysis (Crosta et al 2024), and a 165-study ODI systematic review (Bastagli et al 2016).",
       "image": {
         "@type": "ImageObject",
         "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/og.png",
@@ -159,7 +159,7 @@
       "@type": "Dataset",
       "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/pilots.json#dataset",
       "name": "Abundance — cash-transfer pilot evaluations",
-      "description": "Structured citations for six peer-reviewed cash-transfer evaluations: GiveDirectly Kenya RCT, Alaska Permanent Fund, Iran 2011, Stockton SEED, Brazil Bolsa Familia, Cherokee casino dividend.",
+      "description": "Structured citations for twelve cash-transfer evaluations: GiveDirectly Kenya RCT, Alaska Permanent Fund, Iran 2011, Stockton SEED, Brazil Bolsa Familia, Cherokee casino dividend, Finland Basic Income Experiment, Baby's First Years (US), Manitoba Mincome, Mexico PROGRESA, Malawi & Zambia government transfers, and the SEWA/UNICEF India basic-income pilots.",
       "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/pilots.json",
       "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "datePublished": "2026-05-15",
@@ -342,7 +342,8 @@
 <!-- ============================================================
      SECTION 2 — Per-capita arithmetic
      Cards for food, water, electricity, GDP, housing, plus new
-     essentials (insulin, internet, vaccines).
+     essentials (insulin, internet, vaccines, sanitation, drinking-water
+     access, clean cooking, basic education, maternal survival, medicines).
      Each value is read from data/essentials.json AND recomputed
      in the inline <script> at the bottom of this file.
      To add a new essential: see CONTRIBUTING.md
@@ -662,6 +663,68 @@
     <a href="https://social.desa.un.org/world-summit-2025/blog/300million-people-homeless-worldwide">UN DESA, World Social Summit 2025 background</a>
   </p>
 </div>
+
+<!-- NEW ESSENTIALS (added 2026-06-15): sanitation, drinking-water access,
+     clean cooking, basic education, maternal survival, essential medicines -->
+<div class="card" id="card-sanitation">
+  <h3>Sanitation <span class="tag uneven">distribution failure</span></h3>
+  <div class="row">
+    <div class="stat"><div class="label">World population with safely managed sanitation</div><div class="value accent" id="sanitation-have">57%</div><div class="sub">WHO/UNICEF JMP (2023)</div></div>
+    <div class="stat"><div class="label">People still lacking it</div><div class="value danger" id="sanitation-lack">3.5 billion</div><div class="sub">WHO/UNICEF JMP (2023)</div></div>
+  </div>
+  <p>The engineering of safe sanitation is a solved problem and most of the world already lives with it: in 2022 some <span class="num">57%</span> of humanity (about <span class="num">4.5 billion</span> people) used safely managed sanitation. The remaining <span class="num">3.5 billion</span> without it, including <span class="num">419 million</span> who still practise open defecation, are short of plumbing and treatment capacity, not of any unknown technology. This is a distribution and investment gap, not a production limit.</p>
+  <p class="src">Source: <a href="https://washdata.org/reports/jmp-2023-wash-households">WHO/UNICEF Joint Monitoring Programme (2023). Progress on household drinking water, sanitation and hygiene 2000-2022.</a></p>
+</div>
+
+<div class="card" id="card-drinking-water">
+  <h3>Drinking-water access <span class="tag uneven">distribution failure</span></h3>
+  <div class="row">
+    <div class="stat"><div class="label">World population with safely managed drinking water</div><div class="value accent" id="water-access-have">73%</div><div class="sub">WHO/UNICEF JMP (2023)</div></div>
+    <div class="stat"><div class="label">People still lacking it</div><div class="value danger" id="water-access-lack">2.2 billion</div><div class="sub">WHO/UNICEF JMP (2023)</div></div>
+  </div>
+  <p>The planet's renewable freshwater works out to thousands of cubic metres per person per year; the binding constraint is delivery, not the resource. In 2022 some <span class="num">73%</span> of humanity used safely managed drinking water, while <span class="num">2.2 billion</span> people did not, including <span class="num">115 million</span> who still drink untreated surface water. The water exists and treatment is routine engineering; the gap is pipes, pumps and treatment plants where they have not been built.</p>
+  <p class="src">Source: <a href="https://washdata.org/reports/jmp-2023-wash-households">WHO/UNICEF Joint Monitoring Programme (2023). Progress on household drinking water, sanitation and hygiene 2000-2022.</a></p>
+</div>
+
+<div class="card" id="card-clean-cooking">
+  <h3>Clean cooking fuel <span class="tag uneven">distribution failure</span></h3>
+  <div class="row">
+    <div class="stat"><div class="label">People still cooking with polluting fuels</div><div class="value danger" id="cooking-polluting">2.1 billion</div><div class="sub">WHO (2025), 2021 data</div></div>
+    <div class="stat"><div class="label">Deaths/year from household air pollution</div><div class="value danger" id="cooking-deaths">2.9 million</div><div class="sub">WHO (2025), 2021 data</div></div>
+  </div>
+  <p>Clean cookstoves, LPG and electric cooking are mass-produced, well-understood technologies. Yet about <span class="num">2.1 billion</span> people, roughly a quarter of humanity, still cook over open fires and inefficient stoves burning wood, dung, crop waste, coal or kerosene. The resulting household air pollution killed an estimated <span class="num">2.9 million</span> people in 2021, including over <span class="num">309,000</span> children under five. The shortfall is affordability and supply chains for fuel and stoves, not a missing invention.</p>
+  <p class="src">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health">World Health Organization (2025). Household air pollution fact sheet.</a></p>
+</div>
+
+<div class="card" id="card-education">
+  <h3>Basic education <span class="tag uneven">distribution failure</span></h3>
+  <div class="row">
+    <div class="stat"><div class="label">Out-of-school children & youth worldwide</div><div class="value danger" id="oosc-total">251 million</div><div class="sub">UNESCO GEM Report (2024)</div></div>
+    <div class="stat"><div class="label">Out-of-school rate, low- vs high-income</div><div class="value danger" id="oosc-gap">33% vs 3%</div><div class="sub">UNESCO GEM Report (2024)</div></div>
+  </div>
+  <p>Primary and lower-secondary schooling is a mature public service that rich countries deliver to essentially everyone. UNESCO counts <span class="num">251 million</span> children and youth out of school in 2024, a number that has fallen only about <span class="num">1%</span> in nearly a decade. In low-income countries <span class="num">33%</span> of school-age children are out of school against just <span class="num">3%</span> in high-income countries. The teaching methods exist; the gap is funding, teachers and access where conflict and poverty concentrate.</p>
+  <p class="src">Source: <a href="https://www.unesco.org/en/articles/251m-children-and-youth-still-out-school-despite-decades-progress-unesco-report">UNESCO (2024). Global Education Monitoring Report 2024: 251 million children and youth still out of school.</a></p>
+</div>
+
+<div class="card" id="card-maternal">
+  <h3>Maternal survival <span class="tag uneven">distribution failure</span></h3>
+  <div class="row">
+    <div class="stat"><div class="label">Maternal deaths in 2023</div><div class="value danger" id="maternal-deaths">260,000</div><div class="sub">WHO/UNICEF/UNFPA/WB (2025)</div></div>
+    <div class="stat"><div class="label">Share concentrated in sub-Saharan Africa & S. Asia</div><div class="value danger" id="maternal-conc">87%</div><div class="sub">WHO/UNICEF/UNFPA/WB (2025)</div></div>
+  </div>
+  <p>The clinical interventions that prevent maternal death, skilled birth attendance, blood transfusion, treatment for haemorrhage, sepsis and hypertension, are standard care in high-income countries. Yet an estimated <span class="num">260,000</span> women died of maternal causes in 2023, about one every two minutes, from causes the same report calls largely preventable. About <span class="num">87%</span> of those deaths occurred in sub-Saharan Africa and Southern Asia. Global maternal mortality has already fallen roughly <span class="num">40%</span> since 2000, which shows the remaining toll tracks access to care, not a lack of medical knowledge.</p>
+  <p class="src">Source: <a href="https://www.who.int/publications/i/item/9789240108462">WHO, UNICEF, UNFPA, World Bank Group, UNDESA (2025). Trends in Maternal Mortality 2000 to 2023.</a></p>
+</div>
+
+<div class="card" id="card-essential-medicines">
+  <h3>Essential medicines <span class="tag uneven">distribution failure</span></h3>
+  <div class="row">
+    <div class="stat"><div class="label">Public-sector availability of generic medicines</div><div class="value danger" id="meds-public">38-68%</div><div class="sub">Lancet Global Health (2025)</div></div>
+    <div class="stat"><div class="label">WHO availability target</div><div class="value accent" id="meds-target">80%</div><div class="sub">WHO benchmark</div></div>
+  </div>
+  <p>Most medicines on the WHO Essential Medicines List are off-patent generics that can be manufactured for cents per dose. Yet across 54 low- and middle-income countries, public-sector availability of generic medicines ranged only from <span class="num">38%</span> to <span class="num">68%</span> by region, and no region's public or private sector met WHO's <span class="num">80%</span> availability target. Where stock runs out, patients paid <span class="num">3</span> to <span class="num">11.5</span> times international reference prices in private pharmacies. The drugs are cheap and abundant to make; the failure is procurement, supply chains and pricing.</p>
+  <p class="src">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/39706661/">Oldfield et al. (2025). Prices, availability, and affordability of adult medicines in 54 low-income and middle-income countries. Lancet Global Health.</a></p>
+</div>
 </section>
 
 <!-- ============================================================
@@ -886,11 +949,12 @@
 <section id="pilots">
 <h2>6 · Where this has already been done</h2>
 <p>
-  Four programs, four geographies, four study designs — each with peer-reviewed
-  or official-source evaluation. None of them is the full solution. Together
-  they show that the standard objections ("people will stop working,"
-  "the money will be wasted," "it isn't sustainable") fail empirically at the
-  scales tested.
+  Twelve programs across six continents and five decades — universal and
+  targeted, lump-sum and monthly, conditional and unconditional — each with
+  peer-reviewed or official-source evaluation. None of them is the full
+  solution. Together they show that the standard objections ("people will stop
+  working," "the money will be wasted," "it isn't sustainable") fail empirically
+  at the scales tested.
 </p>
 
 <div class="pilot">
@@ -1041,6 +1105,80 @@
   </p>
 </div>
 
+<!-- NEW PILOTS (added 2026-06-15): Finland, Baby's First Years, Mincome,
+     PROGRESA, Malawi/Zambia, SEWA-India -->
+<div class="pilot">
+  <h4>Finland Basic Income Experiment — Finland (2017-2018)</h4>
+  <div class="meta">2,000 unemployed recipients vs register-wide control · government-mandated statutory RCT · EUR 560/month, tax-free, no conditions</div>
+  <p class="small">The world's first nationwide, statutory, randomized basic-income trial. Kela (Finland's social-insurance institution) randomly selected 2,000 unemployed people to receive EUR 560 a month with no work requirement and no income reporting. It was evaluated by Kela and the VATT Institute for Economic Research and reported to the Ministry of Social Affairs and Health.</p>
+  <ul>
+    <li><strong>Recipients worked slightly more, not fewer,</strong> than controls (about 78 vs 73 employment days) — a small positive employment effect, not the predicted drop.</li>
+    <li>Recipients reported markedly better mental wellbeing, lower stress and depression, and more trust in institutions and in their own future.</li>
+    <li>Limitation: the sample was already unemployed and the labour effect was modest and statistically weak in year one, so this does not test a truly universal payment to the whole population.</li>
+  </ul>
+  <p class="src"><a href="https://julkaisut.valtioneuvosto.fi/bitstreams/f2041c17-878d-490c-8c5f-f12ab5cbd70b/download">Kangas, Jauhiainen, Simanainen & Ylikanno (eds.) (2020). Evaluation of the Finnish basic income experiment. MSAH Reports 2020:15.</a> · <a href="https://vatt.fi/en/-/results-of-the-basic-income-experiment-small-employment-effects-better-perceived-economic-security-and-mental-wellbeing">VATT Institute / official results</a></p>
+</div>
+
+<div class="pilot">
+  <h4>Baby's First Years — United States (2018-2022)</h4>
+  <div class="meta">1,000 low-income mother-infant pairs · randomized controlled trial · USD 333/month vs USD 20/month, unconditional, by debit card</div>
+  <p class="small">An RCT led by researchers at Columbia, NYU, UC Irvine, Maryland and Wisconsin. Mothers of newborns below the poverty line were randomly assigned a high (USD 333/month) or low (USD 20/month) unconditional monthly cash gift. The team measured the infants' brain activity by EEG around their first birthday.</p>
+  <ul>
+    <li><strong>Infants whose mothers got USD 333/month showed more high-frequency brain activity</strong> — a pattern linked in prior work to later cognitive development — than the low-cash group.</li>
+    <li>Because the cash amount was randomized, the difference is causal evidence that reducing poverty changes early brain activity, not just a correlation.</li>
+    <li>Limitation: not every pre-registered outcome reached significance, and EEG power is an indirect proxy — it is not a measure of IQ or school performance, which were not yet assessed at age one.</li>
+  </ul>
+  <p class="src"><a href="https://www.pnas.org/doi/10.1073/pnas.2115649119">Troller-Renfree et al. (2022). The impact of a poverty reduction intervention on infant brain activity. PNAS 119(5):e2115649119.</a> · <a href="https://www.babysfirstyears.com/publications">Baby's First Years study / publications</a></p>
+</div>
+
+<div class="pilot">
+  <h4>Mincome — Dauphin, Manitoba, Canada (1974-1979)</h4>
+  <div class="meta">Whole town of ~10,000 as saturation site + dispersed Manitoba sample · federal-provincial guaranteed-annual-income experiment · income-tested top-up</div>
+  <p class="small">A 1970s Canadian guaranteed-annual-income experiment in which the town of Dauphin was a 'saturation site' where everyone was eligible. The program was defunded before a final report and the data sat unanalyzed for decades until Evelyn Forget (University of Manitoba) linked participants to Canada's universal health records and compared them to matched controls.</p>
+  <ul>
+    <li><strong>Hospitalizations fell 8.5%</strong> among Dauphin residents versus matched controls, driven by fewer accidents/injuries and fewer mental-health admissions.</li>
+    <li>Work effort barely moved: only new mothers (longer maternity leave) and teenagers (staying in school, raising graduation rates) reduced hours.</li>
+    <li>Limitation: Forget's results are a retrospective analysis of a single saturation town decades later, not a fresh randomized comparison, so the causal claim is weaker than a modern RCT.</li>
+  </ul>
+  <p class="src"><a href="https://utppublishing.com/doi/10.3138/cpp.37.3.283">Forget, E. L. (2011). The Town with No Poverty. Canadian Public Policy 37(3):283-305.</a> · <a href="https://uwo.scholaris.ca/bitstreams/fc04d1ec-b665-4f30-ab32-9cb1c9addc25/download">open-access policy brief / full text</a></p>
+</div>
+
+<div class="pilot">
+  <h4>PROGRESA / Oportunidades — Mexico (1997-)</h4>
+  <div class="meta">506 randomized rural communities, later ~5 million households · conditional cash transfer with randomized rollout · cash to mothers, ~20-30% of household income</div>
+  <p class="small">Mexico's flagship anti-poverty program (renamed Oportunidades, then Prospera). It launched with a randomized rollout — 320 communities got the program first, 186 acted as controls — paying mothers cash conditional on their children's school attendance and family clinic visits. The government commissioned IFPRI to run an independent evaluation.</p>
+  <ul>
+    <li><strong>After two years, the poverty headcount among participants was 17.4% lower than controls</strong> and the poverty gap 36% smaller, with large rises in secondary-school enrollment, especially for girls.</li>
+    <li>Adult labour supply did not fall, consumption rose, and child illness and stunting declined — money did not displace work.</li>
+    <li>Limitation: the transfer was conditional on school and clinic use, so it cannot cleanly separate the effect of the cash from the effect of the conditions; later work found much of the schooling gain persisted even when conditions were eased.</li>
+  </ul>
+  <p class="src"><a href="https://cgspace.cgiar.org/items/748d73dd-53b8-4391-9f70-f7d3aa37f1e7">Skoufias, E. (2005). PROGRESA and Its Impacts on the Welfare of Rural Households in Mexico. IFPRI Research Report 139.</a> · <a href="https://www.ifpri.org/publication/progresa-and-its-impacts-welfare-rural-households-mexico">IFPRI publication page</a></p>
+</div>
+
+<div class="pilot">
+  <h4>Government Social Cash Transfers — Malawi & Zambia (2010-2014)</h4>
+  <div class="meta">National government programs, cluster-randomized rollout · unconditional transfers · Zambia ~USD 12/month flat per household, paid to (99% female) caregivers</div>
+  <p class="small">Two government-run unconditional cash transfer programs — Zambia's Child Grant and Malawi's Social Cash Transfer — evaluated by cluster-randomized controlled trials under the Transfer Project (UNC Carolina Population Center, UNICEF, FAO and the national governments). These are real state programs, not NGO pilots.</p>
+  <ul>
+    <li><strong>The transfers expanded household enterprise and farm investment, and adults shifted toward family work rather than working less</strong> — direct evidence against 'cash makes people lazy.'</li>
+    <li>Children's school attendance and material wellbeing rose.</li>
+    <li>Honest counter-evidence: the same transfers also <em>increased</em> children's agricultural work, some potentially hazardous, because the expanded family farms and businesses drew on child labour — a genuine negative side-effect, not a null result.</li>
+  </ul>
+  <p class="src"><a href="https://academic.oup.com/wber/article/34/3/670/5611144">de Hoop, Groppo & Handa (2020). Cash Transfers, Microentrepreneurial Activity, and Child Work. World Bank Economic Review 34(3):670-697.</a> · <a href="https://transfer.cpc.unc.edu/">Transfer Project (UNC/UNICEF/FAO)</a></p>
+</div>
+
+<div class="pilot">
+  <h4>SEWA / UNICEF Basic Income Pilots — Madhya Pradesh, India (2011-2013)</h4>
+  <div class="meta">8 treatment + 12 control villages, ~6,000 recipients · randomized-village unconditional basic income · Rs 200/adult + Rs 100/child per month, paid individually</div>
+  <p class="small">Two unconditional basic-income pilots run by the Self-Employed Women's Association (SEWA) and funded by UNICEF. Every resident of eight treatment villages — men, women and children — received a small monthly cash payment for 12-18 months with no conditions, while twelve villages served as controls. The evaluation was published as an open-access scholarly book.</p>
+  <ul>
+    <li><strong>Recipient households spent more on food, healthcare and schooling</strong>, with measurable gains in nutrition (especially for girls) and school attendance and performance.</li>
+    <li>Economic activity rose, not fell: more own-account work, livestock and small-business investment, and a shift away from casual/bonded labour toward self-employment, with women gaining most.</li>
+    <li>Limitation: the evidence is a scholarly monograph on a short (12-18 month), small, modestly-funded pilot — not a peer-reviewed journal RCT — so long-run durability and scalability are untested.</li>
+  </ul>
+  <p class="src"><a href="https://www.bloomsburycollections.com/book/basic-income-a-transformative-policy-for-india/">Davala, Jhabvala, Standing & Mehta (2015). Basic Income: A Transformative Policy for India. Bloomsbury Academic (open access).</a> · <a href="https://library.oapen.org/handle/20.500.12657/58784">OAPEN open-access repository</a></p>
+</div>
+
 <div class="card">
   <h3>And the meta-analyses confirm it</h3>
   <p class="small">
@@ -1072,7 +1210,7 @@
   </ul>
   <p class="small">
     Together: a meta-analysis of 114 studies and a systematic review of 165
-    studies, both finding the same result that the six individual pilots
+    studies, both finding the same result that the twelve individual pilots
     above find. The objection "people will stop working" is, in 2026, no
     longer a serious empirical claim. It is a folk belief.
   </p>
@@ -1083,14 +1221,15 @@
   conditions, evaluation methods. They converge on one point: when you give
   people money without conditions, they do not stop working, do not waste it,
   and their lives measurably improve. The objection "this can't work" is now
-  an empirical claim with six counterexamples, a 114-study meta-analysis, and
+  an empirical claim with twelve counterexamples, a 114-study meta-analysis, and
   a 165-study systematic review against it.
 </p>
 <p class="small">
   For <em>country-scale</em> precedents — Costa Rica abolishing its military,
   Norway saving its oil money, Iceland prosecuting its bankers, Bhutan
   rewriting its objective function, Mauritius diversifying without dismantling
-  its welfare state — see
+  its welfare state, plus Botswana, South Korea, Finland, Portugal, Kerala and
+  Uruguay (eleven in all) — see
   <a href="case-studies.html"><strong>Abundance · country case studies →</strong></a>.
 </p>
 </section>
@@ -1537,13 +1676,23 @@
 </p>
 <p>
   <strong>Want the full academic literature?</strong>
-  <a href="bibliography.md"><code>bibliography.md</code></a> has 60+ scholarly
+  <a href="bibliography.md"><code>bibliography.md</code></a> has 100+ scholarly
   references organized by topic — Sen on famines, Piketty/Zucman/Saez on
   inequality, Banerjee/Duflo/Suri on cash transfers (with the two systematic
   reviews), Acemoglu/Robinson on institutions, Ostrom on commons, Wilkinson &amp;
   Pickett on inequality and outcomes, plus the canonical anthropology and
   demography. If you want to argue with the page, that file is where the
   citations behind each claim live.
+</p>
+<p>
+  <strong>Deeper notes on specific works</strong> are in <code>papers/</code>:
+  <a href="papers/sen-entitlement.md">Sen's entitlement theory of famine</a>,
+  the <a href="papers/cash-transfer-evidence.md">cash-transfer meta-evidence</a>,
+  the <a href="papers/inequality-and-wealth.md">measured wealth distribution</a>,
+  the <a href="papers/historical-context.md">anthropology of pre-industrial work</a>,
+  and a standing <a href="papers/counterarguments.md">steelman of the strongest
+  case against this page</a> (ecological limits, aid skepticism, the
+  local-vs-global distribution problem).
 </p>
 <p>
   If you find a number on this page that conflicts with its cited source, or

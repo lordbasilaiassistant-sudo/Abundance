@@ -217,5 +217,53 @@
     "source_name": "WHO + UNICEF press release, 15 July 2025",
     "source_url": "https://www.who.int/news/item/15-07-2025-global-childhood-vaccination-coverage-holds-steady-yet-over-14-million-infants-remain-unvaccinated-who-unicef",
     "note": "The 'zero-dose' population — never received any routine immunization. Concentrated in conflict and fragile-state contexts."
+  },
+  "safely_managed_sanitation_share":   {
+    "value": 0.57,
+    "unit": "fraction of world population using safely managed sanitation services",
+    "year": 2022,
+    "source_name": "WHO/UNICEF Joint Monitoring Programme (JMP), Progress on household drinking water, sanitation and hygiene 2000-2022",
+    "source_url": "https://washdata.org/reports/jmp-2023-wash-households",
+    "note": "57% (about 4.5 billion people) had safely managed sanitation in 2022; 3.5 billion lacked it, of whom 419 million still practise open defecation. 'Safely managed' is the highest service rung (excreta safely treated/disposed), so the share with any basic toilet is higher."
+  },
+  "safely_managed_drinking_water_share":   {
+    "value": 0.73,
+    "unit": "fraction of world population using safely managed drinking-water services",
+    "year": 2022,
+    "source_name": "WHO/UNICEF Joint Monitoring Programme (JMP), Progress on household drinking water, sanitation and hygiene 2000-2022",
+    "source_url": "https://washdata.org/reports/jmp-2023-wash-households",
+    "note": "73% had safely managed drinking water in 2022; 2.2 billion lacked it, including 115 million who still drink untreated surface water. This is a service-access measure and is distinct from the renewable-freshwater resource volume entry, which shows the planet has ~5,000+ m3 of renewable freshwater per person per year."
+  },
+  "clean_cooking_polluting_fuel_people":   {
+    "value": 2100000000,
+    "unit": "people cooking with polluting fuels and open fires",
+    "year": 2021,
+    "source_name": "WHO, Household air pollution fact sheet (updated 16 December 2025)",
+    "source_url": "https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health",
+    "note": "Around 2.1 billion people (about a quarter of humanity) still cook with kerosene, biomass (wood, dung, crop waste) or coal on open fires or inefficient stoves. The resulting household air pollution caused an estimated 2.9 million deaths in 2021, including over 309,000 children under 5. Clean stoves and LPG/electric cooking are mature, manufactured at scale."
+  },
+  "out_of_school_children":   {
+    "value": 251000000,
+    "unit": "children and youth out of school worldwide",
+    "year": 2024,
+    "source_name": "UNESCO, Global Education Monitoring Report 2024 (UIS estimates)",
+    "source_url": "https://www.unesco.org/en/articles/251m-children-and-youth-still-out-school-despite-decades-progress-unesco-report",
+    "note": "251 million children and youth were out of school as of UNESCO's October 2024 report. The out-of-school population has fallen only about 1% in nearly a decade; 33% of school-age children in low-income countries are out of school versus 3% in high-income countries. A later 2025 UIS dashboard revision raised the count to 272 million as more data arrived."
+  },
+  "maternal_deaths_preventable":   {
+    "value": 260000,
+    "unit": "maternal deaths worldwide in 2023, nearly all preventable",
+    "year": 2023,
+    "source_name": "WHO, UNICEF, UNFPA, World Bank Group and UNDESA/Population Division, Trends in Maternal Mortality 2000 to 2023 (2025)",
+    "source_url": "https://www.who.int/publications/i/item/9789240108462",
+    "note": "An estimated 260,000 women died of maternal causes in 2023, about 712 per day or one roughly every two minutes, from largely preventable causes related to pregnancy and childbirth. Maternal mortality fell about 40% from 2000 to 2023. Sub-Saharan Africa and Southern Asia accounted for about 87% (225,000) of the deaths."
+  },
+  "essential_medicines_public_availability":   {
+    "value": 0.378,
+    "unit": "lower bound of mean generic-medicine availability in the public sector across WHO regions (range 37.8%-68.3%)",
+    "year": 2025,
+    "source_name": "Oldfield et al., 'Prices, availability, and affordability of adult medicines in 54 low-income and middle-income countries', Lancet Global Health (2025)",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/39706661/",
+    "note": "Across 54 low- and middle-income countries, mean availability of generic medicines in the public sector ranged from 37.8% to 68.3% by WHO region (private sector 42.3%-77.4%). No region's public OR private sector met WHO's 80% availability target. Patients paid 3.0-11.5 times international reference prices for the cheapest generics."
   }
 }
