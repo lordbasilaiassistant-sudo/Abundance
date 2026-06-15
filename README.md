@@ -64,7 +64,7 @@ Abundance/
 │   ├── essentials.json     # food / water / electricity / GDP / etc.
 │   ├── pilots.json         # 6 cash-transfer evaluations
 │   ├── case-studies.json   # 5 country precedents
-│   └── countries.json      # 30 countries × 10 World Bank indicators
+│   └── countries.json      # 91 countries × 10 World Bank indicators
 │
 ├── embed/calculator.html   # standalone iframe-able calculator
 ├── lang/es/index.html      # Spanish; pattern for other languages

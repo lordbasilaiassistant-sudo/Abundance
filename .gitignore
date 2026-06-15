@@ -5,3 +5,5 @@ node_modules/
 *.log
 .vscode/
 .idea/
+.serena/
+data/*.json.bak

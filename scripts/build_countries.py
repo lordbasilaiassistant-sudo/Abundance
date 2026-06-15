@@ -5,25 +5,43 @@ and write data/countries.json. Re-run when underlying data updates.
 No authentication required. Free API. Cited at the bottom of every record.
 """
 import json
+import shutil
 import urllib.request
 import urllib.parse
 from pathlib import Path
 
-# 25 countries: largest populations + key per-capita-comparison cases.
-# ISO3 codes — these are the World Bank's identifiers.
+# Largest populations + every country that backs a pilot or case study on
+# the site + broad regional coverage. ISO3 codes (World Bank identifiers).
 COUNTRIES = [
+    # --- Largest populations ---
     "USA", "CHN", "IND", "IDN", "PAK",
     "NGA", "BRA", "BGD", "RUS", "MEX",
     "JPN", "ETH", "PHL", "EGY", "VNM",
     "COD", "IRN", "TUR", "DEU", "THA",
     "GBR", "FRA", "ITA", "ZAF",
-    # Strong comparison cases
+    # --- Original comparison cases (case-studies.html v1) ---
     "NOR",   # sovereign-wealth dividend (Permanent Fund analog)
     "CRI",   # Costa Rica — military dissolved 1948
     "SAU",   # high consumption vs renewable water supply
     "ISL",   # Iceland post-2009 prosecutions
     "MUS",   # Mauritius post-1968 social investment
     "BTN",   # Bhutan GNH
+    # --- Countries that back a pilot or new case study ---
+    "KEN",   # GiveDirectly UBI RCT
+    "KOR",   # South Korea — land reform + developmental state
+    "BWA",   # Botswana — diamond-revenue governance / Pula Fund
+    "FIN",   # Finland — Housing First; Basic Income Experiment 2017-18
+    "PRT",   # Portugal — 2001 drug decriminalization
+    "URY",   # Uruguay — Frente Amplio social policy
+    "NAM",   # Namibia — Basic Income Grant (Otjivero)
+    # --- Broad regional coverage ---
+    "CAN", "AUS", "ESP", "NLD", "SWE", "CHE", "NZL", "IRL", "DNK",
+    "BEL", "AUT", "GRC", "POL", "CZE", "ROU", "UKR", "KAZ",
+    "SGP", "MYS", "LKA", "NPL", "KHM", "MMR", "AFG", "YEM", "IRQ",
+    "PER", "CHL", "COL", "ARG", "VEN", "GTM", "BOL", "ECU", "HTI",
+    "GHA", "TZA", "UGA", "RWA", "SEN", "CIV", "AGO", "MOZ", "ZMB", "ZWE", "MWI",
+    "DZA", "MAR", "TUN", "SDN", "SOM",
+    "QAT", "ARE", "ISR",
 ]
 
 # Indicator codes. Each has a stable code and a primary source.
@@ -45,6 +63,20 @@ INDICATORS = {
 YEARS = "2018:2024"
 
 
+def _get_json(url: str, attempts: int = 3, timeout: int = 90):
+    """GET with retries — the World Bank API is occasionally slow on large
+    multi-country requests."""
+    last = None
+    for i in range(attempts):
+        try:
+            with urllib.request.urlopen(url, timeout=timeout) as r:
+                return json.loads(r.read())
+        except Exception as e:
+            last = e
+            print(f"  retry {i+1}/{attempts} after: {e}")
+    raise last
+
+
 def fetch_indicator(code: str, country_list: list[str]) -> dict[str, dict]:
     """Returns dict keyed by iso3 -> {value, year}. Picks newest value
     available within YEARS range per country."""
@@ -53,8 +85,7 @@ def fetch_indicator(code: str, country_list: list[str]) -> dict[str, dict]:
         f"https://api.worldbank.org/v2/country/{country_str}"
         f"/indicator/{code}?format=json&date={YEARS}&per_page=2000"
     )
-    with urllib.request.urlopen(url, timeout=30) as r:
-        data = json.loads(r.read())
+    data = _get_json(url)
     if not isinstance(data, list) or len(data) < 2 or data[1] is None:
         return {}
     rows = data[1]
@@ -73,7 +104,7 @@ def fetch_indicator(code: str, country_list: list[str]) -> dict[str, dict]:
 def main():
     out: dict = {
         "$schema": "Per-country primary-source data. Source: World Bank Open Data API. Re-fetched by scripts/build_countries.py.",
-        "fetched_at": "2026-05-15",
+        "fetched_at": "2026-06-15",
         "source": "World Bank Open Data API (api.worldbank.org/v2)",
         "license": "CC-BY-4.0 (World Bank Open Data terms)",
         "indicators": {
@@ -108,8 +139,7 @@ def main():
         f"https://api.worldbank.org/v2/country/{country_str}"
         f"?format=json&per_page=200"
     )
-    with urllib.request.urlopen(url, timeout=30) as r:
-        meta = json.loads(r.read())
+    meta = _get_json(url)
     if isinstance(meta, list) and len(meta) >= 2 and meta[1]:
         for c in meta[1]:
             iso = c.get("id")
@@ -124,9 +154,21 @@ def main():
         used.update(cdat["data"].keys())
     out["indicators"] = {k: v for k, v in out["indicators"].items() if k in used}
 
+    # Safety guard: never clobber good data with a failed/partial fetch.
+    # Require population for at least 70% of requested countries.
+    with_pop = sum(1 for c in out["countries"].values() if "population" in c["data"])
+    if with_pop < 0.7 * len(COUNTRIES):
+        raise SystemExit(
+            f"ABORT: only {with_pop}/{len(COUNTRIES)} countries returned population data — "
+            f"likely a network/API failure. Existing countries.json left untouched."
+        )
+
     out_path = Path(__file__).resolve().parent.parent / "data" / "countries.json"
+    if out_path.exists():
+        shutil.copy2(out_path, out_path.with_suffix(".json.bak"))
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"\nwrote {out_path} ({out_path.stat().st_size} bytes, {len(out['countries'])} countries)")
+    print(f"\nwrote {out_path} ({out_path.stat().st_size} bytes, {len(out['countries'])} countries; "
+          f"{with_pop} with population data)")
 
 
 if __name__ == "__main__":

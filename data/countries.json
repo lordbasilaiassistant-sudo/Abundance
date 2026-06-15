@@ -1,6 +1,6 @@
 {
   "$schema": "Per-country primary-source data. Source: World Bank Open Data API. Re-fetched by scripts/build_countries.py.",
-  "fetched_at": "2026-05-15",
+  "fetched_at": "2026-06-15",
   "source": "World Bank Open Data API (api.worldbank.org/v2)",
   "license": "CC-BY-4.0 (World Bank Open Data terms)",
   "indicators": {
@@ -1461,6 +1461,2850 @@
       "name": "Bhutan",
       "region": "South Asia",
       "capital": "Thimphu"
+    },
+    "KEN": {
+      "iso3": "KEN",
+      "data": {
+        "population": {
+          "value": 56432944,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 120339557905.932,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 2132.43452097647,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.999546585264659,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 195.293727720461,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 3.04382666975517,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 4.35172892,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 90.1,
+          "year": "2022"
+        },
+        "life_expectancy": {
+          "value": 63.834,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 381.549511643352,
+          "year": "2022"
+        }
+      },
+      "name": "Kenya",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Nairobi"
+    },
+    "KOR": {
+      "iso3": "KOR",
+      "data": {
+        "population": {
+          "value": 51751065,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 1875388209406.8,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 36238.639908315,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 2.56205259386748,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 11350.1625522103,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 47.8014965507867,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 8.67656994,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 0.5,
+          "year": "2021"
+        },
+        "life_expectancy": {
+          "value": 83.6292682926829,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 1255.01791869493,
+          "year": "2022"
+        }
+      },
+      "name": "Korea, Rep.",
+      "region": "East Asia & Pacific",
+      "capital": "Seoul"
+    },
+    "BWA": {
+      "iso3": "BWA",
+      "data": {
+        "population": {
+          "value": 2521139,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 19402063512.9066,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 7695.75319445165,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 2.83392800595041,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 1640.96758222175,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 7.4409622000215,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 6.25574684,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 69.293,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 983.650095987855,
+          "year": "2022"
+        }
+      },
+      "name": "Botswana",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Gaborone"
+    },
+    "FIN": {
+      "iso3": "FIN",
+      "data": {
+        "population": {
+          "value": 5619911,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 298696961297.656,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 53149.7671934051,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 2.29979173712597,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 14819.2738283578,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 36.4765341417867,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 10.47389507,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 0.4,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 82.3365853658537,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 19258.0919082537,
+          "year": "2022"
+        }
+      },
+      "name": "Finland",
+      "region": "Europe & Central Asia",
+      "capital": "Helsinki"
+    },
+    "PRT": {
+      "iso3": "PRT",
+      "data": {
+        "population": {
+          "value": 10694681,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 313271185085.102,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 29292.242104753,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.53226822745255,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 5293.84653922824,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 45.2439221846256,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 10.24061108,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 2.2,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 82.3829268292683,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 3641.8239327635,
+          "year": "2022"
+        }
+      },
+      "name": "Portugal",
+      "region": "Europe & Central Asia",
+      "capital": "Lisbon"
+    },
+    "URY": {
+      "iso3": "URY",
+      "data": {
+        "population": {
+          "value": 3386588,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 80961511073.5797,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 23906.5133029408,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 2.31053827798919,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 3789.75591197495,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 33.0440254320868,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 9.01887608,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 5.9,
+          "year": "2024"
+        },
+        "life_expectancy": {
+          "value": 78.287,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 27190.3171800633,
+          "year": "2022"
+        }
+      },
+      "name": "Uruguay",
+      "region": "Latin America & Caribbean ",
+      "capital": "Montevideo"
+    },
+    "NAM": {
+      "iso3": "NAM",
+      "data": {
+        "population": {
+          "value": 3030131,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 13372354511.716,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 4413.12752211572,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 2.73490195432496,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 1232.15759197731,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 2.83462992194067,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 9.48251629,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 67.516,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 2131.73720663524,
+          "year": "2022"
+        }
+      },
+      "name": "Namibia",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Windhoek"
+    },
+    "CAN": {
+      "iso3": "CAN",
+      "data": {
+        "population": {
+          "value": 41288599,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 2243636826633.76,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 54340.3477224733,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.31303419578919,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 14084.4933973177,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 42.5238215177079,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 11.3095665,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 0.6,
+          "year": "2022"
+        },
+        "life_expectancy": {
+          "value": 82.1080487804878,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 73197.1653742787,
+          "year": "2022"
+        }
+      },
+      "name": "Canada",
+      "region": "North America",
+      "capital": "Ottawa"
+    },
+    "AUS": {
+      "iso3": "AUS",
+      "data": {
+        "population": {
+          "value": 27196812,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 1757022451652.83,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 64603.9856308464,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.8837883329175,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 9800.04568182477,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 36.4788276060473,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 10.39852047,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 1.5,
+          "year": "2020"
+        },
+        "life_expectancy": {
+          "value": 83.0512195121951,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 18909.4613835938,
+          "year": "2022"
+        }
+      },
+      "name": "Australia",
+      "region": "East Asia & Pacific",
+      "capital": "Canberra"
+    },
+    "ESP": {
+      "iso3": "ESP",
+      "data": {
+        "population": {
+          "value": 48848840,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 1725671652742.19,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 35326.7683069278,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.43210737406914,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 5196.11110519718,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 39.2337541858756,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 9.2206583,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 2.3,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 83.8878048780488,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 2327.03642577919,
+          "year": "2022"
+        }
+      },
+      "name": "Spain",
+      "region": "Europe & Central Asia",
+      "capital": "Madrid"
+    },
+    "NLD": {
+      "iso3": "NLD",
+      "data": {
+        "population": {
+          "value": 17993485,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 1214927698572.66,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 67520.4218956281,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.91642541759119,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 6386.36706563515,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 42.9782483069868,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 10.00551128,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 0.3,
+          "year": "2021"
+        },
+        "life_expectancy": {
+          "value": 81.9658536585366,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 621.434449229992,
+          "year": "2022"
+        }
+      },
+      "name": "Netherlands",
+      "region": "Europe & Central Asia",
+      "capital": "Amsterdam"
+    },
+    "SWE": {
+      "iso3": "SWE",
+      "data": {
+        "population": {
+          "value": 10569709,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 603715224265.798,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 57117.4877440616,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.99771738810168,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 12226.2590199976,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 40.6156538715616,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 11.21510124,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 1.5,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 84.0634146341463,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 16305.9942837478,
+          "year": "2022"
+        }
+      },
+      "name": "Sweden",
+      "region": "Europe & Central Asia",
+      "capital": "Stockholm"
+    },
+    "CHE": {
+      "iso3": "CHE",
+      "data": {
+        "population": {
+          "value": 9005582,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 936564198048.516,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 103998.186685604,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.717812077671144,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 7117.25238857411,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 47.0197818175134,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 11.69096088,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 0.3,
+          "year": "2022"
+        },
+        "life_expectancy": {
+          "value": 84.4073170731707,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 4602.89335141678,
+          "year": "2022"
+        }
+      },
+      "name": "Switzerland",
+      "region": "Europe & Central Asia",
+      "capital": "Bern"
+    },
+    "NZL": {
+      "iso3": "NZL",
+      "data": {
+        "population": {
+          "value": 5287500,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 260172385097.616,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 49205.1792146792,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.19404695449297,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 7992.62411347518,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 38.048298946057,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 10.06186676,
+          "year": "2024"
+        },
+        "life_expectancy": {
+          "value": 82.009756097561,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 64348.5447783222,
+          "year": "2022"
+        }
+      },
+      "name": "New Zealand",
+      "region": "East Asia & Pacific",
+      "capital": "Wellington"
+    },
+    "IRL": {
+      "iso3": "IRL",
+      "data": {
+        "population": {
+          "value": 5395790,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 609157459747.205,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 112894.953240805,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.239096332495524,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 6298.24363068244,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 32.3023693358176,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 6.85410833,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 0.3,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 83.009756097561,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 9399.87369639099,
+          "year": "2022"
+        }
+      },
+      "name": "Ireland",
+      "region": "Europe & Central Asia",
+      "capital": "Dublin"
+    },
+    "DNK": {
+      "iso3": "DNK",
+      "data": {
+        "population": {
+          "value": 5976992,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 424524722037.047,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 71026.4832271897,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 2.41617454160591,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 6165.47587816748,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 43.3933280824544,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 9.38812923,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 0.6,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 82.2536585365854,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 1016.42595159068,
+          "year": "2022"
+        }
+      },
+      "name": "Denmark",
+      "region": "Europe & Central Asia",
+      "capital": "Copenhagen"
+    },
+    "BEL": {
+      "iso3": "BEL",
+      "data": {
+        "population": {
+          "value": 11858610,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 671370081636.406,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 56614.5679499036,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.2770531266155,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 7098.80837636114,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 44.2321563183446,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 10.80371571,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 0.3,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 82.3,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 1027.3787885663,
+          "year": "2022"
+        }
+      },
+      "name": "Belgium",
+      "region": "Europe & Central Asia",
+      "capital": "Brussels"
+    },
+    "AUT": {
+      "iso3": "AUT",
+      "data": {
+        "population": {
+          "value": 9177982,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 534790720466.822,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 58268.8787651601,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.999843177036641,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 7896.83396633378,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 30.12779672163,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 11.8325634,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 1,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 81.9951219512195,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 6082.82529760776,
+          "year": "2022"
+        }
+      },
+      "name": "Austria",
+      "region": "Europe & Central Asia",
+      "capital": "Vienna"
+    },
+    "GRC": {
+      "iso3": "GRC",
+      "data": {
+        "population": {
+          "value": 10405134,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 256238371778.118,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 24626.1481858973,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 3.12797536550149,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 4685.95599057158,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 44.6759828527928,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 8.39367008,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 3.2,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 81.8390243902439,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 5557.21526793155,
+          "year": "2022"
+        }
+      },
+      "name": "Greece",
+      "region": "Europe & Central Asia",
+      "capital": "Athens"
+    },
+    "POL": {
+      "iso3": "POL",
+      "data": {
+        "population": {
+          "value": 36559233,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 917767106146.761,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 25103.565661423,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 4.15439387975356,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 4369.59385882083,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 25.3612522999634,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 8.06380177,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 1.1,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 78.409756097561,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 1455.66143531096,
+          "year": "2022"
+        }
+      },
+      "name": "Poland",
+      "region": "Europe & Central Asia",
+      "capital": "Warsaw"
+    },
+    "CZE": {
+      "iso3": "CZE",
+      "data": {
+        "population": {
+          "value": 10905028,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 347034062928.479,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 31823.3078290564,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.91680849222604,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 5876.92209501892,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 38.8656371139002,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 8.50710297,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 0.8,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 79.9780487804878,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 1232.18277758923,
+          "year": "2022"
+        }
+      },
+      "name": "Czechia",
+      "region": "Europe & Central Asia",
+      "capital": "Prague"
+    },
+    "ROU": {
+      "iso3": "ROU",
+      "data": {
+        "population": {
+          "value": 19051804,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 382564217988.866,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 20080.2096215595,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 2.29815245791591,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 2585.27043246593,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 35.7995871488999,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 5.70901489,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 5.1,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 76.4585365853659,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 2224.84686722347,
+          "year": "2022"
+        }
+      },
+      "name": "Romania",
+      "region": "Europe & Central Asia",
+      "capital": "Bucharest"
+    },
+    "UKR": {
+      "iso3": "UKR",
+      "data": {
+        "population": {
+          "value": 37860221,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 190741262414.705,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 5389.47314453125,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 34.4815297701892,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 2516.32291831974,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 21.6539327212609,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 8.2027483,
+          "year": "2021"
+        },
+        "poverty_pct_3usd": {
+          "value": 11.3,
+          "year": "2020"
+        },
+        "life_expectancy": {
+          "value": 74.692,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 1342.30588076631,
+          "year": "2022"
+        }
+      },
+      "name": "Ukraine",
+      "region": "Europe & Central Asia",
+      "capital": "Kiev"
+    },
+    "KAZ": {
+      "iso3": "KAZ",
+      "data": {
+        "population": {
+          "value": 20592571,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 291480274648.826,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 14154.6324958076,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.42842846956594,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 5145.57131631004,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 15.3162031103353,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 3.76701546,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 15.2,
+          "year": "2021"
+        },
+        "life_expectancy": {
+          "value": 74.531,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 3211.94189514754,
+          "year": "2022"
+        }
+      },
+      "name": "Kazakhstan",
+      "region": "Europe & Central Asia",
+      "capital": "Astana"
+    },
+    "SGP": {
+      "iso3": "SGP",
+      "data": {
+        "population": {
+          "value": 6036860,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 547386645891.847,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 90674.066632628,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 2.8417655746547,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 9750.49546711802,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 27.813655026664,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 4.49163246,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 83.3463414634146,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 106.439180120283,
+          "year": "2022"
+        }
+      },
+      "name": "Singapore",
+      "region": "East Asia & Pacific",
+      "capital": "Singapore"
+    },
+    "MYS": {
+      "iso3": "MYS",
+      "data": {
+        "population": {
+          "value": 35557673,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 422227005428.688,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 11874.4273684245,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.987556748730683,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 5083.71249369916,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 13.5464432669708,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 3.95760036,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 2.9,
+          "year": "2021"
+        },
+        "life_expectancy": {
+          "value": 76.821,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 16716.8686722509,
+          "year": "2022"
+        }
+      },
+      "name": "Malaysia",
+      "region": "East Asia & Pacific",
+      "capital": "Kuala Lumpur"
+    },
+    "LKA": {
+      "iso3": "LKA",
+      "data": {
+        "population": {
+          "value": 21916000,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 98963185509.6499,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 4515.56787322732,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.42539087177796,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 644.461587330399,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 8.4682688580745,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 3.68313766,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 53.3,
+          "year": "2019"
+        },
+        "life_expectancy": {
+          "value": 77.672,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 2380.41567106983,
+          "year": "2022"
+        }
+      },
+      "name": "Sri Lanka",
+      "region": "South Asia",
+      "capital": "Colombo"
+    },
+    "NPL": {
+      "iso3": "NPL",
+      "data": {
+        "population": {
+          "value": 29651054,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 42914268286.7109,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 1447.31004458428,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.979452474186084,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 350.972738692613,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 10.0656152054494,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 6.15843678,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 52.7,
+          "year": "2022"
+        },
+        "life_expectancy": {
+          "value": 70.636,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 6669.93410428169,
+          "year": "2022"
+        }
+      },
+      "name": "Nepal",
+      "region": "South Asia",
+      "capital": "Kathmandu"
+    },
+    "KHM": {
+      "iso3": "KHM",
+      "data": {
+        "population": {
+          "value": 17638801,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 46352647037.2406,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 2627.87969756224,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.52066451977199,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 932.398524324088,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 4.14566160137529,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 4.61706829,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 70.817,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 7010.92518401063,
+          "year": "2022"
+        }
+      },
+      "name": "Cambodia",
+      "region": "East Asia & Pacific",
+      "capital": "Phnom Penh"
+    },
+    "MMR": {
+      "iso3": "MMR",
+      "data": {
+        "population": {
+          "value": 54500091,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 74068349523.8095,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 1359.05001560107,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 6.79452485229039,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 368.438955640984,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 2.86965759378273,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 4.45748425,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 67.095,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 18654.3887007235,
+          "year": "2022"
+        }
+      },
+      "name": "Myanmar",
+      "region": "East Asia & Pacific",
+      "capital": "Naypyidaw"
+    },
+    "AFG": {
+      "iso3": "AFG",
+      "data": {
+        "population": {
+          "value": 42647492,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 17152234636.8715,
+          "year": "2023"
+        },
+        "gdp_per_capita_usd": {
+          "value": 413.757894705303,
+          "year": "2023"
+        },
+        "military_pct_gdp": {
+          "value": 1.827933856217,
+          "year": "2021"
+        },
+        "broadband_per_100": {
+          "value": 0.0800873028793967,
+          "year": "2023"
+        },
+        "health_pct_gdp": {
+          "value": 14.9857626,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 66.289,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 1161.93557223737,
+          "year": "2022"
+        }
+      },
+      "name": "Afghanistan",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "capital": "Kabul"
+    },
+    "YEM": {
+      "iso3": "YEM",
+      "data": {
+        "population": {
+          "value": 40583164,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 21606160663.0318,
+          "year": "2018"
+        },
+        "gdp_per_capita_usd": {
+          "value": 633.887202451545,
+          "year": "2018"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 89.7417693913749,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 1.27124133725573,
+          "year": "2022"
+        },
+        "health_pct_gdp": {
+          "value": 9.69559193,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 69.439,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 54.9409207198328,
+          "year": "2022"
+        }
+      },
+      "name": "Yemen, Rep.",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "capital": "Sana'a"
+    },
+    "IRQ": {
+      "iso3": "IRQ",
+      "data": {
+        "population": {
+          "value": 46042015,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 279641257615.385,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 6073.61032342708,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 2.35714058035714,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 1377.37792315929,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 17.6333290365333,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 5.53275251,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 28,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 72.424,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 798.71930804768,
+          "year": "2022"
+        }
+      },
+      "name": "Iraq",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "capital": "Baghdad"
+    },
+    "PER": {
+      "iso3": "PER",
+      "data": {
+        "population": {
+          "value": 34217848,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 289221969062.941,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 8452.37167056621,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.909288680359786,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 1594.68211201468,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 11.6788671222106,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 5.63786411,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 36.2,
+          "year": "2024"
+        },
+        "life_expectancy": {
+          "value": 77.941,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 49021.0165435326,
+          "year": "2022"
+        }
+      },
+      "name": "Peru",
+      "region": "Latin America & Caribbean ",
+      "capital": "Lima"
+    },
+    "CHL": {
+      "iso3": "CHL",
+      "data": {
+        "population": {
+          "value": 19764771,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 330267137371.592,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 16709.8893972307,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.57780388625485,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 4373.3873769648,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 23.731405742065,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 10.53092575,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 4.5,
+          "year": "2024"
+        },
+        "life_expectancy": {
+          "value": 81.359,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 45261.513352709,
+          "year": "2022"
+        }
+      },
+      "name": "Chile",
+      "region": "Latin America & Caribbean ",
+      "capital": "Santiago"
+    },
+    "COL": {
+      "iso3": "COL",
+      "data": {
+        "population": {
+          "value": 52886363,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 418818154879.271,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 7919.20886825345,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 3.35903368303836,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 1551.19383043981,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 17.2244156778185,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 8.14139366,
+          "year": "2024"
+        },
+        "poverty_pct_3usd": {
+          "value": 37,
+          "year": "2024"
+        },
+        "life_expectancy": {
+          "value": 77.913,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 41458.9338919227,
+          "year": "2022"
+        }
+      },
+      "name": "Colombia",
+      "region": "Latin America & Caribbean ",
+      "capital": "Bogota"
+    },
+    "ARG": {
+      "iso3": "ARG",
+      "data": {
+        "population": {
+          "value": 45696159,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 638365455340.04,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 13969.7836603737,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.618350391157195,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 2822.09714825266,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 26.0976420359532,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 10.2695179,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 15.2,
+          "year": "2024"
+        },
+        "life_expectancy": {
+          "value": 77.543,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 6430.59851430271,
+          "year": "2022"
+        }
+      },
+      "name": "Argentina",
+      "region": "Latin America & Caribbean ",
+      "capital": "Buenos Aires"
+    },
+    "VEN": {
+      "iso3": "VEN",
+      "data": {
+        "population": {
+          "value": 28405543,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 119802963257.783,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 4217.59102643391,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.500704497643446,
+          "year": "2023"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 1952.80326169663,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 12.9446636524427,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 3.77611423,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 72.673,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 28532.9286123494,
+          "year": "2022"
+        }
+      },
+      "name": "Venezuela, RB",
+      "region": "Latin America & Caribbean ",
+      "capital": "Caracas"
+    },
+    "GTM": {
+      "iso3": "GTM",
+      "data": {
+        "population": {
+          "value": 18406359,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 113199581158.203,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 6150.02571438505,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.367622067360881,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 733.082414309027,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 5.33792153027114,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 6.80241346,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 47.3,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 72.746,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 6118.37475123792,
+          "year": "2022"
+        }
+      },
+      "name": "Guatemala",
+      "region": "Latin America & Caribbean ",
+      "capital": "Guatemala City"
+    },
+    "BOL": {
+      "iso3": "BOL",
+      "data": {
+        "population": {
+          "value": 12413315,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 54881327452.9667,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 4421.16609889999,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.37066364312669,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 890.13871838809,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 12.0711429622144,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 6.91864729,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 17.4,
+          "year": "2024"
+        },
+        "life_expectancy": {
+          "value": 68.739,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 25130.0927354243,
+          "year": "2022"
+        }
+      },
+      "name": "Bolivia",
+      "region": "Latin America & Caribbean ",
+      "capital": "La Paz"
+    },
+    "ECU": {
+      "iso3": "ECU",
+      "data": {
+        "population": {
+          "value": 18135478,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 124676074700,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 6874.705739766,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 2.22194770434425,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 1675.63186443578,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 17.246394056997,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 7.56167889,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 32.6,
+          "year": "2024"
+        },
+        "life_expectancy": {
+          "value": 77.579,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 24820.6102178441,
+          "year": "2022"
+        }
+      },
+      "name": "Ecuador",
+      "region": "Latin America & Caribbean ",
+      "capital": "Quito"
+    },
+    "HTI": {
+      "iso3": "HTI",
+      "data": {
+        "population": {
+          "value": 11772557,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 25224154990.7946,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 2142.62330526788,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.068443100204951,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 76.2369643049319,
+          "year": "2022"
+        },
+        "broadband_per_100": {
+          "value": 0.306790757611135,
+          "year": "2022"
+        },
+        "health_pct_gdp": {
+          "value": 3.19156528,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 65.119,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 1130.68893353962,
+          "year": "2022"
+        }
+      },
+      "name": "Haiti",
+      "region": "Latin America & Caribbean ",
+      "capital": "Port-au-Prince"
+    },
+    "GHA": {
+      "iso3": "GHA",
+      "data": {
+        "population": {
+          "value": 34427414,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 82308110386.4641,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 2390.77237652715,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.383994182354107,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 564.994926884211,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 0.664728986034211,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 2.94686937,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 65.695,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 914.050531368042,
+          "year": "2022"
+        }
+      },
+      "name": "Ghana",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Accra"
+    },
+    "TZA": {
+      "iso3": "TZA",
+      "data": {
+        "population": {
+          "value": 68560157,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 78844405385.2195,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 1186.71691894531,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.154617473534,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 134.964321593904,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 0.246433216306666,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 3.05201221,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 91.5,
+          "year": "2018"
+        },
+        "life_expectancy": {
+          "value": 67.212,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 1298.06268316881,
+          "year": "2022"
+        }
+      },
+      "name": "Tanzania",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Dodoma"
+    },
+    "UGA": {
+      "iso3": "UGA",
+      "data": {
+        "population": {
+          "value": 50015092,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 53911907086.1525,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 1077.91278452817,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.88159798311992,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 95.2799806135246,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 0.207613333991268,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 4.23600149,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 93.6,
+          "year": "2019"
+        },
+        "life_expectancy": {
+          "value": 68.487,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 824.302657389021,
+          "year": "2022"
+        }
+      },
+      "name": "Uganda",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Kampala"
+    },
+    "RWA": {
+      "iso3": "RWA",
+      "data": {
+        "population": {
+          "value": 14256567,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 14251642235.0968,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 999.65456165547,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.24772078121775,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 76.6779335454565,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 0.595648307197658,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 5.12708998,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 89.8,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 68.017,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 695.918183463079,
+          "year": "2022"
+        }
+      },
+      "name": "Rwanda",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Kigali"
+    },
+    "SEN": {
+      "iso3": "SEN",
+      "data": {
+        "population": {
+          "value": 18501984,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 32808056600.9436,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 1773.21829923448,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.56647768181405,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 410.176742198745,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 4.03828584004829,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 4.32314825,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 78.6,
+          "year": "2021"
+        },
+        "life_expectancy": {
+          "value": 68.924,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 1461.66503022502,
+          "year": "2022"
+        }
+      },
+      "name": "Senegal",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Dakar"
+    },
+    "CIV": {
+      "iso3": "CIV",
+      "data": {
+        "population": {
+          "value": 31934230,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 87113179149.284,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 2727.8935220697,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.762358993041457,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 353.81898290984,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 1.60153227430253,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 3.43218303,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 80.9,
+          "year": "2021"
+        },
+        "life_expectancy": {
+          "value": 62.11,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 2528.04720986694,
+          "year": "2022"
+        }
+      },
+      "name": "Cote d'Ivoire",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Yamoussoukro"
+    },
+    "AGO": {
+      "iso3": "AGO",
+      "data": {
+        "population": {
+          "value": 37885849,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 100998916781.079,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 2665.87444776753,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.00049213337543,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 379.103010494775,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 0.362845240712436,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 2.54692864,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 80,
+          "year": "2018"
+        },
+        "life_expectancy": {
+          "value": 64.805,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 4153.21676881475,
+          "year": "2022"
+        }
+      },
+      "name": "Angola",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Luanda"
+    },
+    "MOZ": {
+      "iso3": "MOZ",
+      "data": {
+        "population": {
+          "value": 34631766,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 22745341305.0622,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 656.776824637306,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.99330115632931,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 390.662628035663,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 0.141999688956087,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 8.50126553,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 96.3,
+          "year": "2022"
+        },
+        "life_expectancy": {
+          "value": 63.797,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 3071.3879360169,
+          "year": "2022"
+        }
+      },
+      "name": "Mozambique",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Maputo"
+    },
+    "ZMB": {
+      "iso3": "ZMB",
+      "data": {
+        "population": {
+          "value": 21314956,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 25303185342.2511,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 1187.10943350064,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.33268361976463,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 726.743169079855,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 0.789797548725881,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 5.97841072,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 94,
+          "year": "2022"
+        },
+        "life_expectancy": {
+          "value": 66.528,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 3979.56863659284,
+          "year": "2022"
+        }
+      },
+      "name": "Zambia",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Lusaka"
+    },
+    "ZWE": {
+      "iso3": "ZWE",
+      "data": {
+        "population": {
+          "value": 16634373,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 41539411516.4448,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 2497.20332208763,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.351195023855751,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 503.769027041602,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 1.93865437549104,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 2.92601609,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 86.2,
+          "year": "2019"
+        },
+        "life_expectancy": {
+          "value": 63.064,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 762.957077254569,
+          "year": "2022"
+        }
+      },
+      "name": "Zimbabwe",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Harare"
+    },
+    "MWI": {
+      "iso3": "MWI",
+      "data": {
+        "population": {
+          "value": 21655286,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 11316411329.4619,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 522.570393642547,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.02496048269861,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 0.0863853749149284,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 6.53459597,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 97.1,
+          "year": "2019"
+        },
+        "life_expectancy": {
+          "value": 67.561,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 784.686345212985,
+          "year": "2022"
+        }
+      },
+      "name": "Malawi",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Lilongwe"
+    },
+    "DZA": {
+      "iso3": "DZA",
+      "data": {
+        "population": {
+          "value": 46814308,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 269322281664.773,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 5752.99076651465,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 7.97145723551219,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 1827.95251014644,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 13.3173088877016,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 4.35082531,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 76.475,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 247.309712525493,
+          "year": "2022"
+        }
+      },
+      "name": "Algeria",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "capital": "Algiers"
+    },
+    "MAR": {
+      "iso3": "MAR",
+      "data": {
+        "population": {
+          "value": 38081173,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 160610994054.734,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 4153.1943359375,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 3.51575374206256,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 997.255419654568,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 7.30282126551091,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 6.06396198,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 75.493,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 776.874555440233,
+          "year": "2022"
+        }
+      },
+      "name": "Morocco",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "capital": "Rabat"
+    },
+    "TUN": {
+      "iso3": "TUN",
+      "data": {
+        "population": {
+          "value": 12277109,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 51332285656.5422,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 4181.13789301228,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 2.50636792573464,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 1628.63098852819,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 14.9741523024679,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 7.98537874,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 20.7,
+          "year": "2021"
+        },
+        "life_expectancy": {
+          "value": 76.711,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 346.141132837828,
+          "year": "2022"
+        }
+      },
+      "name": "Tunisia",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "capital": "Tunis"
+    },
+    "SDN": {
+      "iso3": "SDN",
+      "data": {
+        "population": {
+          "value": 50448963,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 49672435513.1126,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 984.607666015625,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 0.925377247984565,
+          "year": "2021"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 222.629469247628,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 0.0604394040047428,
+          "year": "2022"
+        },
+        "health_pct_gdp": {
+          "value": 2.85165739,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 66.521,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 80.9989667366808,
+          "year": "2022"
+        }
+      },
+      "name": "Sudan",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Khartoum"
+    },
+    "SOM": {
+      "iso3": "SOM",
+      "data": {
+        "population": {
+          "value": 19009151,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 11967000000,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 629.538899449007,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 1.58578050121769,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 0.722963033976147,
+          "year": "2023"
+        },
+        "health_pct_gdp": {
+          "value": 3.74413586,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 58.967,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 337.042732018953,
+          "year": "2022"
+        }
+      },
+      "name": "Somalia, Fed. Rep.",
+      "region": "Sub-Saharan Africa ",
+      "capital": "Mogadishu"
+    },
+    "QAT": {
+      "iso3": "QAT",
+      "data": {
+        "population": {
+          "value": 2857822,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 219162637362.637,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 76688.6941743178,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 6.50020565272303,
+          "year": "2022"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 19963.2383947181,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 11.8175200751339,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 2.52358818,
+          "year": "2023"
+        },
+        "life_expectancy": {
+          "value": 82.522,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 21.0737607970096,
+          "year": "2022"
+        }
+      },
+      "name": "Qatar",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "capital": "Doha"
+    },
+    "ARE": {
+      "iso3": "ARE",
+      "data": {
+        "population": {
+          "value": 10986400,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 552324846834.581,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 50273.5060469837,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 15284.7010578561,
+          "year": "2023"
+        },
+        "broadband_per_100": {
+          "value": 40.840113505519,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 4.97095108,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 0.6,
+          "year": "2018"
+        },
+        "life_expectancy": {
+          "value": 83.069,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 14.8883714573244,
+          "year": "2022"
+        }
+      },
+      "name": "United Arab Emirates",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "capital": "Abu Dhabi"
+    },
+    "ISR": {
+      "iso3": "ISR",
+      "data": {
+        "population": {
+          "value": 9974400,
+          "year": "2024"
+        },
+        "gdp_usd": {
+          "value": 540379921261.681,
+          "year": "2024"
+        },
+        "gdp_per_capita_usd": {
+          "value": 54176.6844383302,
+          "year": "2024"
+        },
+        "military_pct_gdp": {
+          "value": 8.77671668977531,
+          "year": "2024"
+        },
+        "electricity_kwh_per_cap": {
+          "value": 7206.44850818094,
+          "year": "2024"
+        },
+        "broadband_per_100": {
+          "value": 29.1837101461688,
+          "year": "2024"
+        },
+        "health_pct_gdp": {
+          "value": 7.09822369,
+          "year": "2023"
+        },
+        "poverty_pct_3usd": {
+          "value": 4.4,
+          "year": "2022"
+        },
+        "life_expectancy": {
+          "value": 83.1975609756098,
+          "year": "2024"
+        },
+        "renewable_water_m3_pc": {
+          "value": 80.0307318010116,
+          "year": "2021"
+        }
+      },
+      "name": "Israel",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "capital": ""
     }
   }
 }

@@ -13,7 +13,7 @@ Each file's top-level `$schema` field is a one-line description of what's in it.
 | [`essentials.json`](essentials.json) | World population, GDP, food kcal supply, freshwater, electricity generation, military spend, etc. ~20 entries, each with primary-source citation. | Hand-edited; re-verify annually. |
 | [`pilots.json`](pilots.json) | Six cash-transfer evaluations: GiveDirectly Kenya RCT, Alaska Permanent Fund, Iran 2011, Stockton SEED, Brazil Bolsa Família, Cherokee casino dividend. Each has design + key findings + primary-source URL. | Hand-edited; add new programs as evidence accumulates. |
 | [`case-studies.json`](case-studies.json) | Five country-scale precedents for the Omelas pivot: Costa Rica 1948, Norway 1990, Iceland 2008, Bhutan 2008, Mauritius 1968. | Hand-edited. |
-| [`countries.json`](countries.json) | Auto-generated — 30 countries × 10 World Bank indicators. Don't hand-edit; re-run `scripts/build_countries.py` instead. | `scripts/build_countries.py` |
+| [`countries.json`](countries.json) | Auto-generated — 91 countries × 10 World Bank indicators. Don't hand-edit; re-run `scripts/build_countries.py` instead. | `scripts/build_countries.py` |
 
 ---
 
