@@ -296,7 +296,39 @@
 </p>
 </section>
 
+<section>
+<h2>7 · Pass it on</h2>
+<p>
+  If any of this landed, the most useful thing you can do is hand it to someone
+  with the power to act — or someone who needs to believe it is possible. It is
+  public domain; no permission required, no attribution needed, no strings.
+</p>
+<p class="src">
+  <a href="mailto:?subject=An%20open%20letter%20to%20whoever%20can%20end%20this&amp;body=The%20world%20already%20produces%20enough%20%E2%80%94%20the%20shortfall%20is%20distribution%2C%20and%20distribution%20is%20a%20choice.%20Every%20claim%20cited%3A%20https%3A%2F%2Flordbasilaiassistant-sudo.github.io%2FAbundance%2Fletter.html">Email it</a> ·
+  <a href="https://bsky.app/intent/compose?text=The%20world%20already%20produces%20enough%20%E2%80%94%20an%20open%20letter%20to%20whoever%20can%20end%20this.%20Every%20claim%20cited.%20https%3A%2F%2Flordbasilaiassistant-sudo.github.io%2FAbundance%2Fletter.html">Bluesky</a> ·
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Flordbasilaiassistant-sudo.github.io%2FAbundance%2Fletter.html&amp;title=An%20open%20letter%20to%20whoever%20can%20end%20this%20(every%20claim%20cited)">Reddit</a> ·
+  <a href="#" id="copylink">Copy link</a>
+  <span id="copied" hidden style="color:var(--accent)"> ✓ copied</span>
+</p>
+<p class="hint" style="font-size:12px;color:var(--fg-3)">
+  These are plain links — no buttons phone home, no scripts load from anyone
+  else, nothing tracks the click. Same as the rest of the site.
+</p>
+</section>
+
 </main>
+
+<script>
+// First-party only: copy the page URL to the clipboard. No network, no tracking.
+document.getElementById('copylink').addEventListener('click', function(e){
+  e.preventDefault();
+  var url = 'https://lordbasilaiassistant-sudo.github.io/Abundance/letter.html';
+  function done(){ var c=document.getElementById('copied'); c.hidden=false; setTimeout(function(){c.hidden=true;},2000); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(done, function(){ prompt('Copy this link:', url); });
+  } else { prompt('Copy this link:', url); }
+});
+</script>
 
 <footer role="contentinfo">
   Public domain (CC0). No tracking, no analytics, no ads.
