@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free image editor — runs in your browser, never uploads · Abundance</title>
+<meta name="description" content="A free, private image editor that runs entirely in your browser. Crop, rotate, adjust, filter, resize and export — no account, no upload, no tracking. Your image never leaves your device. Manufactured scarcity, refuted in code.">
+<meta name="author" content="Eli Vargas (lordbasilaiassistant-sudo)">
+<meta name="theme-color" content="#0a0b0e">
+<link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/tools/image-editor/">
+<link rel="icon" type="image/png" href="../../favicon.png">
+
+<meta property="og:title" content="A free image editor that never uploads your photo.">
+<meta property="og:description" content="Crop, rotate, adjust, filter, resize, export — all in your browser, no account, no tracking. The thing that costs $263/year, given away. Manufactured scarcity, refuted in code.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/tools/image-editor/">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A free image editor that never uploads your photo.">
+<meta name="twitter:description" content="Runs entirely in your browser. No account, no upload, no tracking. Free forever, public domain.">
+<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+
+<style>
+/* Self-contained on purpose (like embed/calculator.html) so it forks as one file.
+   Palette mirrors the main site's design tokens. */
+:root{
+  --bg:#0a0b0e; --bg2:#13151a; --bg3:#1c1f26; --fg:#f0f3f7; --fg2:#b5bdca;
+  --fg3:#717885; --line:#1f232c; --line2:#2b3140; --accent:#6ee0b0; --accent2:#4abf8a;
+  --warn:#f8c574; --danger:#ef8b8b; --link:#9fc1ff;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:var(--sans);
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+header.top{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;
+  align-items:baseline;gap:14px;flex-wrap:wrap}
+header.top .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent)}
+header.top h1{font-family:var(--serif);font-size:21px;margin:0;font-weight:600}
+header.top .spacer{flex:1}
+header.top .back{font-size:13px;color:var(--fg3)}
+.thesis{padding:10px 22px;background:var(--bg2);border-bottom:1px solid var(--line);
+  font-size:13px;color:var(--fg2)}
+.thesis strong{color:var(--fg)}
+.app{display:grid;grid-template-columns:300px 1fr;gap:0;min-height:calc(100vh - 132px)}
+@media(max-width:820px){.app{grid-template-columns:1fr}}
+.panel{background:var(--bg2);border-right:1px solid var(--line);padding:16px;overflow-y:auto;
+  max-height:calc(100vh - 132px)}
+@media(max-width:820px){.panel{max-height:none;border-right:none;border-bottom:1px solid var(--line)}}
+.stage{display:flex;align-items:center;justify-content:center;padding:22px;position:relative;
+  background:repeating-conic-gradient(var(--bg) 0% 25%, var(--bg3) 0% 50%) 50%/22px 22px}
+.stage canvas{max-width:100%;max-height:calc(100vh - 200px);box-shadow:0 6px 30px rgba(0,0,0,.5);
+  display:block;background:#fff;touch-action:none}
+.dropzone{border:2px dashed var(--line2);border-radius:10px;padding:48px 24px;text-align:center;
+  color:var(--fg3);max-width:440px}
+.dropzone.drag{border-color:var(--accent);color:var(--fg2);background:rgba(110,224,176,.05)}
+.dropzone h2{font-family:var(--serif);color:var(--fg);margin:.2em 0 .4em}
+.group{margin-bottom:18px}
+.group h3{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--fg3);margin:0 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.ctrl{margin-bottom:11px}
+.ctrl label{display:flex;justify-content:space-between;font-size:12px;color:var(--fg2);margin-bottom:4px}
+.ctrl label .val{font-family:var(--mono);color:var(--fg)}
+input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap}
+button{font-family:var(--sans);font-size:13px;background:var(--bg3);color:var(--fg);
+  border:1px solid var(--line2);border-radius:7px;padding:8px 12px;cursor:pointer}
+button:hover{border-color:var(--accent);color:var(--fg)}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.primary{background:var(--accent);color:#06281c;border-color:var(--accent);font-weight:600}
+button.primary:hover{background:var(--accent2)}
+button.full{width:100%}
+.btnrow.grid4{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+select{width:100%;background:var(--bg3);color:var(--fg);border:1px solid var(--line2);
+  border-radius:7px;padding:7px}
+.hint{font-size:11px;color:var(--fg3);margin-top:6px}
+.crop-overlay{position:absolute;border:1.5px dashed var(--accent);
+  box-shadow:0 0 0 9999px rgba(0,0,0,.45);pointer-events:none}
+footer{padding:14px 22px;border-top:1px solid var(--line);font-size:12px;color:var(--fg3);
+  display:flex;gap:14px;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);border:1px solid var(--line2);border-radius:999px;padding:3px 9px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="eyebrow">Abundance · free tools</span>
+  <h1>Image editor</h1>
+  <span class="pill">no upload · no account</span>
+  <span class="spacer"></span>
+  <span class="back">← <a href="../../index.html">the arithmetic</a> · <a href="../../letter.html">the letter</a></span>
+</header>
+
+<div class="thesis">
+  <strong>Manufactured scarcity, refuted in code.</strong> This does in your browser, free,
+  what subscription editors charge ~$120–260/year for. Your image is processed on your
+  device with the Canvas API and <strong>never uploaded anywhere</strong> — there is no server.
+  Public domain. <a href="../../index.html#scarcity">Why this exists →</a>
+</div>
+
+<div class="app">
+  <aside class="panel" id="panel">
+    <div class="group">
+      <h3>Image</h3>
+      <div class="btnrow">
+        <button id="open" class="full">Open image…</button>
+      </div>
+      <input type="file" id="file" accept="image/*" hidden>
+      <div class="hint">or drag &amp; drop · paste from clipboard (Ctrl/Cmd+V)</div>
+    </div>
+
+    <div class="group" id="adjust" hidden>
+      <h3>Adjust</h3>
+      <div class="ctrl"><label>Brightness <span class="val" id="v-bri">100%</span></label>
+        <input type="range" id="bri" min="0" max="200" value="100"></div>
+      <div class="ctrl"><label>Contrast <span class="val" id="v-con">100%</span></label>
+        <input type="range" id="con" min="0" max="200" value="100"></div>
+      <div class="ctrl"><label>Saturation <span class="val" id="v-sat">100%</span></label>
+        <input type="range" id="sat" min="0" max="300" value="100"></div>
+      <div class="ctrl"><label>Hue <span class="val" id="v-hue">0°</span></label>
+        <input type="range" id="hue" min="0" max="360" value="0"></div>
+      <div class="ctrl"><label>Blur <span class="val" id="v-blur">0px</span></label>
+        <input type="range" id="blur" min="0" max="20" step="0.5" value="0"></div>
+      <div class="ctrl"><label>Grayscale <span class="val" id="v-gray">0%</span></label>
+        <input type="range" id="gray" min="0" max="100" value="0"></div>
+      <div class="ctrl"><label>Sepia <span class="val" id="v-sep">0%</span></label>
+        <input type="range" id="sep" min="0" max="100" value="0"></div>
+      <div class="ctrl"><label>Invert <span class="val" id="v-inv">0%</span></label>
+        <input type="range" id="inv" min="0" max="100" value="0"></div>
+      <div class="btnrow"><button id="apply" class="full">Bake adjustments in</button></div>
+      <div class="hint">Sliders preview live and are non-destructive until you bake them.</div>
+    </div>
+
+    <div class="group" id="transform" hidden>
+      <h3>Transform</h3>
+      <div class="btnrow grid4">
+        <button id="rotL">⟲ Rotate −90°</button>
+        <button id="rotR">⟳ Rotate +90°</button>
+        <button id="flipH">⇆ Flip H</button>
+        <button id="flipV">⇅ Flip V</button>
+      </div>
+      <div class="btnrow" style="margin-top:8px">
+        <button id="cropStart" class="full">Crop…</button>
+      </div>
+      <div class="btnrow" id="cropActions" hidden style="margin-top:8px">
+        <button id="cropApply" class="primary">Apply crop</button>
+        <button id="cropCancel">Cancel</button>
+      </div>
+    </div>
+
+    <div class="group" id="resizeg" hidden>
+      <h3>Resize</h3>
+      <div class="ctrl"><label>Width <span class="val" id="v-w">—</span></label>
+        <input type="range" id="scale" min="5" max="100" value="100">
+        <div class="hint" id="dims">—</div>
+      </div>
+    </div>
+
+    <div class="group" id="historyg" hidden>
+      <h3>History</h3>
+      <div class="btnrow grid4">
+        <button id="undo" disabled>↶ Undo</button>
+        <button id="redo" disabled>↷ Redo</button>
+        <button id="reset">Reset all</button>
+        <button id="clear">Close image</button>
+      </div>
+    </div>
+
+    <div class="group" id="exportg" hidden>
+      <h3>Export</h3>
+      <select id="fmt">
+        <option value="image/png">PNG (lossless)</option>
+        <option value="image/jpeg">JPEG</option>
+        <option value="image/webp">WebP</option>
+      </select>
+      <div class="ctrl" id="qrow" hidden style="margin-top:8px">
+        <label>Quality <span class="val" id="v-q">92%</span></label>
+        <input type="range" id="q" min="10" max="100" value="92">
+      </div>
+      <div class="btnrow" style="margin-top:8px"><button id="save" class="primary full">Download</button></div>
+    </div>
+  </aside>
+
+  <div class="stage" id="stage">
+    <div class="dropzone" id="dropzone">
+      <h2>Drop an image here</h2>
+      <p>or <a href="#" id="openLink">choose a file</a> · paste with Ctrl/Cmd+V<br>
+      Nothing is uploaded. Everything happens on your device.</p>
+    </div>
+    <canvas id="canvas" hidden></canvas>
+    <div class="crop-overlay" id="cropBox" hidden></div>
+  </div>
+</div>
+
+<footer>
+  <span>Public domain (CC0). No analytics, no cookies, no upload.</span>
+  <span><a href="https://github.com/lordbasilaiassistant-sudo/Abundance">Source on GitHub</a></span>
+  <span><a href="../../index.html">Abundance — the world already produces enough.</a></span>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const canvas = $('canvas'), ctx = canvas.getContext('2d', {willReadFrequently:false});
+  const stage = $('stage'), dropzone = $('dropzone');
+
+  // committed = baseline bitmap (an offscreen canvas). adjustments preview on top.
+  let committed = document.createElement('canvas');
+  let cctx = committed.getContext('2d');
+  let undoStack = [], redoStack = [];
+  let hasImage = false;
+
+  const F = { bri:'bri', con:'con', sat:'sat', hue:'hue', blur:'blur', gray:'gray', sep:'sep', inv:'inv' };
+  const defaults = { bri:100, con:100, sat:100, hue:0, blur:0, gray:0, sep:0, inv:0 };
+  let adj = Object.assign({}, defaults);
+
+  function filterString(a){
+    return `brightness(${a.bri}%) contrast(${a.con}%) saturate(${a.sat}%) `+
+           `hue-rotate(${a.hue}deg) blur(${a.blur}px) grayscale(${a.gray}%) `+
+           `sepia(${a.sep}%) invert(${a.inv}%)`;
+  }
+
+  // Render committed -> visible canvas with current (pending) adjustments.
+  function render(){
+    canvas.width = committed.width; canvas.height = committed.height;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.filter = filterString(adj);
+    ctx.drawImage(committed,0,0);
+    ctx.filter = 'none';
+    updateScaleLabel();
+  }
+
+  function pushUndo(){
+    const snap = document.createElement('canvas');
+    snap.width = committed.width; snap.height = committed.height;
+    snap.getContext('2d').drawImage(committed,0,0);
+    undoStack.push(snap);
+    if(undoStack.length>40) undoStack.shift();
+    redoStack = [];
+    syncHistory();
+  }
+  function restore(snap){
+    committed = snap; cctx = committed.getContext('2d');
+  }
+  function syncHistory(){ $('undo').disabled = !undoStack.length; $('redo').disabled = !redoStack.length; }
+
+  function setImage(img){
+    committed = document.createElement('canvas');
+    committed.width = img.width || img.naturalWidth;
+    committed.height = img.height || img.naturalHeight;
+    cctx = committed.getContext('2d');
+    cctx.drawImage(img,0,0);
+    undoStack = []; redoStack = []; syncHistory();
+    adj = Object.assign({}, defaults); syncSliders();
+    hasImage = true;
+    dropzone.hidden = true; canvas.hidden = false;
+    ['adjust','transform','resizeg','historyg','exportg'].forEach(g=>$(g).hidden=false);
+    $('scale').value = 100;
+    render();
+  }
+
+  // ---------- file loading ----------
+  function loadFile(file){
+    if(!file || !file.type.startsWith('image/')) return;
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = ()=>{ setImage(img); URL.revokeObjectURL(url); };
+    img.onerror = ()=>{ alert('Could not read that image.'); URL.revokeObjectURL(url); };
+    img.src = url;
+  }
+  $('file').addEventListener('change', e=>loadFile(e.target.files[0]));
+  $('open').addEventListener('click', ()=>$('file').click());
+  $('openLink').addEventListener('click', e=>{e.preventDefault();$('file').click();});
+
+  ;['dragenter','dragover'].forEach(ev=>stage.addEventListener(ev,e=>{
+    e.preventDefault(); dropzone.classList.add('drag');
+  }));
+  ;['dragleave','drop'].forEach(ev=>stage.addEventListener(ev,e=>{
+    e.preventDefault(); dropzone.classList.remove('drag');
+  }));
+  stage.addEventListener('drop', e=>{ if(e.dataTransfer.files.length) loadFile(e.dataTransfer.files[0]); });
+  window.addEventListener('paste', e=>{
+    const items = e.clipboardData && e.clipboardData.items;
+    if(!items) return;
+    for(const it of items){ if(it.type.startsWith('image/')){ loadFile(it.getAsFile()); break; } }
+  });
+
+  // ---------- adjustment sliders ----------
+  const sliderMap = [
+    ['bri','v-bri','%'],['con','v-con','%'],['sat','v-sat','%'],['hue','v-hue','°'],
+    ['blur','v-blur','px'],['gray','v-gray','%'],['sep','v-sep','%'],['inv','v-inv','%']
+  ];
+  function syncSliders(){
+    sliderMap.forEach(([id,lab,unit])=>{ $(id).value = adj[id]; $(lab).textContent = adj[id]+unit; });
+  }
+  sliderMap.forEach(([id,lab,unit])=>{
+    $(id).addEventListener('input', ()=>{
+      adj[id] = parseFloat($(id).value); $(lab).textContent = adj[id]+unit; render();
+    });
+  });
+  $('apply').addEventListener('click', ()=>{
+    if(JSON.stringify(adj)===JSON.stringify(defaults)) return;
+    pushUndo();
+    const baked = document.createElement('canvas');
+    baked.width = committed.width; baked.height = committed.height;
+    const bx = baked.getContext('2d');
+    bx.filter = filterString(adj); bx.drawImage(committed,0,0);
+    restore(baked);
+    adj = Object.assign({}, defaults); syncSliders(); render();
+  });
+
+  // ---------- transforms ----------
+  function bakePendingIfAny(){
+    if(JSON.stringify(adj)!==JSON.stringify(defaults)) $('apply').click();
+  }
+  function rotate(deg){
+    bakePendingIfAny(); pushUndo();
+    const w=committed.width,h=committed.height;
+    const out=document.createElement('canvas');
+    out.width = deg%180===0?w:h; out.height = deg%180===0?h:w;
+    const o=out.getContext('2d');
+    o.translate(out.width/2,out.height/2); o.rotate(deg*Math.PI/180);
+    o.drawImage(committed,-w/2,-h/2);
+    restore(out); render();
+  }
+  function flip(h){
+    bakePendingIfAny(); pushUndo();
+    const out=document.createElement('canvas'); out.width=committed.width; out.height=committed.height;
+    const o=out.getContext('2d');
+    o.translate(h?out.width:0, h?0:out.height); o.scale(h?-1:1, h?1:-1);
+    o.drawImage(committed,0,0); restore(out); render();
+  }
+  $('rotL').onclick=()=>rotate(-90); $('rotR').onclick=()=>rotate(90);
+  $('flipH').onclick=()=>flip(true); $('flipV').onclick=()=>flip(false);
+
+  // ---------- crop ----------
+  const cropBox=$('cropBox'); let cropping=false, cropStart=null, cropRect=null;
+  function canvasRectToDisplay(r){
+    const cb=canvas.getBoundingClientRect(), sb=stage.getBoundingClientRect();
+    const sx=cb.width/canvas.width, sy=cb.height/canvas.height;
+    return { left:(cb.left-sb.left)+r.x*sx, top:(cb.top-sb.top)+r.y*sy, width:r.w*sx, height:r.h*sy };
+  }
+  function showCropBox(){
+    if(!cropRect){cropBox.hidden=true;return;}
+    const d=canvasRectToDisplay(cropRect);
+    cropBox.style.left=d.left+'px'; cropBox.style.top=d.top+'px';
+    cropBox.style.width=d.width+'px'; cropBox.style.height=d.height+'px'; cropBox.hidden=false;
+  }
+  function evToCanvas(e){
+    const cb=canvas.getBoundingClientRect();
+    const x=(e.clientX-cb.left)/cb.width*canvas.width;
+    const y=(e.clientY-cb.top)/cb.height*canvas.height;
+    return { x:Math.max(0,Math.min(canvas.width,x)), y:Math.max(0,Math.min(canvas.height,y)) };
+  }
+  $('cropStart').onclick=()=>{
+    cropping=true; cropRect=null; cropBox.hidden=true;
+    $('cropActions').hidden=false; canvas.style.cursor='crosshair';
+  };
+  $('cropCancel').onclick=()=>{ cropping=false; cropRect=null; cropBox.hidden=true;
+    $('cropActions').hidden=true; canvas.style.cursor='default'; };
+  $('cropApply').onclick=()=>{
+    if(!cropRect||cropRect.w<2||cropRect.h<2){ $('cropCancel').click(); return; }
+    pushUndo();
+    const out=document.createElement('canvas'); out.width=Math.round(cropRect.w); out.height=Math.round(cropRect.h);
+    out.getContext('2d').drawImage(committed, cropRect.x,cropRect.y,cropRect.w,cropRect.h, 0,0,cropRect.w,cropRect.h);
+    restore(out); cropping=false; cropRect=null; cropBox.hidden=true;
+    $('cropActions').hidden=true; canvas.style.cursor='default'; render();
+  };
+  canvas.addEventListener('pointerdown', e=>{
+    if(!cropping) return; canvas.setPointerCapture(e.pointerId);
+    cropStart=evToCanvas(e); cropRect={x:cropStart.x,y:cropStart.y,w:0,h:0};
+  });
+  canvas.addEventListener('pointermove', e=>{
+    if(!cropping||!cropStart) return;
+    const p=evToCanvas(e);
+    cropRect={ x:Math.min(p.x,cropStart.x), y:Math.min(p.y,cropStart.y),
+      w:Math.abs(p.x-cropStart.x), h:Math.abs(p.y-cropStart.y) };
+    showCropBox();
+  });
+  canvas.addEventListener('pointerup', ()=>{ cropStart=null; });
+  window.addEventListener('resize', ()=>{ if(cropping&&cropRect) showCropBox(); });
+
+  // ---------- resize (export scale) ----------
+  function updateScaleLabel(){
+    const s=parseInt($('scale').value,10)/100;
+    const w=Math.max(1,Math.round(committed.width*s)), h=Math.max(1,Math.round(committed.height*s));
+    $('v-w').textContent=s*100+'%'; $('dims').textContent=`${w} × ${h} px (source ${committed.width} × ${committed.height})`;
+  }
+  $('scale').addEventListener('input', updateScaleLabel);
+
+  // ---------- history ----------
+  $('undo').onclick=()=>{ if(!undoStack.length) return;
+    const cur=document.createElement('canvas'); cur.width=committed.width; cur.height=committed.height;
+    cur.getContext('2d').drawImage(committed,0,0); redoStack.push(cur);
+    restore(undoStack.pop()); adj=Object.assign({},defaults); syncSliders(); syncHistory(); render(); };
+  $('redo').onclick=()=>{ if(!redoStack.length) return;
+    const cur=document.createElement('canvas'); cur.width=committed.width; cur.height=committed.height;
+    cur.getContext('2d').drawImage(committed,0,0); undoStack.push(cur);
+    restore(redoStack.pop()); adj=Object.assign({},defaults); syncSliders(); syncHistory(); render(); };
+  $('reset').onclick=()=>{ adj=Object.assign({},defaults); syncSliders(); render(); };
+  $('clear').onclick=()=>{ if(!confirm('Close this image? Unsaved edits are lost.')) return;
+    hasImage=false; dropzone.hidden=false; canvas.hidden=true;
+    ['adjust','transform','resizeg','historyg','exportg'].forEach(g=>$(g).hidden=true);
+    $('file').value=''; };
+
+  // ---------- export ----------
+  $('fmt').addEventListener('change', ()=>{ $('qrow').hidden = $('fmt').value==='image/png'; });
+  $('q').addEventListener('input', ()=>$('v-q').textContent=$('q').value+'%');
+  $('save').onclick=()=>{
+    bakePendingIfAny();
+    const s=parseInt($('scale').value,10)/100;
+    const out=document.createElement('canvas');
+    out.width=Math.max(1,Math.round(committed.width*s)); out.height=Math.max(1,Math.round(committed.height*s));
+    const o=out.getContext('2d'); o.imageSmoothingQuality='high';
+    o.drawImage(committed,0,0,out.width,out.height);
+    const fmt=$('fmt').value, q=parseInt($('q').value,10)/100;
+    out.toBlob(blob=>{
+      if(!blob){ alert('Export failed (format may be unsupported in this browser).'); return; }
+      const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+      const ext=fmt.split('/')[1].replace('jpeg','jpg');
+      a.download='edited.'+ext; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+    }, fmt, fmt==='image/png'?undefined:q);
+  };
+
+  // keyboard
+  window.addEventListener('keydown', e=>{
+    if(!hasImage) return;
+    const mod=e.ctrlKey||e.metaKey;
+    if(mod&&e.key.toLowerCase()==='z'&&!e.shiftKey){ e.preventDefault(); $('undo').click(); }
+    else if(mod&&(e.key.toLowerCase()==='y'||(e.key.toLowerCase()==='z'&&e.shiftKey))){ e.preventDefault(); $('redo').click(); }
+    else if(mod&&e.key.toLowerCase()==='s'){ e.preventDefault(); $('save').click(); }
+  });
+})();
+</script>
+</body>
+</html>
