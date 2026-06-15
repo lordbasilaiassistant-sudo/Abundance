@@ -9,6 +9,10 @@ The shorter, list-form bibliography lives at the project root as [`bibliography.
 | File | What it covers |
 |---|---|
 | [`historical-context.md`](historical-context.md) | Anthropological and historical sources supporting § 8 of the main page: Lee on Ju/'hoansi work hours, Wiessner on firelight talk, Ekirch + Wehr on segmented sleep, Conard on the Hohle Fels flute, Larsen on bioarchaeology of agriculture. Includes the substantial revision to Lee's numbers and the Sahlins / Suzman debate. |
+| [`sen-entitlement.md`](sen-entitlement.md) | Amartya Sen's entitlement theory of famine (*Poverty and Famines*, 1981) — the intellectual core of the site: hunger as a distribution/access failure, not a food-availability decline. Bengal 1943, the democracy thesis (Drèze & Sen 1989), and the Bowbrick / Tauger / Devereux critiques. |
+| [`cash-transfer-evidence.md`](cash-transfer-evidence.md) | The meta-analytic case for cash: Bastagli et al (ODI 2016), Banerjee/Hanna/Kreindler/Olken (2017) on work disincentives, Baird/McIntosh/Özler on conditionality, Haushofer & Shapiro (QJE 2016), and the Egger et al (Econometrica 2022) general-equilibrium multiplier. |
+| [`inequality-and-wealth.md`](inequality-and-wealth.md) | Wealth concentration and its consequences: World Inequality Report 2022, Piketty (2014), Zucman's 2024 G20 billionaire-tax blueprint, Wilkinson & Pickett's *Spirit Level*, with Rognlie's housing-capital critique as counter-evidence. |
+| [`counterarguments.md`](counterarguments.md) | The strongest steelman *against* the project: ecological limits / degrowth (Hickel), aid skepticism (Deaton, Easterly), incentive effects at scale, the local-vs-global non-transportability problem (water), and the Iran inflation lesson. What survives the critiques and what doesn't. |
 
 ## How to add a paper note
 
