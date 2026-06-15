@@ -52,7 +52,9 @@ Abundance/
 ├── countries.html          # per-country drill-down
 ├── case-studies.html       # country-scale precedents
 ├── tools/                  # free, client-side tools (manufactured-scarcity demos)
-│   └── image-editor/       # in-browser image editor — no upload, no account
+│   ├── image-editor/       # in-browser image editor — no upload, no account
+│   ├── image-compressor/   # batch compress/resize/convert — no upload
+│   └── password/           # offline password generator (cryptographic RNG)
 ├── style.css               # imports styles/*.css — don't edit directly
 │
 ├── styles/                 # MODULAR CSS — edit here

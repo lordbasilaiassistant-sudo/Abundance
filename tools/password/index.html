@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free password generator — offline, nothing leaves your device · Abundance</title>
+<meta name="description" content="Generate strong, random passwords entirely offline in your browser using the cryptographic RNG. Shows real entropy and crack-time. No account, no upload, no tracking — nothing leaves your device. Free and public domain.">
+<meta name="author" content="Eli Vargas (lordbasilaiassistant-sudo)">
+<meta name="theme-color" content="#0a0b0e">
+<link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/tools/password/">
+<link rel="icon" type="image/png" href="../../favicon.png">
+<meta property="og:title" content="Free password generator — offline, nothing leaves your device.">
+<meta property="og:description" content="Strong random passwords from the browser's cryptographic RNG, with real entropy and crack-time. No account, no upload, no tracking.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/tools/password/">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<style>
+:root{--bg:#0a0b0e;--bg2:#13151a;--bg3:#1c1f26;--fg:#f0f3f7;--fg2:#b5bdca;--fg3:#717885;
+  --line:#1f232c;--line2:#2b3140;--accent:#6ee0b0;--accent2:#4abf8a;--warn:#f8c574;--danger:#ef8b8b;--link:#9fc1ff;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.5}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+header.top{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header.top .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+header.top h1{font-family:var(--serif);font-size:21px;margin:0;font-weight:600}
+header.top .spacer{flex:1}.back{font-size:13px;color:var(--fg3)}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line2);border-radius:999px;padding:3px 9px}
+.thesis{padding:10px 22px;background:var(--bg2);border-bottom:1px solid var(--line);font-size:13px;color:var(--fg2)}
+.thesis strong{color:var(--fg)}
+.wrap{max-width:760px;margin:0 auto;padding:22px}
+.out{display:flex;gap:10px;align-items:center;background:var(--bg2);border:1px solid var(--line2);border-radius:10px;padding:16px;margin-bottom:6px}
+.out .pw{font-family:var(--mono);font-size:22px;word-break:break-all;flex:1;color:var(--fg)}
+.meter{height:6px;border-radius:3px;background:var(--bg3);overflow:hidden;margin:8px 0 4px}
+.meter > div{height:100%;width:0;transition:width .2s,background .2s}
+.strength{font-family:var(--mono);font-size:12px;color:var(--fg2)}
+.controls{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px;margin-top:18px}
+.ctrl{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;font-size:14px}
+.ctrl label{color:var(--fg2)}
+input[type=range]{accent-color:var(--accent);width:55%}
+input[type=checkbox]{accent-color:var(--accent);width:17px;height:17px}
+.val{font-family:var(--mono);color:var(--fg)}
+button{font-family:var(--sans);font-size:14px;background:var(--bg3);color:var(--fg);border:1px solid var(--line2);border-radius:7px;padding:9px 14px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);color:#06281c;border-color:var(--accent);font-weight:600}
+button.primary:hover{background:var(--accent2)}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.extra{margin-top:16px}
+.extra .out{padding:10px 14px}.extra .pw{font-size:16px}
+.copied{color:var(--accent);font-family:var(--mono);font-size:12px}
+footer{padding:14px 22px;border-top:1px solid var(--line);font-size:12px;color:var(--fg3);display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+.note{font-size:12px;color:var(--fg3);margin-top:14px}
+</style>
+</head>
+<body>
+<header class="top">
+  <span class="eyebrow">Abundance · free tools</span>
+  <h1>Password generator</h1>
+  <span class="pill">offline · cryptographic RNG</span>
+  <span class="spacer"></span>
+  <span class="back">← <a href="../">free tools</a> · <a href="../../index.html">the arithmetic</a></span>
+</header>
+<div class="thesis">
+  <strong>A safe tool that asks nothing of you.</strong> Passwords are generated on your device with the
+  browser's cryptographic random-number generator (<code>crypto.getRandomValues</code>). Nothing is sent
+  anywhere, stored, or logged. <a href="../../index.html#scarcity">Why this exists →</a>
+</div>
+
+<div class="wrap">
+  <div class="out">
+    <span class="pw" id="pw">…</span>
+    <button id="copy">Copy</button>
+    <button id="regen" class="primary">↻</button>
+  </div>
+  <div class="meter"><div id="bar"></div></div>
+  <div class="strength" id="strength"></div>
+
+  <div class="controls">
+    <div class="ctrl"><label>Length <span class="val" id="lenv">20</span></label>
+      <input type="range" id="len" min="6" max="64" value="20"></div>
+    <div class="ctrl"><label for="lc">Lowercase a–z</label><input type="checkbox" id="lc" checked></div>
+    <div class="ctrl"><label for="uc">Uppercase A–Z</label><input type="checkbox" id="uc" checked></div>
+    <div class="ctrl"><label for="dg">Digits 0–9</label><input type="checkbox" id="dg" checked></div>
+    <div class="ctrl"><label for="sy">Symbols !@#$…</label><input type="checkbox" id="sy" checked></div>
+    <div class="ctrl"><label for="amb">Exclude look-alikes (I l 1 O 0)</label><input type="checkbox" id="amb"></div>
+    <div class="btnrow">
+      <button id="gen" class="primary">Generate</button>
+      <button id="gen5">Generate 5 more</button>
+    </div>
+  </div>
+
+  <div class="extra" id="extra"></div>
+
+  <p class="note">
+    Entropy is computed as length × log₂(character-set size). Crack-time assumes a fast offline attacker
+    making 100 billion guesses per second against a well-built password (not a reused or dictionary one).
+    Generate locally, copy, paste into your password manager — this page keeps nothing.
+  </p>
+</div>
+
+<footer>
+  <span>Public domain (CC0). No tracking, no telemetry.</span>
+  <span><a href="https://github.com/lordbasilaiassistant-sudo/Abundance">Source</a></span>
+  <span><a href="../../letter.html">An open letter →</a></span>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(id){return document.getElementById(id);};
+  var SETS={ lc:"abcdefghijklmnopqrstuvwxyz", uc:"ABCDEFGHIJKLMNOPQRSTUVWXYZ", dg:"0123456789",
+             sy:"!@#$%^&*()-_=+[]{};:,.?/" };
+  var AMBIG=/[Il1O0]/g;
+
+  function charset(){
+    var s="";
+    if($('lc').checked) s+=SETS.lc;
+    if($('uc').checked) s+=SETS.uc;
+    if($('dg').checked) s+=SETS.dg;
+    if($('sy').checked) s+=SETS.sy;
+    if($('amb').checked) s=s.replace(AMBIG,"");
+    return s;
+  }
+  // Unbiased random index in [0,n) via rejection sampling on a 32-bit value.
+  function randIndex(n){
+    var max=Math.floor(0xFFFFFFFF/n)*n, x, a=new Uint32Array(1);
+    do { crypto.getRandomValues(a); x=a[0]; } while(x>=max);
+    return x % n;
+  }
+  function generate(len){
+    var cs=charset();
+    if(!cs) return null;
+    var out="";
+    for(var i=0;i<len;i++) out+=cs.charAt(randIndex(cs.length));
+    return out;
+  }
+  function entropyBits(len){ var n=charset().length; return n? len*Math.log2(n) : 0; }
+  function humanTime(bits){
+    var seconds=Math.pow(2,bits)/1e11; // 1e11 guesses/sec
+    if(seconds<1) return "instantly";
+    var units=[["second",1],["minute",60],["hour",3600],["day",86400],["year",31557600],
+               ["century",3155760000]];
+    if(seconds>3155760000*1e6) return "longer than the age of the universe";
+    for(var i=units.length-1;i>=0;i--){ if(seconds>=units[i][1]){ var v=seconds/units[i][1];
+      return (v>=1000? Math.round(v).toLocaleString() : v.toFixed(v<10?1:0))+" "+units[i][0]+(Math.round(v)===1?"":"s"); } }
+    return "<1 second";
+  }
+  function rate(bits){
+    if(bits<40) return ["weak", "#ef8b8b", 25];
+    if(bits<60) return ["fair", "#f8c574", 50];
+    if(bits<80) return ["strong", "#6ee0b0", 75];
+    return ["very strong", "#6ee0b0", 100];
+  }
+  function refresh(){
+    var len=parseInt($('len').value,10); $('lenv').textContent=len;
+    var pw=generate(len);
+    if(pw===null){ $('pw').textContent="(pick at least one character set)"; $('bar').style.width="0"; $('strength').textContent=""; return; }
+    $('pw').textContent=pw;
+    var bits=entropyBits(len), r=rate(bits);
+    $('bar').style.width=r[2]+"%"; $('bar').style.background=r[1];
+    $('strength').textContent=Math.round(bits)+" bits · "+r[0]+" · ~"+humanTime(bits)+" to crack offline";
+  }
+  function copy(text,el){
+    function ok(){ if(el){ var s=document.createElement('span'); s.className='copied'; s.textContent=' ✓'; el.appendChild(s); setTimeout(function(){s.remove();},1500);} }
+    if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok,function(){prompt('Copy:',text);});
+    else prompt('Copy:',text);
+  }
+
+  $('len').addEventListener('input',refresh);
+  ['lc','uc','dg','sy','amb'].forEach(function(id){ $(id).addEventListener('change',refresh); });
+  $('gen').addEventListener('click',refresh);
+  $('regen').addEventListener('click',refresh);
+  $('copy').addEventListener('click',function(){ copy($('pw').textContent,this); });
+  $('gen5').addEventListener('click',function(){
+    var len=parseInt($('len').value,10), html="";
+    for(var i=0;i<5;i++){ var p=generate(len); if(p===null) break;
+      html+='<div class="out"><span class="pw" data-pw="'+i+'">'+p+'</span><button data-copy="'+i+'">Copy</button></div>'; }
+    $('extra').innerHTML=html;
+    Array.prototype.forEach.call($('extra').querySelectorAll('[data-copy]'),function(b){
+      b.addEventListener('click',function(){ copy($('extra').querySelector('[data-pw="'+b.getAttribute('data-copy')+'"]').textContent,b.parentNode); });
+    });
+  });
+  refresh();
+})();
+</script>
+</body>
+</html>

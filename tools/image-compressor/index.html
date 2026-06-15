@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free image compressor &amp; converter — in your browser, no upload · Abundance</title>
+<meta name="description" content="Compress, resize and convert images (JPEG, WebP, PNG) entirely in your browser. Batch, with before/after sizes. No account, no upload, no tracking — your images never leave your device. Free and public domain.">
+<meta name="author" content="Eli Vargas (lordbasilaiassistant-sudo)">
+<meta name="theme-color" content="#0a0b0e">
+<link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/tools/image-compressor/">
+<link rel="icon" type="image/png" href="../../favicon.png">
+<meta property="og:title" content="Free image compressor &amp; converter — never uploads your photo.">
+<meta property="og:description" content="Batch compress, resize, and convert to JPEG/WebP/PNG in your browser. No account, no upload, no tracking. The thing that's metered behind sign-ups, given away.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/tools/image-compressor/">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<style>
+:root{--bg:#0a0b0e;--bg2:#13151a;--bg3:#1c1f26;--fg:#f0f3f7;--fg2:#b5bdca;--fg3:#717885;
+  --line:#1f232c;--line2:#2b3140;--accent:#6ee0b0;--accent2:#4abf8a;--warn:#f8c574;--danger:#ef8b8b;--link:#9fc1ff;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.5}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+header.top{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header.top .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+header.top h1{font-family:var(--serif);font-size:21px;margin:0;font-weight:600}
+header.top .spacer{flex:1}.back{font-size:13px;color:var(--fg3)}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line2);border-radius:999px;padding:3px 9px}
+.thesis{padding:10px 22px;background:var(--bg2);border-bottom:1px solid var(--line);font-size:13px;color:var(--fg2)}
+.thesis strong{color:var(--fg)}
+.wrap{max-width:980px;margin:0 auto;padding:22px}
+.controls{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-end;background:var(--bg2);border:1px solid var(--line);
+  border-radius:10px;padding:16px;margin-bottom:18px}
+.field{display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--fg2)}
+.field label{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3)}
+.field .v{font-family:var(--mono);color:var(--fg)}
+select,input[type=number]{background:var(--bg3);color:var(--fg);border:1px solid var(--line2);border-radius:7px;padding:7px}
+input[type=range]{accent-color:var(--accent);width:160px}
+button{font-family:var(--sans);font-size:13px;background:var(--bg3);color:var(--fg);border:1px solid var(--line2);
+  border-radius:7px;padding:9px 14px;cursor:pointer}
+button:hover{border-color:var(--accent)}button:disabled{opacity:.4;cursor:not-allowed}
+button.primary{background:var(--accent);color:#06281c;border-color:var(--accent);font-weight:600}
+button.primary:hover{background:var(--accent2)}
+.dropzone{border:2px dashed var(--line2);border-radius:10px;padding:42px 20px;text-align:center;color:var(--fg3);cursor:pointer}
+.dropzone.drag{border-color:var(--accent);background:rgba(110,224,176,.05);color:var(--fg2)}
+.dropzone h2{font-family:var(--serif);color:var(--fg);margin:.2em 0 .3em}
+.item{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;background:var(--bg2);
+  border:1px solid var(--line);border-radius:9px;padding:12px;margin-top:10px}
+.item img{width:64px;height:64px;object-fit:cover;border-radius:6px;background:var(--bg3)}
+.item .name{font-size:13px;word-break:break-all}
+.item .stat{font-family:var(--mono);font-size:12px;color:var(--fg2);margin-top:3px}
+.save{font-weight:600}.save.good{color:var(--accent)}.save.bad{color:var(--warn)}
+.row2{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:16px 0}
+footer{padding:14px 22px;border-top:1px solid var(--line);font-size:12px;color:var(--fg3);display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+.hint{font-size:12px;color:var(--fg3)}
+</style>
+</head>
+<body>
+<header class="top">
+  <span class="eyebrow">Abundance · free tools</span>
+  <h1>Image compressor &amp; converter</h1>
+  <span class="pill">no upload · no account</span>
+  <span class="spacer"></span>
+  <span class="back">← <a href="../">free tools</a> · <a href="../../index.html">the arithmetic</a></span>
+</header>
+<div class="thesis">
+  <strong>Manufactured scarcity, refuted in code.</strong> Shrink, resize, and convert images right here —
+  batch, with before/after sizes. The work happens on your device with the Canvas API; nothing is uploaded.
+  <a href="../../index.html#scarcity">Why this exists →</a>
+</div>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="field">
+      <label>Format</label>
+      <select id="fmt">
+        <option value="image/jpeg">JPEG</option>
+        <option value="image/webp" selected>WebP (smaller)</option>
+        <option value="image/png">PNG (lossless)</option>
+      </select>
+    </div>
+    <div class="field" id="qfield">
+      <label>Quality <span class="v" id="qv">80%</span></label>
+      <input type="range" id="q" min="10" max="100" value="80">
+    </div>
+    <div class="field">
+      <label>Max width/height (px, 0 = keep)</label>
+      <input type="number" id="maxdim" min="0" step="50" value="0" style="width:120px">
+    </div>
+    <button id="process" class="primary" disabled>Compress all</button>
+    <button id="dlall" disabled>Download all</button>
+    <button id="clear" disabled>Clear</button>
+  </div>
+
+  <div class="dropzone" id="dropzone">
+    <h2>Drop images here</h2>
+    <p>or <span style="color:var(--link)">click to choose files</span> · batch supported · nothing is uploaded</p>
+    <input type="file" id="file" accept="image/*" multiple hidden>
+  </div>
+
+  <div id="list"></div>
+  <p class="hint" id="totals" style="margin-top:14px"></p>
+</div>
+
+<footer>
+  <span>Public domain (CC0). No tracking, no upload.</span>
+  <span><a href="https://github.com/lordbasilaiassistant-sudo/Abundance">Source</a></span>
+  <span><a href="../../letter.html">An open letter →</a></span>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(id){return document.getElementById(id);};
+  var items=[]; // {file,name,origBytes,img,blob,outBytes,url}
+  var dz=$('dropzone'), list=$('list');
+
+  function human(b){ if(b>=1048576) return (b/1048576).toFixed(2)+' MB'; if(b>=1024) return (b/1024).toFixed(1)+' KB'; return b+' B'; }
+  function fmtExt(){ return $('fmt').value.split('/')[1].replace('jpeg','jpg'); }
+
+  $('fmt').addEventListener('change',function(){ $('qfield').style.display = $('fmt').value==='image/png' ? 'none':'flex'; });
+  $('q').addEventListener('input',function(){ $('qv').textContent=$('q').value+'%'; });
+
+  function addFiles(fileList){
+    var arr=Array.prototype.slice.call(fileList).filter(function(f){return f.type.indexOf('image/')===0;});
+    arr.forEach(function(f){
+      var it={file:f,name:f.name,origBytes:f.size,img:null,blob:null,outBytes:0,url:null};
+      items.push(it);
+      var img=new Image(); var u=URL.createObjectURL(f);
+      img.onload=function(){ it.img=img; it.w=img.naturalWidth; it.h=img.naturalHeight; render(); };
+      img.src=u;
+    });
+    syncButtons(); render();
+  }
+  function syncButtons(){
+    var has=items.length>0; $('process').disabled=!has; $('clear').disabled=!has;
+    $('dlall').disabled=!items.some(function(i){return i.blob;});
+  }
+
+  function render(){
+    list.innerHTML=items.map(function(it,i){
+      var thumb = it.img ? '<img src="'+it.img.src+'" alt="">' : '<div style="width:64px;height:64px"></div>';
+      var stat='';
+      if(it.blob){
+        var pct=Math.round((1-it.outBytes/it.origBytes)*100);
+        var cls=pct>0?'good':'bad';
+        stat='<div class="stat">'+human(it.origBytes)+' → <span class="save '+cls+'">'+human(it.outBytes)+' ('+(pct>=0?'−'+pct:'+'+(-pct))+'%)</span></div>';
+      } else {
+        stat='<div class="stat">'+human(it.origBytes)+(it.w?(' · '+it.w+'×'+it.h):'')+'</div>';
+      }
+      var btn = it.blob ? '<button data-dl="'+i+'">Download</button>' : '';
+      return '<div class="item">'+thumb+'<div><div class="name">'+it.name+'</div>'+stat+'</div><div>'+btn+'</div></div>';
+    }).join('');
+    Array.prototype.forEach.call(list.querySelectorAll('[data-dl]'),function(b){
+      b.addEventListener('click',function(){ download(items[+b.getAttribute('data-dl')]); });
+    });
+    var totalIn=items.reduce(function(s,i){return s+i.origBytes;},0);
+    var done=items.filter(function(i){return i.blob;});
+    if(done.length){
+      var totalOut=done.reduce(function(s,i){return s+i.outBytes;},0);
+      var inOfDone=done.reduce(function(s,i){return s+i.origBytes;},0);
+      var pct=Math.round((1-totalOut/inOfDone)*100);
+      $('totals').textContent=done.length+' of '+items.length+' processed · '+human(inOfDone)+' → '+human(totalOut)+' ('+(pct>=0?'saved '+pct:'grew '+(-pct))+'%)';
+    } else { $('totals').textContent = items.length ? (items.length+' image(s) ready') : ''; }
+    syncButtons();
+  }
+
+  function processOne(it){
+    return new Promise(function(resolve){
+      if(!it.img){ resolve(); return; }
+      var maxd=parseInt($('maxdim').value,10)||0;
+      var w=it.w, h=it.h;
+      if(maxd>0 && Math.max(w,h)>maxd){ var s=maxd/Math.max(w,h); w=Math.round(w*s); h=Math.round(h*s); }
+      var c=document.createElement('canvas'); c.width=w; c.height=h;
+      var ctx=c.getContext('2d'); ctx.imageSmoothingQuality='high'; ctx.drawImage(it.img,0,0,w,h);
+      var fmt=$('fmt').value, q=parseInt($('q').value,10)/100;
+      c.toBlob(function(blob){
+        if(blob){ if(it.url) URL.revokeObjectURL(it.url); it.blob=blob; it.outBytes=blob.size; it.url=URL.createObjectURL(blob); }
+        resolve();
+      }, fmt, fmt==='image/png'?undefined:q);
+    });
+  }
+  $('process').addEventListener('click',async function(){
+    $('process').disabled=true; $('process').textContent='Compressing…';
+    for(var i=0;i<items.length;i++){ await processOne(items[i]); render(); }
+    $('process').textContent='Compress all'; $('process').disabled=false; render();
+  });
+
+  function download(it){
+    if(!it.blob) return;
+    var a=document.createElement('a'); a.href=it.url;
+    var base=it.name.replace(/\.[^.]+$/,''); a.download=base+'.'+fmtExt(); a.click();
+  }
+  $('dlall').addEventListener('click',function(){
+    var done=items.filter(function(i){return i.blob;});
+    done.forEach(function(it,idx){ setTimeout(function(){ download(it); }, idx*250); });
+  });
+  $('clear').addEventListener('click',function(){
+    items.forEach(function(i){ if(i.url) URL.revokeObjectURL(i.url); });
+    items=[]; $('file').value=''; render();
+  });
+
+  dz.addEventListener('click',function(){ $('file').click(); });
+  $('file').addEventListener('change',function(e){ addFiles(e.target.files); });
+  ['dragenter','dragover'].forEach(function(ev){ dz.addEventListener(ev,function(e){ e.preventDefault(); dz.classList.add('drag'); }); });
+  ['dragleave','drop'].forEach(function(ev){ dz.addEventListener(ev,function(e){ e.preventDefault(); dz.classList.remove('drag'); }); });
+  dz.addEventListener('drop',function(e){ if(e.dataTransfer.files.length) addFiles(e.dataTransfer.files); });
+  window.addEventListener('paste',function(e){ if(e.clipboardData&&e.clipboardData.files.length) addFiles(e.clipboardData.files); });
+})();
+</script>
+</body>
+</html>
