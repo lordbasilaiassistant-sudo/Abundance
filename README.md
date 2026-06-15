@@ -48,8 +48,11 @@ The project is intentionally vanilla — static HTML/CSS/JS plus JSON. No framew
 ```
 Abundance/
 ├── index.html              # main page (commented sections)
+├── letter.html             # open letter to whoever can act — the moral close
 ├── countries.html          # per-country drill-down
 ├── case-studies.html       # country-scale precedents
+├── tools/                  # free, client-side tools (manufactured-scarcity demos)
+│   └── image-editor/       # in-browser image editor — no upload, no account
 ├── style.css               # imports styles/*.css — don't edit directly
 │
 ├── styles/                 # MODULAR CSS — edit here
