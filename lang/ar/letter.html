@@ -259,8 +259,51 @@
 </p>
 </section>
 
+<section id="yourshare">
+<h2>6 · ماذا يمكن أن تفعل حصتك</h2>
+<p>من السهل التملّص من تريليونات مجرّدة، فلنجعلها ملموسة وشخصية. حرّك المؤشّر إلى مقياسك أنت. يستخدم الحساب أدناه الأرقام الموثّقة الموجودة أصلًا على هذا الموقع فحسب — فعتبة $3/day تعادل $1,095 للفرد في السنة، ومتوسّط النقص دون الخط نحو $1/day، وكلفة صنع قلم إنسولين عام $0.94.</p>
+<div class="card">
+  <div class="dial">
+    <div class="dial-label">
+      <span class="dial-name">لو استطعت تحريك…</span>
+      <span class="dial-value">$<span id="ls-wealth">5,000,000,000</span></span>
+    </div>
+    <input type="range" id="ls-range" min="6" max="11.4" step="0.01" value="9.7" aria-label="wealth">
+    <div class="dial-note">صافي الثروة أو الأصول التي يمكنك السحب منها (مقياس لوغاريتمي، $1M–$250B)</div>
+  </div>
+  <p style="margin-top:14px">اقتطاع 2% لمرة واحدة من ذلك — وهي النسبة التي <a href="https://gabriel-zucman.eu/files/report-g20.pdf">يقترحها زوكمان حدًّا أدنى سنويًّا</a> على المليارديرات — يساوي <strong class="num" id="ls-two">$100,000,000</strong>. هذا وحده يكفي لـ:</p>
+  <ul>
+    <li><strong id="ls-floor">0</strong> — أشخاص يُرفَعون إلى عتبة $3/day لسنة كاملة</li>
+    <li><strong id="ls-gap">0</strong> — سنوات-فرد تُنتشَل من الفقر المدقع (بسدّ الفجوة)</li>
+    <li><strong id="ls-insulin">0</strong> — أقلام إنسولين عامة، بكلفة إنتاجها</li>
+  </ul>
+  <p class="small" id="ls-collective" style="margin-bottom:0"></p>
+</div>
+<p class="small">هذا هو نفس حساب التحقّق المنطقي الذي في حاسبة الصفحة الرئيسية — إحساس بالمقياس، لا خطة تنفيذ. التنفيذ صعب فعلًا. الادّعاء الوحيد هنا هو أن الموارد ليست هي العائق.</p>
+</section>
+
+<script>
+(function(){
+  var R=document.getElementById("ls-range"); if(!R) return;
+  var FLOOR=1095, GAP=365, INS=0.94, GLOBAL_GAP=1e12;
+  function g(n){ return Math.round(n).toLocaleString("en-US"); }
+  var C="اقتطاعك 2% وحده يساوي {P}% من كامل فجوة الفقر العالمية السنوية البالغة نحو $1 trillion. لا تستطيع سدّها بمفردك — لكن نحو 3,000 شخص في مثل هذا المقياس، مجتمعين بنسبة 2% سنويًّا، يغطّون قرابة ربعها ($200–250B، زوكمان)، كل عام.";
+  function upd(){
+    var w=Math.pow(10,parseFloat(R.value)), two=w*0.02;
+    document.getElementById("ls-wealth").textContent=g(w);
+    document.getElementById("ls-two").textContent="$"+g(two);
+    document.getElementById("ls-floor").textContent=g(two/FLOOR);
+    document.getElementById("ls-gap").textContent=g(two/GAP);
+    document.getElementById("ls-insulin").textContent=g(two/INS);
+    var share=two/GLOBAL_GAP*100;
+    document.getElementById("ls-collective").textContent=C.replace("{P}", share>=0.1?share.toFixed(1):share.toFixed(2));
+  }
+  R.addEventListener("input",upd); upd();
+})();
+</script>
+
 <section>
-<h2>6 · القسمة قد أُنجِزت</h2>
+<h2>7 · القسمة قد أُنجِزت</h2>
 <p>
   هذا كل شيء. أجرينا الحساب كي يكفّ "لا نستطيع" عن كونه حقيقة ويبدأ كونه قرارًا.
   كل ما في هذا الموقع مُلكٌ عام — خُذه، تحقّق منه، حاول دحضه. إن كان رقمٌ خاطئًا،
@@ -282,7 +325,7 @@
 </section>
 
 <section>
-<h2>7 · مرّرها</h2>
+<h2>8 · مرّرها</h2>
 <p>
   إن لامسك أيٌّ من هذا، فأنفع ما يمكنك فعله هو أن تسلّمه إلى من يملك القدرة على
   التحرّك — أو إلى من يحتاج أن يصدّق أنه ممكن. إنه مُلكٌ عام؛ بلا إذن مطلوب، بلا

@@ -246,8 +246,51 @@
 </p>
 </section>
 
+<section id="yourshare">
+<h2>6 · 你那一份能做什么</h2>
+<p>抽象的万亿数字很容易被一挥而过，所以不妨把它落到具体、落到个人身上。把滑块拨到你自己的量级。下面的算术只用到本站已经引用过的数字——$3/day 的底线意味着每人每年 $1,095，线下的平均缺口约为 $1/day，而一支普通胰岛素笔的制造成本是 $0.94。</p>
+<div class="card">
+  <div class="dial">
+    <div class="dial-label">
+      <span class="dial-name">如果你能调动……</span>
+      <span class="dial-value">$<span id="ls-wealth">5,000,000,000</span></span>
+    </div>
+    <input type="range" id="ls-range" min="6" max="11.4" step="0.01" value="9.7" aria-label="wealth">
+    <div class="dial-note">你可以动用的净资产或财产（对数刻度，$1M–$250B）</div>
+  </div>
+  <p style="margin-top:14px">对这笔数额一次性征收 2%——也就是<a href="https://gabriel-zucman.eu/files/report-g20.pdf">Zucman 提议作为亿万富翁年度最低税率的那个比例</a>——为<strong class="num" id="ls-two">$100,000,000</strong>。仅凭这一笔，就足以做到：</p>
+  <ul>
+    <li><strong id="ls-floor">0</strong> — 人，被提升到 $3/day 的底线并维持整整一年</li>
+    <li><strong id="ls-gap">0</strong> — 人·年，被拉出极端贫困（填平缺口）</li>
+    <li><strong id="ls-insulin">0</strong> — 支普通胰岛素笔，按其制造成本计</li>
+  </ul>
+  <p class="small" id="ls-collective" style="margin-bottom:0"></p>
+</div>
+<p class="small">这和主页计算器用的是同一套用来核对量级的算术——给出的是一种规模感，而不是一份落实方案。落实确实很难。这里唯一想说的是：拦在前面的，并不是资源。</p>
+</section>
+
+<script>
+(function(){
+  var R=document.getElementById("ls-range"); if(!R) return;
+  var FLOOR=1095, GAP=365, INS=0.94, GLOBAL_GAP=1e12;
+  function g(n){ return Math.round(n).toLocaleString("en-US"); }
+  var C="你这 2% 单独来看，相当于全球每年约 $1 trillion 贫困缺口的 {P}%。仅靠你一个人无法填平它——但处在这个量级的约 3,000 人，每年共同拿出 2%，就能覆盖其中约四分之一（$200–250B，Zucman），年复一年。";
+  function upd(){
+    var w=Math.pow(10,parseFloat(R.value)), two=w*0.02;
+    document.getElementById("ls-wealth").textContent=g(w);
+    document.getElementById("ls-two").textContent="$"+g(two);
+    document.getElementById("ls-floor").textContent=g(two/FLOOR);
+    document.getElementById("ls-gap").textContent=g(two/GAP);
+    document.getElementById("ls-insulin").textContent=g(two/INS);
+    var share=two/GLOBAL_GAP*100;
+    document.getElementById("ls-collective").textContent=C.replace("{P}", share>=0.1?share.toFixed(1):share.toFixed(2));
+  }
+  R.addEventListener("input",upd); upd();
+})();
+</script>
+
 <section>
-<h2>6 · 这道除法已经做完了</h2>
+<h2>7 · 这道除法已经做完了</h2>
 <p>
   这就是它的全部。我们做了这笔算术，是为了让那个“我们做不到”不再是一个事实，而开始成为
   一个决定。本站上的一切都属于公有领域——拿去吧，去核对它，去试着推翻它。如果某个数字
@@ -269,7 +312,7 @@
 </section>
 
 <section>
-<h2>7 · 把它传下去</h2>
+<h2>8 · 把它传下去</h2>
 <p>
   如果这里有任何一点打动了你，你能做的最有用的事，就是把它交到一个有能力行动的人手里——
   或者交给一个需要相信这件事是可能的人。它属于公有领域；无需许可，无需署名，没有任何

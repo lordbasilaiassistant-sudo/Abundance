@@ -294,8 +294,51 @@
 </p>
 </section>
 
+<section id="yourshare">
+<h2>6 · O que a sua parte poderia fazer</h2>
+<p>Trilhões abstratos são fáceis de ignorar, então torne isso concreto e pessoal. Mova o controle para a sua própria escala. A conta abaixo usa apenas os números já citados neste site — um piso de $3/day equivale a $1,095 por pessoa por ano, a falta média abaixo da linha é de cerca de $1/day, e uma caneta de insulina genérica custa $0.94 para ser fabricada.</p>
+<div class="card">
+  <div class="dial">
+    <div class="dial-label">
+      <span class="dial-name">Se você pudesse movimentar…</span>
+      <span class="dial-value">$<span id="ls-wealth">5,000,000,000</span></span>
+    </div>
+    <input type="range" id="ls-range" min="6" max="11.4" step="0.01" value="9.7" aria-label="wealth">
+    <div class="dial-note">patrimônio líquido ou ativos de que você poderia dispor (escala logarítmica, $1M–$250B)</div>
+  </div>
+  <p style="margin-top:14px">Um único 2% disso — a alíquota que <a href="https://gabriel-zucman.eu/files/report-g20.pdf">Zucman propõe como mínimo anual</a> para bilionários — é <strong class="num" id="ls-two">$100,000,000</strong>. Só isso já basta para:</p>
+  <ul>
+    <li><strong id="ls-floor">0</strong> — pessoas elevadas ao piso de $3/day durante um ano inteiro</li>
+    <li><strong id="ls-gap">0</strong> — anos-pessoa fora da pobreza extrema (fechando a lacuna)</li>
+    <li><strong id="ls-insulin">0</strong> — canetas de insulina genérica, ao seu custo de produção</li>
+  </ul>
+  <p class="small" id="ls-collective" style="margin-bottom:0"></p>
+</div>
+<p class="small">Esta é a mesma conta de verificação de sanidade usada na calculadora da página principal — uma noção de escala, não um plano de execução. A execução é genuinamente difícil. A única afirmação aqui é que os recursos não são o que está no caminho.</p>
+</section>
+
+<script>
+(function(){
+  var R=document.getElementById("ls-range"); if(!R) return;
+  var FLOOR=1095, GAP=365, INS=0.94, GLOBAL_GAP=1e12;
+  function g(n){ return Math.round(n).toLocaleString("en-US"); }
+  var C="Seus 2% sozinhos são {P}% de toda a lacuna global anual de pobreza, de cerca de ~$1 trillion. Você não pode fechá-la sozinho — mas as ~3.000 pessoas nesta escala, juntas a 2% ao ano, cobririam aproximadamente um quarto dela ($200–250B, Zucman), todos os anos.";
+  function upd(){
+    var w=Math.pow(10,parseFloat(R.value)), two=w*0.02;
+    document.getElementById("ls-wealth").textContent=g(w);
+    document.getElementById("ls-two").textContent="$"+g(two);
+    document.getElementById("ls-floor").textContent=g(two/FLOOR);
+    document.getElementById("ls-gap").textContent=g(two/GAP);
+    document.getElementById("ls-insulin").textContent=g(two/INS);
+    var share=two/GLOBAL_GAP*100;
+    document.getElementById("ls-collective").textContent=C.replace("{P}", share>=0.1?share.toFixed(1):share.toFixed(2));
+  }
+  R.addEventListener("input",upd); upd();
+})();
+</script>
+
 <section>
-<h2>6 · A divisão já está feita</h2>
+<h2>7 · A divisão já está feita</h2>
 <p>
   É só isso. Fizemos a aritmética para que o "não podemos" deixasse de ser um
   fato e passasse a ser uma decisão. Tudo neste site é de domínio público —
@@ -321,7 +364,7 @@
 </section>
 
 <section>
-<h2>7 · Repasse</h2>
+<h2>8 · Repasse</h2>
 <p>
   Se algo disto fez sentido para você, a coisa mais útil que você pode fazer é
   entregar isto a alguém com poder para agir — ou a alguém que precise

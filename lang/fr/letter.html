@@ -299,8 +299,51 @@
 </p>
 </section>
 
+<section id="yourshare">
+<h2>6 · Ce que votre part pourrait faire</h2>
+<p>Des milliers de milliards abstraits, on les balaie facilement d’un revers de main ; rendons donc la chose concrète et personnelle. Déplacez le curseur jusqu’à votre propre échelle. Le calcul ci-dessous n’utilise que les chiffres déjà cités sur ce site : un seuil de $3/day représente $1,095 par personne et par an, le déficit moyen sous le seuil avoisine $1/day, et un stylo d’insuline générique coûte $0.94 à produire.</p>
+<div class="card">
+  <div class="dial">
+    <div class="dial-label">
+      <span class="dial-name">Si vous pouviez mobiliser…</span>
+      <span class="dial-value">$<span id="ls-wealth">5,000,000,000</span></span>
+    </div>
+    <input type="range" id="ls-range" min="6" max="11.4" step="0.01" value="9.7" aria-label="wealth">
+    <div class="dial-note">patrimoine net ou actifs sur lesquels vous pourriez puiser (échelle logarithmique, $1M–$250B)</div>
+  </div>
+  <p style="margin-top:14px">Un prélèvement unique de 2% de ce montant — le taux que <a href="https://gabriel-zucman.eu/files/report-g20.pdf">Zucman propose comme minimum annuel</a> pour les milliardaires — représente <strong class="num" id="ls-two">$100,000,000</strong>. Cela suffit à lui seul pour :</p>
+  <ul>
+    <li><strong id="ls-floor">0</strong> — personnes hissées au seuil de $3/day pendant une année entière</li>
+    <li><strong id="ls-gap">0</strong> — années-personnes sorties de l’extrême pauvreté (en comblant l’écart)</li>
+    <li><strong id="ls-insulin">0</strong> — stylos d’insuline génériques, à leur coût de production</li>
+  </ul>
+  <p class="small" id="ls-collective" style="margin-bottom:0"></p>
+</div>
+<p class="small">Il s’agit du même calcul de vérification que celui du calculateur de la page principale — un ordre de grandeur, non un plan de mise en œuvre. La mise en œuvre est véritablement difficile. La seule affirmation ici est que les ressources ne sont pas ce qui fait obstacle.</p>
+</section>
+
+<script>
+(function(){
+  var R=document.getElementById("ls-range"); if(!R) return;
+  var FLOOR=1095, GAP=365, INS=0.94, GLOBAL_GAP=1e12;
+  function g(n){ return Math.round(n).toLocaleString("en-US"); }
+  var C="Vos 2% à eux seuls représentent {P}% de la totalité du déficit mondial annuel de pauvreté, d’environ ~$1 trillion. Vous ne pouvez pas le combler à vous seul — mais les quelque 3 000 personnes à cette échelle, ensemble à 2% par an, en couvriraient environ un quart ($200–250B, Zucman), chaque année.";
+  function upd(){
+    var w=Math.pow(10,parseFloat(R.value)), two=w*0.02;
+    document.getElementById("ls-wealth").textContent=g(w);
+    document.getElementById("ls-two").textContent="$"+g(two);
+    document.getElementById("ls-floor").textContent=g(two/FLOOR);
+    document.getElementById("ls-gap").textContent=g(two/GAP);
+    document.getElementById("ls-insulin").textContent=g(two/INS);
+    var share=two/GLOBAL_GAP*100;
+    document.getElementById("ls-collective").textContent=C.replace("{P}", share>=0.1?share.toFixed(1):share.toFixed(2));
+  }
+  R.addEventListener("input",upd); upd();
+})();
+</script>
+
 <section>
-<h2>6 · La division est faite</h2>
+<h2>7 · La division est faite</h2>
 <p>
   C'est tout. Nous avons fait l'arithmétique pour que le « nous ne pouvons
   pas » cesse d'être un fait et devienne une décision. Tout sur ce site est dans
@@ -327,7 +370,7 @@
 </section>
 
 <section>
-<h2>7 · Faites-la passer</h2>
+<h2>8 · Faites-la passer</h2>
 <p>
   Si quelque chose là-dedans a touché juste, la chose la plus utile que vous
   puissiez faire est de la remettre à quelqu'un ayant le pouvoir d'agir — ou à

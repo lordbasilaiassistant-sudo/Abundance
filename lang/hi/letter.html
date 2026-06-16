@@ -276,8 +276,51 @@
 </p>
 </section>
 
+<section id="yourshare">
+<h2>6 · आपका हिस्सा क्या कर सकता है</h2>
+<p>अमूर्त खरबों को नज़रअंदाज़ करना आसान है, इसलिए इसे ठोस और व्यक्तिगत बनाइए। स्लाइडर को अपने पैमाने पर ले जाइए। नीचे का गणित केवल उन्हीं आँकड़ों का इस्तेमाल करता है जो इस साइट पर पहले से दिए गए हैं — $3/day की न्यूनतम सीमा प्रति व्यक्ति प्रति वर्ष $1,095 बैठती है, इस रेखा के नीचे की औसत कमी लगभग $1/day है, और एक सामान्य इंसुलिन पेन बनाने में $0.94 की लागत आती है।</p>
+<div class="card">
+  <div class="dial">
+    <div class="dial-label">
+      <span class="dial-name">अगर आप इतना हिला सकते…</span>
+      <span class="dial-value">$<span id="ls-wealth">5,000,000,000</span></span>
+    </div>
+    <input type="range" id="ls-range" min="6" max="11.4" step="0.01" value="9.7" aria-label="wealth">
+    <div class="dial-note">कुल संपत्ति या वे परिसंपत्तियाँ जिन पर आप निर्भर रह सकते हैं (लॉग पैमाना, $1M–$250B)</div>
+  </div>
+  <p style="margin-top:14px">इसका एक बार का 2% — वही दर जो <a href="https://gabriel-zucman.eu/files/report-g20.pdf">ज़ुकमैन एक वार्षिक न्यूनतम के रूप में प्रस्तावित करते हैं</a> अरबपतियों के लिए — होता है <strong class="num" id="ls-two">$100,000,000</strong>। अकेले इतना ही काफ़ी है:</p>
+  <ul>
+    <li><strong id="ls-floor">0</strong> — लोग पूरे एक वर्ष के लिए $3/day की सीमा तक उठाए गए</li>
+    <li><strong id="ls-gap">0</strong> — व्यक्ति-वर्ष अत्यधिक गरीबी से बाहर निकाले गए (अंतर को पाटते हुए)</li>
+    <li><strong id="ls-insulin">0</strong> — सामान्य इंसुलिन पेन, उनकी उत्पादन लागत पर</li>
+  </ul>
+  <p class="small" id="ls-collective" style="margin-bottom:0"></p>
+</div>
+<p class="small">यह वही समझदारी-जाँच वाला गणित है जो मुख्य पृष्ठ के कैलकुलेटर में है — पैमाने का एक अंदाज़ा, कोई वितरण-योजना नहीं। वितरण सचमुच कठिन है। यहाँ बस इतना ही दावा है कि संसाधन वह चीज़ नहीं हैं जो रास्ते में खड़ी है।</p>
+</section>
+
+<script>
+(function(){
+  var R=document.getElementById("ls-range"); if(!R) return;
+  var FLOOR=1095, GAP=365, INS=0.94, GLOBAL_GAP=1e12;
+  function g(n){ return Math.round(n).toLocaleString("en-US"); }
+  var C="अकेले आपका 2% पूरे ~$1 trillion के सालाना वैश्विक गरीबी अंतर का {P}% है। आप इसे अकेले नहीं पाट सकते — पर इस पैमाने के जो ~3,000 लोग हैं, वे साल में 2% पर मिलकर इसका लगभग एक-चौथाई ($200–250B, ज़ुकमैन) हर साल पूरा कर देंगे।";
+  function upd(){
+    var w=Math.pow(10,parseFloat(R.value)), two=w*0.02;
+    document.getElementById("ls-wealth").textContent=g(w);
+    document.getElementById("ls-two").textContent="$"+g(two);
+    document.getElementById("ls-floor").textContent=g(two/FLOOR);
+    document.getElementById("ls-gap").textContent=g(two/GAP);
+    document.getElementById("ls-insulin").textContent=g(two/INS);
+    var share=two/GLOBAL_GAP*100;
+    document.getElementById("ls-collective").textContent=C.replace("{P}", share>=0.1?share.toFixed(1):share.toFixed(2));
+  }
+  R.addEventListener("input",upd); upd();
+})();
+</script>
+
 <section>
-<h2>6 · भाग पूरा हो चुका है</h2>
+<h2>7 · भाग पूरा हो चुका है</h2>
 <p>
   बस इतना ही है। हमने गणित इसलिए की ताकि "हम नहीं कर सकते" एक तथ्य रहना बंद हो और
   एक फ़ैसला बनना शुरू हो जाए। इस साइट पर सब कुछ सार्वजनिक संपत्ति है — इसे लीजिए,
@@ -302,7 +345,7 @@
 </section>
 
 <section>
-<h2>7 · इसे आगे बढ़ाइए</h2>
+<h2>8 · इसे आगे बढ़ाइए</h2>
 <p>
   अगर इसमें से कुछ भी आप तक पहुँचा, तो सबसे उपयोगी काम जो आप कर सकते हैं वह है इसे
   किसी ऐसे व्यक्ति को सौंपना जिसके पास कुछ करने की ताकत है — या किसी ऐसे को जिसे यह
