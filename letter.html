@@ -280,8 +280,70 @@
 </p>
 </section>
 
+<section id="yourshare">
+<h2>6 · What your share could do</h2>
+<p>
+  Abstract trillions are easy to wave away, so make it concrete and personal.
+  Move the slider to your own scale. The arithmetic below uses only the cited
+  figures already on this site — a $3/day floor is $1,095 per person per year,
+  the average shortfall below the line is about $1/day, and a generic insulin
+  pen costs $0.94 to make.
+</p>
+<div class="card">
+  <div class="dial">
+    <div class="dial-label">
+      <span class="dial-name">If you could move&hellip;</span>
+      <span class="dial-value">$<span id="ls-wealth">5.0B</span></span>
+    </div>
+    <input type="range" id="ls-range" min="6" max="11.4" step="0.01" value="9.7" aria-label="wealth you could draw on">
+    <div class="dial-note">net worth or assets you could draw on (log scale, $1M&ndash;$250B)</div>
+  </div>
+  <p style="margin-top:14px">
+    A one-time <strong>2%</strong> of that — the rate
+    <a href="https://gabriel-zucman.eu/files/report-g20.pdf">Zucman proposes as an
+    <em>annual</em> minimum</a> for billionaires — is
+    <strong class="num" id="ls-two">$100M</strong>. That alone is enough for:
+  </p>
+  <ul>
+    <li><strong id="ls-floor">91 million</strong> — people lifted to the $3/day floor for a full year</li>
+    <li><strong id="ls-gap">274 million</strong> — person-years pulled out of extreme poverty (closing the gap)</li>
+    <li><strong id="ls-insulin">106 million</strong> — generic insulin pens, at their production cost</li>
+  </ul>
+  <p class="small" id="ls-collective" style="margin-bottom:0"></p>
+</div>
+<p class="small">
+  This is the same sanity-check arithmetic as the
+  <a href="index.html#dials">main page's calculator</a> — a sense of scale, not a
+  delivery plan. Delivery is genuinely hard. The only claim here is that the
+  resources are not the thing standing in the way.
+</p>
+</section>
+
+<script>
+(function(){
+  var R=document.getElementById('ls-range'); if(!R) return;
+  var FLOOR=1095, GAP=365, INS=0.94, GLOBAL_GAP=1e12;
+  function money(n){ if(n>=1e12)return '$'+(n/1e12).toFixed(2)+'T'; if(n>=1e9)return '$'+(n/1e9).toFixed(1)+'B'; if(n>=1e6)return '$'+(n/1e6).toFixed(0)+'M'; return '$'+Math.round(n).toLocaleString(); }
+  function wealth(n){ if(n>=1e9)return (n/1e9).toFixed(1)+'B'; if(n>=1e6)return (n/1e6).toFixed(0)+'M'; return Math.round(n).toLocaleString(); }
+  function count(n){ if(n>=1e9)return (n/1e9).toFixed(2)+' billion'; if(n>=1e6)return (n/1e6).toFixed(1)+' million'; if(n>=1e3)return Math.round(n/1e3)+',000'; return Math.round(n).toLocaleString(); }
+  function upd(){
+    var w=Math.pow(10, parseFloat(R.value)), two=w*0.02;
+    document.getElementById('ls-wealth').textContent=wealth(w);
+    document.getElementById('ls-two').textContent=money(two);
+    document.getElementById('ls-floor').textContent=count(two/FLOOR);
+    document.getElementById('ls-gap').textContent=count(two/GAP);
+    document.getElementById('ls-insulin').textContent=count(two/INS);
+    var share=two/GLOBAL_GAP*100;
+    document.getElementById('ls-collective').textContent=
+      'Your 2% alone is '+(share>=0.1?share.toFixed(1):share.toFixed(2))+
+      '% of the entire ~$1 trillion annual global poverty gap. You can’t close it by yourself — but the ~3,000 people at this scale, together at 2% a year, would cover roughly a quarter of it ($200–250B, Zucman), every year.';
+  }
+  R.addEventListener('input',upd); upd();
+})();
+</script>
+
 <section>
-<h2>6 · The division is done</h2>
+<h2>7 · The division is done</h2>
 <p>
   That is the whole of it. We did the arithmetic so the "we can't" would stop
   being a fact and start being a decision. Everything on this site is in the
@@ -306,7 +368,7 @@
 </section>
 
 <section>
-<h2>7 · Pass it on</h2>
+<h2>8 · Pass it on</h2>
 <p>
   If any of this landed, the most useful thing you can do is hand it to someone
   with the power to act — or someone who needs to believe it is possible. It is
