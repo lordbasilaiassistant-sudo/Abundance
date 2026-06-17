@@ -38,7 +38,7 @@ the empirical question: is the suffering load-bearing? The evidence base says no
 - **[An open letter](letter.html)** — the case made to anyone who can act on this, without attack; cited throughout. Also in [Español](lang/es/letter.html), [Français](lang/fr/letter.html), [Português](lang/pt/letter.html), [العربية](lang/ar/letter.html), [中文](lang/zh/letter.html), and [हिन्दी](lang/hi/letter.html).
 - **[Country case studies](case-studies.html)** — eleven nations that chose to lift underclass suffering, each with its honest counter-narrative.
 - **[By country](countries.html)** — a sortable drill-down of 91 countries × 10 World Bank indicators.
-- **[Free tools](tools/)** — an image editor, image compressor, QR code generator, and password generator that run entirely in your browser: no account, no upload, no tracking. The "manufactured scarcity" argument, demonstrated in code.
+- **[Free tools](tools/)** — an image editor, image compressor, QR code generator, color contrast checker, and password generator that run entirely in your browser: no account, no upload, no tracking. The "manufactured scarcity" argument, demonstrated in code.
 - **[Deep notes](papers/)** and a **[~100-entry bibliography](bibliography.md)** — including a standing steelman of the [strongest case *against* this project](papers/counterarguments.md).
 
 ## What this is *not*
@@ -64,6 +64,7 @@ Abundance/
 │   ├── image-editor/       # in-browser image editor — no upload, no account
 │   ├── image-compressor/   # batch compress/resize/convert — no upload
 │   ├── qr/                 # QR code generator (full ISO/IEC 18004 encoder)
+│   ├── contrast/           # WCAG 2.1 color contrast checker
 │   └── password/           # offline password generator (cryptographic RNG)
 ├── style.css               # imports styles/*.css — don't edit directly
 │

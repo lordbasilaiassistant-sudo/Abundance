@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free color contrast checker — WCAG AA/AAA, in your browser · Abundance</title>
+<meta name="description" content="Check color contrast against the WCAG 2.1 accessibility standard — exact ratio, AA/AAA pass-fail for normal and large text, and a one-click accessible fix. Runs entirely in your browser: no account, no upload, no tracking. Free and public domain.">
+<meta name="author" content="Eli Vargas (lordbasilaiassistant-sudo)">
+<meta name="theme-color" content="#0a0b0e">
+<link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/tools/contrast/">
+<link rel="icon" type="image/png" href="../../favicon.png">
+<meta property="og:title" content="Free color contrast checker — WCAG AA/AAA, in your browser.">
+<meta property="og:description" content="Exact WCAG 2.1 contrast ratio, AA/AAA pass-fail, and a one-click accessible fix. No account, no upload, no tracking.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/tools/contrast/">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<style>
+:root{--bg:#0a0b0e;--bg2:#13151a;--bg3:#1c1f26;--fg:#f0f3f7;--fg2:#b5bdca;--fg3:#717885;
+  --line:#1f232c;--line2:#2b3140;--accent:#6ee0b0;--accent2:#4abf8a;--warn:#f8c574;--danger:#ef8b8b;--link:#9fc1ff;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.5}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+header.top{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header.top .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+header.top h1{font-family:var(--serif);font-size:21px;margin:0;font-weight:600}
+header.top .spacer{flex:1}.back{font-size:13px;color:var(--fg3)}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line2);border-radius:999px;padding:3px 9px}
+.thesis{padding:10px 22px;background:var(--bg2);border-bottom:1px solid var(--line);font-size:13px;color:var(--fg2)}
+.thesis strong{color:var(--fg)}
+.wrap{max-width:900px;margin:0 auto;padding:22px;display:grid;grid-template-columns:300px 1fr;gap:22px}
+@media(max-width:720px){.wrap{grid-template-columns:1fr}}
+.panel{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px}
+h3{font-family:var(--serif);font-size:16px;margin:0 0 14px;font-weight:600}
+.field{display:block;font-size:13px;color:var(--fg2);margin:0 0 6px}
+.colorrow{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+input[type=color]{width:46px;height:38px;border:1px solid var(--line2);border-radius:7px;background:var(--bg);padding:2px;cursor:pointer;flex:none}
+input[type=text]{flex:1;background:var(--bg);color:var(--fg);border:1px solid var(--line2);border-radius:8px;padding:10px 11px;font-family:var(--mono);font-size:14px;text-transform:uppercase}
+input[type=text]:focus{outline:none;border-color:var(--accent)}
+button{font-family:var(--sans);font-size:13px;background:var(--bg3);color:var(--fg);border:1px solid var(--line2);border-radius:7px;padding:8px 12px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.swap{width:100%;margin-bottom:6px}
+.ratio{font-family:var(--mono);font-size:46px;font-weight:600;text-align:center;margin:4px 0 2px;letter-spacing:-.02em}
+.ratioword{text-align:center;font-family:var(--mono);font-size:12px;color:var(--fg3);margin-bottom:16px;text-transform:uppercase;letter-spacing:.1em}
+.grid{display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:center;font-size:14px}
+.grid .lbl{color:var(--fg2)}
+.badge{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+.pass{background:rgba(110,224,176,.16);color:var(--accent)}
+.fail{background:rgba(239,139,139,.16);color:var(--danger)}
+.preview{border-radius:10px;padding:26px;margin-top:4px;border:1px solid var(--line2)}
+.preview .big{font-size:24px;font-weight:700;margin:0 0 10px}
+.preview .small{font-size:15px;margin:0}
+.preview .tiny{font-size:13px;margin:10px 0 0;opacity:.85}
+.fixbox{margin-top:16px;font-size:13px;color:var(--fg2);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.chip{font-family:var(--mono);font-size:13px;padding:4px 9px;border-radius:6px;border:1px solid var(--line2);cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.chip .sw{width:13px;height:13px;border-radius:3px;border:1px solid rgba(255,255,255,.25)}
+.note{font-size:12px;color:var(--fg3);margin-top:16px;line-height:1.55}
+footer{padding:14px 22px;border-top:1px solid var(--line);font-size:12px;color:var(--fg3);display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+.err{color:var(--danger);font-size:12px;min-height:14px}
+</style>
+</head>
+<body>
+<header class="top">
+  <span class="eyebrow">Abundance · free tools</span>
+  <h1>Color contrast checker</h1>
+  <span class="pill">WCAG 2.1 · in-browser</span>
+  <span class="spacer"></span>
+  <span class="back">← <a href="../">free tools</a> · <a href="../../index.html">the arithmetic</a></span>
+</header>
+<div class="thesis">
+  <strong>Whether text is readable shouldn't be a paid feature.</strong> Accessible color contrast is a
+  fixed, published formula (WCAG 2.1) — yet plenty of design suites gate the checker behind a subscription.
+  This one computes the exact ratio on your device and tells you, plainly, whether your colors pass.
+  <a href="../../index.html#scarcity">Why this exists →</a>
+</div>
+
+<div class="wrap">
+  <div class="panel">
+    <h3>Colors</h3>
+    <label class="field" for="fgt">Text / foreground</label>
+    <div class="colorrow">
+      <input type="color" id="fg" value="#717885">
+      <input type="text" id="fgt" value="#717885" maxlength="7" spellcheck="false">
+    </div>
+    <label class="field" for="bgt">Background</label>
+    <div class="colorrow">
+      <input type="color" id="bg" value="#0a0b0e">
+      <input type="text" id="bgt" value="#0A0B0E" maxlength="7" spellcheck="false">
+    </div>
+    <button class="swap" id="swap">⇅ Swap foreground &amp; background</button>
+    <div class="err" id="err"></div>
+    <p class="note">
+      Ratio = (L<sub>light</sub> + 0.05) / (L<sub>dark</sub> + 0.05), where L is sRGB relative luminance.
+      Large text = 18.66px bold or 24px regular and up. Range is 1:1 (identical) to 21:1 (black on white).
+    </p>
+  </div>
+
+  <div>
+    <div class="panel">
+      <div class="ratio" id="ratio">—</div>
+      <div class="ratioword" id="ratioword"></div>
+      <div class="grid">
+        <span class="lbl">Normal text — AA (≥ 4.5)</span><span class="badge" id="aa"></span>
+        <span class="lbl">Normal text — AAA (≥ 7)</span><span class="badge" id="aaa"></span>
+        <span class="lbl">Large text — AA (≥ 3)</span><span class="badge" id="aal"></span>
+        <span class="lbl">Large text — AAA (≥ 4.5)</span><span class="badge" id="aaal"></span>
+        <span class="lbl">UI &amp; graphics (≥ 3)</span><span class="badge" id="ui"></span>
+      </div>
+      <div class="fixbox" id="fixbox"></div>
+    </div>
+
+    <div class="panel" style="margin-top:16px">
+      <h3>Live preview</h3>
+      <div class="preview" id="preview">
+        <p class="big">The world already produces enough.</p>
+        <p class="small">Hunger and energy poverty are distribution outcomes, not production outcomes.</p>
+        <p class="tiny">This sentence is small text — it needs the highest contrast to stay readable.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Public domain (CC0). No tracking, no telemetry.</span>
+  <span><a href="https://github.com/lordbasilaiassistant-sudo/Abundance">Source</a></span>
+  <span><a href="../../letter.html">An open letter →</a></span>
+</footer>
+
+<script>
+/* ============================================================================
+   WCAG 2.1 contrast core — exposed as Contrast for browser + Node testing.
+   ========================================================================== */
+(function(root){
+  "use strict";
+  function parseHex(s){
+    if(typeof s!=="string") return null;
+    s=s.trim().replace(/^#/,"");
+    if(/^[0-9a-fA-F]{3}$/.test(s)) s=s[0]+s[0]+s[1]+s[1]+s[2]+s[2];
+    if(!/^[0-9a-fA-F]{6}$/.test(s)) return null;
+    return [parseInt(s.slice(0,2),16),parseInt(s.slice(2,4),16),parseInt(s.slice(4,6),16)];
+  }
+  function toHex(rgb){
+    return "#"+rgb.map(function(v){ v=Math.max(0,Math.min(255,Math.round(v))); return (v<16?"0":"")+v.toString(16); }).join("").toUpperCase();
+  }
+  function channelLum(c){ c/=255; return c<=0.03928 ? c/12.92 : Math.pow((c+0.055)/1.055,2.4); }
+  function luminance(rgb){ return 0.2126*channelLum(rgb[0])+0.7152*channelLum(rgb[1])+0.0722*channelLum(rgb[2]); }
+  function ratio(rgbA,rgbB){
+    var la=luminance(rgbA), lb=luminance(rgbB);
+    var hi=Math.max(la,lb), lo=Math.min(la,lb);
+    return (hi+0.05)/(lo+0.05);
+  }
+  // Nudge fg toward black or white (whichever the bg favors). Returns the best
+  // achievable foreground and whether it actually reaches `target` — a mid-tone
+  // background may make `target` impossible with any foreground.
+  function suggest(fg,bg,target){
+    if(ratio(fg,bg)>=target) return null;
+    var bgLum=luminance(bg);
+    var toward = bgLum>0.5 ? [0,0,0] : [255,255,255]; // dark bg -> lighten text, light bg -> darken
+    var hit=null;
+    for(var t=0;t<=1.0001;t+=0.01){
+      var cand=[fg[0]+(toward[0]-fg[0])*t, fg[1]+(toward[1]-fg[1])*t, fg[2]+(toward[2]-fg[2])*t].map(Math.round);
+      if(ratio(cand,bg)>=target){ hit=cand; break; }
+    }
+    var best = hit || toward;
+    return { hex: toHex(best), ratio: ratio(best,bg), reaches: !!hit };
+  }
+  root.Contrast={parseHex:parseHex,toHex:toHex,luminance:luminance,ratio:ratio,suggest:suggest};
+})(typeof module!=="undefined"&&module.exports?module.exports:(typeof window!=="undefined"?window:this));
+</script>
+
+<script>
+if (typeof document !== "undefined") (function(){
+  "use strict";
+  var $=function(id){return document.getElementById(id);};
+  var C=window.Contrast;
+
+  function badge(el,ok){ el.textContent=ok?"Pass":"Fail"; el.className="badge "+(ok?"pass":"fail"); }
+
+  function ratioWord(r){
+    if(r>=7) return "excellent contrast";
+    if(r>=4.5) return "good contrast";
+    if(r>=3) return "borderline — large text only";
+    return "too low — hard to read";
+  }
+
+  function render(){
+    var fg=C.parseHex($('fgt').value), bg=C.parseHex($('bgt').value);
+    if(!fg||!bg){ $('err').textContent="Enter valid hex colors (e.g. #1A2B3C or #ABC)."; return; }
+    $('err').textContent="";
+    var r=C.ratio(fg,bg);
+    var rr=Math.round(r*100)/100;
+    $('ratio').textContent=rr.toFixed(2)+":1";
+    $('ratioword').textContent=ratioWord(r);
+    badge($('aa'), r>=4.5); badge($('aaa'), r>=7);
+    badge($('aal'), r>=3); badge($('aaal'), r>=4.5);
+    badge($('ui'), r>=3);
+    // preview
+    var fgHex=C.toHex(fg), bgHex=C.toHex(bg);
+    var pv=$('preview'); pv.style.background=bgHex; pv.style.color=fgHex; pv.style.borderColor=bgHex;
+    // fix suggestion
+    var fb=$('fixbox'); fb.innerHTML="";
+    if(r<4.5){
+      var fix=C.suggest(fg,bg,4.5);
+      if(fix){
+        var span=document.createElement('span');
+        span.textContent= fix.reaches ? "Nearest foreground that passes AA: "
+          : "No foreground passes AA on this background — lighten or darken the background too. Closest ("+fix.ratio.toFixed(2)+":1): ";
+        var chip=document.createElement('span'); chip.className="chip";
+        var sw=document.createElement('span'); sw.className="sw"; sw.style.background=fix.hex;
+        chip.appendChild(sw); chip.appendChild(document.createTextNode(fix.hex));
+        chip.title="Apply this color"; chip.addEventListener('click',function(){ setFg(fix.hex); });
+        fb.appendChild(span); fb.appendChild(chip);
+      }
+    } else {
+      fb.innerHTML='<span style="color:var(--accent)">✓ This combination meets WCAG AA for normal text.</span>';
+    }
+  }
+
+  function setFg(hex){ $('fg').value=hex.toLowerCase(); $('fgt').value=hex.toUpperCase(); render(); }
+  function setBg(hex){ $('bg').value=hex.toLowerCase(); $('bgt').value=hex.toUpperCase(); render(); }
+
+  $('fg').addEventListener('input',function(){ $('fgt').value=$('fg').value.toUpperCase(); render(); });
+  $('bg').addEventListener('input',function(){ $('bgt').value=$('bg').value.toUpperCase(); render(); });
+  $('fgt').addEventListener('input',function(){ var p=C.parseHex($('fgt').value); if(p) $('fg').value=C.toHex(p).toLowerCase(); render(); });
+  $('bgt').addEventListener('input',function(){ var p=C.parseHex($('bgt').value); if(p) $('bg').value=C.toHex(p).toLowerCase(); render(); });
+  $('swap').addEventListener('click',function(){
+    var f=$('fgt').value, b=$('bgt').value; setFg(C.parseHex(b)?b:f); setBg(C.parseHex(f)?f:b);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
