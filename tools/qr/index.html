@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free QR code generator — no watermark, no account, no expiry · Abundance</title>
+<meta name="description" content="Generate QR codes entirely in your browser and download them as PNG or SVG. No watermark, no account, no upload, no tracking, no expiry — the opposite of the QR sites that charge a monthly fee. Free and public domain.">
+<meta name="author" content="Eli Vargas (lordbasilaiassistant-sudo)">
+<meta name="theme-color" content="#0a0b0e">
+<link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/tools/qr/">
+<link rel="icon" type="image/png" href="../../favicon.png">
+<meta property="og:title" content="Free QR code generator — no watermark, no account, no expiry.">
+<meta property="og:description" content="QR codes generated in your browser, downloadable as PNG or SVG. No watermark, no account, no upload, no tracking. The QR subscription, refuted in code.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/tools/qr/">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<style>
+:root{--bg:#0a0b0e;--bg2:#13151a;--bg3:#1c1f26;--fg:#f0f3f7;--fg2:#b5bdca;--fg3:#717885;
+  --line:#1f232c;--line2:#2b3140;--accent:#6ee0b0;--accent2:#4abf8a;--warn:#f8c574;--danger:#ef8b8b;--link:#9fc1ff;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.5}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+header.top{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header.top .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+header.top h1{font-family:var(--serif);font-size:21px;margin:0;font-weight:600}
+header.top .spacer{flex:1}.back{font-size:13px;color:var(--fg3)}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line2);border-radius:999px;padding:3px 9px}
+.thesis{padding:10px 22px;background:var(--bg2);border-bottom:1px solid var(--line);font-size:13px;color:var(--fg2)}
+.thesis strong{color:var(--fg)}
+.wrap{max-width:900px;margin:0 auto;padding:22px;display:grid;grid-template-columns:1fr 320px;gap:22px}
+@media(max-width:720px){.wrap{grid-template-columns:1fr}}
+.panel{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px}
+label.field{display:block;font-size:13px;color:var(--fg2);margin-bottom:6px}
+textarea,input[type=text]{width:100%;background:var(--bg);color:var(--fg);border:1px solid var(--line2);border-radius:8px;
+  padding:11px 12px;font-family:var(--mono);font-size:14px;resize:vertical}
+textarea{min-height:104px}
+textarea:focus,input:focus{outline:none;border-color:var(--accent)}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.row > div{flex:1;min-width:130px}
+select{width:100%;background:var(--bg);color:var(--fg);border:1px solid var(--line2);border-radius:8px;padding:9px 10px;font-family:var(--sans);font-size:14px}
+input[type=range]{accent-color:var(--accent);width:100%}
+input[type=color]{width:42px;height:32px;border:1px solid var(--line2);border-radius:6px;background:var(--bg);padding:2px;cursor:pointer}
+.swatch{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--fg2)}
+button{font-family:var(--sans);font-size:14px;background:var(--bg3);color:var(--fg);border:1px solid var(--line2);border-radius:7px;padding:9px 14px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);color:#06281c;border-color:var(--accent);font-weight:600}
+button.primary:hover{background:var(--accent2)}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.preset{font-family:var(--mono);font-size:11px;letter-spacing:.04em;padding:6px 10px}
+.presets{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+.qrbox{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:10px;padding:16px;min-height:260px}
+.qrbox canvas{image-rendering:pixelated;max-width:100%;height:auto}
+.qmeta{font-family:var(--mono);font-size:12px;color:var(--fg3);margin-top:12px;text-align:center}
+.err{color:var(--danger);font-size:13px;margin-top:10px}
+.val{font-family:var(--mono);color:var(--fg);font-size:13px}
+.ctrl{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;font-size:13px;color:var(--fg2)}
+footer{padding:14px 22px;border-top:1px solid var(--line);font-size:12px;color:var(--fg3);display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+.note{font-size:12px;color:var(--fg3);margin-top:16px;line-height:1.55}
+h3{font-family:var(--serif);font-size:16px;margin:0 0 12px;font-weight:600}
+</style>
+</head>
+<body>
+<header class="top">
+  <span class="eyebrow">Abundance · free tools</span>
+  <h1>QR code generator</h1>
+  <span class="pill">in-browser · no watermark · no expiry</span>
+  <span class="spacer"></span>
+  <span class="back">← <a href="../">free tools</a> · <a href="../../index.html">the arithmetic</a></span>
+</header>
+<div class="thesis">
+  <strong>A QR code is just math — it should never have cost a subscription.</strong> Many "free" QR sites
+  watermark the code, gate downloads behind a sign-up, or make the code <em>expire</em> unless you pay
+  monthly. This one encodes the QR on your device (full ISO/IEC 18004 spec), downloads clean PNG or SVG, and
+  nothing is sent anywhere. <a href="../../index.html#scarcity">Why this exists →</a>
+</div>
+
+<div class="wrap">
+  <div>
+    <div class="panel">
+      <div class="presets">
+        <button class="preset" data-preset="url">URL</button>
+        <button class="preset" data-preset="text">Plain text</button>
+        <button class="preset" data-preset="wifi">Wi-Fi</button>
+        <button class="preset" data-preset="email">Email</button>
+        <button class="preset" data-preset="sms">SMS</button>
+        <button class="preset" data-preset="tel">Phone</button>
+        <button class="preset" data-preset="vcard">Contact (vCard)</button>
+        <button class="preset" data-preset="geo">Location</button>
+      </div>
+      <label class="field" for="data">Content to encode</label>
+      <textarea id="data" placeholder="https://example.com">https://lordbasilaiassistant-sudo.github.io/Abundance/</textarea>
+
+      <div class="row">
+        <div>
+          <label class="field" for="ec">Error correction</label>
+          <select id="ec">
+            <option value="L">L — 7% recoverable</option>
+            <option value="M" selected>M — 15% recoverable</option>
+            <option value="Q">Q — 25% recoverable</option>
+            <option value="H">H — 30% recoverable (logos)</option>
+          </select>
+        </div>
+        <div>
+          <label class="field" for="margin">Quiet-zone margin <span class="val" id="marginv">4</span></label>
+          <input type="range" id="margin" min="0" max="10" value="4">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="swatch"><input type="color" id="fg" value="#000000"><label class="field" for="fg" style="margin:0">Foreground</label></div>
+        <div class="swatch"><input type="color" id="bg" value="#ffffff"><label class="field" for="bg" style="margin:0">Background</label></div>
+      </div>
+
+      <div class="btnrow">
+        <button class="primary" id="dlpng">Download PNG</button>
+        <button id="dlsvg">Download SVG</button>
+        <button id="copyimg">Copy image</button>
+      </div>
+      <div class="err" id="err"></div>
+    </div>
+
+    <p class="note">
+      Built to the QR spec: automatic mode selection (numeric, alphanumeric, or UTF-8 byte), the smallest
+      version that fits, Reed–Solomon error correction, and the lowest-penalty data mask. Higher error
+      correction makes the code denser but lets it still scan if part is damaged, dirty, or covered by a logo.
+      Dark-on-light scans best — keep good contrast. Verified module-for-module against a reference encoder.
+    </p>
+  </div>
+
+  <div>
+    <div class="panel">
+      <h3>Your QR code</h3>
+      <div class="qrbox" id="qrbox"><canvas id="cv" width="300" height="300"></canvas></div>
+      <div class="qmeta" id="qmeta"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Public domain (CC0). No tracking, no telemetry, no expiry.</span>
+  <span><a href="https://github.com/lordbasilaiassistant-sudo/Abundance">Source</a></span>
+  <span><a href="../../letter.html">An open letter →</a></span>
+</footer>
+
+<script>
+/* ============================================================================
+   QR encoder — vanilla JS, ISO/IEC 18004. Exposes QR.encode(text, ecLevel)
+   returning {version, size, modules:boolean[size][size]}.
+   Written to run in both the browser and Node (for verification).
+   ========================================================================== */
+(function(root){
+  "use strict";
+
+  // ---- Galois field GF(256), primitive polynomial 0x11D --------------------
+  var EXP = new Array(512), LOG = new Array(256);
+  (function(){ var x=1; for(var i=0;i<255;i++){ EXP[i]=x; LOG[x]=i; x<<=1; if(x&0x100) x^=0x11D; }
+    for(var j=255;j<512;j++) EXP[j]=EXP[j-255]; })();
+  function gmul(a,b){ return (a===0||b===0)?0:EXP[LOG[a]+LOG[b]]; }
+
+  function rsGenPoly(deg){
+    var poly=[1];
+    for(var i=0;i<deg;i++) poly=mulPoly(poly,[1,EXP[i]]);
+    return poly;
+  }
+  function mulPoly(a,b){
+    var r=new Array(a.length+b.length-1); for(var i=0;i<r.length;i++) r[i]=0;
+    for(var i2=0;i2<a.length;i2++) for(var j=0;j<b.length;j++) r[i2+j]^=gmul(a[i2],b[j]);
+    return r;
+  }
+  function rsEncode(data, ecLen){
+    var gen=rsGenPoly(ecLen);
+    var res=data.slice().concat(new Array(ecLen).fill(0));
+    for(var i=0;i<data.length;i++){
+      var coef=res[i];
+      if(coef!==0){ for(var j=0;j<gen.length;j++) res[i+j]^=gmul(gen[j],coef); }
+    }
+    return res.slice(data.length);
+  }
+
+  // ---- Capacity / block tables ---------------------------------------------
+  var LEVELS={L:0,M:1,Q:2,H:3};
+  // [ecPerBlock, numG1, dataG1, numG2, dataG2] per version(1..40) per level
+  var EC=[
+    null,
+    [[7,1,19,0,0],[10,1,16,0,0],[13,1,13,0,0],[17,1,9,0,0]],
+    [[10,1,34,0,0],[16,1,28,0,0],[22,1,22,0,0],[28,1,16,0,0]],
+    [[15,1,55,0,0],[26,1,44,0,0],[18,2,17,0,0],[22,2,13,0,0]],
+    [[20,1,80,0,0],[18,2,32,0,0],[26,2,24,0,0],[16,4,9,0,0]],
+    [[26,1,108,0,0],[24,2,43,0,0],[18,2,15,2,16],[22,2,11,2,12]],
+    [[18,2,68,0,0],[16,4,27,0,0],[24,4,19,0,0],[28,4,15,0,0]],
+    [[20,2,78,0,0],[18,4,31,0,0],[18,2,14,4,15],[26,4,13,1,14]],
+    [[24,2,97,0,0],[22,2,38,2,39],[22,4,18,2,19],[26,4,14,2,15]],
+    [[30,2,116,0,0],[22,3,36,2,37],[20,4,16,4,17],[24,4,12,4,13]],
+    [[18,2,68,2,69],[26,4,43,1,44],[24,6,19,2,20],[28,6,15,2,16]],
+    [[20,4,81,0,0],[30,1,50,4,51],[28,4,22,4,23],[24,3,12,8,13]],
+    [[24,2,92,2,93],[22,6,36,2,37],[26,4,20,6,21],[28,7,14,4,15]],
+    [[26,4,107,0,0],[22,8,37,1,38],[24,8,20,4,21],[22,12,11,4,12]],
+    [[30,3,115,1,116],[24,4,40,5,41],[20,11,16,5,17],[24,11,12,5,13]],
+    [[22,5,87,1,88],[24,5,41,5,42],[30,5,24,7,25],[24,11,12,7,13]],
+    [[24,5,98,1,99],[28,7,45,3,46],[24,15,19,2,20],[30,3,15,13,16]],
+    [[28,1,107,5,108],[28,10,46,1,47],[28,1,22,15,23],[28,2,14,17,15]],
+    [[30,5,120,1,121],[26,9,43,4,44],[28,17,22,1,23],[28,2,14,19,15]],
+    [[28,3,113,4,114],[26,3,44,11,45],[26,17,21,4,22],[26,9,13,16,14]],
+    [[28,3,107,5,108],[26,3,41,13,42],[30,15,24,5,25],[28,15,15,10,16]],
+    [[28,4,116,4,117],[26,17,42,0,0],[28,17,22,6,23],[30,19,16,6,17]],
+    [[28,2,111,7,112],[28,17,46,0,0],[30,7,24,16,25],[24,34,13,0,0]],
+    [[30,4,121,5,122],[28,4,47,14,48],[30,11,24,14,25],[30,16,15,14,16]],
+    [[30,6,117,4,118],[28,6,45,14,46],[30,11,24,16,25],[30,30,16,2,17]],
+    [[26,8,106,4,107],[28,8,47,13,48],[30,7,24,22,25],[30,22,15,13,16]],
+    [[28,10,114,2,115],[28,19,46,4,47],[28,28,22,6,23],[30,33,16,4,17]],
+    [[30,8,122,4,123],[28,22,45,3,46],[30,8,23,26,24],[30,12,15,28,16]],
+    [[30,3,117,10,118],[28,3,45,23,46],[30,4,24,31,25],[30,11,15,31,16]],
+    [[30,7,116,7,117],[28,21,45,7,46],[30,1,23,37,24],[30,19,15,26,16]],
+    [[30,5,115,10,116],[28,19,47,10,48],[30,15,24,25,25],[30,23,15,25,16]],
+    [[30,13,115,3,116],[28,2,46,29,47],[30,42,24,1,25],[30,23,15,28,16]],
+    [[30,17,115,0,0],[28,10,46,23,47],[30,10,24,35,25],[30,19,15,35,16]],
+    [[30,17,115,1,116],[28,14,46,21,47],[30,29,24,19,25],[30,11,15,46,16]],
+    [[30,13,115,6,116],[28,14,46,23,47],[30,44,24,7,25],[30,59,16,1,17]],
+    [[30,12,121,7,122],[28,12,47,26,48],[30,39,24,14,25],[30,22,15,41,16]],
+    [[30,6,121,14,122],[28,6,47,34,48],[30,46,24,10,25],[30,2,15,64,16]],
+    [[30,17,122,4,123],[28,29,46,14,47],[30,49,24,10,25],[30,24,15,46,16]],
+    [[30,4,122,18,123],[28,13,46,32,47],[30,48,24,14,25],[30,42,15,32,16]],
+    [[30,20,117,4,118],[28,40,47,7,48],[30,43,24,22,25],[30,10,15,67,16]],
+    [[30,19,118,6,119],[28,18,47,31,48],[30,34,24,34,25],[30,20,15,61,16]]
+  ];
+
+  var ALIGN=[null,[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],
+    [6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],
+    [6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],
+    [6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],
+    [6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],
+    [6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],
+    [6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]];
+
+  // ---- Bit buffer ----------------------------------------------------------
+  function BitBuf(){ this.bits=[]; }
+  BitBuf.prototype.put=function(num,len){ for(var i=len-1;i>=0;i--) this.bits.push((num>>>i)&1); };
+  BitBuf.prototype.len=function(){ return this.bits.length; };
+
+  // ---- Mode detection & data encoding --------------------------------------
+  var ALNUM="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:";
+  function utf8bytes(str){
+    var out=[];
+    for(var i=0;i<str.length;i++){
+      var c=str.charCodeAt(i);
+      if(c<0x80) out.push(c);
+      else if(c<0x800){ out.push(0xC0|(c>>6),0x80|(c&0x3F)); }
+      else if(c>=0xD800&&c<=0xDBFF&&i+1<str.length){
+        var c2=str.charCodeAt(i+1); var cp=0x10000+((c-0xD800)<<10)+(c2-0xDC00); i++;
+        out.push(0xF0|(cp>>18),0x80|((cp>>12)&0x3F),0x80|((cp>>6)&0x3F),0x80|(cp&0x3F));
+      } else { out.push(0xE0|(c>>12),0x80|((c>>6)&0x3F),0x80|(c&0x3F)); }
+    }
+    return out;
+  }
+  function detectMode(str){
+    if(/^[0-9]*$/.test(str)) return "numeric";
+    var ok=true; for(var i=0;i<str.length;i++){ if(ALNUM.indexOf(str.charAt(i))<0){ ok=false; break; } }
+    return ok?"alnum":"byte";
+  }
+  function ccBits(mode,version){
+    if(mode==="numeric") return version<10?10:(version<27?12:14);
+    if(mode==="alnum")   return version<10?9 :(version<27?11:13);
+    return version<10?8:16; // byte
+  }
+  var MODE_IND={numeric:1,alnum:2,byte:4};
+
+  function dataBitLength(mode,str){
+    if(mode==="numeric"){ var n=str.length; return 10*((n/3)|0)+[0,4,7][n%3]; }
+    if(mode==="alnum"){ var n2=str.length; return 11*((n2/2)|0)+6*(n2%2); }
+    return utf8bytes(str).length*8;
+  }
+  function totalDataCodewords(version,levelIdx){
+    var e=EC[version][levelIdx];
+    return e[1]*e[2]+e[3]*e[4];
+  }
+  function chooseVersion(mode,str,levelIdx){
+    for(var v=1;v<=40;v++){
+      var need=4+ccBits(mode,v)+dataBitLength(mode,str);
+      if(need <= totalDataCodewords(v,levelIdx)*8) return v;
+    }
+    return -1;
+  }
+
+  function encodeData(mode,str,version){
+    var bb=new BitBuf();
+    bb.put(MODE_IND[mode],4);
+    if(mode==="numeric"){
+      bb.put(str.length,ccBits(mode,version));
+      for(var i=0;i<str.length;i+=3){ var g=str.substr(i,3); bb.put(parseInt(g,10), g.length===3?10:(g.length===2?7:4)); }
+    } else if(mode==="alnum"){
+      bb.put(str.length,ccBits(mode,version));
+      for(var j=0;j<str.length;j+=2){
+        if(j+1<str.length) bb.put(ALNUM.indexOf(str.charAt(j))*45+ALNUM.indexOf(str.charAt(j+1)),11);
+        else bb.put(ALNUM.indexOf(str.charAt(j)),6);
+      }
+    } else {
+      var bytes=utf8bytes(str);
+      bb.put(bytes.length,ccBits(mode,version));
+      for(var k=0;k<bytes.length;k++) bb.put(bytes[k],8);
+    }
+    return bb;
+  }
+
+  function buildCodewords(str,levelIdx){
+    var mode=detectMode(str);
+    var version=chooseVersion(mode,str,levelIdx);
+    if(version<0) throw new Error("Too much data to fit in a QR code. Shorten it or lower error correction.");
+    var bb=encodeData(mode,str,version);
+    var capBits=totalDataCodewords(version,levelIdx)*8;
+    // Terminator
+    var term=Math.min(4,capBits-bb.len()); bb.put(0,term);
+    // Pad to byte boundary
+    while(bb.len()%8!==0) bb.bits.push(0);
+    // Convert to bytes
+    var bytes=[]; for(var i=0;i<bb.len();i+=8){ var b=0; for(var j=0;j<8;j++) b=(b<<1)|bb.bits[i+j]; bytes.push(b); }
+    // Pad bytes
+    var pad=[0xEC,0x11], pi=0; var totalBytes=totalDataCodewords(version,levelIdx);
+    while(bytes.length<totalBytes){ bytes.push(pad[pi&1]); pi++; }
+    return {version:version, dataBytes:bytes};
+  }
+
+  function interleave(version,levelIdx,dataBytes){
+    var e=EC[version][levelIdx];
+    var ecLen=e[0];
+    var blocks=[], idx=0, b;
+    for(b=0;b<e[1];b++){ var d=dataBytes.slice(idx,idx+e[2]); idx+=e[2]; blocks.push({data:d,ec:rsEncode(d,ecLen)}); }
+    for(b=0;b<e[3];b++){ var d2=dataBytes.slice(idx,idx+e[4]); idx+=e[4]; blocks.push({data:d2,ec:rsEncode(d2,ecLen)}); }
+    var maxData=Math.max(e[2],e[4]);
+    var out=[];
+    for(var i=0;i<maxData;i++) for(b=0;b<blocks.length;b++) if(i<blocks[b].data.length) out.push(blocks[b].data[i]);
+    for(var i2=0;i2<ecLen;i2++) for(b=0;b<blocks.length;b++) out.push(blocks[b].ec[i2]);
+    return out;
+  }
+
+  // ---- Matrix construction -------------------------------------------------
+  function makeMatrix(version){ var size=version*4+17; var m=[]; for(var r=0;r<size;r++){ m.push(new Array(size).fill(null)); } return m; }
+
+  function placeFinder(m,r,c){
+    for(var i=-1;i<=7;i++) for(var j=-1;j<=7;j++){
+      var rr=r+i, cc=c+j; if(rr<0||cc<0||rr>=m.length||cc>=m.length) continue;
+      var on=(i>=0&&i<=6&&(j===0||j===6))||(j>=0&&j<=6&&(i===0||i===6))||(i>=2&&i<=4&&j>=2&&j<=4);
+      m[rr][cc]=on;
+    }
+  }
+  function placeAlignment(m,version){
+    var pos=ALIGN[version]; if(!pos||!pos.length) return;
+    var last=pos.length-1;
+    for(var a=0;a<pos.length;a++) for(var b=0;b<pos.length;b++){
+      // Skip only the three positions occupied by finder patterns (by index).
+      if((a===0&&b===0)||(a===0&&b===last)||(a===last&&b===0)) continue;
+      var r=pos[a], c=pos[b];
+      for(var i=-2;i<=2;i++) for(var j=-2;j<=2;j++){
+        m[r+i][c+j]=(Math.max(Math.abs(i),Math.abs(j))!==1);
+      }
+    }
+  }
+  function reserveFormat(m,version){
+    var size=m.length;
+    // reserve a sentinel for format/version areas as "reserved but unset"
+    function res(r,c){ if(m[r][c]===null) m[r][c]="R"; }
+    for(var i=0;i<=8;i++){ res(8,i); res(i,8); }
+    for(var i2=0;i2<8;i2++){ res(8,size-1-i2); res(size-1-i2,8); }
+    if(version>=7){
+      for(var k=0;k<18;k++){ var r=Math.floor(k/3), c=k%3; res(size-11+c,r); res(r,size-11+c); }
+    }
+  }
+  function buildBaseMatrix(version){
+    var m=makeMatrix(version), size=m.length;
+    placeFinder(m,0,0); placeFinder(m,0,size-7); placeFinder(m,size-7,0);
+    // separators are implicitly the white border drawn by placeFinder's -1..7 loop
+    // timing patterns
+    for(var i=8;i<size-8;i++){ if(m[6][i]===null) m[6][i]=(i%2===0); if(m[i][6]===null) m[i][6]=(i%2===0); }
+    placeAlignment(m,version);
+    m[size-8][8]=true; // dark module
+    reserveFormat(m,version);
+    return m;
+  }
+
+  function placeData(m,codewords){
+    var size=m.length;
+    var bits=[]; for(var i=0;i<codewords.length;i++) for(var b=7;b>=0;b--) bits.push((codewords[i]>>b)&1);
+    var idx=0, dir=-1, row=size-1;
+    for(var col=size-1;col>0;col-=2){
+      if(col===6) col=5; // skip vertical timing column
+      while(true){
+        for(var c2=0;c2<2;c2++){
+          var cc=col-c2;
+          if(m[row][cc]===null){
+            var bit=idx<bits.length?bits[idx]:0; idx++;
+            m[row][cc]={data:!!bit};
+          }
+        }
+        row+=dir;
+        if(row<0||row>=size){ row-=dir; dir=-dir; break; }
+      }
+    }
+  }
+
+  function maskFn(i,row,col){
+    switch(i){
+      case 0: return (row+col)%2===0;
+      case 1: return row%2===0;
+      case 2: return col%3===0;
+      case 3: return (row+col)%3===0;
+      case 4: return (Math.floor(row/2)+Math.floor(col/3))%2===0;
+      case 5: return ((row*col)%2)+((row*col)%3)===0;
+      case 6: return (((row*col)%2)+((row*col)%3))%2===0;
+      case 7: return (((row+col)%2)+((row*col)%3))%2===0;
+    }
+  }
+
+  function applyMask(m,maskNo){
+    var size=m.length, out=[];
+    for(var r=0;r<size;r++){ out.push([]); for(var c=0;c<size;c++){
+      var cell=m[r][c];
+      if(cell&&typeof cell==="object"&&"data" in cell){
+        out[r][c]= cell.data ^ (maskFn(maskNo,r,c)?1:0) ? true:false;
+      } else out[r][c]= cell===true;
+    }}
+    return out;
+  }
+
+  function bchFormat(data){ // 15-bit format info, data is 5 bits
+    var d=data<<10, g=0x537;
+    for(var i=14;i>=10;i--){ if((d>>i)&1) d^=g<<(i-10); }
+    return ((data<<10)|d)^0x5412;
+  }
+  function bchVersion(version){ // 18-bit version info
+    var d=version<<12, g=0x1F25;
+    for(var i=17;i>=12;i--){ if((d>>i)&1) d^=g<<(i-12); }
+    return (version<<12)|d;
+  }
+
+  function placeFormat(grid,levelIdx,maskNo){
+    var size=grid.length;
+    var ecBits=[1,0,3,2][levelIdx]; // L=01,M=00,Q=11,H=10
+    var fmt=bchFormat((ecBits<<3)|maskNo);
+    function bit(i){ return ((fmt>>i)&1)?true:false; } // bit 0 = LSB
+    for(var i=0;i<15;i++){
+      var m=bit(i);
+      // vertical strip (column 8)
+      if(i<6) grid[i][8]=m;
+      else if(i<8) grid[i+1][8]=m;
+      else grid[size-15+i][8]=m;
+      // horizontal strip (row 8)
+      if(i<8) grid[8][size-i-1]=m;
+      else if(i<9) grid[8][7]=m;
+      else grid[8][15-i-1]=m;
+    }
+    grid[size-8][8]=true; // dark module
+  }
+  function placeVersionInfo(grid,version){
+    if(version<7) return;
+    var size=grid.length, vinfo=bchVersion(version);
+    for(var k=0;k<18;k++){
+      var bit=!!((vinfo>>k)&1), r=Math.floor(k/3), c=k%3;
+      grid[size-11+c][r]=bit; grid[r][size-11+c]=bit;
+    }
+  }
+
+  function penalty(grid){
+    var size=grid.length, p=0, r,c,i;
+    // Rule 1: runs of 5+ same color in row/col
+    for(r=0;r<size;r++){ var run=1; for(c=1;c<size;c++){ if(grid[r][c]===grid[r][c-1]){ run++; if(run===5)p+=3; else if(run>5)p++; } else run=1; } }
+    for(c=0;c<size;c++){ var run2=1; for(r=1;r<size;r++){ if(grid[r][c]===grid[r-1][c]){ run2++; if(run2===5)p+=3; else if(run2>5)p++; } else run2=1; } }
+    // Rule 2: 2x2 blocks
+    for(r=0;r<size-1;r++) for(c=0;c<size-1;c++){ var v=grid[r][c]; if(v===grid[r][c+1]&&v===grid[r+1][c]&&v===grid[r+1][c+1]) p+=3; }
+    // Rule 3: finder-like pattern 1:1:3:1:1 with 4 light
+    var pat1=[true,false,true,true,true,false,true,false,false,false,false];
+    var pat2=[false,false,false,false,true,false,true,true,true,false,true];
+    for(r=0;r<size;r++) for(c=0;c<=size-11;c++){
+      var m1=true,m2=true; for(i=0;i<11;i++){ if(grid[r][c+i]!==pat1[i])m1=false; if(grid[r][c+i]!==pat2[i])m2=false; } if(m1||m2)p+=40;
+    }
+    for(c=0;c<size;c++) for(r=0;r<=size-11;r++){
+      var n1=true,n2=true; for(i=0;i<11;i++){ if(grid[r+i][c]!==pat1[i])n1=false; if(grid[r+i][c]!==pat2[i])n2=false; } if(n1||n2)p+=40;
+    }
+    // Rule 4: dark proportion
+    var dark=0; for(r=0;r<size;r++) for(c=0;c<size;c++) if(grid[r][c]) dark++;
+    var pct=dark*100/(size*size); var k5=Math.floor(Math.abs(pct-50)/5); p+=k5*10;
+    return p;
+  }
+
+  function encode(text,ecLevel,forceMask){
+    if(text==null) text="";
+    var levelIdx=LEVELS[ecLevel!=null?ecLevel:"M"]; if(levelIdx==null) levelIdx=1;
+    var cw=buildCodewords(text,levelIdx);
+    var version=cw.version;
+    var interleaved=interleave(version,levelIdx,cw.dataBytes);
+    var base=buildBaseMatrix(version);
+    placeData(base,interleaved);
+    // try all 8 masks, pick lowest penalty (or use forced mask for testing)
+    var best=null, bestMask=0, bestPen=Infinity;
+    var lo=(forceMask!=null)?forceMask:0, hi=(forceMask!=null)?forceMask:7;
+    for(var mk=lo;mk<=hi;mk++){
+      var g=applyMask(base,mk);
+      placeFormat(g,levelIdx,mk);
+      placeVersionInfo(g,version);
+      var pen=penalty(g);
+      if(pen<bestPen){ bestPen=pen; best=g; bestMask=mk; }
+    }
+    return {version:version, size:best.length, mask:bestMask, modules:best};
+  }
+
+  root.QR={encode:encode};
+})(typeof module!=="undefined"&&module.exports?module.exports:(typeof window!=="undefined"?window:this));
+</script>
+
+<script>
+/* ---- UI (browser only) --------------------------------------------------- */
+if (typeof document !== "undefined") (function(){
+  "use strict";
+  var $=function(id){return document.getElementById(id);};
+  var current=null; // {modules,size,version,mask}
+
+  var PRESETS={
+    url:"https://lordbasilaiassistant-sudo.github.io/Abundance/",
+    text:"The world already produces enough.",
+    wifi:"WIFI:T:WPA;S:NetworkName;P:password;;",
+    email:"mailto:someone@example.com?subject=Hello&body=Hi%20there",
+    sms:"SMSTO:+15555550123:Your message here",
+    tel:"tel:+15555550123",
+    vcard:"BEGIN:VCARD\nVERSION:3.0\nN:Doe;Jane\nFN:Jane Doe\nTEL:+15555550123\nEMAIL:jane@example.com\nEND:VCARD",
+    geo:"geo:42.0987,-76.0497"
+  };
+
+  function render(){
+    var text=$('data').value;
+    var ec=$('ec').value;
+    $('err').textContent="";
+    if(!text){ $('qmeta').textContent="Type something to encode."; clearCanvas(); current=null; return; }
+    var res;
+    try { res=window.QR.encode(text,ec); }
+    catch(e){ $('err').textContent=e.message; $('qmeta').textContent=""; clearCanvas(); current=null; return; }
+    current=res;
+    draw(res);
+    var bytes=new Blob([text]).size;
+    $('qmeta').textContent="Version "+res.version+" · "+res.size+"×"+res.size+" modules · mask "+res.mask+" · "+bytes+" bytes encoded";
+  }
+
+  function clearCanvas(){ var cv=$('cv'); var ctx=cv.getContext('2d'); ctx.clearRect(0,0,cv.width,cv.height); }
+
+  function draw(res){
+    var margin=parseInt($('margin').value,10);
+    var total=res.size+margin*2;
+    var scale=Math.max(2,Math.floor(560/total));
+    var px=total*scale;
+    var cv=$('cv'); cv.width=px; cv.height=px;
+    var ctx=cv.getContext('2d');
+    ctx.fillStyle=$('bg').value; ctx.fillRect(0,0,px,px);
+    ctx.fillStyle=$('fg').value;
+    for(var r=0;r<res.size;r++) for(var c=0;c<res.size;c++) if(res.modules[r][c])
+      ctx.fillRect((c+margin)*scale,(r+margin)*scale,scale,scale);
+  }
+
+  function svgString(res){
+    var margin=parseInt($('margin').value,10);
+    var total=res.size+margin*2;
+    var rects="";
+    for(var r=0;r<res.size;r++) for(var c=0;c<res.size;c++) if(res.modules[r][c])
+      rects+='<rect x="'+(c+margin)+'" y="'+(r+margin)+'" width="1" height="1"/>';
+    return '<?xml version="1.0" encoding="UTF-8"?>\n'+
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+total+' '+total+'" shape-rendering="crispEdges">'+
+      '<rect width="'+total+'" height="'+total+'" fill="'+$('bg').value+'"/>'+
+      '<g fill="'+$('fg').value+'">'+rects+'</g></svg>';
+  }
+
+  function download(blob,name){
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); },1000);
+  }
+
+  $('dlpng').addEventListener('click',function(){
+    if(!current) return;
+    // render at high resolution for crisp print
+    var margin=parseInt($('margin').value,10), total=current.size+margin*2, scale=Math.max(8,Math.floor(1024/total));
+    var px=total*scale, cv=document.createElement('canvas'); cv.width=px; cv.height=px;
+    var ctx=cv.getContext('2d'); ctx.fillStyle=$('bg').value; ctx.fillRect(0,0,px,px); ctx.fillStyle=$('fg').value;
+    for(var r=0;r<current.size;r++) for(var c=0;c<current.size;c++) if(current.modules[r][c])
+      ctx.fillRect((c+margin)*scale,(r+margin)*scale,scale,scale);
+    cv.toBlob(function(b){ download(b,"qr-code.png"); },"image/png");
+  });
+  $('dlsvg').addEventListener('click',function(){ if(!current) return; download(new Blob([svgString(current)],{type:"image/svg+xml"}),"qr-code.svg"); });
+  $('copyimg').addEventListener('click',function(){
+    if(!current||!navigator.clipboard||!window.ClipboardItem){ $('err').textContent="Copy image isn't supported in this browser — use Download."; return; }
+    $('cv').toBlob(function(b){ navigator.clipboard.write([new ClipboardItem({"image/png":b})]).then(function(){
+      $('err').style.color="var(--accent)"; $('err').textContent="Copied image to clipboard ✓"; setTimeout(function(){ $('err').textContent=""; $('err').style.color=""; },1800);
+    },function(){ $('err').textContent="Couldn't copy — use Download instead."; }); },"image/png");
+  });
+
+  ['data','ec','fg','bg'].forEach(function(id){ $(id).addEventListener('input',render); });
+  $('margin').addEventListener('input',function(){ $('marginv').textContent=$('margin').value; if(current) draw(current); });
+  Array.prototype.forEach.call(document.querySelectorAll('.preset'),function(b){
+    b.addEventListener('click',function(){ $('data').value=PRESETS[b.getAttribute('data-preset')]; render(); $('data').focus(); });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
