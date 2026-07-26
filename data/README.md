@@ -23,7 +23,7 @@ Each fact-entry, regardless of file, looks like:
 
 ```jsonc
 "world_gdp_nominal_usd": {
-  "value": 110060000000000,        // raw number, no abbreviation
+  "value": 118175000000000,        // raw number, no abbreviation
   "unit": "USD",                   // SI or canonical unit string
   "year": 2024,                    // year of the published figure
   "as_of": "mid-2024",             // optional, for granularity

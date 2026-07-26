@@ -31,9 +31,9 @@ A reader moves four sliders — income floor ($/day), wealth tax above $1M, mili
 All inputs are real published figures:
 
 - **Population:** UN World Population Prospects 2024 (8.2B mid-2024)
-- **World GDP:** IMF World Economic Outlook April 2026 ($110.06T)
+- **World GDP:** IMF World Economic Outlook April 2026 ($118.18T, 2025)
 - **Wealth above $1M:** UBS Global Wealth Report 2024 ($213.8T held by 58M people)
-- **Global military spending:** SIPRI 2024 ($2.7T)
+- **Global military spending:** SIPRI 2025 ($2.887T)
 - **Food waste/loss:** FAO + UNEP Food Waste Index 2024 (32% of global production)
 
 ## Sizing

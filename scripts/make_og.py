@@ -55,8 +55,8 @@ d.text((64, 170),
 rows = [
     ("FOOD",        "2,950 kcal / day",   "need 2,100",   "1.4×"),
     ("WATER",       "14,367 L / day",     "WHO basic 50", "287×"),
-    ("ELECTRICITY", "3,763 kWh / year",   "min 1,000",    "3.8×"),
-    ("GDP",         "$13,422 / year",     "poverty $1,095","12×"),
+    ("ELECTRICITY", "3,927 kWh / year",   "min 1,000",    "3.9×"),
+    ("GDP",         "$14,412 / year",     "poverty $1,095","13×"),
 ]
 
 y = 300

@@ -13,7 +13,7 @@ The single most foundational citation for the entire page. Sen's argument that f
 - **Sen, A. (1981). *Poverty and Famines: An Essay on Entitlement and Deprivation*. Oxford University Press.** [Full PDF](https://gdsnet.org/Sen1982PovertyandFaminesBook.pdf). The 1998 Nobel-cited work. Documents the 1943 Bengal famine, Ethiopia 1973, Sahel 1968–73, and Bangladesh 1974, all of which occurred during years of adequate food production.
 - **Sen, A. & Drèze, J. (1989). *Hunger and Public Action*. Oxford.** Extends entitlement theory to public policy and democratic accountability ("no famine has ever taken place in a functioning democracy").
 - **Devereux, S. (2001). 'Sen's Entitlement Approach: Critiques and Counter-Critiques.' *Oxford Development Studies* 29(3):245–263.** Honest summary of where Sen's framework has been challenged.
-- **FAO, IFAD, UNICEF, WFP, WHO (annual). *The State of Food Security and Nutrition in the World*.** [Latest: SOFI 2025](https://openknowledge.fao.org/handle/20.500.14283/cd6008en). The canonical annual measurement.
+- **FAO, IFAD, UNICEF, WFP, WHO (annual). *The State of Food Security and Nutrition in the World*.** [Latest: SOFI 2026](https://www.fao.org/newsroom/detail/sofi-2026--hunger-not-inevitable--fao-says-as-global-hunger-report-shows-progress/en). The canonical annual measurement.
 - **FAO + UNEP (2024). *Food Waste Index Report 2024*.** [Link](https://www.fao.org/family-farming/detail/en/c/1681058/). ~32% of food production lost or wasted globally.
 
 ---
@@ -120,7 +120,7 @@ Background for §8 of the main page.
 - **TeleGeography. *Global Bandwidth Research Service*.** [Snapshot](https://blog.telegeography.com/international-internet-bandwidth).
 - **World Bank Open Data API.** [data.worldbank.org](https://data.worldbank.org/). Source for `data/countries.json`.
 - **UN-Habitat / UN DESA.** [Housing data](https://social.desa.un.org/world-summit-2025/blog/300million-people-homeless-worldwide).
-- **SIPRI. *Trends in World Military Expenditure* (annual).** [2024 fact sheet](https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024).
+- **SIPRI. *Trends in World Military Expenditure* (annual).** [2025 fact sheet](https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025).
 - **World Bank. *June 2025 Update to Global Poverty Lines*.** [Factsheet](https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines).
 - **International Diabetes Federation. *IDF Diabetes Atlas* (11th ed, 2024).** [diabetesatlas.org](https://diabetesatlas.org/).
 - **MSF Access Campaign / JAMA Network Open (2024).** Barber, M. et al. 'Estimated Sustainable Cost-Based Prices for Diabetes Medicines.' [Summary](https://msfaccess.org/jama-network-open-estimated-sustainable-cost-based-prices-diabetes-medicines).

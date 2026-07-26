@@ -98,6 +98,26 @@ Abundance/
 
 For "where do I add X?" see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
+## Data currency
+
+Last refresh: **2026-07-26**. Headline vintages currently in use:
+
+| Figure | Value | Year | Source |
+|---|---|---|---|
+| World population (divisor) | 8.2B | mid-2024 | UN WPP 2024 |
+| World GDP (nominal) | $118.18T | 2025 | IMF WEO, April 2026 |
+| Global electricity generation | 32,202 TWh | 2025 | Energy Institute, Statistical Review 2026 |
+| World cereal production | 3,043 Mt | 2025 | FAO Cereal Supply & Demand Brief, July 2026 |
+| People in hunger | 645M | 2025 | FAO SOFI 2026 (21 July 2026) |
+| Global military spending | $2.887T | 2025 | SIPRI, April 2026 |
+| Internet users | 6.0B | 2025 | ITU Facts and Figures 2025 |
+
+Known stale, awaiting a verified primary figure: global household wealth
+($449.9T, UBS 2024 — GWR 2026 reports 10.8% growth in 2025 but publishes no
+aggregate we could cite), health spending (WHO, 2022), and dietary energy
+supply (FAOSTAT, 2021). Retiring a stale number requires a source link, not an
+extrapolation — see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
 ## Contributing
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the full guide. The single rule:
@@ -114,15 +134,18 @@ Quick standards:
 
 The data is universal; the language barrier isn't. Current state:
 
-| Language | Status | Path |
+| Language | Main page | Open letter |
 |---|---|---|
-| English | full (canonical) | [`/`](index.html) |
-| Español | summary version | [`/lang/es/`](lang/es/index.html) |
-| 中文 (Mandarin) | not started | help wanted |
-| हिन्दी (Hindi) | not started | help wanted |
-| العربية (Arabic) | not started | help wanted (RTL) |
-| Français | not started | help wanted |
-| Português | not started | help wanted |
+| English | full (canonical) — [`/`](index.html) | [`letter.html`](letter.html) |
+| Español | summary — [`/lang/es/`](lang/es/index.html) | [`/lang/es/letter.html`](lang/es/letter.html) |
+| Français | not started — help wanted | [`/lang/fr/letter.html`](lang/fr/letter.html) |
+| Português | not started — help wanted | [`/lang/pt/letter.html`](lang/pt/letter.html) |
+| العربية (Arabic, RTL) | not started — help wanted | [`/lang/ar/letter.html`](lang/ar/letter.html) |
+| 中文 (Mandarin) | not started — help wanted | [`/lang/zh/letter.html`](lang/zh/letter.html) |
+| हिन्दी (Hindi) | not started — help wanted | [`/lang/hi/letter.html`](lang/hi/letter.html) |
+
+The open letter exists in all seven languages; the main arithmetic page still
+needs six of them. Porting a main page is the highest-value contribution here.
 
 **How to contribute a translation:**
 1. Fork the repo.

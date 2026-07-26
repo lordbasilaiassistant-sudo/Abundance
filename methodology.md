@@ -47,11 +47,13 @@ introduces <1% error in any per-capita figure.
 
 ### Electricity
 
-- **Numerator:** `30,856 TWh / year` — IEA Electricity 2024 reported 2023
-  generation of 29,471 TWh; the IEA's Global Energy Review 2025 reports 2024
-  generation grew by ~1,200 TWh (4%). We use the sum as a 2024 estimate. If
-  the IEA's final 2024 figure when published differs by more than 1%, the
-  number on the page should be updated.
+- **Numerator:** `32,202 TWh / year` — reported 2025 global generation, per the
+  [Energy Institute Statistical Review of World Energy 2026](https://www.energyinst.org/statistical-review),
+  up 857 TWh (3%) on 2024. This replaces the prior derived estimate (IEA 2023
+  generation plus a reported growth increment) with a single published total.
+  Ember's [Global Electricity Review 2026](https://ember-energy.org/latest-insights/global-electricity-review-2026/)
+  independently reports 2025 demand growth of 849 TWh and renewables at a record
+  33.8% of generation, overtaking coal for the first time in over a century.
 - **Denominator (need):** two thresholds, because the IEA's "Tier 1" definition
   (100 kWh/person/year) is widely considered too low to enable economic
   development. The Modern Energy Minimum (1,000 kWh/person/year) includes
@@ -65,17 +67,18 @@ introduces <1% error in any per-capita figure.
 
 ### Output (GDP)
 
-- **Numerator:** `$110.06 trillion` — IMF World Economic Outlook, April 2026
-  vintage. Nominal, current prices. PPP-adjusted world GDP is roughly $185T;
-  we use nominal because the comparison to the World Bank poverty line is also
-  in current USD.
+- **Numerator:** `$118.18 trillion` — the 2025 world aggregate in the IMF World
+  Economic Outlook, April 2026 vintage ($118,175.485 billion; 2024 was
+  $111,598.554B). Nominal, current prices. PPP-adjusted world GDP runs
+  considerably higher; we use nominal because the comparison to the World Bank
+  poverty line is also in current USD.
 - **Denominator (need):** `$3.00 / day × 365 = $1,095 / year` — the World Bank's
   updated International Poverty Line ([June 2025 update](https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines)),
   which replaced the prior $2.15/day (2017 PPP) line.
 - **What this ratio misses:** GDP is not income. It includes capital
   consumption, government spending, and net exports. A claim that "GDP per
-  capita is 12× the poverty line" is not a claim that everyone's *income* is
-  12× the line — only that the world's output, if it flowed directly to
+  capita is 13× the poverty line" is not a claim that everyone's *income* is
+  13× the line — only that the world's output, if it flowed directly to
   households, would average that much per person.
 
 ### Housing
@@ -95,7 +98,7 @@ Universal $3/day floor for every human alive:
 ```
 $3.00 × 8,200,000,000 people × 365 days = $8,979,000,000,000
                                         ≈ $8.98 trillion / year
-                                        ≈ 8.2% of world GDP ($110.06T)
+                                        ≈ 7.6% of world GDP ($118.18T)
 ```
 
 Closing the **poverty gap** (paying only the difference between current income
