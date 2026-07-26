@@ -271,6 +271,33 @@
     redistribution claim cites a peer-reviewed study.
   </p>
 
+  <!-- GUESS-FIRST.
+       This page's argument is the distance between what people assume and
+       what is measured. So it measures that distance on the reader before
+       showing a single number. Progressive enhancement: hidden by default and
+       only revealed by JS, so a no-JS reader gets the finished hero band
+       exactly as before. -->
+  <div class="guess" id="guess" hidden>
+    <div class="guess-head">
+      <span class="guess-kicker" id="guess-kicker">Before you scroll · 1 of 4</span>
+      <span class="guess-progress" id="guess-progress" aria-hidden="true"></span>
+    </div>
+    <p class="guess-q" id="guess-q"></p>
+    <div>
+      <input type="range" id="guess-range" min="0" max="1000" value="300"
+             aria-label="Your guess, as a multiple of the minimum need">
+      <div class="guess-scale" aria-hidden="true">
+        <span>0.5×</span><span>5×</span><span>50×</span><span>1000×</span>
+      </div>
+    </div>
+    <div class="guess-row">
+      <div class="guess-your">your guess<strong id="guess-val">2×</strong></div>
+      <button type="button" class="guess-btn" id="guess-lock">Lock it in</button>
+    </div>
+    <p class="guess-verdict" id="guess-verdict" role="status" aria-live="polite"></p>
+    <button type="button" class="guess-skip" id="guess-skip">skip — just show me the numbers</button>
+  </div>
+
   <div class="hero-stats" role="region" aria-label="Headline per-capita ratios">
     <div class="hero-stat">
       <div class="label">Food</div>
@@ -284,12 +311,12 @@
     </div>
     <div class="hero-stat">
       <div class="label">Electricity</div>
-      <div class="ratio" id="hero-energy">3.8<span class="x">×</span></div>
+      <div class="ratio" id="hero-energy">3.9<span class="x">×</span></div>
       <div class="vs">generation ÷ Modern<br>Energy Minimum</div>
     </div>
     <div class="hero-stat">
       <div class="label">Output (GDP)</div>
-      <div class="ratio" id="hero-gdp">12<span class="x">×</span></div>
+      <div class="ratio" id="hero-gdp">13<span class="x">×</span></div>
       <div class="vs">per capita ÷ World<br>Bank poverty line</div>
     </div>
   </div>
@@ -1845,6 +1872,143 @@ const setHTML = (id, v) => { const el = document.getElementById(id); if (el) el.
   setHTML('hero-water',  fmtRatio(waterRatio)      + '<span class="x">×</span>');
   setHTML('hero-energy', fmtRatio(energyRatioHigh) + '<span class="x">×</span>');
   setHTML('hero-gdp',    fmtRatio(gdpRatio)        + '<span class="x">×</span>');
+})();
+
+// ---- Guess-first hero ----
+// Almost nobody guesses these right, and the direction of the error is the
+// argument: people assume scarcity. So the reader commits to a number before
+// the page shows one. Values are read back out of the DOM that recompute()
+// just wrote, so this can never drift from the cited data.
+(function guessFirst() {
+  const box = document.getElementById('guess');
+  if (!box) return;
+
+  const KEY = 'abundance.guess.v1';
+  const parseRatio = id => parseFloat(
+    (document.getElementById(id).textContent || '').replace(/[^\d.]/g, '')
+  );
+
+  const QS = [
+    { id: 'hero-food',
+      q: 'For every person alive today, how many times over does the world already grow <em>enough food</em>?',
+      after: 'The world grows about 40% more calories than humanity needs to eat. Hunger sits alongside roughly a third of all food being lost or wasted.' },
+    { id: 'hero-water',
+      q: 'And <em>renewable freshwater</em>, against the WHO minimum for drinking, cooking and hygiene?',
+      after: 'The one number on this page that most deserves an asterisk: freshwater is geographically locked. The aggregate is enormous; it is not where the people are.' },
+    { id: 'hero-energy',
+      q: 'How about <em>electricity</em>, against the Modern Energy Minimum of 1,000 kWh a year?',
+      after: 'Renewables passed coal in 2025 for the first time in over a century — the supply side is not the bottleneck it was.' },
+    { id: 'hero-gdp',
+      q: 'And <em>economic output</em> — world GDP per person, against the extreme-poverty line?',
+      after: 'GDP is not income, and this is not a claim that everyone earns that. It is a claim about how much the world produces per person, before anyone divides it.' },
+  ];
+  QS.forEach(item => { item.real = parseRatio(item.id); });
+  if (QS.some(item => !isFinite(item.real) || item.real <= 0)) return;
+
+  // Someone who already played gets the finished page, not the quiz again.
+  try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+
+  const MIN = 0.5, MAX = 1000, LOG = Math.log(MAX / MIN);
+  const toVal = t => MIN * Math.exp(LOG * (t / 1000));
+  const fmt = n => n >= 100 ? Math.round(n).toLocaleString()
+                 : n >= 10  ? Math.round(n).toString()
+                 : n.toFixed(1);
+
+  const el = {
+    kicker:   document.getElementById('guess-kicker'),
+    progress: document.getElementById('guess-progress'),
+    q:        document.getElementById('guess-q'),
+    range:    document.getElementById('guess-range'),
+    val:      document.getElementById('guess-val'),
+    lock:     document.getElementById('guess-lock'),
+    verdict:  document.getElementById('guess-verdict'),
+    skip:     document.getElementById('guess-skip'),
+  };
+
+  const dots = QS.map(() => {
+    const d = document.createElement('span');
+    d.className = 'guess-dot';
+    el.progress.appendChild(d);
+    return d;
+  });
+
+  // Blank the hero band and hold the real values aside until they're earned.
+  QS.forEach(item => {
+    const node = document.getElementById(item.id);
+    item.html = node.innerHTML;
+    node.innerHTML = '?';
+    node.classList.add('pending');
+  });
+  box.hidden = false;
+
+  let i = 0, low = 0;
+
+  function land(item) {
+    const node = document.getElementById(item.id);
+    node.innerHTML = item.html;
+    node.classList.remove('pending');
+    node.classList.add('landed');
+  }
+
+  function finish(skipped) {
+    QS.slice(i).forEach(land);
+    try { localStorage.setItem(KEY, skipped ? 'skipped' : String(low)); } catch (e) {}
+    el.q.innerHTML = skipped
+      ? 'All four, then — every one of them global production divided by a documented minimum need.'
+      : (low >= 3
+          ? 'You guessed low on <em>' + low + ' of 4</em>. So does almost everyone — and that reflex is exactly what the rest of this page is about.'
+          : low === 0
+            ? 'You called all four without going under. That is rare, and it means the rest of this page is confirmation rather than news.'
+            : 'You guessed low on <em>' + low + ' of 4</em> — better than most readers manage.');
+    el.verdict.innerHTML = 'Every figure above is global production divided by a published minimum need, and each one links to its primary source. The arithmetic is the easy part. <a href="#thesis">What follows is the argument →</a>';
+    el.kicker.textContent = skipped ? 'The four numbers' : 'How you did';
+    el.range.parentNode.hidden = true;
+    document.querySelector('.guess-row').hidden = true;
+    el.skip.hidden = true;
+    dots.forEach(d => { d.className = 'guess-dot done'; });
+  }
+
+  function ask() {
+    const item = QS[i];
+    el.kicker.textContent = 'Before you scroll · ' + (i + 1) + ' of 4';
+    el.q.innerHTML = item.q;
+    el.verdict.textContent = '';
+    el.lock.textContent = 'Lock it in';
+    el.range.disabled = false;
+    dots.forEach((d, n) => {
+      d.className = 'guess-dot' + (n < i ? ' done' : n === i ? ' active' : '');
+    });
+    el.range.focus({ preventScroll: true });
+  }
+
+  function reveal() {
+    const item = QS[i];
+    const you = toVal(+el.range.value);
+    if (you < item.real) low++;
+    el.range.disabled = true;   // the guess is committed; no editing it now
+    land(item);
+    el.verdict.innerHTML =
+      'You said <span class="g-you">' + fmt(you) + '×</span>. ' +
+      'It is <span class="g-real">' + fmt(item.real) + '×</span>. ' + item.after;
+    dots[i].className = 'guess-dot done';
+    i++;
+    el.lock.textContent = i < QS.length ? 'Next →' : 'See how you did →';
+    el.lock.onclick = () => {
+      el.lock.onclick = onLock;
+      if (i < QS.length) ask(); else finish(false);
+    };
+  }
+
+  function onLock() { reveal(); }
+
+  el.range.addEventListener('input', () => {
+    el.val.textContent = fmt(toVal(+el.range.value)) + '×';
+  });
+  el.lock.onclick = onLock;
+  el.skip.addEventListener('click', () => finish(true));
+
+  el.val.textContent = fmt(toVal(+el.range.value)) + '×';
+  ask();
 })();
 
 // ---- Interactive dials ----

@@ -263,3 +263,144 @@ details.card > p, details.card > ul {
   padding-bottom: 2px;
 }
 .cta-link:hover { color: var(--fg); border-bottom-color: var(--accent); }
+
+/* ---------- guess-first hero ----------
+ * The page's argument is the distance between what a reader assumes and what
+ * is measured. So the page measures that distance on the reader before it
+ * shows a single number. Enhancement only: without JS the block stays hidden
+ * and the hero band renders its values directly.
+ */
+.guess {
+  margin: 48px 0 8px;
+  padding: 26px 28px 22px;
+  background: var(--bg-2);
+  border-radius: 12px;
+}
+.guess-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.guess-kicker {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.guess-progress { display: flex; gap: 6px; }
+.guess-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--line-2);
+  transition: background 200ms;
+}
+.guess-dot.done   { background: var(--accent-2); }
+.guess-dot.active { background: var(--fg-2); }
+
+.guess-q {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.35;
+  color: var(--fg);
+  margin: 0 0 22px;
+  max-width: 46em;
+}
+.guess-q em { color: var(--accent); font-style: normal; }
+
+.guess-scale {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--fg-4);
+  margin-top: 8px;
+}
+.guess-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.guess-your {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--fg-3);
+}
+.guess-your strong {
+  font-size: 26px;
+  color: var(--fg);
+  font-weight: 500;
+  margin-left: 8px;
+  letter-spacing: -0.02em;
+}
+.guess-btn {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  padding: 11px 20px;
+  cursor: pointer;
+  transition: background 140ms;
+}
+.guess-btn:hover  { background: #8aeac2; }
+.guess-btn:active { background: var(--accent-2); }
+.guess-btn:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+
+.guess-verdict {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--fg-2);
+  margin: 18px 0 0;
+  min-height: 1px;
+}
+.guess-verdict .g-real { color: var(--accent); font-family: var(--mono); }
+.guess-verdict .g-you  { color: var(--fg-3);  font-family: var(--mono); }
+
+.guess-skip {
+  display: block;
+  margin-top: 16px;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--fg-4);
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+}
+.guess-skip:hover { color: var(--fg-2); border-bottom-color: var(--line-2); }
+
+/* Hero placeholders while a stat is still unrevealed */
+.hero-stat .ratio.pending {
+  color: var(--fg-4);
+  letter-spacing: 0;
+}
+.hero-stat .ratio.landed { animation: guess-land 420ms ease-out; }
+@keyframes guess-land {
+  0%   { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-stat .ratio.landed { animation: none; }
+  .guess-dot { transition: none; }
+}
+@media (max-width: 560px) {
+  .guess { padding: 22px 18px 18px; }
+  .guess-q { font-size: 19px; }
+  .guess-row { align-items: stretch; }
+  .guess-btn { width: 100%; }
+}
+
+/* The [hidden] attribute loses to any explicit display rule, and .guess-row /
+ * .guess-skip both set one — so hiding them at the end of the sequence needs
+ * this. Without it the finished state still shows a dead slider row. */
+.guess [hidden] { display: none !important; }
+.guess input[type="range"]:disabled { opacity: 0.45; cursor: default; }
