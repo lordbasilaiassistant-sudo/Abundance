@@ -39,6 +39,7 @@ the empirical question: is the suffering load-bearing? The evidence base says no
 - **[Country case studies](case-studies.html)** — eleven nations that chose to lift underclass suffering, each with its honest counter-narrative.
 - **[By country](countries.html)** — a sortable drill-down of 91 countries × 10 World Bank indicators.
 - **[Free tools](tools/)** — an image editor, image compressor, QR code generator, color contrast checker, and password generator that run entirely in your browser: no account, no upload, no tracking. The "manufactured scarcity" argument, demonstrated in code.
+- **[The Graveyard](https://graveyard.broke2builtai.com)** — our own dead projects, buried in public with measured causes of death (real numbers, no euphemisms) and an organ registry of salvageable parts — code, methods, proven negatives — free to take. Abundance applied to failure itself: walkable at night, or machine-readable via [graves.json](https://graveyard.broke2builtai.com/graves.json) and [llms.txt](https://graveyard.broke2builtai.com/llms.txt). Any org can publish the same shape; agents can harvest organs across yards.
 - **[Deep notes](papers/)** and a **[~100-entry bibliography](bibliography.md)** — including a standing steelman of the [strongest case *against* this project](papers/counterarguments.md).
 
 ## What this is *not*
