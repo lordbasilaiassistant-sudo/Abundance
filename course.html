@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Abundance Course</title>
+<meta name="description" content="The world already produces enough — the 8-minute interactive version. Seven short lessons, a few guesses, and real numbers, each linked to its primary source. A friendlier front door to the fully-cited Abundance page. CC0.">
+<meta name="theme-color" content="#0a0b0e">
+<link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/course.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="The Abundance Course">
+<meta property="og:description" content="The world already produces enough — the 8-minute interactive version. Guess first, then see the cited numbers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/course.html">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+
+<style>
+/* ============================================================
+   The Abundance Course — self-contained interactive front door.
+   Extends the main site's design tokens (see styles/tokens.css):
+   same near-black grounds, off-white ink, and the semantic accent
+   trio that already carries meaning on the site —
+     mint  = abundance / supply >= need
+     amber = uneven but solvable (distribution)
+     red   = real or manufactured scarcity
+   plus one added token, --phys (muted blue), for "physical / finite"
+   so the three-kinds-of-scarcity lesson can be a clean 3-way.
+   Committed single dark theme, matching the brand. No webfonts
+   (CSP-safe, same local/system stacks the site uses). No emoji.
+   ============================================================ */
+:root{
+  --bg:#0a0b0e; --bg-2:#13151a; --bg-3:#1c1f26; --bg-warm:#1a1612;
+  --fg:#f0f3f7; --fg-2:#b5bdca; --fg-3:#717885; --fg-4:#4a4f59;
+  --accent:#6ee0b0; --accent-2:#4abf8a;   /* abundance */
+  --warn:#f8c574;                          /* uneven / solvable */
+  --danger:#ef8b8b;                        /* scarcity */
+  --phys:#93b4e6;                          /* physical / finite */
+  --link:#9fc1ff;
+  --line:#1f232c; --line-2:#2b3140;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,"Helvetica Neue",sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --maxw:640px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--fg);
+  font-family:var(--sans); line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  min-height:100vh; min-height:100dvh;
+}
+a{color:var(--link); text-decoration:none}
+a:hover{text-decoration:underline}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--fg); outline-offset:3px; border-radius:4px}
+
+/* ---- shell ---- */
+.shell{
+  display:flex; flex-direction:column;
+  min-height:100vh; min-height:100dvh;
+  max-width:840px; margin:0 auto;
+}
+
+/* ---- top bar: progress ---- */
+.topbar{
+  position:sticky; top:0; z-index:5;
+  background:linear-gradient(var(--bg),var(--bg) 70%,rgba(10,11,14,0));
+  padding:14px 20px 10px;
+}
+.topbar-row{display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:10px}
+.brand{
+  font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--fg-3); white-space:nowrap;
+}
+.brand b{color:var(--fg-2); font-weight:600}
+.exit{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--fg-3)}
+.exit:hover{color:var(--fg-2); text-decoration:none}
+.segs{display:flex; gap:5px}
+.seg{flex:1; height:4px; border-radius:2px; background:var(--bg-3); overflow:hidden; position:relative}
+.seg > i{position:absolute; inset:0; background:var(--accent); transform-origin:left; transform:scaleX(0); transition:transform .45s ease}
+.seg.done > i{transform:scaleX(1)}
+.seg.active > i{transform:scaleX(.5); background:var(--accent)}
+@media (prefers-reduced-motion:reduce){ .seg > i{transition:none} }
+
+/* ---- stage ---- */
+.stage-wrap{flex:1; display:flex; flex-direction:column; justify-content:center; padding:8px 20px 20px}
+.stage{max-width:var(--maxw); width:100%; margin:0 auto}
+.step{animation:rise .34s ease both}
+@keyframes rise{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){ .step{animation:none} }
+
+.kicker{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--fg-3); margin:0 0 14px}
+.kicker.g{color:var(--accent-2)} .kicker.a{color:var(--warn)} .kicker.d{color:var(--danger)} .kicker.p{color:var(--phys)}
+h1.lead{font-family:var(--serif); font-weight:500; font-size:clamp(28px,6vw,44px); line-height:1.12; letter-spacing:-.02em; margin:0 0 18px; text-wrap:balance}
+h2.lead{font-family:var(--serif); font-weight:500; font-size:clamp(24px,5vw,34px); line-height:1.16; letter-spacing:-.015em; margin:0 0 16px; text-wrap:balance}
+.body{font-size:clamp(16px,2.4vw,18px); color:var(--fg-2); margin:0 0 16px; max-width:34em}
+.body strong{color:var(--fg)}
+.body.small{font-size:14.5px; color:var(--fg-3)}
+.src{font-size:12.5px; color:var(--fg-3); font-family:var(--mono); margin-top:18px; line-height:1.6}
+.src a{color:var(--fg-2)}
+
+.big{font-family:var(--serif); font-weight:500; font-size:clamp(60px,17vw,132px); line-height:.9; letter-spacing:-.03em; color:var(--accent); font-variant-numeric:tabular-nums; margin-bottom:20px}
+.big .x{font-size:.42em; color:var(--fg-3); margin-left:.04em}
+.big.warn{color:var(--warn)} .big.danger{color:var(--danger)} .big.phys{color:var(--phys)}
+
+/* ---- tiles (stat rows / galleries) ---- */
+.tiles{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:6px 0 4px}
+.tiles.one{grid-template-columns:1fr}
+.tile{background:var(--bg-2); border-radius:10px; padding:16px 18px}
+.tile .tv{font-family:var(--mono); font-size:clamp(20px,4.4vw,26px); font-weight:500; letter-spacing:-.01em; color:var(--fg); line-height:1.05; font-variant-numeric:tabular-nums}
+.tile .tv.accent{color:var(--accent)} .tile .tv.warn{color:var(--warn)} .tile .tv.danger{color:var(--danger)}
+.tile .tl{font-family:var(--mono); font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--fg-3); margin-bottom:8px}
+.tile .ts{font-size:12.5px; color:var(--fg-3); margin-top:7px; line-height:1.5}
+@media (max-width:460px){ .tiles{grid-template-columns:1fr} }
+
+/* gallery card (post-money / pilots) */
+.gcard{background:var(--bg-2); border-left:3px solid var(--accent); border-radius:0 10px 10px 0; padding:15px 18px; margin:10px 0}
+.gcard h4{margin:0 0 5px; font-family:var(--serif); font-weight:500; font-size:18px; color:var(--fg)}
+.gcard p{margin:0; font-size:14px; color:var(--fg-2); line-height:1.5}
+
+/* ---- guess slider ---- */
+.guessbox{margin:8px 0 4px}
+.rangewrap{margin:26px 0 4px}
+input[type=range]{-webkit-appearance:none; appearance:none; width:100%; height:5px; border-radius:3px; background:var(--bg-3); outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; appearance:none; width:26px; height:26px; border-radius:50%; background:var(--accent); border:3px solid var(--bg); cursor:pointer; box-shadow:0 0 0 0 rgba(110,224,176,.25); transition:box-shadow .12s}
+input[type=range]::-webkit-slider-thumb:hover{box-shadow:0 0 0 8px rgba(110,224,176,.16)}
+input[type=range]::-moz-range-thumb{width:26px; height:26px; border-radius:50%; background:var(--accent); border:3px solid var(--bg); cursor:pointer}
+input[type=range]:disabled::-webkit-slider-thumb{background:var(--fg-4); cursor:default}
+.scale{display:flex; justify-content:space-between; font-family:var(--mono); font-size:10.5px; color:var(--fg-4); margin-top:9px}
+.yourguess{font-family:var(--mono); font-size:14px; color:var(--fg-3); margin-top:20px}
+.yourguess b{font-family:var(--serif); font-size:34px; color:var(--fg); margin-left:8px; letter-spacing:-.02em; font-variant-numeric:tabular-nums; vertical-align:-2px}
+.verdict{font-size:15.5px; line-height:1.6; color:var(--fg-2); margin-top:20px; min-height:1px}
+.verdict .real{font-family:var(--serif); color:var(--accent); font-size:1.05em}
+.verdict .you{font-family:var(--mono); color:var(--fg-3)}
+
+/* ---- choice / true-false / sort ---- */
+.q{font-family:var(--serif); font-weight:500; font-size:clamp(21px,4.4vw,27px); line-height:1.22; margin:0 0 20px; letter-spacing:-.01em; text-wrap:balance}
+.opts{display:flex; flex-direction:column; gap:10px}
+.opt{
+  text-align:left; width:100%; cursor:pointer;
+  background:var(--bg-2); color:var(--fg); border:1px solid var(--line-2);
+  border-radius:10px; padding:15px 16px; font-size:16px; line-height:1.4;
+  transition:border-color .15s, background .15s, transform .05s;
+}
+.opt:hover:not(:disabled){border-color:var(--fg-3)}
+.opt:active:not(:disabled){transform:translateY(1px)}
+.opt:disabled{cursor:default}
+.opt.correct{border-color:var(--accent); background:rgba(110,224,176,.09); color:var(--fg)}
+.opt.wrong{border-color:var(--danger); background:rgba(239,139,139,.08)}
+.opt .mk{float:right; font-family:var(--mono); font-size:13px; margin-left:12px}
+.opt.correct .mk{color:var(--accent)} .opt.wrong .mk{color:var(--danger)}
+
+.chips{display:flex; flex-wrap:wrap; gap:9px; margin-top:4px}
+.chip{cursor:pointer; font-family:var(--mono); font-size:12px; letter-spacing:.04em; text-transform:uppercase; padding:9px 14px; border-radius:999px; background:var(--bg-3); color:var(--fg-2); border:1px solid transparent; transition:border-color .15s, color .15s}
+.chip[data-k=phys]:hover{border-color:var(--phys); color:var(--phys)}
+.chip[data-k=dist]:hover{border-color:var(--warn); color:var(--warn)}
+.chip[data-k=manu]:hover{border-color:var(--danger); color:var(--danger)}
+.chip:disabled{cursor:default; opacity:.55}
+.feedback{font-size:14.5px; line-height:1.55; color:var(--fg-2); margin-top:18px; min-height:1px}
+.feedback.ok{color:var(--accent)} .feedback.no{color:var(--danger)}
+.feedback .tag{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em}
+.tag.phys{color:var(--phys)} .tag.dist{color:var(--warn)} .tag.manu{color:var(--danger)}
+
+/* ---- bottom controls ---- */
+.controls{
+  position:sticky; bottom:0; z-index:5;
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  padding:14px 20px calc(14px + env(safe-area-inset-bottom));
+  background:linear-gradient(rgba(10,11,14,0),var(--bg) 40%);
+  max-width:840px; margin:0 auto; width:100%;
+}
+.btn{
+  font-family:var(--mono); font-size:12.5px; letter-spacing:.09em; text-transform:uppercase;
+  border-radius:8px; padding:13px 22px; cursor:pointer; border:none; transition:background .14s, color .14s, opacity .14s;
+}
+.btn.primary{background:var(--accent); color:#08130d; font-weight:600}
+.btn.primary:hover{background:#8aeac2}
+.btn.primary:disabled{background:var(--bg-3); color:var(--fg-4); cursor:not-allowed}
+.btn.ghost{background:transparent; color:var(--fg-3); padding-left:6px; padding-right:6px}
+.btn.ghost:hover{color:var(--fg-2)}
+.btn.ghost.hide{visibility:hidden}
+.counter{font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--fg-4); text-transform:uppercase}
+/* [hidden] loses to an explicit display rule, so hiding the bars needs this */
+.controls[hidden],.topbar[hidden]{display:none !important}
+
+/* ---- cover ---- */
+.cover .eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-2); margin-bottom:20px}
+.cover .subttl{font-size:17px; color:var(--fg-2); max-width:32em; margin:0 0 30px}
+.cover-actions{display:flex; align-items:center; gap:16px; flex-wrap:wrap}
+.cover .meta{font-family:var(--mono); font-size:11.5px; color:var(--fg-4); letter-spacing:.04em; margin-top:26px; line-height:1.7}
+.cover .meta a{color:var(--fg-3)}
+
+/* ---- finish ---- */
+.recap{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:8px 0 22px}
+.recap .r{background:var(--bg-2); border-radius:10px; padding:14px 10px; text-align:center}
+.recap .rv{font-family:var(--serif); font-size:clamp(22px,5vw,30px); color:var(--accent); line-height:1; font-variant-numeric:tabular-nums}
+.recap .rl{font-family:var(--mono); font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--fg-3); margin-top:8px}
+@media (max-width:460px){ .recap{grid-template-columns:repeat(2,1fr)} }
+.links{display:flex; flex-direction:column; gap:10px; margin-top:10px}
+.linkrow{display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--bg-2); border-radius:10px; padding:15px 18px; color:var(--fg); border:1px solid var(--line-2); transition:border-color .15s}
+.linkrow:hover{border-color:var(--fg-3); text-decoration:none}
+.linkrow .lt{font-size:15.5px} .linkrow .lt b{font-weight:600}
+.linkrow .arr{font-family:var(--mono); color:var(--accent)}
+
+.noscript{max-width:var(--maxw); margin:60px auto; padding:0 24px; color:var(--fg-2)}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar" id="topbar" hidden>
+    <div class="topbar-row">
+      <span class="brand"><b>Abundance</b> · the course</span>
+      <a class="exit" href="index.html">Full page →</a>
+    </div>
+    <div class="segs" id="segs" aria-hidden="true"></div>
+  </div>
+
+  <div class="stage-wrap">
+    <main class="stage" id="stage" role="main" aria-live="polite">
+      <noscript>
+        <div class="noscript">
+          <h1 style="font-family:var(--serif);font-weight:500">The Abundance Course</h1>
+          <p>This interactive course needs JavaScript. The full argument — every
+          number, every citation — is on the <a href="index.html">main page</a>,
+          and it works without JavaScript.</p>
+        </div>
+      </noscript>
+    </main>
+  </div>
+
+  <div class="controls" id="controls" hidden>
+    <button class="btn ghost" id="backBtn" type="button">← Back</button>
+    <span class="counter" id="counter"></span>
+    <button class="btn primary" id="nextBtn" type="button">Next →</button>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ------------------------------------------------------------
+   Source-of-truth numbers — kept in sync with data/essentials.json
+   and index.html's D object. Ratios are COMPUTED below, never typed,
+   so the course can't drift from the cited arithmetic.
+   ------------------------------------------------------------ */
+var D = {
+  pop: 8200000000,
+  gdp_usd: 118175000000000,
+  wealth_usd: 449900000000000,
+  wealth_top_usd: 213800000000000,
+  military_usd: 2887000000000,
+  health_share: 0.099,
+  kcal_supply: 2950, kcal_need: 2100,
+  freshwater_km3: 43000, water_need_l_day: 50,
+  electricity_twh: 32202, tier1_kwh_yr: 100, modern_min_kwh_yr: 1000,
+  poverty_line_usd_day: 3.00,
+  hungry: 645000000, food_waste_share: 0.32,
+  insulin_cost: 0.94, insulin_us: 90.69
+};
+var C = (function(){
+  var waterPCday = (D.freshwater_km3*1e12)/D.pop/365;
+  var energyPC = (D.electricity_twh*1e9)/D.pop;
+  var gdpPC = D.gdp_usd/D.pop;
+  var ubiCost = D.poverty_line_usd_day*D.pop*365;
+  return {
+    food: D.kcal_supply/D.kcal_need,
+    water: waterPCday/D.water_need_l_day,
+    energy: energyPC/D.modern_min_kwh_yr,
+    energyLow: energyPC/D.tier1_kwh_yr,
+    gdp: gdpPC/(D.poverty_line_usd_day*365),
+    waterPCday: waterPCday, energyPC: energyPC, gdpPC: gdpPC,
+    ubiCost: ubiCost, ubiShare: ubiCost/D.gdp_usd,
+    insulinMarkup: D.insulin_us/D.insulin_cost
+  };
+})();
+var fmtR = function(n){ return n>=100 ? Math.round(n).toLocaleString() : n>=10 ? Math.round(n).toString() : n.toFixed(1); };
+
+/* ------------------------------------------------------------
+   Module names drive the segmented progress bar (7 modules).
+   ------------------------------------------------------------ */
+var MODS = ["Guess","The idea","Scarcity","The money","Tried","Beyond money","Enough"];
+
+/* ------------------------------------------------------------
+   The course, as a list of steps. `mod` (1..7) maps to a progress
+   segment. Types: cover, guess, teach, sort, tf, choice, finish.
+   ------------------------------------------------------------ */
+var STEPS = [
+  { type:"cover" },
+
+  // ---- Module 1 · Guess before you look ----
+  { type:"guess", mod:1, kicker:"Guess 1 of 4 · Food", cls:"g",
+    q:"For every person alive today, how many times over does the world already grow <em>enough food to eat</em>?",
+    real:C.food,
+    after:"About <strong>40% more calories</strong> than humanity needs. And it sits right next to hunger — roughly a third of all food is lost or wasted.",
+    src:'FAOSTAT food balance sheets · FAO SOFI 2026' },
+  { type:"guess", mod:1, kicker:"Guess 2 of 4 · Water", cls:"g",
+    q:"And <em>renewable freshwater</em>, measured against the WHO daily minimum for drinking, cooking and hygiene?",
+    real:C.water,
+    after:"The one number that most deserves an asterisk: freshwater is <strong>geographically locked</strong>. The aggregate is enormous — it just isn't where the people are.",
+    src:'FAO AQUASTAT · WHO domestic-water guidelines' },
+  { type:"guess", mod:1, kicker:"Guess 3 of 4 · Electricity", cls:"g",
+    q:"How about <em>electricity generated</em>, against the Modern Energy Minimum of 1,000 kWh a year?",
+    real:C.energy,
+    after:"And climbing: renewables <strong>passed coal in 2025</strong> for the first time in over a century. The supply side isn't the bottleneck it was.",
+    src:'Energy Institute Statistical Review 2026 · Ember 2026' },
+  { type:"guess", mod:1, kicker:"Guess 4 of 4 · Output", cls:"g",
+    q:"And <em>economic output</em> — world GDP per person, against the extreme-poverty line?",
+    real:C.gdp,
+    after:"GDP isn't income, and this isn't a claim that everyone earns it. It's how much the world <strong>produces per person</strong>, before anyone divides it up.",
+    src:'IMF WEO April 2026 · World Bank poverty line (2021 PPP)' },
+
+  // ---- Module 2 · The one idea ----
+  { type:"teach", mod:2, kicker:"The one idea", cls:"g",
+    big:"Not a<br>production<br>problem.",
+    bigPlain:true,
+    body:"For every essential with reliable global data, we already make <strong>more than everyone needs</strong>. Hunger, homelessness and energy poverty in 2026 are <strong>distribution</strong> outcomes — not production outcomes." },
+  { type:"teach", mod:2, kicker:"This isn't new",
+    head:"A Nobel was won for exactly this.",
+    body:"<strong>Amartya Sen</strong> won the 1998 Nobel in economics for showing the great famines — including Bengal 1943, ~3 million dead — happened in years of <em>adequate</em> food. Famine is an <strong>entitlement failure</strong>: people lose the claim to food while the food is still right there.",
+    src:'Sen (1981), <em>Poverty and Famines</em>' },
+  { type:"choice", mod:2, kicker:"Checkpoint",
+    q:"So the core claim of this course is —",
+    options:[
+      { t:"We urgently need to produce much more food.", correct:false },
+      { t:"Enough already exists; the problem is who can get it.", correct:true },
+      { t:"Nothing can really be done about it.", correct:false }
+    ],
+    explain:"Right. The page exists to refute “we can’t produce enough” — not to claim distribution is easy." },
+
+  // ---- Module 3 · Three kinds of scarcity ----
+  { type:"teach", mod:3, kicker:"Three kinds of scarcity",
+    head:"Not all scarcity is fake.",
+    body:"Learn to tell three apart — because the fix for each is different:",
+    kinds:true,
+    src:"You'll sort a few in a moment." },
+  { type:"sort", mod:3, kicker:"Sort it · 1 of 4",
+    stmt:"A generic insulin pen costs about <b>$0.94</b> to make — and <b>$90</b> to buy in the United States.",
+    answer:"manu",
+    explain:"The molecule isn't scarce. The legal right to copy it is. ($0.94 vs $90.69 — a ~96× markup.)",
+    src:'Barber, Sulis et al. (2024), JAMA Network Open / MSF' },
+  { type:"sort", mod:3, kicker:"Sort it · 2 of 4",
+    stmt:"In many wealthy countries, <b>empty homes outnumber homeless people</b> roughly ten to one.",
+    answer:"dist",
+    explain:"The shortage isn't of walls. It's of walls people are allowed to enter — a logistics-and-rights problem.",
+    src:'UN-Habitat / UN DESA' },
+  { type:"sort", mod:3, kicker:"Sort it · 3 of 4",
+    stmt:"<b>Helium</b>, once vented to the atmosphere, is effectively gone for good.",
+    answer:"phys",
+    explain:"Genuinely finite. No amount of redistribution conjures more — this kind is real.",
+    src:'Physical scarcity — the honest category' },
+  { type:"sort", mod:3, kicker:"Sort it · 4 of 4",
+    stmt:"A limited-edition sneaker <b>“drop”</b> — supply could be infinite, but is capped on purpose.",
+    answer:"manu",
+    explain:"Here the scarcity <em>is</em> the product. Someone profits from it existing.",
+    src:'Manufactured scarcity' },
+
+  // ---- Module 4 · The money question ----
+  { type:"teach", mod:4, kicker:"“We can’t afford it”", cls:"g",
+    big:C.ubiShare, bigPct:true,
+    body:"A <strong>$3-a-day floor for every human alive</strong> costs "+"$"+(C.ubiCost/1e12).toFixed(2)+" trillion a year — that share of world GDP. <strong>Less than the world already spends on healthcare</strong> (9.9%).",
+    tiles:[
+      { tl:"Global household wealth", tv:"$449.9T", cls:"", ts:"$213.8T of it held by the richest 0.7%" },
+      { tl:"Global military spending / yr", tv:"$2.887T", cls:"warn", ts:"11th straight annual rise" }
+    ],
+    src:'UBS GWR 2024 · SIPRI 2026 · IMF WEO 2026' },
+  { type:"tf", mod:4, kicker:"Checkpoint · true or false",
+    stmt:"“Give people cash with no strings attached and they'll stop working.”",
+    answer:false,
+    explain:"<strong>False.</strong> Every well-run trial — Kenya, Alaska, Iran, Stockton — finds no drop in work, sometimes a rise. A 114-study meta-analysis and a 165-study review agree.",
+    src:'Crosta et al. (2024); Bastagli et al. (2016, ODI)' },
+
+  // ---- Module 5 · It's been tried ----
+  { type:"teach", mod:5, kicker:"It has already been done",
+    head:"Twelve programs. Five decades. Same result.",
+    body:"When you give people money without conditions, they don't stop working, don't waste it, and their lives measurably improve:",
+    tiles:[
+      { tl:"Kenya UBI (RCT, ~23k people)", tv:"0", cls:"accent", ts:"change in labor supply — in any arm" },
+      { tl:"Alaska dividend", tv:"40+ yrs", cls:"accent", ts:"paid to every resident, every year" },
+      { tl:"Stockton $500/mo", tv:"+12 pp", cls:"accent", ts:"full-time work vs +5pp control" },
+      { tl:"Iran universal transfer", tv:"22.5→10.6%", cls:"accent", ts:"poverty headcount, >70M people" }
+    ],
+    src:'Banerjee et al. 2023 · Jones & Marinescu 2022 · West et al. 2023 · Salehi-Isfahani 2018' },
+  { type:"tf", mod:5, kicker:"Checkpoint · true or false",
+    stmt:"“Alaska's dividend is a fringe experiment that never really lasted.”",
+    answer:false,
+    explain:"<strong>False.</strong> It has paid every Alaskan — including children — for <strong>40+ years</strong>, through four decades of party turnover and oil-price crashes.",
+    src:'Alaska Permanent Fund Dividend Division' },
+
+  // ---- Module 6 · Beyond money ----
+  { type:"teach", mod:6, kicker:"The important part",
+    head:"Money is a measuring tool.",
+    body:"The trouble starts when the <em>reading</em> becomes the goal. Maximize money and abundance becomes a <strong>liability</strong> — so scarcity gets manufactured: insulin marked up 90×, “drops,” planned obsolescence, paywalled knowledge." },
+  { type:"teach", mod:6, kicker:"What “post-money” means",
+    head:"Not no money. Money demoted.",
+    body:"From the <strong>objective</strong> a business maximizes to a <strong>constraint</strong> it works within. “Earn enough to do the work,” not “earn as much as possible.” Profit as oxygen — needed to live, not the reason for living. And it already exists, at scale:",
+    gallery:[
+      { h:"Patagonia", p:"“Earth is now our only shareholder.” Gave the company away in 2022; ~$100M/yr of profit now leaves to fight the climate crisis, permanently, by structure." },
+      { h:"The $1 patent", p:"Insulin's discoverers sold the patent for $1 (1923). Salk on the polio vaccine: “Could you patent the sun?”" },
+      { h:"The commons", p:"Linux runs 100% of the world's 500 fastest supercomputers and most of the web — given away. Wikipedia: a top site, no ads." },
+      { h:"Newman's Own", p:"100% of profit to charity — over $600M — while competing on ordinary supermarket shelves." }
+    ],
+    src:'patagonia.com/ownership · top500.org · newmansown.org' },
+  { type:"choice", mod:6, kicker:"Checkpoint",
+    q:"A post-money business treats profit as —",
+    options:[
+      { t:"The purpose — the number to maximize.", correct:false },
+      { t:"Oxygen — needed to live, not the reason to.", correct:true },
+      { t:"Something to abolish entirely.", correct:false }
+    ],
+    explain:"Exactly. Post-money ≠ no money. It's money put back in its place: a means, not the end." },
+
+  // ---- Module 7 · Finish ----
+  { type:"finish", mod:7 }
+];
+
+/* count content modules present for the progress bar */
+var MODCOUNT = MODS.length;
+
+/* ------------------------------------------------------------
+   State + persistence
+   ------------------------------------------------------------ */
+var LSKEY = "abundance.course.v2";
+var state = { i:0, max:0, ans:{} };
+try{ var saved = JSON.parse(localStorage.getItem(LSKEY)||"null"); if(saved && typeof saved.i==="number"){ state = saved; state.ans = state.ans||{}; } }catch(e){}
+function save(){ try{ localStorage.setItem(LSKEY, JSON.stringify(state)); }catch(e){} }
+
+/* ------------------------------------------------------------
+   DOM helpers
+   ------------------------------------------------------------ */
+var stage = document.getElementById("stage");
+var topbar = document.getElementById("topbar");
+var segsEl = document.getElementById("segs");
+var controls = document.getElementById("controls");
+var backBtn = document.getElementById("backBtn");
+var nextBtn = document.getElementById("nextBtn");
+var counter = document.getElementById("counter");
+
+function el(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
+
+/* build progress segments once */
+for(var m=0;m<MODCOUNT;m++){ var s=el("div","seg"); s.appendChild(el("i")); segsEl.appendChild(s); }
+function paintSegs(step){
+  var mod = step.mod||0;
+  var kids = segsEl.children;
+  for(var k=0;k<kids.length;k++){
+    kids[k].className = "seg" + (mod> (k+1) ? " done" : mod===(k+1) ? " active" : "");
+  }
+}
+
+/* number count-up (respects reduced motion) */
+var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function countUp(node, to, fmt){
+  if(reduce){ node.innerHTML = fmt(to); return; }
+  var start=performance.now(), dur=650;
+  function tick(now){
+    var t=Math.min(1,(now-start)/dur); var e=1-Math.pow(1-t,3);
+    node.innerHTML = fmt(to*e);
+    if(t<1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ------------------------------------------------------------
+   Renderers per step type. Each returns whether "Next" starts enabled.
+   ------------------------------------------------------------ */
+function render(){
+  var step = STEPS[state.i];
+  stage.innerHTML = "";
+  var wrap = el("div","step");
+  var nextEnabled = true;
+  var nextLabel = "Next →";
+
+  if(step.type==="cover"){
+    topbar.hidden = true; controls.hidden = true;
+    renderCover(wrap);
+    stage.appendChild(wrap);
+    return;
+  }
+  topbar.hidden = false; controls.hidden = false;
+  paintSegs(step);
+  nextBtn.dataset.mode = "";
+
+  if(step.type==="guess"){ nextEnabled = renderGuess(wrap, step); }
+  else if(step.type==="teach"){ renderTeach(wrap, step); }
+  else if(step.type==="sort"){ nextEnabled = renderSort(wrap, step); }
+  else if(step.type==="tf"){ nextEnabled = renderTF(wrap, step); }
+  else if(step.type==="choice"){ nextEnabled = renderChoice(wrap, step); }
+  else if(step.type==="finish"){ topbar.hidden=false; controls.hidden=true; paintSegs(step); renderFinish(wrap); stage.appendChild(wrap); return; }
+
+  stage.appendChild(wrap);
+
+  // controls
+  backBtn.className = "btn ghost" + (state.i<=1 ? " hide" : "");
+  counter.textContent = step.mod ? ("Lesson "+step.mod+" of "+MODCOUNT) : "";
+  var isLast = (state.i===STEPS.length-2); // step just before the finish screen
+  if(step.type==="guess" && !state.ans[state.i]) nextBtn.textContent = "Lock it in";
+  else nextBtn.textContent = isLast ? "Finish →" : nextLabel;
+  setNext(nextEnabled);
+  // focus for a11y
+  var h = wrap.querySelector("h1,h2,.q,.kicker");
+  if(h){ h.setAttribute("tabindex","-1"); h.focus({preventScroll:true}); }
+}
+
+function setNext(on){ nextBtn.disabled = !on; }
+
+/* ---- cover ---- */
+function renderCover(wrap){
+  wrap.className = "step cover";
+  wrap.appendChild(el("div","eyebrow","A short course · about 8 minutes · no sign-up"));
+  wrap.appendChild(el("h1","lead","The world already produces enough. Here's the 8-minute version."));
+  wrap.appendChild(el("p","subttl","Seven quick lessons, a few guesses, and real numbers — every one linked to its primary source. Built from the long page, minus the wall of text."));
+  var actions = el("div","cover-actions");
+  var start = el("button","btn primary", state.max>1 ? "Resume →" : "Start →");
+  start.type="button";
+  start.onclick=function(){ go(Math.max(1, state.max>1? Math.min(state.max, STEPS.length-1):1)); };
+  actions.appendChild(start);
+  if(state.max>1){
+    var restart = el("button","btn ghost","Start over");
+    restart.type="button";
+    restart.onclick=function(){ state={i:0,max:0,ans:{}}; save(); go(1); };
+    actions.appendChild(restart);
+  }
+  wrap.appendChild(actions);
+  wrap.appendChild(el("div","meta","Rather read the full, cited page? <a href=\"index.html\">Abundance →</a><br>Public domain (CC0). No tracking, no ads, nothing leaves your device."));
+}
+
+/* ---- guess ---- */
+function renderGuess(wrap, step){
+  var a = state.ans[state.i];
+  wrap.appendChild(el("p","kicker "+(step.cls||""), step.kicker));
+  wrap.appendChild(el("h2","lead q", step.q));
+
+  var box = el("div","guessbox");
+  var MIN=0.5, MAX=1000, LOG=Math.log(MAX/MIN);
+  var toVal=function(t){ return MIN*Math.exp(LOG*(t/1000)); };
+  var fmtG=function(n){ return n>=100?Math.round(n).toLocaleString():n>=10?Math.round(n).toString():n.toFixed(1); };
+
+  var rangewrap = el("div","rangewrap");
+  var range=document.createElement("input");
+  range.type="range"; range.min="0"; range.max="1000"; range.step="1"; range.value= a? a.t : "300";
+  range.setAttribute("aria-label","Your guess, as a multiple of the minimum need");
+  rangewrap.appendChild(range);
+  var scale=el("div","scale"); scale.innerHTML="<span>0.5×</span><span>5×</span><span>50×</span><span>1000×</span>";
+  rangewrap.appendChild(scale);
+  box.appendChild(rangewrap);
+
+  var your=el("div","yourguess"); your.innerHTML='<span id="ylab">your guess</span> <b id="gv">'+fmtG(toVal(+range.value))+'×</b>';
+  box.appendChild(your);
+  var gv=your.querySelector("#gv");
+  var ylab=your.querySelector("#ylab");
+  var verdict=el("p","verdict"); verdict.setAttribute("role","status");
+  box.appendChild(verdict);
+  wrap.appendChild(box);
+
+  var locked = !!a;
+  range.addEventListener("input",function(){ gv.innerHTML=fmtG(toVal(+range.value))+"×"; });
+
+  function reveal(g){
+    range.disabled=true; locked=true;
+    var real=step.real;
+    if(ylab) ylab.textContent="the answer";
+    gv.innerHTML=fmtR(real)+"×";
+    countUp(gv, real, function(v){ return fmtR(v)+"×"; });
+    var factor = real/g;
+    var howoff = factor>=2 ? ("about <span class=\"real\">"+fmtR(factor)+"×</span> more than you guessed")
+               : factor<=0.5 ? ("about "+fmtR(1/factor)+"× <em>less</em> than you guessed")
+               : "close — nicely done";
+    verdict.innerHTML = "You guessed <span class=\"you\">"+fmtG(g)+"×</span>. It's <span class=\"real\">"+fmtR(real)+"×</span> — "+howoff+". "+step.after;
+    if(step.src) { var s=el("p","src",step.src); box.appendChild(s); }
+    setNext(true);
+  }
+
+  if(locked){ reveal(a.g); }
+  else {
+    // first Next acts as "Lock it in"; we intercept via nextBtn override below
+    nextBtn.dataset.mode="lock";
+    wrap._lock = function(){
+      var g=toVal(+range.value);
+      state.ans[state.i]={t:+range.value, g:g};
+      save();
+      reveal(g);
+      nextBtn.dataset.mode="";
+      nextBtn.textContent = (state.i===STEPS.length-2)?"Finish →":"Next →";
+    };
+    nextBtn.textContent="Lock it in";
+    return true; // next enabled (acts as lock)
+  }
+  return true;
+}
+
+/* ---- teach ---- */
+function renderTeach(wrap, step){
+  wrap.appendChild(el("p","kicker "+(step.cls||""), step.kicker));
+  if(step.big!=null){
+    var big = el("div","big"+(step.cls==="g"?"":""));
+    if(step.bigPct){ big.className="big"; big.innerHTML=(step.big*100).toFixed(1)+"<span class=\"x\">%</span>"; }
+    else if(step.bigPlain){ big.className="big"; big.innerHTML=step.big; }
+    else { big.innerHTML=fmtR(step.big)+"<span class=\"x\">×</span>"; }
+    wrap.appendChild(big);
+    wrap.appendChild(el("div","",""));
+  }
+  if(step.head){ wrap.appendChild(el("h2","lead", step.head)); }
+  if(step.body){ wrap.appendChild(el("p","body", step.body)); }
+  if(step.kinds){ wrap.appendChild(kindsBlock()); }
+  if(step.tiles){ wrap.appendChild(tilesBlock(step.tiles)); }
+  if(step.gallery){ step.gallery.forEach(function(g){ var c=el("div","gcard"); c.appendChild(el("h4","",g.h)); c.appendChild(el("p","",g.p)); wrap.appendChild(c); }); }
+  if(step.src){ wrap.appendChild(el("p","src", step.src)); }
+}
+function tilesBlock(tiles){
+  var t=el("div","tiles"+(tiles.length===1?" one":""));
+  tiles.forEach(function(x){
+    var d=el("div","tile");
+    d.appendChild(el("div","tl",x.tl));
+    d.appendChild(el("div","tv "+(x.cls||""), x.tv));
+    if(x.ts) d.appendChild(el("div","ts",x.ts));
+    t.appendChild(d);
+  });
+  return t;
+}
+function kindsBlock(){
+  var box=el("div","");
+  var data=[
+    ["p","Physical","real / finite","Rare earths, a desert's water, a doctor's hours. Redistribution can't conjure these."],
+    ["a","Distribution","solvable","The big one. Food rots here while people starve there. Fixed with logistics, pricing and rights."],
+    ["d","Manufactured","created","Someone profits from the scarcity: insulin priced 90× its cost, “drops,” lockouts, paywalls."]
+  ];
+  data.forEach(function(k){
+    var c=el("div","gcard"); c.style.borderLeftColor = k[0]==="p"?"var(--phys)":k[0]==="a"?"var(--warn)":"var(--danger)";
+    c.appendChild(el("h4","", k[1]+" <span style=\"font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--"+(k[0]==="p"?"phys":k[0]==="a"?"warn":"danger")+")\">— "+k[2]+"</span>"));
+    c.appendChild(el("p","",k[3]));
+    box.appendChild(c);
+  });
+  return box;
+}
+
+/* ---- sort ---- */
+function renderSort(wrap, step){
+  var a=state.ans[state.i];
+  wrap.appendChild(el("p","kicker", step.kicker));
+  wrap.appendChild(el("p","q", step.stmt));
+  wrap.appendChild(el("p","body small","Which kind of scarcity is this?"));
+  var chips=el("div","chips");
+  var defs=[["phys","Physical"],["dist","Distribution"],["manu","Manufactured"]];
+  var fb=el("p","feedback"); fb.setAttribute("role","status");
+  defs.forEach(function(d){
+    var b=el("button","chip",d[1]); b.type="button"; b.setAttribute("data-k",d[0]);
+    b.onclick=function(){ pick(d[0]); };
+    chips.appendChild(b);
+  });
+  wrap.appendChild(chips);
+  wrap.appendChild(fb);
+
+  var names={phys:["phys","physical"],dist:["dist","distribution"],manu:["manu","manufactured"]};
+  function pick(k){
+    if(state.ans[state.i]) return;
+    state.ans[state.i]={k:k}; save();
+    lockChips(k);
+    setNext(true);
+  }
+  function lockChips(k){
+    Array.prototype.forEach.call(chips.children,function(b){
+      b.disabled=true;
+      var bk=b.getAttribute("data-k");
+      if(bk===step.answer) b.classList.add("chip-correct"), b.style.borderColor="var(--accent)", b.style.color="var(--accent)";
+    });
+    var ok = k===step.answer;
+    fb.className="feedback "+(ok?"ok":"no");
+    var right="<span class=\"tag "+step.answer+"\">"+names[step.answer][1]+"</span>";
+    fb.innerHTML=(ok?"Correct — ":"Not quite — it's ")+right+". "+step.explain;
+    var s=el("p","src",step.src); wrap.appendChild(s);
+  }
+  if(a){ lockChips(a.k); return true; }
+  return false; // must answer before Next
+}
+
+/* ---- true / false ---- */
+function renderTF(wrap, step){
+  var a=state.ans[state.i];
+  wrap.appendChild(el("p","kicker", step.kicker));
+  wrap.appendChild(el("p","q", step.stmt));
+  var opts=el("div","opts");
+  var fb=el("p","feedback"); fb.setAttribute("role","status");
+  [["True",true],["False",false]].forEach(function(o){
+    var b=el("button","opt",o[0]+"<span class=\"mk\"></span>"); b.type="button";
+    b.onclick=function(){ choose(o[1], b); };
+    opts.appendChild(b);
+  });
+  wrap.appendChild(opts); wrap.appendChild(fb);
+
+  function lock(sel){
+    Array.prototype.forEach.call(opts.children,function(b,idx){
+      b.disabled=true;
+      var val = (idx===0); // first is True
+      if(val===step.answer){ b.classList.add("correct"); b.querySelector(".mk").textContent="✓ true"; }
+      if(sel!=null && val===sel && sel!==step.answer){ b.classList.add("wrong"); b.querySelector(".mk").textContent="✗"; }
+    });
+    fb.className="feedback "+(sel===step.answer?"ok":"no");
+    fb.innerHTML=step.explain;
+    wrap.appendChild(el("p","src",step.src));
+  }
+  function choose(val,b){ if(state.ans[state.i]) return; state.ans[state.i]={v:val}; save(); lock(val); setNext(true); }
+  if(a){ lock(a.v); return true; }
+  return false;
+}
+
+/* ---- choice ---- */
+function renderChoice(wrap, step){
+  var a=state.ans[state.i];
+  wrap.appendChild(el("p","kicker", step.kicker));
+  wrap.appendChild(el("p","q", step.q));
+  var opts=el("div","opts");
+  var fb=el("p","feedback"); fb.setAttribute("role","status");
+  step.options.forEach(function(o,idx){
+    var b=el("button","opt",o.t+"<span class=\"mk\"></span>"); b.type="button";
+    b.onclick=function(){ choose(idx,o,b); };
+    opts.appendChild(b);
+  });
+  wrap.appendChild(opts); wrap.appendChild(fb);
+  function lock(sel){
+    Array.prototype.forEach.call(opts.children,function(b,idx){
+      b.disabled=true;
+      if(step.options[idx].correct){ b.classList.add("correct"); b.querySelector(".mk").textContent="✓"; }
+      if(sel===idx && !step.options[idx].correct){ b.classList.add("wrong"); b.querySelector(".mk").textContent="✗"; }
+    });
+    var ok = sel!=null && step.options[sel].correct;
+    fb.className="feedback "+(ok?"ok":"no");
+    fb.innerHTML=step.explain;
+  }
+  function choose(idx,o,b){ if(state.ans[state.i]) return; state.ans[state.i]={c:idx}; save(); lock(idx); setNext(true); }
+  if(a){ lock(a.c); return true; }
+  return false;
+}
+
+/* ---- finish ---- */
+function renderFinish(wrap){
+  wrap.appendChild(el("p","kicker g","You made it · lesson 7 of 7"));
+  wrap.appendChild(el("h1","lead","Enough already exists. The rest is a choice."));
+  var recap=el("div","recap");
+  [["food",C.food,"Food"],["water",C.water,"Water"],["energy",C.energy,"Electricity"],["gdp",C.gdp,"Output"]].forEach(function(r){
+    var d=el("div","r"); d.appendChild(el("div","rv",fmtR(r[1])+"×")); d.appendChild(el("div","rl",r[2])); recap.appendChild(d);
+  });
+  wrap.appendChild(recap);
+  wrap.appendChild(el("p","body","The world already produces enough food, water, electricity and output to meet every human's basic needs. The shortfalls are <strong>distribution</strong> — and distribution is a choice. Every number you just saw links to a primary source. Nothing was rounded up to persuade you."));
+  var links=el("div","links");
+  [["index.html","Read the full, cited page","the complete argument, ~14 essentials, all sources"],
+   ["letter.html","The open letter","for anyone who can move resources"],
+   ["tools/","Free in-browser tools","manufactured scarcity, refuted in code"]].forEach(function(l){
+    var a=document.createElement("a"); a.href=l[0]; a.className="linkrow";
+    a.innerHTML="<span class=\"lt\"><b>"+l[1]+"</b><br><span style=\"color:var(--fg-3);font-size:13px\">"+l[2]+"</span></span><span class=\"arr\">→</span>";
+    links.appendChild(a);
+  });
+  wrap.appendChild(links);
+  var again=el("button","btn ghost","↻ Take it again"); again.type="button"; again.style.marginTop="18px";
+  again.onclick=function(){ state={i:0,max:0,ans:{}}; save(); go(0); };
+  wrap.appendChild(again);
+}
+
+/* ------------------------------------------------------------
+   Navigation
+   ------------------------------------------------------------ */
+function go(i){
+  state.i = Math.max(0, Math.min(STEPS.length-1, i));
+  if(state.i>state.max) state.max=state.i;
+  save();
+  render();
+  window.scrollTo(0,0);
+}
+function next(){
+  // guess steps: first press locks the guess instead of advancing
+  var wrap = stage.querySelector(".step");
+  if(wrap && wrap._lock && nextBtn.dataset.mode==="lock"){ wrap._lock(); return; }
+  if(nextBtn.disabled) return;
+  if(state.i>=STEPS.length-1) return;
+  go(state.i+1);
+}
+function back(){ if(state.i>1) go(state.i-1); }
+
+nextBtn.addEventListener("click", next);
+backBtn.addEventListener("click", back);
+document.addEventListener("keydown", function(e){
+  // let the slider own its own arrow keys
+  if(e.target && e.target.tagName==="INPUT") return;
+  if(e.key==="ArrowRight"){ if(!controls.hidden && !nextBtn.disabled) next(); }
+  else if(e.key==="ArrowLeft"){ if(!controls.hidden) back(); }
+});
+
+/* start */
+render();
+</script>
+</body>
+</html>
