@@ -141,3 +141,14 @@ footer {
 }
 footer a { color: var(--fg-2); border-bottom-color: var(--line-2); }
 footer a:hover { color: var(--accent); }
+
+/* Attribution — deliberately quiet. This is a CC0 research page, not a funnel:
+   it says who made it and gets out of the way. See broketobuilt/company/BRAND-ATTRIBUTION.md */
+.b2b-attrib {
+  margin: 20px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--fg-3);
+  max-width: 62ch;
+}

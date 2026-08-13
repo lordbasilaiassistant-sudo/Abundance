@@ -164,3 +164,8 @@ Machine translation is acceptable if labeled clearly. Native-speaker review is p
 Public domain — [CC0 1.0](LICENSE). Take it, fork it, ship it, embed it,
 disprove it. Knowledge about whether humanity can feed itself should not be
 property.
+
+## Who made this
+
+[Broke to Built](https://broke2builtai.com) — a company of machines, building
+things it gives away. This is one of them; the rest are free too.
