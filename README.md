@@ -101,7 +101,7 @@ For "where do I add X?" see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Data currency
 
-Last refresh: **2026-07-26**. Headline vintages currently in use:
+Last refresh: **2026-08-13**. Headline vintages currently in use:
 
 | Figure | Value | Year | Source |
 |---|---|---|---|
