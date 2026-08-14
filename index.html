@@ -353,7 +353,8 @@
 <script>
 (() => {
   'use strict';
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const rmq = matchMedia('(prefers-reduced-motion: reduce)');
+  let reduced = rmq.matches;
 
   /* ── count-up + gauges ─────────────────────────────── */
   const ease = t => 1 - Math.pow(1 - t, 3);
@@ -381,6 +382,7 @@
   const ctx = cv.getContext('2d');
   let W, H, DPR, CX, CY, R0, RMAX;
 
+  let ready = false;
   function resize(){
     DPR = Math.min(2, devicePixelRatio || 1);
     W = innerWidth; H = innerHeight;
@@ -390,6 +392,9 @@
     CY = H * 0.52;
     R0   = Math.min(W, H) * 0.135;          // the world
     RMAX = Math.min(W * 0.46, H * 0.42);    // outermost orbit
+    // resizing clears the canvas; with no animation loop running,
+    // repaint the static frame or the scene is lost
+    if (ready && reduced) frame(9000);
   }
   resize();
   addEventListener('resize', resize);
@@ -564,10 +569,20 @@
       ctx.fill();
     }
 
-    if (!reduced) requestAnimationFrame(frame);
+    if (!reduced) requestAnimationFrame(frame); else looping = false;
   }
 
-  if (reduced) { frame(1); } else { requestAnimationFrame(frame); }
+  let looping = false;
+  function startLoop(){ if (!looping) { looping = true; requestAnimationFrame(frame); } }
+
+  ready = true;
+  if (reduced) { frame(9000); } else { startLoop(); }
+
+  // battery-saver / OS setting can flip mid-session; follow it
+  rmq.addEventListener('change', e => {
+    reduced = e.matches;
+    if (reduced) frame(9000); else startLoop();
+  });
 })();
 </script>
 
