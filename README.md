@@ -34,7 +34,8 @@ the empirical question: is the suffering load-bearing? The evidence base says no
 
 ## What's in here
 
-- **[The main page](index.html)** — the per-capita arithmetic for ~14 essentials, recomputed in JS from cited data.
+- **[The dashboard](index.html)** — the whole thesis on one zero-scroll screen: a particle world with one orbit per resource (radius = log of its surplus multiple), the four headline numbers, and the human gap.
+- **[The full essay](essay.html)** — the per-capita arithmetic for ~14 essentials, recomputed in JS from cited data.
 - **[An open letter](letter.html)** — the case made to anyone who can act on this, without attack; cited throughout. Also in [Español](lang/es/letter.html), [Français](lang/fr/letter.html), [Português](lang/pt/letter.html), [العربية](lang/ar/letter.html), [中文](lang/zh/letter.html), and [हिन्दी](lang/hi/letter.html).
 - **[Country case studies](case-studies.html)** — eleven nations that chose to lift underclass suffering, each with its honest counter-narrative.
 - **[By country](countries.html)** — a sortable drill-down of 91 countries × 10 World Bank indicators.
@@ -57,7 +58,8 @@ The project is intentionally vanilla — static HTML/CSS/JS plus JSON. No framew
 
 ```
 Abundance/
-├── index.html              # main page (commented sections)
+├── index.html              # zero-scroll dashboard (canvas particle world + surplus orbits)
+├── essay.html              # the full arithmetic essay (commented sections)
 ├── letter.html             # open letter to whoever can act — the moral close
 ├── countries.html          # per-country drill-down
 ├── case-studies.html       # country-scale precedents
@@ -152,7 +154,7 @@ needs six of them. Porting a main page is the highest-value contribution here.
 1. Fork the repo.
 2. Copy `lang/es/index.html` as `lang/{your-code}/index.html`.
 3. Translate the prose. Leave the numbers, source URLs, and `<code>` blocks alone — those are language-independent.
-4. Add `<link rel="alternate" hreflang="{your-code}" href="...">` to both your new file and the main `index.html`.
+4. Add `<link rel="alternate" hreflang="{your-code}" href="...">` to both your new file and the main `essay.html`.
 5. Add a `<url>` block to `sitemap.xml` for your file, with the appropriate `<xhtml:link rel="alternate" hreflang>` entries on the root `<url>`.
 6. Add yourself to the eyebrow language switcher on the main `index.html`.
 7. Open a pull request. You will be credited in `CITATION.cff` as a translator.

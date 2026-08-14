@@ -3,2300 +3,572 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Abundance — what humanity actually produces, per person</title>
-<meta name="description" content="The world produces 1.4× the calories, 287× the water, 3.9× the electricity, and 13× the income per person that minimum needs require. A primary-sourced per-capita arithmetic of global production — anchored by Amartya Sen's Nobel-winning entitlement theory, twelve cash-transfer pilots, and meta-analyses across 279 studies. Every number cited. CC0.">
-<meta name="keywords" content="abundance, scarcity, universal basic income, UBI, per capita arithmetic, redistribution, world production, world GDP, global hunger, poverty line, primary source, Omelas, Amartya Sen, entitlement theory, Bengal famine, cash transfer, GiveDirectly, Alaska Permanent Fund, Bolsa Familia, Stockton SEED, World Inequality Lab, Piketty, Wilkinson Pickett, Spirit Level, Acemoglu inclusive institutions, Ostrom commons, demographic transition, food waste, freshwater scarcity, Modern Energy Minimum">
+<title>Abundance — the world already produces enough</title>
+<meta name="description" content="A live dashboard of what humanity produces per person vs documented minimum need: food 1.4×, water 287×, electricity 3.9×, income 13× the thresholds. Every number primary-sourced. CC0.">
+<meta name="keywords" content="abundance, scarcity, per capita arithmetic, world production, global hunger, poverty line, UBI, redistribution, primary source, Amartya Sen, entitlement theory, cash transfers">
 <meta name="author" content="Eli Vargas (lordbasilaiassistant-sudo)">
-<meta name="theme-color" content="#0a0b0e">
-<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#07080c">
 <link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/">
-<link rel="alternate" hreflang="en" href="https://lordbasilaiassistant-sudo.github.io/Abundance/">
-<link rel="alternate" hreflang="es" href="https://lordbasilaiassistant-sudo.github.io/Abundance/lang/es/">
-<link rel="alternate" hreflang="x-default" href="https://lordbasilaiassistant-sudo.github.io/Abundance/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <!-- OpenGraph -->
 <meta property="og:title" content="Abundance — the world already produces enough.">
-<meta property="og:description" content="Primary-sourced per-capita arithmetic. Food 1.4×, water 287×, electricity 3.9×, GDP 13× their respective minimum-need thresholds. Every number cited. CC0.">
-<meta property="og:type" content="article">
+<meta property="og:description" content="Per-person arithmetic, primary sources only. Food 1.4×, water 287×, electricity 3.9×, income 13× their minimum-need thresholds. The shortfall is distribution, not production.">
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/">
 <meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The world already produces enough. Food 1.4x, water 287x, electricity 3.9x, GDP 13x their respective minimum-need thresholds.">
+<meta property="og:image:alt" content="The world already produces enough. Food 1.4x, water 287x, electricity 3.9x, income 13x their minimum-need thresholds.">
 <meta property="og:site_name" content="Abundance">
-<meta property="article:published_time" content="2026-05-15T00:00:00Z">
-<meta property="article:modified_time" content="2026-08-13T00:00:00Z">
-
-<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Abundance — the world already produces enough.">
-<meta name="twitter:description" content="Per-capita arithmetic with primary-source citations. Food 1.4×, water 287×, electricity 3.9×, GDP 13× their thresholds.">
+<meta name="twitter:description" content="Per-person arithmetic with primary-source citations. Food 1.4×, water 287×, electricity 3.9×, income 13× their thresholds.">
 <meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
-<meta name="twitter:image:alt" content="Headline arithmetic from the Abundance site.">
 
-<link rel="stylesheet" href="style.css">
-
-<!-- Structured data for search engines and AI assistants -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/#article",
-      "headline": "The world already produces enough. The question is whether we admit it.",
-      "alternativeHeadline": "Abundance: a primary-sourced per-capita arithmetic of global production",
-      "description": "A single-page, fully-cited arithmetic check of whether aggregate global production of food, water, electricity, and economic output is sufficient to meet every human's documented minimum needs. Includes Sen's entitlement framing, the Omelas question, twelve cash-transfer pilots, a 114-study Bayesian meta-analysis (Crosta et al 2024), and a 165-study ODI systematic review (Bastagli et al 2016).",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/og.png",
-        "width": 1200,
-        "height": 630
-      },
-      "datePublished": "2026-05-15",
-      "dateModified": "2026-08-13",
-      "author": { "@type": "Person", "name": "Eli Vargas (lordbasilaiassistant-sudo)" },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Abundance",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/apple-touch-icon.png",
-          "width": 180,
-          "height": 180
-        }
-      },
-      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "isAccessibleForFree": true,
-      "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/",
-      "inLanguage": ["en", "es"],
-      "wordCount": 8200,
-      "articleSection": [
-        "Per-capita arithmetic",
-        "Money / UBI feasibility",
-        "Kinds of scarcity",
-        "Omelas question",
-        "Cash-transfer pilots",
-        "Redistribution calculator",
-        "Historical context",
-        "FAQ",
-        "Post-money enterprise",
-        "Methodology and sources"
-      ],
-      "keywords": "abundance, scarcity, universal basic income, UBI, redistribution, per capita, world production, world GDP, hunger, poverty, Amartya Sen, Bengal famine, entitlement failure, Omelas, GiveDirectly, Alaska Permanent Fund, Bolsa Familia, cash transfer evidence",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": ["#thesis", ".lede", ".hero-stats"]
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/"
-      },
-      "hasPart": [
-        { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/countries.html", "name": "Per-country drill-down" },
-        { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/case-studies.html", "name": "Country case studies" },
-        { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/embed/calculator.html", "name": "Embeddable calculator" },
-        { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/bibliography.md", "name": "Academic bibliography" }
-      ],
-      "citation": [
-        "UN World Population Prospects 2024",
-        "IMF World Economic Outlook April 2026",
-        "FAO Food Outlook 2024",
-        "FAO State of Food Security and Nutrition in the World 2025",
-        "IEA Electricity 2024",
-        "WHO Global Health Expenditure Report 2024",
-        "World Bank June 2025 Update to Global Poverty Lines",
-        "UN-Habitat 2024 / UN DESA",
-        "SIPRI Trends in World Military Expenditure 2024",
-        "UBS Global Wealth Report 2024",
-        "Banerjee, Faye, Krueger, Niehaus, Suri (2023) Universal Basic Income RCT, Kenya",
-        "Jones & Marinescu (2022) American Economic Journal: Economic Policy 14(2):315",
-        "Salehi-Isfahani & Mostafavi-Dehzooei (2018) Journal of Development Economics 135:349",
-        "West, Castro, Samra, Coltrera (2023) Journal of Urban Health 100:1184",
-        "Wiessner (2014) PNAS 111(39):14027",
-        "Ekirch (2024) Medical History, Cambridge Core",
-        "Conard, Malina, Münzel (2009) Nature 460:737",
-        "Larsen (1995) Annual Review of Anthropology 24:185",
-        "Sen (1981) Poverty and Famines: An Essay on Entitlement and Deprivation",
-        "Crosta, Karlan, Ong, Rüschenpöhler, Udry (2024) Unconditional Cash Transfers: A Bayesian Meta-Analysis",
-        "Bastagli, Hagen-Zanker et al (2016) ODI Rigorous Review of cash transfers",
-        "Costello et al (2003) JAMA 290(15):2023 — Cherokee casino dividend",
-        "Soares et al / World Bank — Brazil Bolsa Família evaluations",
-        "Chancel, Piketty, Saez, Zucman — World Inequality Report",
-        "Wilkinson & Pickett (2009) The Spirit Level",
-        "Acemoglu, Johnson, Robinson — Why Nations Fail (2024 Nobel)",
-        "Ostrom (1990) Governing the Commons (2009 Nobel)",
-        "Banerjee & Duflo (2011) Poor Economics (2019 Nobel)"
-      ]
-    },
-    {
-      "@type": "Dataset",
-      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/essentials.json#dataset",
-      "name": "Abundance — global per-capita essentials, with primary-source citations",
-      "description": "Structured JSON dataset of global production figures (food, water, electricity, GDP) and documented minimum-need thresholds, each with primary-source citation, year, and unit. Every ratio on the main page is computed live from these values.",
-      "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/essentials.json",
-      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "creator": { "@type": "Person", "name": "Eli Vargas (lordbasilaiassistant-sudo)" },
-      "datePublished": "2026-05-15",
-      "isAccessibleForFree": true,
-      "encodingFormat": "application/json",
-      "keywords": "world population, world GDP, food calorie supply, freshwater, electricity, poverty line, military spending"
-    },
-    {
-      "@type": "Dataset",
-      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/countries.json#dataset",
-      "name": "Abundance — 91 countries × 10 World Bank indicators",
-      "description": "Per-country indicator dataset: population, GDP, GDP per capita, military spending, health spending, poverty headcount, electricity, broadband, life expectancy, renewable freshwater. Fetched live from the World Bank Open Data API.",
-      "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/countries.json",
-      "license": "https://datacatalog.worldbank.org/public-licenses",
-      "creator": { "@type": "Organization", "name": "World Bank Open Data" },
-      "datePublished": "2026-05-15",
-      "isAccessibleForFree": true,
-      "encodingFormat": "application/json"
-    },
-    {
-      "@type": "Dataset",
-      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/pilots.json#dataset",
-      "name": "Abundance — cash-transfer pilot evaluations",
-      "description": "Structured citations for twelve cash-transfer evaluations: GiveDirectly Kenya RCT, Alaska Permanent Fund, Iran 2011, Stockton SEED, Brazil Bolsa Familia, Cherokee casino dividend, Finland Basic Income Experiment, Baby's First Years (US), Manitoba Mincome, Mexico PROGRESA, Malawi & Zambia government transfers, and the SEWA/UNICEF India basic-income pilots.",
-      "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/data/pilots.json",
-      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "datePublished": "2026-05-15",
-      "isAccessibleForFree": true,
-      "encodingFormat": "application/json"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Abundance",
-          "item": "https://lordbasilaiassistant-sudo.github.io/Abundance/"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "If we give people a universal income, won't they stop working?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Every well-designed evaluation finds either no labor-supply effect or a positive one. GiveDirectly's Kenya RCT (Banerjee, Faye, Krueger, Niehaus, Suri 2023) found no labor reduction across three transfer designs. Jones & Marinescu's 2022 study of Alaska's 40+ year Permanent Fund Dividend found no aggregate labor-supply reduction. Salehi-Isfahani & Mostafavi-Dehzooei (2018, J. Dev. Econ.) found Iran's 2011 universal transfer had no negative effect on labor and positive effects on women's and self-employed men's labor supply. Stockton SEED (West et al 2023, J. Urban Health) found full-time employment in the treatment group rose 12 percentage points vs 5 in the control group."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Where would the money actually come from?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A universal $3/day floor for every human costs $8.98 trillion/year, or 7.6% of world GDP. Existing reservoirs from which it could be drawn include: global household wealth $449.9T (UBS 2024), of which $213.8T is held by ~58 million people with net worth above $1M; global military spending $2.887T/year (SIPRI 2025); and an estimated $480-700B/year lost to multinational profit-shifting to tax havens (Zucman, Tørsløv, Wier 2018+). The site's interactive calculator lets readers stress-test their own assumptions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Doesn't inflation just eat any universal transfer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It can, if the transfer is not indexed. Iran's 2011 cash transfer demonstrated this empirically: cumulative 136.5% inflation over five years halved the real value of the transfer and erased ~40% of its poverty-reduction effect (Salehi-Isfahani 2018). The lesson is that indexing matters; it is not a refutation of the concept."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Doesn't a wealth tax cause capital flight?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Some flight occurs, but the empirical literature finds the magnitude is often much smaller than predicted because most wealth is in illiquid assets (real estate, business ownership, retirement accounts) that cannot be moved as easily as cash. Gabriel Zucman's work (UC Berkeley) on tax-haven leakage estimates that roughly $7.6T of household wealth is offshore — this can be partly recovered through coordinated tax-haven enforcement, an active item on the OECD agenda. The site's redistribution calculator is honest about not modeling flight; the limits section says so."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Isn't GDP-per-capita just an average that hides distribution?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. The site says exactly this in its methodology and limits sections. GDP is not income; it includes capital depreciation, government spending, and net exports. Average per-capita figures show that the aggregate physical resource is sufficient, which is a necessary precondition for distribution. It is not a sufficient condition. The point of the page is to refute 'we cannot produce enough,' not to argue 'distribution is solved.'"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Won't lifting people out of poverty cause a population explosion?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The opposite is observed empirically. Fertility rates fall as women gain education, healthcare access, and income — the demographic transition. The UN's medium-variant projection (WPP 2024) is that global population peaks around 10.3B in the 2080s and then declines. Lifting people out of poverty accelerates fertility decline, not population growth."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Doesn't innovation require inequality?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The empirical literature on long-run growth (Acemoglu, Johnson, Robinson — 2024 Nobel) finds that inclusive institutions, characterized by broad property rights, broad political voice, and broad access to opportunity, outperform extractive institutions over decades. Nordic countries combine high innovation output per capita with low inequality. The argument 'extreme inequality is the price of innovation' is not supported by cross-country evidence."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Isn't this just communism / Marxism?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tax-and-transfer is what every modern developed country already does. The arithmetic on this page is independent of any political ideology — it asks whether physical production exceeds physical need, and quantifies what redistribution would cost in dollars. Universal basic income proposals span the political spectrum: Milton Friedman (negative income tax), F.A. Hayek (a minimum income), Martin Luther King Jr., Richard Nixon, Andrew Yang, the GiveDirectly study (Banerjee et al), and Alaska's bipartisan Permanent Fund. The site does not advocate a political program; it shows the math and the pilot evidence."
-          }
-        }
-      ]
-    }
+  "@type": "WebSite",
+  "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/#site",
+  "name": "Abundance",
+  "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/",
+  "description": "A primary-sourced dashboard of global production per person versus documented minimum need. Food 1.4×, water 287×, electricity 3.9×, income 13× their thresholds.",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "author": { "@type": "Person", "name": "Eli Vargas (lordbasilaiassistant-sudo)" },
+  "hasPart": [
+    { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/essay.html", "name": "The full essay — every number cited" },
+    { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/letter.html", "name": "An open letter to whoever can end this" },
+    { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/countries.html", "name": "Per-country drill-down" },
+    { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/case-studies.html", "name": "Country case studies" },
+    { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/embed/calculator.html", "name": "Redistribution calculator" }
   ]
 }
 </script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#07080c;
+    --ink:#e9e6df;
+    --ink-dim:#9a968c;
+    --ink-faint:#5f5c55;
+    --gold:#e8b64c;
+    --gold-soft:#f3d489;
+    --food:#8ee08a;
+    --water:#5cd6ef;
+    --energy:#f5b13d;
+    --income:#c08bf5;
+    --gap:#f07a8a;
+    --card:rgba(16,18,26,.55);
+    --card-edge:rgba(233,230,223,.10);
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"Instrument Sans",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code",Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  #cosmos{position:fixed;inset:0;width:100%;height:100%;display:block}
+  /* warm dawn vignette — abundance, not void */
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;
+    background:
+      radial-gradient(120% 55% at 50% 108%, rgba(232,182,76,.14), transparent 60%),
+      radial-gradient(90% 90% at 50% 50%, transparent 55%, rgba(0,0,0,.55) 100%);
+  }
+
+  .frame{
+    position:relative;z-index:2;
+    height:100%;
+    display:flex;flex-direction:column;
+    max-width:1180px;margin:0 auto;
+    padding:clamp(10px,1.6vh,20px) clamp(14px,2.2vw,28px);
+    gap:clamp(6px,1.2vh,14px);
+  }
+
+  /* ── top bar ─────────────────────────────── */
+  header{
+    display:flex;align-items:baseline;gap:14px;
+    animation:rise .8s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .wordmark{
+    font-family:var(--serif);font-weight:700;
+    font-size:clamp(15px,1.9vh,19px);letter-spacing:.34em;
+    color:var(--gold-soft);
+  }
+  .wordmark .spark{color:var(--gold);letter-spacing:0;margin-right:.45em}
+  header .tag{font-size:clamp(10px,1.4vh,12px);color:var(--ink-dim);letter-spacing:.02em}
+  header .cc0{
+    margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    border:1px solid var(--card-edge);border-radius:99px;padding:3px 10px;white-space:nowrap;
+  }
+
+  /* ── headline ────────────────────────────── */
+  .hero{text-align:center;animation:rise .9s .08s cubic-bezier(.2,.7,.2,1) both}
+  h1{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(26px,5vh,44px);line-height:1.06;letter-spacing:-.01em;
+  }
+  h1 em{
+    font-style:italic;font-weight:600;color:var(--gold);
+    text-shadow:0 0 34px rgba(232,182,76,.35);
+  }
+  .hero p{
+    margin-top:clamp(4px,.8vh,8px);
+    font-size:clamp(11.5px,1.7vh,14px);color:var(--ink-dim);
+  }
+
+  /* ── dashboard grid ──────────────────────── */
+  main{
+    flex:1;min-height:0;
+    display:grid;
+    grid-template-columns:minmax(215px,285px) 1fr minmax(215px,285px);
+    grid-template-rows:1fr 1fr;
+    gap:clamp(8px,1.4vh,14px);
+    align-items:stretch;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--card-edge);
+    border-radius:14px;
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    padding:clamp(10px,1.8vh,18px) clamp(12px,1.6vw,18px);
+    display:flex;flex-direction:column;justify-content:center;
+    gap:clamp(6px,1.1vh,12px);min-height:0;
+    position:relative;overflow:hidden;
+    animation:rise .9s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .card::before{ /* colored breath along the top edge */
+    content:"";position:absolute;top:0;left:8%;right:8%;height:1px;
+    background:linear-gradient(90deg,transparent,var(--c),transparent);
+    opacity:.9;
+  }
+  .card::after{
+    content:"";position:absolute;top:-40%;left:20%;right:20%;height:70%;
+    background:radial-gradient(50% 50% at 50% 0%,var(--c),transparent 70%);
+    opacity:.07;pointer-events:none;
+  }
+  .card:nth-of-type(1){animation-delay:.15s}
+  .card:nth-of-type(2){animation-delay:.30s}
+  .card:nth-of-type(3){animation-delay:.22s}
+  .card:nth-of-type(4){animation-delay:.37s}
+
+  .card .head{display:flex;align-items:center;gap:8px}
+  .card .dot{width:7px;height:7px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
+  .card .name{
+    font-size:10.5px;font-weight:600;letter-spacing:.24em;color:var(--ink-dim);
+  }
+  .card .mult{
+    font-family:var(--serif);font-weight:700;
+    font-size:clamp(30px,5.4vh,48px);line-height:1;color:var(--ink);
+    font-variant-numeric:tabular-nums;
+    display:flex;align-items:baseline;gap:10px;
+  }
+  .card .mult .x{font-size:.5em;color:var(--c);font-style:italic;font-weight:600}
+  .gauge{height:4px;border-radius:99px;background:rgba(233,230,223,.08);overflow:hidden;margin:clamp(4px,.8vh,8px) 0}
+  .gauge i{
+    display:block;height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,color-mix(in srgb,var(--c) 45%,transparent),var(--c));
+    box-shadow:0 0 12px var(--c);
+    transition:width 1.6s cubic-bezier(.25,.8,.25,1);
+  }
+  .card .math{font-size:clamp(10.5px,1.55vh,12.5px);color:var(--ink-dim);line-height:1.45}
+  .card .math b{color:var(--ink);font-weight:600}
+  .card .src{font-family:var(--mono);font-size:9.5px;color:var(--ink-faint);letter-spacing:.02em}
+  .card .src a{color:var(--ink-faint);text-decoration:none;border-bottom:1px dotted var(--ink-faint)}
+  .card .src a:hover{color:var(--c)}
+
+  /* center column — the sphere lives here (canvas behind) */
+  .well{
+    grid-row:1 / span 2;grid-column:2;
+    display:flex;flex-direction:column;justify-content:flex-end;align-items:center;
+    pointer-events:none;padding-bottom:clamp(2px,.6vh,8px);
+  }
+  .well .cap{
+    pointer-events:auto;text-align:center;
+    font-family:var(--mono);font-size:clamp(9.5px,1.3vh,11px);
+    color:var(--ink-faint);letter-spacing:.06em;line-height:1.7;
+    animation:rise 1s .5s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .well .cap b{color:var(--gold-soft);font-weight:600}
+  .c1{grid-column:1;grid-row:1} .c2{grid-column:1;grid-row:2}
+  .c3{grid-column:3;grid-row:1} .c4{grid-column:3;grid-row:2}
+
+  /* ── the gap strip ───────────────────────── */
+  .gapstrip{
+    display:flex;align-items:center;gap:clamp(10px,1.8vw,24px);
+    border:1px solid rgba(240,122,138,.18);
+    background:linear-gradient(90deg,rgba(240,122,138,.07),rgba(240,122,138,.02) 55%,transparent);
+    border-radius:14px;
+    padding:clamp(8px,1.5vh,14px) clamp(12px,1.8vw,22px);
+    animation:rise .9s .45s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .gapstrip .andyet{
+    font-family:var(--serif);font-style:italic;font-size:clamp(13px,2vh,17px);
+    color:var(--gap);white-space:nowrap;
+  }
+  .gapstrip .items{display:flex;flex:1;justify-content:space-around;gap:12px;flex-wrap:wrap}
+  .gapstat{text-align:center}
+  .gapstat .n{
+    font-family:var(--serif);font-weight:700;font-size:clamp(15px,2.5vh,21px);
+    color:var(--ink);font-variant-numeric:tabular-nums;
+  }
+  .gapstat .l{font-size:clamp(9.5px,1.3vh,11px);color:var(--ink-dim)}
+  .gapstrip .verdict{
+    font-size:clamp(10.5px,1.5vh,12.5px);color:var(--ink-dim);
+    max-width:200px;line-height:1.45;text-align:right;
+  }
+  .gapstrip .verdict b{color:var(--gap);font-weight:600}
+
+  /* ── doc links ───────────────────────────── */
+  nav{
+    display:flex;gap:clamp(6px,.9vw,10px);justify-content:center;flex-wrap:wrap;
+    animation:rise .9s .55s cubic-bezier(.2,.7,.2,1) both;
+  }
+  nav a{
+    font-size:clamp(10.5px,1.5vh,12.5px);font-weight:500;
+    color:var(--ink-dim);text-decoration:none;
+    border:1px solid var(--card-edge);border-radius:99px;
+    padding:clamp(5px,.9vh,8px) clamp(11px,1.4vw,16px);
+    background:rgba(16,18,26,.4);backdrop-filter:blur(8px);
+    transition:color .2s,border-color .2s,transform .2s;
+    white-space:nowrap;
+  }
+  nav a:hover{color:var(--gold-soft);border-color:rgba(232,182,76,.4);transform:translateY(-1px)}
+  nav a.prime{color:var(--bg);background:var(--gold);border-color:var(--gold);font-weight:600}
+  nav a.prime:hover{color:var(--bg);background:var(--gold-soft)}
+  nav a span{opacity:.55;margin-right:.4em}
+
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  /* small screens: stack + allow scroll */
+  @media (max-width:820px), (max-height:600px){
+    body{overflow:auto}
+    .frame{height:auto;min-height:100%}
+    main{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+    .well{display:none}
+    .c1,.c2,.c3,.c4{grid-column:auto;grid-row:auto}
+    .card{min-height:120px}
+    .gapstrip{flex-direction:column;text-align:center}
+    .gapstrip .verdict{text-align:center;max-width:none}
+    #cosmos{opacity:.5}
+  }
+  @media (max-width:480px){ main{grid-template-columns:1fr} }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+  }
+</style>
 </head>
 <body>
-<main class="container" role="main" itemscope itemtype="https://schema.org/Article">
 
-<header class="masthead">
-  <div class="eyebrow">
-    A primary-sourced arithmetic · updated 2026-08-13
-    &nbsp;·&nbsp;
-    <a href="lang/es/">Español</a>
-    &nbsp;·&nbsp;
-    <a href="https://github.com/lordbasilaiassistant-sudo/Abundance#translations">+ translation</a>
+<canvas id="cosmos" aria-hidden="true"></canvas>
+
+<div class="frame">
+
+  <header>
+    <div class="wordmark"><span class="spark">✳</span>ABUNDANCE</div>
+    <div class="tag">what humanity makes ÷ what every human needs</div>
+    <div class="cc0">every number cited · CC0</div>
+  </header>
+
+  <div class="hero">
+    <h1>The world already produces <em>enough.</em></h1>
+    <p>Global production per person, measured against the documented minimum a human needs. Primary sources only.</p>
   </div>
-  <h1>The world already produces enough. <em>The question is whether we admit it.</em></h1>
-  <p class="lede">
-    Below: four numbers. Each is global production divided by the documented
-    minimum need, per person. Every number links to a primary source —
-    FAO, IEA, IMF, WHO, World Bank, UN-Habitat, SIPRI, UBS — and every
-    redistribution claim cites a peer-reviewed study.
-  </p>
 
-  <!-- GUESS-FIRST.
-       This page's argument is the distance between what people assume and
-       what is measured. So it measures that distance on the reader before
-       showing a single number. Progressive enhancement: hidden by default and
-       only revealed by JS, so a no-JS reader gets the finished hero band
-       exactly as before. -->
-  <div class="guess" id="guess" hidden>
-    <div class="guess-head">
-      <span class="guess-kicker" id="guess-kicker">Before you scroll · 1 of 4</span>
-      <span class="guess-progress" id="guess-progress" aria-hidden="true"></span>
-    </div>
-    <p class="guess-q" id="guess-q"></p>
-    <div>
-      <input type="range" id="guess-range" min="0" max="1000" value="300"
-             aria-label="Your guess, as a multiple of the minimum need">
-      <div class="guess-scale" aria-hidden="true">
-        <span>0.5×</span><span>5×</span><span>50×</span><span>1000×</span>
+  <main>
+    <section class="card c1" style="--c:var(--food)" aria-label="Food surplus">
+      <div class="head"><i class="dot"></i><span class="name">FOOD</span></div>
+      <div class="mult"><span data-count="1.4" data-dec="1">0</span><span class="x">× need</span></div>
+      <div class="gauge"><i data-mult="1.4"></i></div>
+      <p class="math"><b>2,950 kcal</b> grown per person per day, against the <b>2,100 kcal</b> an average human needs. A third of it is wasted before anyone eats.</p>
+      <p class="src"><a href="https://ourworldindata.org/food-supply" rel="noopener">FAOSTAT</a> · <a href="https://www.fao.org/4/y5686e/y5686e00.htm" rel="noopener">FAO/WHO/UNU</a></p>
+    </section>
+
+    <section class="card c2" style="--c:var(--energy)" aria-label="Electricity surplus">
+      <div class="head"><i class="dot"></i><span class="name">ELECTRICITY</span></div>
+      <div class="mult"><span data-count="3.9" data-dec="1">0</span><span class="x">× need</span></div>
+      <div class="gauge"><i data-mult="3.9"></i></div>
+      <p class="math"><b>3,927 kWh</b> generated per person per year, against the <b>1,000 kWh</b> Modern Energy Minimum for a decent life.</p>
+      <p class="src"><a href="https://www.energyinst.org/statistical-review" rel="noopener">Energy Institute 2026</a> · <a href="https://www.rockefellerfoundation.org/wp-content/uploads/2020/12/Modern-Energy-Minimum-Sept30.pdf" rel="noopener">MEM</a></p>
+    </section>
+
+    <div class="well">
+      <div class="cap">
+        <b>8.2 billion</b> people · one planet's output<br>
+        each orbit = one resource's surplus over need
       </div>
     </div>
-    <div class="guess-row">
-      <div class="guess-your">your guess<strong id="guess-val">2×</strong></div>
-      <button type="button" class="guess-btn" id="guess-lock">Lock it in</button>
-    </div>
-    <p class="guess-verdict" id="guess-verdict" role="status" aria-live="polite"></p>
-    <button type="button" class="guess-skip" id="guess-skip">skip — just show me the numbers</button>
-  </div>
 
-  <div class="hero-stats" role="region" aria-label="Headline per-capita ratios">
-    <div class="hero-stat">
-      <div class="label">Food</div>
-      <div class="ratio" id="hero-food">1.4<span class="x">×</span></div>
-      <div class="vs">supply ÷ daily<br>caloric need</div>
-    </div>
-    <div class="hero-stat">
-      <div class="label">Water</div>
-      <div class="ratio" id="hero-water">287<span class="x">×</span></div>
-      <div class="vs">renewable ÷ WHO<br>basic L/day</div>
-    </div>
-    <div class="hero-stat">
-      <div class="label">Electricity</div>
-      <div class="ratio" id="hero-energy">3.9<span class="x">×</span></div>
-      <div class="vs">generation ÷ Modern<br>Energy Minimum</div>
-    </div>
-    <div class="hero-stat">
-      <div class="label">Output (GDP)</div>
-      <div class="ratio" id="hero-gdp">13<span class="x">×</span></div>
-      <div class="vs">per capita ÷ World<br>Bank poverty line</div>
-    </div>
-  </div>
-</header>
+    <section class="card c3" style="--c:var(--water)" aria-label="Water surplus">
+      <div class="head"><i class="dot"></i><span class="name">FRESH WATER</span></div>
+      <div class="mult"><span data-count="287" data-dec="0">0</span><span class="x">× need</span></div>
+      <div class="gauge"><i data-mult="287"></i></div>
+      <p class="math"><b>5,244 m³</b> renewed per person per year, against the <b>18 m³</b> WHO basic-access minimum (50 L/day). The bottleneck is pipes, not planet.</p>
+      <p class="src"><a href="https://www.fao.org/aquastat/en/overview/methodology/water-resources/" rel="noopener">FAO AQUASTAT</a> · <a href="https://www.who.int/publications/i/item/WHO-SDE-WSH-03.02" rel="noopener">WHO</a></p>
+    </section>
 
-<nav class="toc" aria-label="Contents">
-  <a href="#thesis">1 · The thesis, in one sentence</a>
-  <a href="#math">2 · The per-capita arithmetic</a>
-  <a href="#money">3 · The money question — UBI / UHI feasibility</a>
-  <a href="#scarcity">4 · Three kinds of scarcity</a>
-  <a href="#omelas">5 · The Omelas question — is the suffering load-bearing?</a>
-  <a href="#pilots">6 · Where this has already been done</a>
-  <a href="#dials">7 · Move the dials yourself</a>
-  <a href="#history">8 · Historical context — work as a recent system</a>
-  <a href="#limits">9 · Honest limits of this page</a>
-  <a href="#faq">10 · Common objections, answered</a>
-  <a href="#beyond-money">11 · Beyond money — the post-money enterprise</a>
-  <a href="#act">12 · What this asks of whoever can act</a>
-  <a href="#sources">13 · Sources &amp; methodology</a>
-</nav>
+    <section class="card c4" style="--c:var(--income)" aria-label="Income surplus">
+      <div class="head"><i class="dot"></i><span class="name">INCOME</span></div>
+      <div class="mult"><span data-count="13.2" data-dec="1">0</span><span class="x">× need</span></div>
+      <div class="gauge"><i data-mult="13.2"></i></div>
+      <p class="math"><b>$39.48</b> of world GDP per person per day, against the <b>$3.00</b> extreme-poverty line. Nobody needs to live under it.</p>
+      <p class="src"><a href="https://www.imf.org/external/datamapper/NGDPD@WEO/WEOWORLD" rel="noopener">IMF WEO</a> · <a href="https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines" rel="noopener">World Bank</a></p>
+    </section>
+  </main>
 
-<div class="card tinted-warm" style="margin-bottom:24px">
-  <p style="margin:0">
-    <strong>If you can act on this</strong> — there is a short, fully-cited open
-    letter addressed to anyone with the power to move resources:
-    <a href="letter.html"><strong>To whoever can end this →</strong></a>.
-    And a set of free <a href="tools/">in-browser tools</a> (image editor, image
-    compressor, QR code generator, contrast checker, password generator — no
-    account, no upload, nothing leaves your device) — manufactured scarcity,
-    refuted in code.
-  </p>
+  <section class="gapstrip" aria-label="The gap">
+    <div class="andyet">and yet —</div>
+    <div class="items">
+      <div class="gapstat"><div class="n" data-count="645" data-dec="0">0</div><div class="l">million in hunger</div></div>
+      <div class="gapstat"><div class="n" data-count="847" data-dec="0">0</div><div class="l">million in extreme poverty</div></div>
+      <div class="gapstat"><div class="n" data-count="318" data-dec="0">0</div><div class="l">million homeless</div></div>
+      <div class="gapstat"><div class="n"><span data-count="32" data-dec="0">0</span>%</div><div class="l">of food wasted</div></div>
+    </div>
+    <div class="verdict">Not a production problem. <b>A distribution problem.</b></div>
+  </section>
+
+  <nav aria-label="Go deeper">
+    <a class="prime" href="essay.html">Read the full essay</a>
+    <a href="letter.html"><span>✉</span>The open letter</a>
+    <a href="countries.html"><span>◍</span>195 countries</a>
+    <a href="case-studies.html"><span>▤</span>Case studies</a>
+    <a href="embed/calculator.html"><span>÷</span>Calculator</a>
+    <a href="https://github.com/lordbasilaiassistant-sudo/Abundance" rel="noopener"><span>⌘</span>Sources &amp; data</a>
+  </nav>
+
 </div>
-
-<!-- ============================================================
-     SECTION 1 — Thesis
-     Single-paragraph statement of the page's argument, anchored
-     to Sen (1981). To edit: update prose + the Sen citation.
-     ============================================================ -->
-<section id="thesis">
-<h2>1 · The thesis, in one sentence</h2>
-<p>
-  For every essential resource where global production data exists, aggregate
-  human production already exceeds aggregate human need — usually by a wide
-  margin. Hunger, homelessness, and energy poverty in 2026 are <em>distribution
-  outcomes</em>, not <em>production outcomes</em>.
-</p>
-<p>
-  This is not a new claim. <strong>Amartya Sen won the 1998 Nobel Prize in
-  Economics</strong> for proving exactly this — that the great famines of
-  the twentieth century, including the 1943 Bengal famine that killed
-  ~3 million people, occurred during years of <em>adequate or above-average</em>
-  food production. Famine, Sen showed, is an <em>entitlement failure</em>:
-  some people lose the legal/economic claim to food while the food is still
-  there.
-  (<a href="https://gdsnet.org/Sen1982PovertyandFaminesBook.pdf">Sen, A. (1981). <em>Poverty and Famines: An Essay on Entitlement and Deprivation.</em> Oxford University Press.</a>)
-</p>
-<p>
-  This page does not argue policy. It states arithmetic, cites the
-  experiments that have already tested the policy, and points at the
-  scholars who have been making this case for forty years.
-</p>
-</section>
-
-<!-- ============================================================
-     SECTION 2 — Per-capita arithmetic
-     Cards for food, water, electricity, GDP, housing, plus new
-     essentials (insulin, internet, vaccines, sanitation, drinking-water
-     access, clean cooking, basic education, maternal survival, medicines).
-     Each value is read from data/essentials.json AND recomputed
-     in the inline <script> at the bottom of this file.
-     To add a new essential: see CONTRIBUTING.md
-     ============================================================ -->
-<section id="math">
-<h2>2 · The per-capita arithmetic</h2>
-<p class="small">
-  Divisor everywhere on this page: <span class="num" id="pop-display">8,200,000,000</span>
-  people, the UN's mid-2024 estimate
-  (<a href="https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf">WPP 2024</a>).
-  For the per-country breakdown see <a href="countries.html"><strong>Abundance · by country →</strong></a>
-  (sortable World Bank data for 91 countries).
-</p>
-
-<!-- FOOD -->
-<div class="card" id="card-food">
-  <h3>Food <span class="tag abundance">abundance exists</span></h3>
-  <div class="row">
-    <div class="stat">
-      <div class="label">Daily food supply, global average</div>
-      <div class="value accent" id="food-supply">2,950 kcal / person / day</div>
-      <div class="sub">FAOSTAT food balance sheets, 2021 latest revision</div>
-    </div>
-    <div class="stat">
-      <div class="label">Adult minimum need (reference)</div>
-      <div class="value" id="food-need">2,100 kcal / person / day</div>
-      <div class="sub">FAO/WHO/UNU Human Energy Requirements, 2001</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="stat">
-      <div class="label">Ratio: supply ÷ need</div>
-      <div class="ratio accent" id="food-ratio">1.40<span class="x">×</span></div>
-      <div class="sub">We currently produce ~40% more calories than the human population needs.</div>
-    </div>
-    <div class="stat">
-      <div class="label">People still in hunger, 2025</div>
-      <div class="value danger" id="food-hungry">645 million</div>
-      <div class="sub">FAO SOFI 2026 — a third straight annual decline, and still 7.8% of humanity. Coexists with ~32% of food being lost or wasted.</div>
-    </div>
-  </div>
-  <p>
-    The Bengal famine of 1943 — the most-studied modern famine — occurred
-    in a year when rice production in Bengal was <em>13% higher</em> than in
-    1941, a non-famine year. Grain prices rose more than 300% over four
-    years while agricultural wages rose 30%. People starved because the
-    money they earned could no longer buy the food that physically existed.
-    Sen's analysis of this and subsequent famines (Ethiopia 1973, Sahel
-    1968–73, Bangladesh 1974) established the modern consensus that
-    starvation in the modern era is overwhelmingly a problem of access, not
-    production.
-  </p>
-  <p class="src">
-    Sources:
-    <a href="https://ourworldindata.org/food-supply">FAOSTAT food balance sheets via Our World in Data</a> ·
-    <a href="https://www.fao.org/4/y5686e/y5686e00.htm">FAO/WHO/UNU energy requirements</a> ·
-    <a href="https://www.fao.org/newsroom/detail/sofi-2026--hunger-not-inevitable--fao-says-as-global-hunger-report-shows-progress/en">SOFI 2026</a> ·
-    <a href="https://www.fao.org/family-farming/detail/en/c/1681058/">FAO + UNEP Food Waste Index 2024</a> ·
-    <a href="https://gdsnet.org/Sen1982PovertyandFaminesBook.pdf">Sen (1981) <em>Poverty and Famines</em></a>
-  </p>
-</div>
-
-<!-- WATER -->
-<div class="card" id="card-water">
-  <h3>Freshwater <span class="tag uneven">geographically uneven</span></h3>
-  <div class="row">
-    <div class="stat">
-      <div class="label">Renewable freshwater, globally</div>
-      <div class="value accent" id="water-total">43,000 km³ / year</div>
-      <div class="sub">FAO AQUASTAT — long-term renewable resources</div>
-    </div>
-    <div class="stat">
-      <div class="label">Per person per day, even split</div>
-      <div class="value" id="water-pc">14,367 L / person / day</div>
-      <div class="sub">Math: 43,000 km³ ÷ 8.2B ÷ 365 days</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="stat">
-      <div class="label">WHO intermediate-access threshold</div>
-      <div class="value" id="water-need">50 L / person / day</div>
-      <div class="sub">Drinking, cooking, basic hygiene</div>
-    </div>
-    <div class="stat">
-      <div class="label">Ratio: supply ÷ basic need</div>
-      <div class="ratio accent" id="water-ratio">287<span class="x">×</span></div>
-      <div class="sub">Globally, ~287 days of basic-access water exist per person per day. The hard problem is moving it.</div>
-    </div>
-  </div>
-  <p class="src">
-    Sources:
-    <a href="https://www.fao.org/aquastat/en/overview/methodology/water-resources/">FAO AQUASTAT</a> ·
-    <a href="https://www.who.int/publications/i/item/WHO-SDE-WSH-03.02">WHO domestic water quantity guidelines</a>
-  </p>
-</div>
-
-<!-- ENERGY -->
-<div class="card" id="card-energy">
-  <h3>Electricity <span class="tag abundance">abundance exists</span></h3>
-  <div class="row">
-    <div class="stat">
-      <div class="label">Global generation, 2025</div>
-      <div class="value accent" id="energy-total">32,202 TWh / year</div>
-      <div class="sub">Energy Institute, Statistical Review of World Energy 2026 — up 857 TWh (3%) on 2024</div>
-    </div>
-    <div class="stat">
-      <div class="label">Per person, even split</div>
-      <div class="value" id="energy-pc">3,927 kWh / person / year</div>
-      <div class="sub">Math: 32,202 TWh ÷ 8.2B</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="stat">
-      <div class="label">IEA Tier 1 access</div>
-      <div class="value" id="energy-need-low">100 kWh / person / yr</div>
-      <div class="sub">Lights, phone charging, fan</div>
-    </div>
-    <div class="stat">
-      <div class="label">Modern Energy Minimum (productive use)</div>
-      <div class="value" id="energy-need-high">1,000 kWh / person / yr</div>
-      <div class="sub">Rockefeller Foundation / Energy for Growth Hub</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="stat">
-      <div class="label">Ratio: supply ÷ Tier 1</div>
-      <div class="ratio accent" id="energy-ratio-low">39<span class="x">×</span></div>
-    </div>
-    <div class="stat">
-      <div class="label">Ratio: supply ÷ Modern Energy Minimum</div>
-      <div class="ratio accent" id="energy-ratio-high">3.9<span class="x">×</span></div>
-    </div>
-  </div>
-  <p class="src">
-    Sources:
-    <a href="https://www.energyinst.org/statistical-review">Energy Institute Statistical Review of World Energy 2026</a> ·
-    <a href="https://ember-energy.org/latest-insights/global-electricity-review-2026/">Ember Global Electricity Review 2026</a> ·
-    <a href="https://www.iea.org/articles/defining-energy-access-2020-methodology">IEA energy access definitions</a> ·
-    <a href="https://www.rockefellerfoundation.org/wp-content/uploads/2020/12/Modern-Energy-Minimum-Sept30.pdf">Modern Energy Minimum (2020)</a>
-  </p>
-</div>
-
-<!-- MONEY -->
-<div class="card" id="card-money">
-  <h3>Output (GDP) <span class="tag abundance">abundance exists</span></h3>
-  <div class="row">
-    <div class="stat">
-      <div class="label">World GDP, 2025 (nominal)</div>
-      <div class="value accent" id="gdp-total">$118.18 trillion</div>
-      <div class="sub">IMF WEO April 2026</div>
-    </div>
-    <div class="stat">
-      <div class="label">Per person, even split</div>
-      <div class="value" id="gdp-pc">$14,412 / person / yr</div>
-      <div class="sub">Math: $118.18T ÷ 8.2B</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="stat">
-      <div class="label">World Bank extreme poverty line</div>
-      <div class="value" id="poverty-line">$3.00 / person / day</div>
-      <div class="sub">2021 PPP, updated June 2025</div>
-    </div>
-    <div class="stat">
-      <div class="label">Ratio: GDP-per-capita ÷ poverty-line annual</div>
-      <div class="ratio accent" id="gdp-ratio">13<span class="x">×</span></div>
-      <div class="sub">Global per-capita output is ~13× the line at which a human is no longer "in extreme poverty."</div>
-    </div>
-  </div>
-  <p class="src">
-    Sources:
-    <a href="https://www.imf.org/external/datamapper/NGDPD@WEO/WEOWORLD">IMF WEO</a> ·
-    <a href="https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines">World Bank, June 2025 poverty line update</a>
-  </p>
-</div>
-
-<!-- INSULIN -->
-<div class="card" id="card-insulin">
-  <h3>Insulin <span class="tag real">manufactured scarcity</span></h3>
-  <div class="row">
-    <div class="stat">
-      <div class="label">Cost-based price to make one human-insulin pen</div>
-      <div class="value accent" id="insulin-cost">$0.94</div>
-      <div class="sub">MSF Access / JAMA Network Open (2024)</div>
-    </div>
-    <div class="stat">
-      <div class="label">US list price for the same molecule</div>
-      <div class="value danger" id="insulin-us">$90.69</div>
-      <div class="sub">Barber, Sulis et al (2024)</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="stat">
-      <div class="label">Markup over cost</div>
-      <div class="ratio danger" id="insulin-markup">96<span class="x">×</span></div>
-      <div class="sub">International price spread of the regular vial: factor of 103.</div>
-    </div>
-    <div class="stat">
-      <div class="label">Adults with diabetes, globally</div>
-      <div class="value" id="insulin-pop">589 million</div>
-      <div class="sub">IDF Diabetes Atlas 2024. 81% in low- and middle-income countries.</div>
-    </div>
-  </div>
-  <p>
-    Insulin was isolated in 1921; in 1923 its discoverers sold the patent to
-    the University of Toronto for $1 so that it could not be monopolized. A
-    century later, the molecule costs ~$1 to manufacture and ~$90+
-    to buy in the United States. This is the cleanest single example on the
-    page of <em>manufactured scarcity</em>: there is no physical shortage of
-    insulin. There is a pricing structure protected by patent and supply-chain
-    consolidation.
-  </p>
-  <p class="src">
-    Source:
-    <a href="https://msfaccess.org/jama-network-open-estimated-sustainable-cost-based-prices-diabetes-medicines">Barber, Sulis et al (2024). 'Estimated Sustainable Cost-Based Prices for Diabetes Medicines,' JAMA Network Open / MSF Access Campaign</a> ·
-    <a href="https://diabetesatlas.org/">IDF Diabetes Atlas 11th ed.</a>
-  </p>
-</div>
-
-<!-- INTERNET -->
-<div class="card" id="card-internet">
-  <h3>Internet <span class="tag uneven">distribution failure</span></h3>
-  <div class="row">
-    <div class="stat">
-      <div class="label">Global Internet users, 2025</div>
-      <div class="value accent" id="net-users">6.0 billion</div>
-      <div class="sub">About three quarters of the world population (ITU 2025)</div>
-    </div>
-    <div class="stat">
-      <div class="label">Still offline</div>
-      <div class="value danger" id="net-offline">2.2 billion</div>
-      <div class="sub">96% of them live in low- and middle-income countries.</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="stat">
-      <div class="label">Annual global Internet traffic</div>
-      <div class="value" id="net-traffic">~7.3 zettabytes / year</div>
-      <div class="sub">Fixed ~6 ZB + mobile ~1.3 ZB (ITU 2024)</div>
-    </div>
-    <div class="stat">
-      <div class="label">Per person, even split</div>
-      <div class="value" id="net-pc">~890 GB / person / year</div>
-      <div class="sub">~2.4 GB / person / day</div>
-    </div>
-  </div>
-  <p>
-    International bandwidth capacity is <span class="num">1,835 Tbps</span>
-    (TeleGeography 2024), growing 24%/year, and the laid-but-unlit ("dark")
-    fiber inventory exceeds installed capacity in most countries by multiples.
-    Aggregate capacity is not the constraint. The gap is the
-    <span class="num">2.2 billion</span> people without affordable access —
-    most of them rural, and 96% of them in low- and middle-income countries.
-  </p>
-  <p class="src">
-    Sources:
-    <a href="https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/">ITU Facts and Figures 2025</a> ·
-    <a href="https://blog.telegeography.com/international-internet-bandwidth">TeleGeography Global Bandwidth Research 2024</a>
-  </p>
-</div>
-
-<!-- VACCINES -->
-<div class="card" id="card-vaccines">
-  <h3>Childhood vaccines <span class="tag uneven">distribution failure</span></h3>
-  <div class="row">
-    <div class="stat">
-      <div class="label">DTP3 global coverage, 2024</div>
-      <div class="value accent" id="vacc-cov">85%</div>
-      <div class="sub">~109M infants fully immunized. WHO target: 90%.</div>
-    </div>
-    <div class="stat">
-      <div class="label">"Zero-dose" infants — no routine vaccines at all</div>
-      <div class="value danger" id="vacc-zero">14 million</div>
-      <div class="sub">Concentrated in conflict and fragile-state contexts.</div>
-    </div>
-  </div>
-  <p>
-    The supply side of routine childhood immunization is one of the rare areas
-    where global manufacturing capacity already exceeds need by a comfortable
-    margin. The Serum Institute of India alone produces more than 1.5 billion
-    doses per year; UNICEF procures vaccines for ~45% of the world's children
-    at prices of cents-to-dollars per dose. The 14 million zero-dose infants
-    are not a supply problem. They are a cold-chain, conflict, funding-gap,
-    and political-will problem.
-  </p>
-  <p class="src">
-    Source:
-    <a href="https://www.who.int/teams/immunization-vaccines-and-biologicals/immunization-analysis-and-insights/global-monitoring/immunization-coverage/who-unicef-estimates-of-national-immunization-coverage">WHO/UNICEF Estimates of National Immunization Coverage (WUENIC) 2024 revision</a> ·
-    <a href="https://www.who.int/news/item/15-07-2025-global-childhood-vaccination-coverage-holds-steady-yet-over-14-million-infants-remain-unvaccinated-who-unicef">WHO + UNICEF press release, Jul 2025</a>
-  </p>
-</div>
-
-<!-- HOUSING -->
-<div class="card" id="card-housing">
-  <h3>Housing <span class="tag uneven">distribution failure</span></h3>
-  <div class="row">
-    <div class="stat">
-      <div class="label">Homeless worldwide, 2024</div>
-      <div class="value danger" id="housing-homeless">318 million</div>
-      <div class="sub">UN-Habitat / UN DESA</div>
-    </div>
-    <div class="stat">
-      <div class="label">Lacking adequate housing</div>
-      <div class="value danger" id="housing-inadequate">2.8 billion</div>
-      <div class="sub">≈ 40% of the global population</div>
-    </div>
-  </div>
-  <p>
-    Unlike food or electricity, there is no single "global housing production"
-    number to divide. But the inverse is well-documented: in many wealthy
-    countries, <em>vacant</em> housing units exceed homeless population by an
-    order of magnitude or more. The shortage is not of walls; it is of
-    walls people are allowed to enter.
-  </p>
-  <p class="src">
-    Source:
-    <a href="https://social.desa.un.org/world-summit-2025/blog/300million-people-homeless-worldwide">UN DESA, World Social Summit 2025 background</a>
-  </p>
-</div>
-
-<!-- NEW ESSENTIALS (added 2026-06-15): sanitation, drinking-water access,
-     clean cooking, basic education, maternal survival, essential medicines -->
-<div class="card" id="card-sanitation">
-  <h3>Sanitation <span class="tag uneven">distribution failure</span></h3>
-  <div class="row">
-    <div class="stat"><div class="label">World population with safely managed sanitation</div><div class="value accent" id="sanitation-have">58%</div><div class="sub">WHO/UNICEF JMP (2025)</div></div>
-    <div class="stat"><div class="label">People still lacking it</div><div class="value danger" id="sanitation-lack">3.4 billion</div><div class="sub">WHO/UNICEF JMP (2025)</div></div>
-  </div>
-  <p>The engineering of safe sanitation is a solved problem and most of the world already lives with it: in 2024 some <span class="num">58%</span> of humanity (about <span class="num">4.8 billion</span> people) used safely managed sanitation, up from 48% in 2015. The remaining <span class="num">3.4 billion</span> without it, including <span class="num">354 million</span> who still practise open defecation, are short of plumbing and treatment capacity, not of any unknown technology. This is a distribution and investment gap, not a production limit.</p>
-  <p class="src">Source: <a href="https://washdata.org/reports/jmp-2025-wash-households">WHO/UNICEF Joint Monitoring Programme (2025). Progress on household drinking water, sanitation and hygiene 2000-2024.</a></p>
-</div>
-
-<div class="card" id="card-drinking-water">
-  <h3>Drinking-water access <span class="tag uneven">distribution failure</span></h3>
-  <div class="row">
-    <div class="stat"><div class="label">World population with safely managed drinking water</div><div class="value accent" id="water-access-have">74%</div><div class="sub">WHO/UNICEF JMP (2025)</div></div>
-    <div class="stat"><div class="label">People still lacking it</div><div class="value danger" id="water-access-lack">2.1 billion</div><div class="sub">WHO/UNICEF JMP (2025)</div></div>
-  </div>
-  <p>The planet's renewable freshwater works out to thousands of cubic metres per person per year; the binding constraint is delivery, not the resource. In 2024 some <span class="num">74%</span> of humanity used safely managed drinking water (up from 68% in 2015), while <span class="num">2.1 billion</span> people did not, including <span class="num">106 million</span> who still drink untreated surface water. The water exists and treatment is routine engineering; the gap is pipes, pumps and treatment plants where they have not been built.</p>
-  <p class="src">Source: <a href="https://washdata.org/reports/jmp-2025-wash-households">WHO/UNICEF Joint Monitoring Programme (2025). Progress on household drinking water, sanitation and hygiene 2000-2024.</a></p>
-</div>
-
-<div class="card" id="card-clean-cooking">
-  <h3>Clean cooking fuel <span class="tag uneven">distribution failure</span></h3>
-  <div class="row">
-    <div class="stat"><div class="label">People still cooking with polluting fuels</div><div class="value danger" id="cooking-polluting">2.1 billion</div><div class="sub">WHO (2025), 2021 data</div></div>
-    <div class="stat"><div class="label">Deaths/year from household air pollution</div><div class="value danger" id="cooking-deaths">2.9 million</div><div class="sub">WHO (2025), 2021 data</div></div>
-  </div>
-  <p>Clean cookstoves, LPG and electric cooking are mass-produced, well-understood technologies. Yet about <span class="num">2.1 billion</span> people, roughly a quarter of humanity, still cook over open fires and inefficient stoves burning wood, dung, crop waste, coal or kerosene. The resulting household air pollution killed an estimated <span class="num">2.9 million</span> people in 2021, including over <span class="num">309,000</span> children under five. The shortfall is affordability and supply chains for fuel and stoves, not a missing invention.</p>
-  <p class="src">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health">World Health Organization (2025). Household air pollution fact sheet.</a></p>
-</div>
-
-<div class="card" id="card-education">
-  <h3>Basic education <span class="tag uneven">distribution failure</span></h3>
-  <div class="row">
-    <div class="stat"><div class="label">Out-of-school children & youth worldwide</div><div class="value danger" id="oosc-total">251 million</div><div class="sub">UNESCO GEM Report (2024)</div></div>
-    <div class="stat"><div class="label">Out-of-school rate, low- vs high-income</div><div class="value danger" id="oosc-gap">33% vs 3%</div><div class="sub">UNESCO GEM Report (2024)</div></div>
-  </div>
-  <p>Primary and lower-secondary schooling is a mature public service that rich countries deliver to essentially everyone. UNESCO counts <span class="num">251 million</span> children and youth out of school in 2024, a number that has fallen only about <span class="num">1%</span> in nearly a decade. In low-income countries <span class="num">33%</span> of school-age children are out of school against just <span class="num">3%</span> in high-income countries. The teaching methods exist; the gap is funding, teachers and access where conflict and poverty concentrate.</p>
-  <p class="src">Source: <a href="https://www.unesco.org/en/articles/251m-children-and-youth-still-out-school-despite-decades-progress-unesco-report">UNESCO (2024). Global Education Monitoring Report 2024: 251 million children and youth still out of school.</a></p>
-</div>
-
-<div class="card" id="card-maternal">
-  <h3>Maternal survival <span class="tag uneven">distribution failure</span></h3>
-  <div class="row">
-    <div class="stat"><div class="label">Maternal deaths in 2023</div><div class="value danger" id="maternal-deaths">260,000</div><div class="sub">WHO/UNICEF/UNFPA/WB (2025)</div></div>
-    <div class="stat"><div class="label">Share concentrated in sub-Saharan Africa & S. Asia</div><div class="value danger" id="maternal-conc">87%</div><div class="sub">WHO/UNICEF/UNFPA/WB (2025)</div></div>
-  </div>
-  <p>The clinical interventions that prevent maternal death, skilled birth attendance, blood transfusion, treatment for haemorrhage, sepsis and hypertension, are standard care in high-income countries. Yet an estimated <span class="num">260,000</span> women died of maternal causes in 2023, about one every two minutes, from causes the same report calls largely preventable. About <span class="num">87%</span> of those deaths occurred in sub-Saharan Africa and Southern Asia. Global maternal mortality has already fallen roughly <span class="num">40%</span> since 2000, which shows the remaining toll tracks access to care, not a lack of medical knowledge.</p>
-  <p class="src">Source: <a href="https://www.who.int/publications/i/item/9789240108462">WHO, UNICEF, UNFPA, World Bank Group, UNDESA (2025). Trends in Maternal Mortality 2000 to 2023.</a></p>
-</div>
-
-<div class="card" id="card-essential-medicines">
-  <h3>Essential medicines <span class="tag uneven">distribution failure</span></h3>
-  <div class="row">
-    <div class="stat"><div class="label">Public-sector availability of generic medicines</div><div class="value danger" id="meds-public">38-68%</div><div class="sub">Lancet Global Health (2025)</div></div>
-    <div class="stat"><div class="label">WHO availability target</div><div class="value accent" id="meds-target">80%</div><div class="sub">WHO benchmark</div></div>
-  </div>
-  <p>Most medicines on the WHO Essential Medicines List are off-patent generics that can be manufactured for cents per dose. Yet across 54 low- and middle-income countries, public-sector availability of generic medicines ranged only from <span class="num">38%</span> to <span class="num">68%</span> by region, and no region's public or private sector met WHO's <span class="num">80%</span> availability target. Where stock runs out, patients paid <span class="num">3</span> to <span class="num">11.5</span> times international reference prices in private pharmacies. The drugs are cheap and abundant to make; the failure is procurement, supply chains and pricing.</p>
-  <p class="src">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/39706661/">Oldfield et al. (2025). Prices, availability, and affordability of adult medicines in 54 low-income and middle-income countries. Lancet Global Health.</a></p>
-</div>
-</section>
-
-<!-- ============================================================
-     SECTION 3 — Money question (UBI cost math)
-     Cost of universal $3/day floor; where the money is.
-     World Inequality Lab cross-confirmation added 2026-05-15.
-     ============================================================ -->
-<section id="money">
-<h2>3 · The money question</h2>
-<p>
-  Even if the resources exist, can the financial system move them? Here are
-  three numbers placed next to each other. They are not a policy proposal —
-  they are a sanity check on the claim "we cannot afford it."
-</p>
-
-<div class="card">
-  <h3>Cost of a universal $3/day floor — for every human alive</h3>
-  <div class="row">
-    <div class="stat">
-      <div class="label">Math: $3 × 8.2B × 365 days</div>
-      <div class="value accent" id="ubi-cost">$8.98 trillion / year</div>
-      <div class="sub">Universal — paid to everyone, including the wealthy.</div>
-    </div>
-    <div class="stat">
-      <div class="label">As a share of world GDP</div>
-      <div class="value accent" id="ubi-share">7.6%</div>
-      <div class="sub">Less than the share the world already spends on healthcare (9.9%).</div>
-    </div>
-  </div>
-  <p class="small">
-    For comparison: actually closing the <em>gap</em> for the 847M people below
-    the line costs far less, because most of them are not at $0/day; the average
-    poverty gap is roughly $1/day per affected person. Closing the gap costs
-    well under $1 trillion / year — comparable to a single year's growth in
-    global military spending.
-  </p>
-</div>
-
-<div class="card">
-  <h3>Where the money already is</h3>
-  <ul>
-    <li>
-      Global household wealth, 2023:
-      <span class="num">$449.9 trillion</span>
-      (<a href="https://www.ubs.com/global/en/media/display-page-ndp/en-20240710-gwr-2024.html">UBS Global Wealth Report 2024</a>).
-      Of that, <span class="num">$213.8T</span> is held by the 58 million
-      people with net worth over $1M — 0.7% of humanity holding 47.5% of the wealth.
-      Cross-confirmed by the <a href="https://wid.world/">World Inequality Lab</a>
-      (Chancel, Piketty, Saez, Zucman): the top 10% of humanity owns roughly
-      <span class="num">75%</span> of all personal wealth, and the
-      top 0.001% — fewer than 60,000 people — owns three times more wealth
-      than the entire bottom half of humanity combined.
-    </li>
-    <li>
-      Global military spending, 2025:
-      <span class="num">$2.887 trillion</span>
-      (<a href="https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025">SIPRI</a>) — 11th consecutive annual increase, and 2.5% of world GDP, the highest military burden since 2009.
-    </li>
-    <li>
-      Global health spending, 2022:
-      <span class="num">$9.8 trillion</span>
-      (<a href="https://www.who.int/teams/health-financing-and-economics/global-spending-on-health-report">WHO</a>),
-      but the US alone accounts for 43%. Per-capita health spending in
-      high-income countries is ~87× that in low-income countries — same disease,
-      different price tag.
-    </li>
-  </ul>
-  <p class="small">
-    "We cannot afford it" is a statement about political will, not about
-    physical resources or aggregate money supply.
-  </p>
-</div>
-</section>
-
-<!-- ============================================================
-     SECTION 4 — Three kinds of scarcity
-     Physical (real) vs distribution (solvable) vs manufactured.
-     Pure prose, no data dependencies.
-     ============================================================ -->
-<section id="scarcity">
-<h2>4 · Three kinds of scarcity</h2>
-<p>
-  Not all scarcity is fake. An honest version of this argument has to separate
-  three distinct things, because the policy response to each is different.
-</p>
-
-<h3>Physical scarcity <span class="tag real">real</span></h3>
-<p>
-  Some things are genuinely finite or geographically bound: rare-earth elements,
-  helium, the lithium in a specific salt flat, doctor-hours per day, intact
-  tropical forest, a particular human's time, fresh water <em>in a desert</em>.
-  No amount of redistribution conjures these. They require substitution,
-  recycling, or restraint.
-</p>
-
-<h3>Distribution scarcity <span class="tag uneven">solvable</span></h3>
-<p>
-  Production exceeds need globally, but the surplus is concentrated where need
-  is lowest. Food rots in one country while another starves. Electricity is
-  curtailed in one grid while another has none. Housing units sit empty in
-  cities where people sleep outside them.
-  This is the largest category by far. It is solved with logistics, pricing,
-  and rights — not with more production.
-</p>
-
-<h3>Manufactured scarcity <span class="tag real">created</span></h3>
-<p>
-  A third category exists because someone profits from it existing:
-</p>
-<ul>
-  <li>
-    <strong>IP gates on near-zero-marginal-cost goods.</strong> A generic
-    insulin vial costs roughly $2–$6 to manufacture; the list price in the US
-    has reached $300+. The molecule isn't scarce. The legal right to copy it is.
-  </li>
-  <li>
-    <strong>Artificial limited editions.</strong> Sneakers, handbags, NFTs,
-    "drops" — supply could be infinite; scarcity is the product.
-  </li>
-  <li>
-    <strong>Planned obsolescence and repair lockouts.</strong> A working
-    device is made non-working to manufacture replacement demand.
-  </li>
-  <li>
-    <strong>Zoning that forbids new housing</strong> in places where people
-    want to live.
-  </li>
-  <li>
-    <strong>Information asymmetry.</strong> The "scarcity" of expertise often
-    survives only because the knowledge is paywalled or trade-secreted.
-  </li>
-</ul>
-<p>
-  Manufactured scarcity is the part of the system that is most legibly a
-  <em>choice</em>. It is the easiest to argue about and the hardest to dislodge,
-  because someone is profiting on the other side of the choice.
-</p>
-<p class="small">
-  We didn't only describe this category — we built small refutations of it: a
-  set of <a href="tools/">free, client-side tools</a> (an image editor, an image
-  compressor/converter, a QR code generator, a contrast checker, a password generator) that run entirely in your browser —
-  no account, no upload, nothing leaves your device — doing what subscription or
-  ad-gated services charge for. Manufactured scarcity, undone in a few files.
-</p>
-</section>
-
-<!-- ============================================================
-     SECTION 5 — Omelas question
-     Le Guin frame + empirical answer (suffering is contingent,
-     not load-bearing). Pivot into pilot evidence in § 6.
-     ============================================================ -->
-<section id="omelas">
-<h2>5 · The Omelas question</h2>
-<p>
-  In 1973 Ursula K. Le Guin published a short story called
-  <em>The Ones Who Walk Away from Omelas</em>. Omelas is a city of beauty,
-  music, and abundant joy. Every citizen's happiness depends — they are told
-  on coming of age — on the continuous suffering of one child kept locked in a
-  basement. The reader is given the choice: accept the bargain, or walk away.
-  Le Guin never tells you what waits past the city walls.
-  (<a href="https://en.wikipedia.org/wiki/The_Ones_Who_Walk_Away_from_Omelas">background</a>)
-</p>
-<p>
-  The current global system has the shape of Omelas at scale. Roughly a billion
-  people live in conditions of relative abundance — durable shelter, clean
-  water, reliable food, electricity, healthcare, leisure — while
-  <span class="num">847M</span> live in extreme poverty,
-  <span class="num">2.8B</span> in inadequate housing, and
-  <span class="num">645M</span> in hunger. The wealthy world's comfort runs on
-  cobalt mined by children, garments sewn in unsafe factories, agricultural
-  labor below legal wages, and ecosystems converted to commodities. The
-  bargain isn't presented to anyone formally. It is just the condition of the
-  city.
-</p>
-<p>
-  Le Guin's story <em>poses</em> the bargain. It does not assert that the
-  bargain is necessary. The interesting question — the empirical question this
-  site can actually address — is whether the suffering is <strong>load-bearing</strong>.
-  If you removed the child from the basement, would Omelas collapse? Or has the
-  city simply never tried?
-</p>
-<p>
-  Three lines of evidence say the suffering is not load-bearing:
-</p>
-<ul>
-  <li>
-    <strong>Cash transfers do not reduce labor supply.</strong> Every
-    well-designed evaluation we have — Kenya, Iran, Stockton, Alaska —
-    finds either no labor-supply effect or a positive one. The widely-feared
-    "people will stop working if you give them money" version of the Omelas
-    bargain is not supported by data. (See §6 below for sources.)
-  </li>
-  <li>
-    <strong>High-comfort societies exist without correspondingly high
-    underclass exploitation.</strong> The Nordic countries, Costa Rica, and
-    several others sustain top-tier human development with lower internal
-    inequality and lower foreign-supply-chain abuse profiles than the US,
-    UK, or Gulf states. The luxuries are the same; the basement isn't.
-  </li>
-  <li>
-    <strong>Extractive vs inclusive institutions.</strong> The empirical
-    literature on long-run growth (Acemoglu, Johnson, Robinson, 2024 Nobel)
-    finds that <em>inclusive</em> institutions — broad property rights, broad
-    political voice, broad access to opportunity — outperform extractive ones
-    over decades. The basement is not the engine. The basement is the failure mode.
-  </li>
-</ul>
-<p>
-  That doesn't make removing the child easy. Transition costs are real —
-  capital flight, political resistance, the need to reorganize entire supply
-  chains. But "hard" is not the same as "load-bearing." The site's claim is
-  narrow: the resources exist, the cash-transfer experiments work, and the
-  basement-comfort link is contingent, not necessary.
-</p>
-<p class="small">
-  The next section is the part of Omelas that the story didn't write:
-  what happens when you actually try to lift the child out, on a recorded,
-  measured scale.
-</p>
-</section>
-
-<!-- ============================================================
-     SECTION 6 — Cash-transfer pilots
-     Six programs + two meta-analyses. Each .pilot block reads
-     from data/pilots.json. Update both when adding/removing.
-     Also update FAQPage schema in <head> and the JSON-LD article
-     `citation` list.
-     ============================================================ -->
-<section id="pilots">
-<h2>6 · Where this has already been done</h2>
-<p>
-  Twelve programs across six continents and five decades — universal and
-  targeted, lump-sum and monthly, conditional and unconditional — each with
-  peer-reviewed or official-source evaluation. None of them is the full
-  solution. Together they show that the standard objections ("people will stop
-  working," "the money will be wasted," "it isn't sustainable") fail empirically
-  at the scales tested.
-</p>
-
-<div class="pilot">
-  <h4>GiveDirectly Universal Basic Income — rural Kenya (2017–ongoing)</h4>
-  <div class="meta">~23,000 people · 195 villages + 100 control · RCT</div>
-  <p class="small">
-    Three-arm randomized controlled trial run by Tavneet Suri (MIT), Abhijit
-    Banerjee (MIT, Nobel 2019), Paul Niehaus (UCSD), Alan Krueger (Princeton),
-    and Michael Faye. Three transfer designs compared: lump sum $500;
-    two-year monthly UBI ($0.75/day); twelve-year commitment, same monthly amount.
-  </p>
-  <ul>
-    <li><strong>No reduction in labor supply</strong> in any arm.</li>
-    <li>Lump-sum arm produced the largest income gain (~50% over control).</li>
-    <li>Long-term commitment changed behavior — saving, business creation —
-        that short-term transfers did not.</li>
-  </ul>
-  <p class="src">
-    <a href="https://www.povertyactionlab.org/sites/default/files/research-paper/Universal-Basic-Income-Short-Term-Results-from-a-Long-Term-Experiment-in-Kenya_BFKNS_December2023.pdf">Banerjee, Faye, Krueger, Niehaus, Suri (2023). Universal Basic Income: Short-Term Results from a Long-Term Experiment in Kenya.</a> ·
-    <a href="https://www.socialscienceregistry.org/trials/1952">AEA registry</a>
-  </p>
-</div>
-
-<div class="pilot">
-  <h4>Alaska Permanent Fund Dividend — United States (1982–present)</h4>
-  <div class="meta">~733,000 people · every Alaska resident · ~$1,600 / yr (long-run avg)</div>
-  <p class="small">
-    A sovereign-wealth fund: 25% of state oil-and-mineral royalties go into a
-    trust ($80B+ in assets) that pays an annual dividend to every Alaska
-    resident, including children. 2024 payment: $1,702. 2022 record: $3,284.
-    The program has survived 40+ years, four decades of party turnover, and
-    multiple oil-price downturns.
-  </p>
-  <ul>
-    <li><strong>No measurable reduction in aggregate labor supply</strong>
-        (Jones &amp; Marinescu 2022, <em>American Economic Journal: Economic
-        Policy</em>).</li>
-    <li>Alaska maintains the lowest poverty rate among comparable rural-heavy
-        US states.</li>
-    <li>Demonstrates that universal, unconditional, lifetime cash distribution
-        is administratively trivial when the political mechanism exists.</li>
-  </ul>
-  <p class="src">
-    <a href="https://pfd.alaska.gov/">Alaska Department of Revenue, Permanent Fund Dividend Division</a> ·
-    <a href="https://www.aeaweb.org/articles?id=10.1257/pol.20190299">Jones &amp; Marinescu, AEJ:EP 14(2):315–340</a>
-  </p>
-</div>
-
-<div class="pilot">
-  <h4>Iran Universal Cash Transfer — Iran (2011)</h4>
-  <div class="meta">&gt;70 million people · national · ~28% of median household income initially</div>
-  <p class="small">
-    Replaced ~$50–70B/year of energy and bread subsidies with universal monthly
-    cash deposits into individual accounts. Within the first year, &gt;$30B in
-    cash was disbursed to essentially the entire population. The largest
-    universal cash program ever attempted.
-  </p>
-  <ul>
-    <li>Headcount poverty fell from <strong>22.5% → 10.6%</strong> as a
-        direct effect of the transfer.</li>
-    <li><strong>No reduction in labor supply</strong>; positive effects on
-        women's and self-employed men's labor supply
-        (Salehi-Isfahani &amp; Mostafavi-Dehzooei 2018, <em>J. Dev. Econ.</em>).</li>
-    <li>Critical lesson: the nominal value was not indexed to inflation. After
-        five years of cumulative 136.5% inflation, real value of the transfer
-        was cut in half and ~40% of the poverty-reduction effect was lost.
-        Indexing matters.</li>
-  </ul>
-  <p class="src">
-    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0304387818306084">Salehi-Isfahani &amp; Mostafavi-Dehzooei, J. Dev. Econ. 135:349</a> ·
-    <a href="https://www.imf.org/external/pubs/ft/wp/2011/wp11167.pdf">IMF Working Paper 11/167</a>
-  </p>
-</div>
-
-<div class="pilot">
-  <h4>Stockton SEED — Stockton, CA (2019–2021)</h4>
-  <div class="meta">125 treatment · 200 control · $500/month × 24 months · RCT</div>
-  <p class="small">
-    Stockton Economic Empowerment Demonstration. Mayor Michael Tubbs launched
-    it; University of Pennsylvania's Center for Guaranteed Income Research
-    and Stanford's Center for Advanced Study in the Behavioral Sciences ran
-    the evaluation. Mixed-methods RCT.
-  </p>
-  <ul>
-    <li>Full-time employment <strong>rose from 28% to 40%</strong> in the
-        treatment group over twelve months. The control group rose 32% → 37%.
-        Net effect: +7 percentage points of full-time employment.</li>
-    <li>Reduced anxiety and depression scores.</li>
-    <li>Most recipients used funds for groceries, utilities, transportation,
-        and auto repair — not "temptation goods."</li>
-  </ul>
-  <p class="src">
-    <a href="https://link.springer.com/article/10.1007/s11524-023-00723-0">West, Castro, Samra, Coltrera (2023), J. Urban Health 100:1184</a> ·
-    <a href="https://static1.squarespace.com/static/6039d612b17d055cac14070f/t/603ef1194c474b329f33c329/1614737690661/SEED_Preliminary+Analysis-SEEDs+First+Year_Final+Report_Individual+Pages+-2.pdf">First-year report</a>
-  </p>
-</div>
-
-<div class="pilot">
-  <h4>Bolsa Família — Brazil (2003–present)</h4>
-  <div class="meta">~48 million people · ~13.8M families · ~one-quarter of Brazil's population</div>
-  <p class="small">
-    The largest <em>conditional</em> cash transfer program ever implemented.
-    Transfers are tied to school enrollment and health-clinic visits for
-    children, but at the scale of nearly a quarter of a national population
-    over more than two decades.
-  </p>
-  <ul>
-    <li>Extreme poverty in Brazil would be <strong>33–50% higher</strong>
-        without the program (World Bank evaluation).</li>
-    <li>Accounted for <strong>12–21% of the recent sharp decline</strong> in
-        Brazilian income inequality.</li>
-    <li>No measurable negative effect on labor force participation
-        (Soares et al, multiple evaluations).</li>
-    <li>The program survived three presidencies of opposing parties, including
-        a government that publicly opposed it — and was reinstated in expanded
-        form under Lula 2023.</li>
-  </ul>
-  <p class="src">
-    <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/793761468015579565/lifting-families-out-of-poverty-in-brazil-bolsa-familia-program">World Bank, 'Lifting Families out of Poverty in Brazil: Bolsa Familia Program'</a> ·
-    <a href="https://www.imf.org/-/media/Files/Publications/WP/2020/English/wpiea2020099-print-pdf.ashx">IMF WP/20/099 evaluation</a>
-  </p>
-</div>
-
-<div class="pilot">
-  <h4>Cherokee casino dividend — Eastern Band of Cherokee Indians, NC, USA (1996–present)</h4>
-  <div class="meta">~16,000 tribal members · ~$4,000–$6,000 / yr / person · 30-year quasi-experiment</div>
-  <p class="small">
-    A naturally occurring quasi-experiment. In 1996 the Eastern Band of
-    Cherokee opened a casino and decided to distribute a per-capita share of
-    profits to every enrolled member, including children. This intersected
-    with the ongoing Great Smoky Mountains Study of childhood mental health —
-    1,420 children including 350 Cherokee — giving researchers a randomized-
-    by-tribal-membership comparison.
-  </p>
-  <ul>
-    <li>Cherokee children in poverty fell by half by 2001; behavioral and
-        emotional problems in formerly-poor children dropped 40% to match
-        never-poor levels.</li>
-    <li>Each additional $4,000/year correlated with one extra year of
-        educational attainment by age 21 and a 22% reduction in criminal
-        record by age 16.</li>
-    <li>Effects intergenerational: children whose families joined the
-        dividend at younger ages showed lasting decade-plus benefits.</li>
-  </ul>
-  <p class="src">
-    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7250001/">Costello, E.J. et al (2020). 'Income dividends and subjective survival in a Cherokee Indian cohort.' SSM-Population Health 10:100530</a> ·
-    earlier work: Costello, Compton, Keeler, Angold (2003), <em>JAMA</em> 290(15):2023–9.
-  </p>
-</div>
-
-<!-- NEW PILOTS (added 2026-06-15): Finland, Baby's First Years, Mincome,
-     PROGRESA, Malawi/Zambia, SEWA-India -->
-<div class="pilot">
-  <h4>Finland Basic Income Experiment — Finland (2017-2018)</h4>
-  <div class="meta">2,000 unemployed recipients vs register-wide control · government-mandated statutory RCT · EUR 560/month, tax-free, no conditions</div>
-  <p class="small">The world's first nationwide, statutory, randomized basic-income trial. Kela (Finland's social-insurance institution) randomly selected 2,000 unemployed people to receive EUR 560 a month with no work requirement and no income reporting. It was evaluated by Kela and the VATT Institute for Economic Research and reported to the Ministry of Social Affairs and Health.</p>
-  <ul>
-    <li><strong>Recipients worked slightly more, not fewer,</strong> than controls (about 78 vs 73 employment days) — a small positive employment effect, not the predicted drop.</li>
-    <li>Recipients reported markedly better mental wellbeing, lower stress and depression, and more trust in institutions and in their own future.</li>
-    <li>Limitation: the sample was already unemployed and the labour effect was modest and statistically weak in year one, so this does not test a truly universal payment to the whole population.</li>
-  </ul>
-  <p class="src"><a href="https://julkaisut.valtioneuvosto.fi/bitstreams/f2041c17-878d-490c-8c5f-f12ab5cbd70b/download">Kangas, Jauhiainen, Simanainen & Ylikanno (eds.) (2020). Evaluation of the Finnish basic income experiment. MSAH Reports 2020:15.</a> · <a href="https://vatt.fi/en/-/results-of-the-basic-income-experiment-small-employment-effects-better-perceived-economic-security-and-mental-wellbeing">VATT Institute / official results</a></p>
-</div>
-
-<div class="pilot">
-  <h4>Baby's First Years — United States (2018-2022)</h4>
-  <div class="meta">1,000 low-income mother-infant pairs · randomized controlled trial · USD 333/month vs USD 20/month, unconditional, by debit card</div>
-  <p class="small">An RCT led by researchers at Columbia, NYU, UC Irvine, Maryland and Wisconsin. Mothers of newborns below the poverty line were randomly assigned a high (USD 333/month) or low (USD 20/month) unconditional monthly cash gift. The team measured the infants' brain activity by EEG around their first birthday.</p>
-  <ul>
-    <li><strong>Infants whose mothers got USD 333/month showed more high-frequency brain activity</strong> — a pattern linked in prior work to later cognitive development — than the low-cash group.</li>
-    <li>Because the cash amount was randomized, the difference is causal evidence that reducing poverty changes early brain activity, not just a correlation.</li>
-    <li>Limitation: not every pre-registered outcome reached significance, and EEG power is an indirect proxy — it is not a measure of IQ or school performance, which were not yet assessed at age one.</li>
-  </ul>
-  <p class="src"><a href="https://www.pnas.org/doi/10.1073/pnas.2115649119">Troller-Renfree et al. (2022). The impact of a poverty reduction intervention on infant brain activity. PNAS 119(5):e2115649119.</a> · <a href="https://www.babysfirstyears.com/publications">Baby's First Years study / publications</a></p>
-</div>
-
-<div class="pilot">
-  <h4>Mincome — Dauphin, Manitoba, Canada (1974-1979)</h4>
-  <div class="meta">Whole town of ~10,000 as saturation site + dispersed Manitoba sample · federal-provincial guaranteed-annual-income experiment · income-tested top-up</div>
-  <p class="small">A 1970s Canadian guaranteed-annual-income experiment in which the town of Dauphin was a 'saturation site' where everyone was eligible. The program was defunded before a final report and the data sat unanalyzed for decades until Evelyn Forget (University of Manitoba) linked participants to Canada's universal health records and compared them to matched controls.</p>
-  <ul>
-    <li><strong>Hospitalizations fell 8.5%</strong> among Dauphin residents versus matched controls, driven by fewer accidents/injuries and fewer mental-health admissions.</li>
-    <li>Work effort barely moved: only new mothers (longer maternity leave) and teenagers (staying in school, raising graduation rates) reduced hours.</li>
-    <li>Limitation: Forget's results are a retrospective analysis of a single saturation town decades later, not a fresh randomized comparison, so the causal claim is weaker than a modern RCT.</li>
-  </ul>
-  <p class="src"><a href="https://utppublishing.com/doi/10.3138/cpp.37.3.283">Forget, E. L. (2011). The Town with No Poverty. Canadian Public Policy 37(3):283-305.</a> · <a href="https://uwo.scholaris.ca/bitstreams/fc04d1ec-b665-4f30-ab32-9cb1c9addc25/download">open-access policy brief / full text</a></p>
-</div>
-
-<div class="pilot">
-  <h4>PROGRESA / Oportunidades — Mexico (1997-)</h4>
-  <div class="meta">506 randomized rural communities, later ~5 million households · conditional cash transfer with randomized rollout · cash to mothers, ~20-30% of household income</div>
-  <p class="small">Mexico's flagship anti-poverty program (renamed Oportunidades, then Prospera). It launched with a randomized rollout — 320 communities got the program first, 186 acted as controls — paying mothers cash conditional on their children's school attendance and family clinic visits. The government commissioned IFPRI to run an independent evaluation.</p>
-  <ul>
-    <li><strong>After two years, the poverty headcount among participants was 17.4% lower than controls</strong> and the poverty gap 36% smaller, with large rises in secondary-school enrollment, especially for girls.</li>
-    <li>Adult labour supply did not fall, consumption rose, and child illness and stunting declined — money did not displace work.</li>
-    <li>Limitation: the transfer was conditional on school and clinic use, so it cannot cleanly separate the effect of the cash from the effect of the conditions; later work found much of the schooling gain persisted even when conditions were eased.</li>
-  </ul>
-  <p class="src"><a href="https://cgspace.cgiar.org/items/748d73dd-53b8-4391-9f70-f7d3aa37f1e7">Skoufias, E. (2005). PROGRESA and Its Impacts on the Welfare of Rural Households in Mexico. IFPRI Research Report 139.</a> · <a href="https://www.ifpri.org/publication/progresa-and-its-impacts-welfare-rural-households-mexico">IFPRI publication page</a></p>
-</div>
-
-<div class="pilot">
-  <h4>Government Social Cash Transfers — Malawi & Zambia (2010-2014)</h4>
-  <div class="meta">National government programs, cluster-randomized rollout · unconditional transfers · Zambia ~USD 12/month flat per household, paid to (99% female) caregivers</div>
-  <p class="small">Two government-run unconditional cash transfer programs — Zambia's Child Grant and Malawi's Social Cash Transfer — evaluated by cluster-randomized controlled trials under the Transfer Project (UNC Carolina Population Center, UNICEF, FAO and the national governments). These are real state programs, not NGO pilots.</p>
-  <ul>
-    <li><strong>The transfers expanded household enterprise and farm investment, and adults shifted toward family work rather than working less</strong> — direct evidence against 'cash makes people lazy.'</li>
-    <li>Children's school attendance and material wellbeing rose.</li>
-    <li>Honest counter-evidence: the same transfers also <em>increased</em> children's agricultural work, some potentially hazardous, because the expanded family farms and businesses drew on child labour — a genuine negative side-effect, not a null result.</li>
-  </ul>
-  <p class="src"><a href="https://academic.oup.com/wber/article/34/3/670/5611144">de Hoop, Groppo & Handa (2020). Cash Transfers, Microentrepreneurial Activity, and Child Work. World Bank Economic Review 34(3):670-697.</a> · <a href="https://transfer.cpc.unc.edu/">Transfer Project (UNC/UNICEF/FAO)</a></p>
-</div>
-
-<div class="pilot">
-  <h4>SEWA / UNICEF Basic Income Pilots — Madhya Pradesh, India (2011-2013)</h4>
-  <div class="meta">8 treatment + 12 control villages, ~6,000 recipients · randomized-village unconditional basic income · Rs 200/adult + Rs 100/child per month, paid individually</div>
-  <p class="small">Two unconditional basic-income pilots run by the Self-Employed Women's Association (SEWA) and funded by UNICEF. Every resident of eight treatment villages — men, women and children — received a small monthly cash payment for 12-18 months with no conditions, while twelve villages served as controls. The evaluation was published as an open-access scholarly book.</p>
-  <ul>
-    <li><strong>Recipient households spent more on food, healthcare and schooling</strong>, with measurable gains in nutrition (especially for girls) and school attendance and performance.</li>
-    <li>Economic activity rose, not fell: more own-account work, livestock and small-business investment, and a shift away from casual/bonded labour toward self-employment, with women gaining most.</li>
-    <li>Limitation: the evidence is a scholarly monograph on a short (12-18 month), small, modestly-funded pilot — not a peer-reviewed journal RCT — so long-run durability and scalability are untested.</li>
-  </ul>
-  <p class="src"><a href="https://www.bloomsburycollections.com/book/basic-income-a-transformative-policy-for-india/">Davala, Jhabvala, Standing & Mehta (2015). Basic Income: A Transformative Policy for India. Bloomsbury Academic (open access).</a> · <a href="https://library.oapen.org/handle/20.500.12657/58784">OAPEN open-access repository</a></p>
-</div>
-
-<div class="card">
-  <h3>And the meta-analyses confirm it</h3>
-  <p class="small">
-    Individual studies can be cherry-picked. Systematic reviews and
-    meta-analyses can't. Two of them, both peer-reviewed, both covering
-    the full literature, both reaching the same conclusion:
-  </p>
-  <ul>
-    <li>
-      <strong>Crosta, Karlan, Ong, Rüschenpöhler, Udry (2024).</strong>
-      Bayesian meta-analysis of <span class="num">114 studies</span> across
-      <span class="num">72 unconditional cash transfer programs</span> in
-      low- and middle-income countries. Strong positive average effects on
-      <em>10 of 13</em> outcomes measured: household consumption, food
-      security, monthly income, labor supply, school enrollment, psychological
-      wellbeing, total assets, financial assets, and child height-for-age.
-      (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4923490">SSRN preprint, 2024</a>)
-    </li>
-    <li>
-      <strong>Bastagli, Hagen-Zanker, Harman, Barca, Sturge, Schmidt, Pellerano (2016).</strong>
-      ODI Rigorous Review. <span class="num">15 years</span> of literature
-      (2000–2015), <span class="num">165 studies</span>,
-      <span class="num">35 indicators</span>, 6 outcome areas. Conclusion:
-      <em>"There is no systematic evidence that cash transfers reduce adult
-      labour supply, despite this often being a concern raised by policymakers
-      and the public."</em>
-      (<a href="https://odi.org/documents/5301/11316.pdf">ODI, July 2016</a>)
-    </li>
-  </ul>
-  <p class="small">
-    Together: a meta-analysis of 114 studies and a systematic review of 165
-    studies, both finding the same result that the twelve individual pilots
-    above find. The objection "people will stop working" is, in 2026, no
-    longer a serious empirical claim. It is a folk belief.
-  </p>
-</div>
-
-<p class="small">
-  The pilots are not identical — different amounts, durations, countries,
-  conditions, evaluation methods. They converge on one point: when you give
-  people money without conditions, they do not stop working, do not waste it,
-  and their lives measurably improve. The objection "this can't work" is now
-  an empirical claim with twelve counterexamples, a 114-study meta-analysis, and
-  a 165-study systematic review against it.
-</p>
-<p class="small">
-  For <em>country-scale</em> precedents — Costa Rica abolishing its military,
-  Norway saving its oil money, Iceland prosecuting its bankers, Bhutan
-  rewriting its objective function, Mauritius diversifying without dismantling
-  its welfare state, plus Botswana, South Korea, Finland, Portugal, Kerala and
-  Uruguay (eleven in all) — see
-  <a href="case-studies.html"><strong>Abundance · country case studies →</strong></a>.
-</p>
-</section>
-
-<!-- ============================================================
-     SECTION 7 — Interactive redistribution calculator
-     Vanilla JS sliders. Math is in the bottom <script> in the
-     `dials()` IIFE. Same code is duplicated, simplified, in
-     embed/calculator.html (the iframe widget).
-     ============================================================ -->
-<section id="dials">
-<h2>7 · Move the dials yourself</h2>
-<p>
-  This widget is a calculator, not a forecast. It shows what the per-capita
-  numbers become when you redirect parts of existing flows. Math is the same
-  arithmetic used in §3, recomputed live; every input value is a real published
-  figure (UBS 2024, SIPRI 2025, IMF 2026, World Bank 2025).
-</p>
-
-<div class="dials" id="dials">
-
-  <div class="dial">
-    <div class="dial-label">
-      <span class="dial-name">Income floor — daily, per person, every human</span>
-      <span class="dial-value"><span id="d-floor">$3.00</span> / day</span>
-    </div>
-    <input type="range" id="i-floor" min="0" max="30" step="0.25" value="3.00">
-    <div class="dial-note">
-      Default = World Bank extreme-poverty line. $5.50 = lower-middle-income
-      poverty line. $15 ≈ "no developed-country household lives in poverty."
-    </div>
-  </div>
-
-  <div class="dial">
-    <div class="dial-label">
-      <span class="dial-name">Annual wealth tax above $1M net worth</span>
-      <span class="dial-value"><span id="d-wealth">2.0</span> %</span>
-    </div>
-    <input type="range" id="i-wealth" min="0" max="10" step="0.25" value="2.0">
-    <div class="dial-note">
-      Applied to the $213.8T held by ~58M people with net worth &gt;$1M
-      (UBS Global Wealth Report 2024). Capital-flight loss is not modeled —
-      see "honest limits" below.
-    </div>
-  </div>
-
-  <div class="dial">
-    <div class="dial-label">
-      <span class="dial-name">Share of global military spending redirected</span>
-      <span class="dial-value"><span id="d-mil">10</span> %</span>
-    </div>
-    <input type="range" id="i-mil" min="0" max="100" step="5" value="10">
-    <div class="dial-note">
-      Applied to $2.887T global military spending (SIPRI 2025). 10% ≈ closing
-      three years' recent growth in global military spending.
-    </div>
-  </div>
-
-  <div class="dial">
-    <div class="dial-label">
-      <span class="dial-name">Share of food waste/loss recovered</span>
-      <span class="dial-value"><span id="d-food">20</span> %</span>
-    </div>
-    <input type="range" id="i-food" min="0" max="100" step="5" value="20">
-    <div class="dial-note">
-      Applied to the 32% of global food production currently lost or wasted
-      (FAO + UNEP, 2024). Recovery means redirecting calories that already
-      exist, not producing more.
-    </div>
-  </div>
-
-  <div class="results">
-    <div class="row">
-      <div class="stat">
-        <div class="label">Annual cost of universal floor</div>
-        <div class="value" id="r-cost">$8.98T</div>
-        <div class="sub" id="r-cost-share">7.6% of world GDP</div>
-      </div>
-      <div class="stat">
-        <div class="label">Annual revenue from selected sources</div>
-        <div class="value" id="r-revenue">$4.56T</div>
-        <div class="sub" id="r-revenue-mix">wealth tax + military redirect</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="stat">
-        <div class="label">Food calories recovered</div>
-        <div class="value" id="r-cal">~278 kcal / person / day extra</div>
-        <div class="sub">enough to lift everyone above the 2,100 kcal floor without producing one additional crop</div>
-      </div>
-      <div class="stat">
-        <div class="label">Net funding gap (positive = shortfall)</div>
-        <div class="value" id="r-gap">$4.41T</div>
-        <div class="sub" id="r-gap-share">3.7% of world GDP</div>
-      </div>
-    </div>
-    <div class="verdict" id="r-verdict">
-      At these dials, redirecting existing flows covers about half the cost.
-      The remainder requires additional revenue, deficit financing, or a
-      lower floor.
-    </div>
-  </div>
-</div>
-
-<p class="small">
-  This calculator is deliberately simple. It does not model: capital flight
-  from wealth taxation, military-industry employment displacement, monetary
-  effects of issuing $X trillion, or the regional distribution gap between
-  where food is wasted and where people are hungry. Those are real costs —
-  the calculator's purpose is to show that aggregate funding is in the
-  achievable range, not to claim transition is free.
-</p>
-<p class="small">
-  <strong>Embed this calculator</strong> on any site:
-  <a href="embed/"><code>embed/</code></a> has a one-line <code>&lt;iframe&gt;</code> snippet.
-  Public domain, no attribution required.
-</p>
-</section>
-
-<!-- ============================================================
-     SECTION 8 — Historical context
-     Lee, Wiessner, Ekirch, Conard, Larsen. Full source notes at
-     papers/historical-context.md. Includes the honest correction
-     to Lee's 17 hrs/week figure (full labor closer to 40 hrs).
-     ============================================================ -->
-<section id="history">
-<h2>8 · Historical context — work as a recent system</h2>
-<p>
-  Asking "can we afford to work less" presumes that working most of one's
-  waking hours is the human default. It isn't. For the first ~290,000 years of
-  anatomically modern humans, there was no employment, no wage, no clock, and
-  no possibility of being fired.
-</p>
-<p>
-  The standard reference is Richard B. Lee's 1963–1965 fieldwork with the
-  Ju/'hoansi (Dobe !Kung) of Botswana, presented at the 1966 <em>Man the
-  Hunter</em> symposium at the University of Chicago. He recorded adults
-  spending <span class="num">~12–19 hours per week</span> on food acquisition.
-  Comparable figures have since been reported for the Hadza, Aché, and Martu
-  on three other continents.
-</p>
-<div class="disclaim">
-  <p>
-    <strong>The honest caveat:</strong> Lee's figure is food-acquisition only.
-    When food processing, tool-making, childcare, water-hauling, and camp
-    maintenance are included, the total comes to roughly 40 hours/week —
-    similar to a modern job. The historically novel thing is not that humans
-    invented work. It is that humans invented a system where the value of
-    your labor is extracted by someone else, and where the labor required to
-    access food and shelter became disconnected from the labor that produces them.
-  </p>
-</div>
-<p>
-  Three other facts, each from peer-reviewed primary sources, are worth
-  knowing:
-</p>
-<ul>
-  <li>
-    <strong>Firelight changes what humans talk about.</strong>
-    Polly Wiessner's 2014 PNAS study of Ju/'hoansi conversation found that
-    daytime talk was 31% economic and 6% stories. After dark, by firelight,
-    stories rose to <span class="num">81%</span> while economic talk collapsed
-    to 4%. The leisure portion of the day is where culture is produced —
-    myth, music, history, identity.
-    (<a href="https://www.pnas.org/doi/10.1073/pnas.1404212111">PNAS 111(39):14027</a>)
-  </li>
-  <li>
-    <strong>Human sleep was not originally a single block.</strong>
-    Historian A. Roger Ekirch documented over 500 pre-industrial references
-    to "first sleep" and "second sleep" with a wakeful interval between them.
-    Thomas Wehr's 1992 NIMH experiment, confining seven men to 14 hours of
-    darkness per night, reproduced this pattern spontaneously after about
-    three weeks. The single 8-hour block is an artifact of artificial light
-    and industrial scheduling.
-    (<a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/85ACD24ADCEEA5725E3CADC63DB58922/S0025727324000206a.pdf/reflections_on_have_we_lost_sleep.pdf">Ekirch 2024</a>; Wehr, <em>J. Sleep Research</em> 1(2):103.)
-  </li>
-  <li>
-    <strong>Agriculture, measured against the bone record, made humans
-    smaller and sicker — and bound them to more labor, not less.</strong>
-    Bioarchaeological reviews (Larsen 1995; Cohen &amp; Armelagos 1984)
-    consistently find shorter stature, more dental caries, more osteoarthritis,
-    and more nutritional deficiency in early agriculturalists vs. the
-    hunter-gatherer populations they replaced. The skeletons are very clear
-    about this. Working more did not produce healthier humans.
-  </li>
-</ul>
-<p>
-  None of this is an argument to return to caves. It is one argument: <em>the
-  framework where most of life is wage labor to access basic survival</em> is
-  ~0.04% of human history. It is a recent system, not a permanent fact.
-  Combined with the per-capita arithmetic above — that aggregate global
-  production now exceeds aggregate need — it raises a fair question about
-  how much of that system is currently required, and how much is inherited.
-</p>
-<p class="src">
-  See <a href="papers/historical-context.md"><code>papers/historical-context.md</code></a>
-  for the full source notes, including the substantial revision to Lee's
-  numbers, the Sahlins "original affluent society" debate, and what
-  evidence we deliberately excluded.
-</p>
-</section>
-
-<!-- ============================================================
-     SECTION 9 — Honest limits
-     What the page does NOT prove. Pure prose.
-     ============================================================ -->
-<section id="limits">
-<h2>9 · Honest limits of this page</h2>
-<div class="disclaim">
-  <p><strong>What this page does <em>not</em> prove:</strong></p>
-  <ul>
-    <li>
-      It does not prove that money can be abolished. Money is a coordination
-      technology; whether to keep it is a separate question from whether the
-      underlying resources exist.
-    </li>
-    <li>
-      It does not prove that UBI / UHI is politically feasible. Demonstrating
-      that the bill is payable is different from demonstrating that it will be
-      paid.
-    </li>
-    <li>
-      It does not handle <em>transport, refrigeration, infrastructure,
-      governance, and conflict</em> — all of which convert a global surplus into
-      a local shortage. These are real costs, not accounting tricks.
-    </li>
-    <li>
-      Aggregate per-capita averages hide distribution. "Enough exists" is a
-      necessary condition for "everyone has enough," not a sufficient one.
-    </li>
-    <li>
-      The pilot evidence is for transfers measured at thousands to millions of
-      people over months to years. Universal global rollout is a larger
-      step, and second-order effects (inflation, capital flight, sovereignty)
-      would emerge that the pilots could not have captured.
-    </li>
-    <li>
-      Production data has measurement error and political bias. Numbers here
-      reflect what major institutions publish; the institutions are not neutral.
-    </li>
-  </ul>
-  <p>
-    What this page <em>does</em> prove: the common claim that humanity cannot
-    physically produce enough food, water, electricity, or output to meet
-    every human's basic needs is, in 2026, factually wrong. Whatever else stops
-    us, it is not the soil, the rivers, the grids, or the GDP.
-  </p>
-</div>
-</section>
-
-<!-- ============================================================
-     SECTION 10 — FAQ / common objections
-     Each <details> entry mirrors a Q in the FAQPage JSON-LD
-     schema in <head>. Add to both when adding a new entry.
-     ============================================================ -->
-<section id="faq">
-<h2>10 · Common objections, answered</h2>
-<p>
-  The objections to "we already produce enough" tend to recur. Each of the
-  following has been raised in good faith and has an empirical answer.
-</p>
-
-<details class="card" open>
-  <summary><strong>"If we give people a universal income, won't they stop working?"</strong></summary>
-  <p>
-    No. Every well-designed evaluation finds either no labor-supply effect or
-    a positive one.
-  </p>
-  <ul>
-    <li>GiveDirectly's Kenya RCT (~23k people, three transfer designs) —
-      <em>no</em> labor reduction in any arm
-      (<a href="https://www.povertyactionlab.org/sites/default/files/research-paper/Universal-Basic-Income-Short-Term-Results-from-a-Long-Term-Experiment-in-Kenya_BFKNS_December2023.pdf">Banerjee et al 2023</a>).</li>
-    <li>Alaska Permanent Fund Dividend (every Alaskan, 40+ years) — no
-      aggregate labor reduction
-      (<a href="https://www.aeaweb.org/articles?id=10.1257/pol.20190299">Jones &amp; Marinescu 2022, AEJ:EP</a>).</li>
-    <li>Iran 2011 universal cash transfer (&gt;70M people) — no labor reduction,
-      positive effects on women and self-employed men
-      (<a href="https://www.sciencedirect.com/science/article/abs/pii/S0304387818306084">Salehi-Isfahani &amp; Mostafavi-Dehzooei 2018, JDE</a>).</li>
-    <li>Stockton SEED (125 treatment vs 200 control, RCT) — full-time employment
-      <em>rose</em> 12pp in treatment vs 5pp in control
-      (<a href="https://link.springer.com/article/10.1007/s11524-023-00723-0">West et al 2023, J. Urban Health</a>).</li>
-  </ul>
-</details>
-
-<details class="card">
-  <summary><strong>"Where would the money actually come from?"</strong></summary>
-  <p>
-    A universal $3/day floor for every human is $8.98T/year, or 7.6% of world
-    GDP. Reservoirs from which it could be drawn:
-  </p>
-  <ul>
-    <li>Global household wealth: <span class="num">$449.9T</span> (UBS 2024);
-      <span class="num">$213.8T</span> held by ~58M people with net worth &gt;$1M.
-      A 2% annual tax on this top tier alone yields ~$4.3T.</li>
-    <li>Global military spending: <span class="num">$2.887T/year</span>
-      (<a href="https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025">SIPRI 2025</a>);
-      10% redirection = $289B/year.</li>
-    <li>Profit-shifting to tax havens: estimated $480–700B/year of corporate
-      profit relocated to evade tax
-      (<a href="https://gabriel-zucman.eu/files/TWZ2018.pdf">Tørsløv, Wier &amp; Zucman 2018</a>;
-      OECD has the Pillar Two minimum-tax framework partially live).</li>
-    <li>Closing the actual <em>poverty gap</em> for the 847M below the line
-      costs well under $1T/year — comparable to a single year's growth in
-      global military spending.</li>
-  </ul>
-  <p>The site's §7 calculator lets you stress-test any combination.</p>
-</details>
-
-<details class="card">
-  <summary><strong>"Wouldn't inflation just eat any universal transfer?"</strong></summary>
-  <p>
-    It can, if the transfer is not indexed. Iran 2011 demonstrated this
-    empirically: cumulative 136.5% inflation over five years halved the real
-    value of the transfer and erased ~40% of its poverty-reduction effect
-    (Salehi-Isfahani 2018). The lesson is that indexing matters; it is not
-    a refutation of the concept. The Alaska Permanent Fund Dividend, which
-    fluctuates with fund performance rather than being fixed in nominal terms,
-    has held real value over 40+ years.
-  </p>
-</details>
-
-<details class="card">
-  <summary><strong>"Doesn't a wealth tax cause capital flight?"</strong></summary>
-  <p>
-    Some, but typically much less than predicted, because most wealth is in
-    illiquid assets (real estate, business ownership, retirement accounts)
-    that cannot be moved as easily as cash. Gabriel Zucman's
-    <a href="https://gabriel-zucman.eu/">research</a> estimates ~$7.6T of
-    household wealth is offshore — recoverable through coordinated tax-haven
-    enforcement, an active item on the OECD/G20 agenda (Pillar Two minimum
-    tax took partial effect 2024). The site's §7 calculator does not model
-    capital flight, and the limits section explicitly notes this.
-  </p>
-</details>
-
-<details class="card">
-  <summary><strong>"Isn't GDP-per-capita just an average that hides distribution?"</strong></summary>
-  <p>
-    Yes — and the site says so in §6 of the methodology and §9 of the limits.
-    GDP is not income. It includes capital depreciation, government spending,
-    and net exports. Average per-capita figures show that the aggregate
-    physical resource is sufficient, which is a necessary precondition for
-    distribution. It is not a sufficient condition. The page exists to refute
-    "we cannot produce enough," not to claim "distribution is solved."
-  </p>
-</details>
-
-<details class="card">
-  <summary><strong>"Won't lifting people out of poverty cause a population explosion?"</strong></summary>
-  <p>
-    The opposite is empirically observed. Fertility rates fall as women gain
-    education, healthcare access, and income — the demographic transition.
-    The UN's medium-variant projection
-    (<a href="https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf">WPP 2024</a>)
-    is that global population peaks around 10.3B in the mid-2080s and
-    declines thereafter. Lifting people out of poverty accelerates fertility
-    decline, not population growth.
-  </p>
-</details>
-
-<details class="card">
-  <summary><strong>"Doesn't innovation require inequality?"</strong></summary>
-  <p>
-    The empirical literature on long-run growth — most notably Acemoglu,
-    Johnson, and Robinson (2024 Nobel Prize in Economics) — finds that
-    <em>inclusive</em> institutions (broad property rights, broad political
-    voice, broad opportunity) outperform <em>extractive</em> ones over
-    decades. The Nordic countries combine top-quintile innovation output per
-    capita with low inequality.
-  </p>
-  <p>
-    Beyond growth, Wilkinson &amp; Pickett's <em>The Spirit Level</em> (2009)
-    documented across 23 rich democracies that for <strong>eleven distinct
-    health and social outcomes</strong> — physical health, mental health, drug
-    abuse, educational achievement, imprisonment rates, obesity, social
-    mobility, social trust, violence, teenage pregnancy, and child well-being —
-    more equal societies do measurably better, regardless of average income.
-    The work has critics (cross-sectional rather than causal, omitted variables)
-    but the descriptive pattern across 11 outcomes is robust and has been
-    replicated across multiple data sets.
-    (<a href="https://equalitytrust.org.uk/the-spirit-level/">Equality Trust</a> ·
-    Wilkinson &amp; Pickett, <em>The Spirit Level</em>, Allen Lane, 2009.)
-  </p>
-  <p>
-    The argument that extreme inequality is required for innovation is not
-    supported by cross-country evidence. The opposite case — that very high
-    inequality <em>impairs</em> human-capital formation, trust, and political
-    stability — has stronger empirical support.
-  </p>
-</details>
-
-<details class="card">
-  <summary><strong>"Isn't this communism?"</strong></summary>
-  <p>
-    Tax-and-transfer is what every modern developed country already does.
-    The arithmetic on this page is independent of political ideology — it
-    asks whether physical production exceeds physical need, then quantifies
-    redistribution costs. Universal basic income proposals span the
-    political spectrum: Milton Friedman (negative income tax), F.A. Hayek
-    (a minimum income), Martin Luther King Jr., Richard Nixon (1969 Family
-    Assistance Plan), Andrew Yang, GiveDirectly's RCT, and Alaska's
-    bipartisan Permanent Fund. The site shows the math and the pilots; it
-    does not advocate a political program.
-  </p>
-</details>
-
-<details class="card">
-  <summary><strong>"Geographic distribution makes the global average meaningless. Water in the Sahara is not water in the Amazon."</strong></summary>
-  <p>
-    True, and the site says exactly this — water gets the
-    <span class="tag uneven">geographically uneven</span> tag in §2 and
-    transport/refrigeration is the first item in §9 (limits). The 287× water
-    ratio is an aggregate-supply claim, not a local-supply claim. The food
-    ratio (1.4×) and electricity ratio (3.9×) are less geographically locked
-    because both can move at reasonable cost. The Omelas argument (§5) is
-    even narrower: the resources exist physically; the question is whether
-    institutions move them.
-  </p>
-</details>
-</section>
-
-<!-- ============================================================
-     SECTION 11 — Beyond money / the post-money enterprise
-     Why money-maximisation is the mechanism behind §4's
-     manufactured scarcity, and cited real enterprises that
-     demote money from objective to constraint. Prose + .pilot
-     blocks mirroring §6. Numbers here are stable pre-2026 facts,
-     each with a source line.
-     ============================================================ -->
-<section id="beyond-money">
-<h2>11 · Beyond money — what a post-money enterprise is</h2>
-<p>
-  Every section above measures the same gap: the world produces enough, and
-  people still go without. <a href="#scarcity">Section 4</a> named the reason
-  the gap is defended — <em>manufactured scarcity</em>, the scarcity someone
-  profits from. This section names the mechanism behind it, and what it looks
-  like when the mechanism is switched off.
-</p>
-<p>
-  Money is a measuring instrument. It was invented so that strangers could
-  coordinate — so a sack of grain could be compared to an hour of labour to a
-  roof over a head. That is an extraordinary tool, and this page is not against
-  it (see <a href="#limits">§9</a>: money is a coordination technology, and
-  whether to keep it is a different question from whether the resources exist).
-</p>
-<p>
-  The problem is not money. The problem is treating <em>the reading on the
-  instrument</em> as the thing to maximise. Once "make the number go up" becomes
-  the objective function of an enterprise, abundance becomes a liability. If
-  insulin is cheap to make, the rational money-maximiser raises the price
-  (<a href="#card-insulin">§2</a>). If a song can be copied for free, the
-  rational money-maximiser builds a fence around it. If a phone could last ten
-  years, the rational money-maximiser designs it to last three. Under that
-  objective, scarcity is not a market failure — it is the product. Nearly
-  everything in <a href="#scarcity">§4</a> follows from one inverted priority:
-  the map was mistaken for the territory.
-</p>
-
-<div class="disclaim">
-  <p>
-    <strong>Post-money does not mean no money.</strong> It means money demoted
-    from master to tool — from the <em>objective</em> a business optimises to a
-    <em>constraint</em> it operates within. "Earn enough to keep going and do the
-    work" instead of "earn as much as is extractable." Profit becomes oxygen:
-    necessary to live, not the reason for living. That single change to the
-    objective function is enough to remove the incentive that manufactures
-    scarcity — and it is not a thought experiment. Enterprises already run this
-    way, some of them for a century, on ordinary shelves, against competitors
-    who don't.
-  </p>
-</div>
-
-<h3>These already exist, at scale</h3>
-
-<div class="pilot">
-  <h4>Patagonia — "Earth is now our only shareholder" (2022)</h4>
-  <div class="meta">Company valued ~$3B · ~$100M/yr in profit routed to the environment · permanently, by structure</div>
-  <p class="small">
-    In 2022 Yvon Chouinard and his family gave Patagonia away: all voting stock
-    to a purpose trust, all economic value to a non-profit (the Holdfast
-    Collective). The profit the company makes after reinvesting in itself — an
-    estimated $100 million a year — now leaves to fight the environmental crisis,
-    and the ownership structure makes any other use impossible.
-  </p>
-  <ul>
-    <li>The company still sells jackets and still makes money; it simply
-        <strong>cannot be sold, taken public, or cashed out</strong> for a
-        founder's exit.</li>
-    <li>Money is the fuel, not the destination — the clearest live example of an
-        objective function set to something other than accumulation.</li>
-  </ul>
-  <p class="src">
-    Source: <a href="https://www.patagonia.com/ownership/">Patagonia, "Earth is now our only shareholder"</a>
-  </p>
-</div>
-
-<div class="pilot">
-  <h4>The $1 patent — insulin (1923) and Salk's sun (1955)</h4>
-  <div class="meta">Two of the most valuable inventions of the 20th century · deliberately un-owned</div>
-  <p class="small">
-    In 1923 the discoverers of insulin sold the patent to the University of
-    Toronto for $1 so that no one could monopolise a molecule that keeps people
-    alive. In 1955, asked who owned the patent on his polio vaccine, Jonas Salk
-    answered: "The people, I would say. There is no patent. Could you patent the
-    sun?"
-  </p>
-  <ul>
-    <li>Both inventions were worth staggering fortunes; both inventors decided
-        the value of the thing was that <strong>everyone could have it</strong>.</li>
-    <li>Insulin's later journey to a ~$90 US pen (<a href="#card-insulin">§2</a>)
-        is what happens when that decision is reversed — the same molecule, a
-        different objective function.</li>
-  </ul>
-  <p class="src">
-    Sources:
-    <a href="https://insulin.library.utoronto.ca/">University of Toronto, Insulin Collection</a> ·
-    <a href="https://retroreport.org/video/could-you-patent-the-sun/">Salk, <em>See It Now</em> interview (CBS, 12 April 1955), Retro Report archival footage</a>
-  </p>
-</div>
-
-<div class="pilot">
-  <h4>The commons the economy runs on — Linux &amp; Wikipedia</h4>
-  <div class="meta">100% of the world's 500 fastest supercomputers · most web servers · every Android phone · a top global website with no ads</div>
-  <p class="small">
-    Linux — written by thousands of paid and volunteer engineers and given away
-    under a licence that forbids anyone from making it exclusive — runs every one
-    of the world's 500 fastest supercomputers, most of the servers behind the
-    internet, and the kernel inside every Android phone. Wikipedia, run by a
-    non-profit with no advertising, is among the most-visited websites on Earth.
-  </p>
-  <ul>
-    <li>These are not charities losing to the "real" economy; they are
-        <strong>load-bearing infrastructure the for-profit economy is built on
-        top of</strong>.</li>
-    <li>Produced by people whose objective was the work and the commons, not the
-        price.</li>
-  </ul>
-  <p class="src">
-    Sources:
-    <a href="https://www.top500.org/statistics/details/osfam/1/">TOP500 operating-system share</a> ·
-    <a href="https://wikimediafoundation.org/">Wikimedia Foundation</a>
-  </p>
-</div>
-
-<div class="pilot">
-  <h4>100% out the door — Newman's Own (1982–present)</h4>
-  <div class="meta">&gt;$600M given away to date · 100% of profits and royalties · sold at ordinary supermarket prices</div>
-  <p class="small">
-    Paul Newman started a food company in 1982 and gave away all of it. Newman's
-    Own donates 100% of its profits and royalties to charity — more than
-    $600 million to date — while competing on ordinary shelves against companies
-    that keep theirs.
-  </p>
-  <ul>
-    <li>It sells salad dressing at a normal price and routes the
-        <strong>entire margin</strong> to people who need it.</li>
-    <li>Profitability and private accumulation turn out to be separable — you can
-        keep one and give away the other.</li>
-  </ul>
-  <p class="src">
-    Source: <a href="https://newmansown.org/faq/">Newman's Own Foundation</a> ·
-    <a href="https://www.prnewswire.com/news-releases/600-million-in-giving-surpassed-on-40th-anniversary-of-newmans-own-the-pioneering-purpose-driven-brand-301698279.html">$600M-in-giving milestone (2022)</a>
-  </p>
-</div>
-
-<div class="pilot">
-  <h4>Proof it doesn't need an owner — Ostrom's commons (2009 Nobel)</h4>
-  <div class="meta">Irrigation systems, fisheries, forests, pastures across several continents · centuries of working examples</div>
-  <p class="small">
-    Elinor Ostrom won the 2009 Nobel in economics for documenting that
-    communities manage shared resources sustainably for generations without
-    privatising them and without a state running them — directly refuting the
-    "tragedy of the commons" assumption that only ownership or coercion prevents
-    ruin.
-  </p>
-  <ul>
-    <li>The commons is <strong>not a naive dream that has never been tried</strong>.
-        It is a governance form with documented, durable, real-world cases and a
-        Nobel behind it.</li>
-  </ul>
-  <p class="src">
-    Source: <a href="https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/facts/">Ostrom, 2009 Sveriges Riksbank Prize</a> ·
-    Ostrom (1990), <em>Governing the Commons</em>, Cambridge University Press.
-  </p>
-</div>
-
-<h3>Why this is the important part</h3>
-<p>
-  You can accept every number on this page and still feel the shortfalls are
-  inevitable — because the instrument you use to think about them is built to see
-  scarcity. A ledger cannot record "enough." It records only more and less, mine
-  and not-mine, priced and unpriced. Ask a money-maximiser to distribute an
-  abundance and you are asking it to dissolve its own reason to exist — which is
-  why it won't, and why <a href="#money">"we can't afford it"</a> keeps feeling
-  true from inside the ledger even when the granaries are full.
-</p>
-<p>
-  Stepping outside that frame is not utopian, and it is not the abolition of
-  markets. It is the ordinary, already-proven move of putting the objective back
-  where it belongs: human need met, work done well — the thing money was only
-  ever supposed to be a proxy for. The enterprises above did nothing exotic. They
-  demoted the number. This site is one more small instance of the same move —
-  public domain (CC0), no ads, no tracking, with free
-  <a href="tools/">in-browser tools</a> and a public
-  <a href="https://graveyard.broke2builtai.com">graveyard</a> of its own dead
-  projects, given away for parts. Manufactured scarcity is a choice. So is the
-  alternative — and it is already sitting on the shelf, next to the salad
-  dressing.
-</p>
-</section>
-
-<!-- ============================================================
-     SECTION 12 — What this asks of whoever can act
-     The turn to the reader. Full version: letter.html
-     ============================================================ -->
-<section id="act">
-<h2>12 · What this asks of whoever can act</h2>
-<p>
-  Everything above is one argument: the world already produces enough, so the
-  shortfalls are distribution, and distribution is a choice. That leaves one
-  question the data cannot answer — what the people who can move resources
-  decide to do. So here, briefly, is the case made to them.
-</p>
-<p>
-  <strong>It costs less than the objection assumes.</strong> Closing the global
-  poverty <em>gap</em> — paying only the distance between what people have and a
-  $3/day floor — runs well under <span class="num">$1 trillion</span> a year:
-  about one year’s <em>increase</em> in world military spending
-  (<a href="https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025">$2.887T in 2025</a>),
-  set against the <a href="https://www.ubs.com/global/en/media/display-page-ndp/en-20240710-gwr-2024.html">$213.8T</a>
-  held by 58 million people. A dollar that is a rounding error on one balance
-  sheet is, somewhere else, medicine or a year of school.
-</p>
-<p>
-  <strong>People exactly as capable have already chosen it.</strong> Banting and
-  colleagues sold the insulin patent for $1 so it could not be monopolized; Jonas
-  Salk, asked who owned the polio vaccine, said “the people… could you patent the
-  sun?”; Carnegie funded 2,509 libraries; Chuck Feeney gave away $8&nbsp;billion and
-  died with almost nothing; Yvon Chouinard gave Patagonia to the planet. History
-  did not record them as fools.
-</p>
-<p>
-  <strong>And a fairer world is measurably better even at the top.</strong> More
-  equal rich societies have better health, more trust, and less violence
-  (Wilkinson &amp; Pickett), and in 2024 some
-  <a href="https://proudtopaymore.org/toolkit">260 millionaires and billionaires
-  asked to be taxed more</a>. Every pilot (§6) and country (case studies) on this
-  page points the same way: the suffering is <em>not load-bearing</em> — which
-  means whoever ends it is not a sucker, but the person the story remembers.
-</p>
-<p>
-  The full case, every claim cited and written to be read or sent, is a short
-  open letter: <a href="letter.html"><strong>To whoever can end this →</strong></a>
-</p>
-</section>
-
-<!-- ============================================================
-     SECTION 12 — Sources & methodology
-     Pointers to data/*.json, methodology.md, bibliography.md.
-     ============================================================ -->
-<section id="sources">
-<h2>13 · Sources &amp; methodology</h2>
-<p>
-  All raw values live in
-  <a href="data/essentials.json"><code>data/essentials.json</code></a>,
-  pilot programs in
-  <a href="data/pilots.json"><code>data/pilots.json</code></a>,
-  country case studies in
-  <a href="data/case-studies.json"><code>data/case-studies.json</code></a>,
-  and the per-country drill-down in
-  <a href="data/countries.json"><code>data/countries.json</code></a>.
-  Every entry has citation, year, and unit. The on-page math is transparent:
-  every ratio is a single division of two of those values.
-</p>
-<p>
-  Full methodology — what was included, what was excluded, where averages mask
-  inequality — is in
-  <a href="methodology.md"><code>methodology.md</code></a>.
-</p>
-<p>
-  <strong>Want the full academic literature?</strong>
-  <a href="bibliography.md"><code>bibliography.md</code></a> has 100+ scholarly
-  references organized by topic — Sen on famines, Piketty/Zucman/Saez on
-  inequality, Banerjee/Duflo/Suri on cash transfers (with the two systematic
-  reviews), Acemoglu/Robinson on institutions, Ostrom on commons, Wilkinson &amp;
-  Pickett on inequality and outcomes, plus the canonical anthropology and
-  demography. If you want to argue with the page, that file is where the
-  citations behind each claim live.
-</p>
-<p>
-  <strong>Deeper notes on specific works</strong> are in <code>papers/</code>:
-  <a href="papers/sen-entitlement.md">Sen's entitlement theory of famine</a>,
-  the <a href="papers/cash-transfer-evidence.md">cash-transfer meta-evidence</a>,
-  the <a href="papers/inequality-and-wealth.md">measured wealth distribution</a>,
-  the <a href="papers/historical-context.md">anthropology of pre-industrial work</a>,
-  and a standing <a href="papers/counterarguments.md">steelman of the strongest
-  case against this page</a> (ecological limits, aid skepticism, the
-  local-vs-global distribution problem).
-</p>
-<p>
-  If you find a number on this page that conflicts with its cited source, or
-  has been superseded by a newer publication, please open an issue or PR on the
-  <a href="https://github.com/lordbasilaiassistant-sudo/Abundance">GitHub repository</a>.
-  This page exists to be corrected.
-</p>
-</section>
-
-<footer role="contentinfo">
-  Public domain (CC0). No tracking, no analytics, no ads. The code, the data,
-  and the math are
-  <a href="https://github.com/lordbasilaiassistant-sudo/Abundance">on GitHub</a>.
-  <br>
-  Made because someone had to do the division.
-  <p class="b2b-attrib">
-    Made by <a href="https://broke2builtai.com">Broke to Built</a> — a company of
-    machines, building things it gives away. Free, no account, no paywall.
-  </p>
-</footer>
-
-</main>
 
 <script>
-// ---- Source-of-truth raw data (kept in sync with data/essentials.json) ----
-const D = {
-  pop: 8200000000,
-  gdp_usd: 118175000000000,
-  wealth_above_1m_usd: 213800000000000,
-  military_usd: 2887000000000,
-  health_usd: 9800000000000,
-  cereal_t: 3043000000,
-  kcal_supply: 2950,
-  hungry: 645000000,
-  food_waste_share: 0.32,
-  electricity_twh: 32202,
-  freshwater_km3: 43000,
-  homeless: 318000000,
-  inadequate_housing: 2800000000,
-  extreme_poverty: 847000000,
-  poverty_line_usd_day: 3.00,
-  kcal_need: 2100,
-  water_need_l_day: 50,
-  tier1_kwh_yr: 100,
-  modern_min_kwh_yr: 1000,
-};
+(() => {
+  'use strict';
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ---- Formatters ----
-const fmtUSD = n => {
-  if (n >= 1e12) return '$' + (n/1e12).toFixed(2) + 'T';
-  if (n >= 1e9)  return '$' + (n/1e9).toFixed(1) + 'B';
-  if (n >= 1e6)  return '$' + (n/1e6).toFixed(1) + 'M';
-  return '$' + Math.round(n).toLocaleString();
-};
-const fmtPct = n => (n * 100).toFixed(1) + '%';
-const fmtRatio = n => (n >= 100 ? Math.round(n).toString()
-                     : n >= 10  ? n.toFixed(0)
-                     : n.toFixed(1));
-const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-const setHTML = (id, v) => { const el = document.getElementById(id); if (el) el.innerHTML = v; };
-
-// ---- Static recomputation of the headline numbers ----
-(function recompute() {
-  const waterPC  = (D.freshwater_km3 * 1e12) / D.pop / 365;
-  const energyPC = (D.electricity_twh * 1e9) / D.pop;
-  const gdpPC    = D.gdp_usd / D.pop;
-  const foodRatio       = D.kcal_supply / D.kcal_need;
-  const waterRatio      = waterPC / D.water_need_l_day;
-  const energyRatioLow  = energyPC / D.tier1_kwh_yr;
-  const energyRatioHigh = energyPC / D.modern_min_kwh_yr;
-  const gdpRatio        = gdpPC / (D.poverty_line_usd_day * 365);
-  const ubiCost  = D.poverty_line_usd_day * D.pop * 365;
-  const ubiShare = ubiCost / D.gdp_usd;
-
-  setText('pop-display', D.pop.toLocaleString());
-  setHTML('food-ratio',  fmtRatio(foodRatio) + '<span class="x">×</span>');
-  setText('water-pc',    Math.round(waterPC).toLocaleString() + ' L / person / day');
-  setHTML('water-ratio', fmtRatio(waterRatio) + '<span class="x">×</span>');
-  setText('energy-pc',   Math.round(energyPC).toLocaleString() + ' kWh / person / year');
-  setHTML('energy-ratio-low',  fmtRatio(energyRatioLow) + '<span class="x">×</span>');
-  setHTML('energy-ratio-high', fmtRatio(energyRatioHigh) + '<span class="x">×</span>');
-  setText('gdp-pc',      '$' + Math.round(gdpPC).toLocaleString() + ' / person / yr');
-  setHTML('gdp-ratio',   fmtRatio(gdpRatio) + '<span class="x">×</span>');
-  setText('ubi-cost',    fmtUSD(ubiCost) + ' / year');
-  setText('ubi-share',   fmtPct(ubiShare));
-
-  // Hero stat banner — same numbers as the cards below, kept in sync.
-  setHTML('hero-food',   fmtRatio(foodRatio)       + '<span class="x">×</span>');
-  setHTML('hero-water',  fmtRatio(waterRatio)      + '<span class="x">×</span>');
-  setHTML('hero-energy', fmtRatio(energyRatioHigh) + '<span class="x">×</span>');
-  setHTML('hero-gdp',    fmtRatio(gdpRatio)        + '<span class="x">×</span>');
-})();
-
-// ---- Guess-first hero ----
-// Almost nobody guesses these right, and the direction of the error is the
-// argument: people assume scarcity. So the reader commits to a number before
-// the page shows one. Values are read back out of the DOM that recompute()
-// just wrote, so this can never drift from the cited data.
-(function guessFirst() {
-  const box = document.getElementById('guess');
-  if (!box) return;
-
-  const KEY = 'abundance.guess.v1';
-  const parseRatio = id => parseFloat(
-    (document.getElementById(id).textContent || '').replace(/[^\d.]/g, '')
-  );
-
-  const QS = [
-    { id: 'hero-food',
-      q: 'For every person alive today, how many times over does the world already grow <em>enough food</em>?',
-      after: 'The world grows about 40% more calories than humanity needs to eat. Hunger sits alongside roughly a third of all food being lost or wasted.' },
-    { id: 'hero-water',
-      q: 'And <em>renewable freshwater</em>, against the WHO minimum for drinking, cooking and hygiene?',
-      after: 'The one number on this page that most deserves an asterisk: freshwater is geographically locked. The aggregate is enormous; it is not where the people are.' },
-    { id: 'hero-energy',
-      q: 'How about <em>electricity</em>, against the Modern Energy Minimum of 1,000 kWh a year?',
-      after: 'Renewables passed coal in 2025 for the first time in over a century — the supply side is not the bottleneck it was.' },
-    { id: 'hero-gdp',
-      q: 'And <em>economic output</em> — world GDP per person, against the extreme-poverty line?',
-      after: 'GDP is not income, and this is not a claim that everyone earns that. It is a claim about how much the world produces per person, before anyone divides it.' },
-  ];
-  QS.forEach(item => { item.real = parseRatio(item.id); });
-  if (QS.some(item => !isFinite(item.real) || item.real <= 0)) return;
-
-  // Someone who already played gets the finished page, not the quiz again.
-  try { if (localStorage.getItem(KEY)) return; } catch (e) {}
-
-  const MIN = 0.5, MAX = 1000, LOG = Math.log(MAX / MIN);
-  const toVal = t => MIN * Math.exp(LOG * (t / 1000));
-  const fmt = n => n >= 100 ? Math.round(n).toLocaleString()
-                 : n >= 10  ? Math.round(n).toString()
-                 : n.toFixed(1);
-
-  const el = {
-    kicker:   document.getElementById('guess-kicker'),
-    progress: document.getElementById('guess-progress'),
-    q:        document.getElementById('guess-q'),
-    range:    document.getElementById('guess-range'),
-    val:      document.getElementById('guess-val'),
-    lock:     document.getElementById('guess-lock'),
-    verdict:  document.getElementById('guess-verdict'),
-    skip:     document.getElementById('guess-skip'),
-  };
-
-  const dots = QS.map(() => {
-    const d = document.createElement('span');
-    d.className = 'guess-dot';
-    el.progress.appendChild(d);
-    return d;
+  /* ── count-up + gauges ─────────────────────────────── */
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = parseFloat(el.dataset.count), dec = +el.dataset.dec;
+    if (reduced) { el.textContent = target.toLocaleString(undefined,{minimumFractionDigits:dec,maximumFractionDigits:dec}); return; }
+    const t0 = performance.now() + 500, dur = 1700;
+    (function tick(now){
+      const p = Math.min(1, Math.max(0,(now - t0) / dur));
+      el.textContent = (target * ease(p)).toLocaleString(undefined,{minimumFractionDigits:dec,maximumFractionDigits:dec});
+      if (p < 1) requestAnimationFrame(tick);
+    })(performance.now());
   });
-
-  // Blank the hero band and hold the real values aside until they're earned.
-  QS.forEach(item => {
-    const node = document.getElementById(item.id);
-    item.html = node.innerHTML;
-    node.innerHTML = '?';
-    node.classList.add('pending');
-  });
-  box.hidden = false;
-
-  let i = 0, low = 0;
-
-  function land(item) {
-    const node = document.getElementById(item.id);
-    node.innerHTML = item.html;
-    node.classList.remove('pending');
-    node.classList.add('landed');
-  }
-
-  function finish(skipped) {
-    QS.slice(i).forEach(land);
-    try { localStorage.setItem(KEY, skipped ? 'skipped' : String(low)); } catch (e) {}
-    el.q.innerHTML = skipped
-      ? 'All four, then — every one of them global production divided by a documented minimum need.'
-      : (low >= 3
-          ? 'You guessed low on <em>' + low + ' of 4</em>. So does almost everyone — and that reflex is exactly what the rest of this page is about.'
-          : low === 0
-            ? 'You called all four without going under. That is rare, and it means the rest of this page is confirmation rather than news.'
-            : 'You guessed low on <em>' + low + ' of 4</em> — better than most readers manage.');
-    el.verdict.innerHTML = 'Every figure above is global production divided by a published minimum need, and each one links to its primary source. The arithmetic is the easy part. <a href="#thesis">What follows is the argument →</a>';
-    el.kicker.textContent = skipped ? 'The four numbers' : 'How you did';
-    el.range.parentNode.hidden = true;
-    document.querySelector('.guess-row').hidden = true;
-    el.skip.hidden = true;
-    dots.forEach(d => { d.className = 'guess-dot done'; });
-  }
-
-  function ask() {
-    const item = QS[i];
-    el.kicker.textContent = 'Before you scroll · ' + (i + 1) + ' of 4';
-    el.q.innerHTML = item.q;
-    el.verdict.textContent = '';
-    el.lock.textContent = 'Lock it in';
-    el.range.disabled = false;
-    dots.forEach((d, n) => {
-      d.className = 'guess-dot' + (n < i ? ' done' : n === i ? ' active' : '');
+  // gauge fill: shared log scale so 287x visibly dwarfs 1.4x
+  const LOGMAX = Math.log10(300);
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    document.querySelectorAll('.gauge i').forEach(bar => {
+      const m = parseFloat(bar.dataset.mult);
+      bar.style.width = (8 + 92 * Math.log10(m) / LOGMAX).toFixed(1) + '%';
     });
-    el.range.focus({ preventScroll: true });
+  }));
+
+  /* ── the cosmos: particle world + surplus orbits ───── */
+  const cv = document.getElementById('cosmos');
+  const ctx = cv.getContext('2d');
+  let W, H, DPR, CX, CY, R0, RMAX;
+
+  function resize(){
+    DPR = Math.min(2, devicePixelRatio || 1);
+    W = innerWidth; H = innerHeight;
+    cv.width = W * DPR; cv.height = H * DPR;
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    CX = W / 2;
+    CY = H * 0.52;
+    R0   = Math.min(W, H) * 0.135;          // the world
+    RMAX = Math.min(W * 0.46, H * 0.42);    // outermost orbit
   }
+  resize();
+  addEventListener('resize', resize);
 
-  function reveal() {
-    const item = QS[i];
-    const you = toVal(+el.range.value);
-    if (you < item.real) low++;
-    el.range.disabled = true;   // the guess is committed; no editing it now
-    land(item);
-    el.verdict.innerHTML =
-      'You said <span class="g-you">' + fmt(you) + '×</span>. ' +
-      'It is <span class="g-real">' + fmt(item.real) + '×</span>. ' + item.after;
-    dots[i].className = 'guess-dot done';
-    i++;
-    el.lock.textContent = i < QS.length ? 'Next →' : 'See how you did →';
-    el.lock.onclick = () => {
-      el.lock.onclick = onLock;
-      if (i < QS.length) ask(); else finish(false);
-    };
-  }
+  // ring radius on the same log scale as the gauges
+  const ringR = m => R0 * 1.55 + (RMAX - R0 * 1.55) * Math.log10(m) / LOGMAX;
 
-  function onLock() { reveal(); }
-
-  el.range.addEventListener('input', () => {
-    el.val.textContent = fmt(toVal(+el.range.value)) + '×';
+  const RINGS = [
+    { m: 1.4,  color: '142,224,138', incl: 0.42, yaw:  0.0, n: 46,  speed: 0.00050 }, // food
+    { m: 3.9,  color: '245,177,61', incl: 0.30, yaw:  0.9, n: 60,  speed: 0.00038 }, // energy
+    { m: 13.2, color: '192,139,245',incl: 0.50, yaw: -0.7, n: 80,  speed: 0.00028 }, // income
+    { m: 287,  color: '92,214,239', incl: 0.24, yaw:  0.4, n: 120, speed: 0.00018 }  // water
+  ];
+  RINGS.forEach(r => {
+    r.r = ringR(r.m);
+    r.p = Array.from({length: r.n}, () => ({
+      a: Math.random() * Math.PI * 2,
+      jr: (Math.random() - 0.5) * r.r * 0.045,
+      jy: (Math.random() - 0.5) * 6,
+      s: 1.0 + Math.random() * 1.8,
+      v: 0.75 + Math.random() * 0.5
+    }));
   });
-  el.lock.onclick = onLock;
-  el.skip.addEventListener('click', () => finish(true));
 
-  el.val.textContent = fmt(toVal(+el.range.value)) + '×';
-  ask();
-})();
+  // the world: fibonacci sphere of points
+  const SPN = 900, sphere = [];
+  const GA = Math.PI * (3 - Math.sqrt(5));
+  for (let i = 0; i < SPN; i++){
+    const y = 1 - (i / (SPN - 1)) * 2;
+    const rad = Math.sqrt(1 - y * y), th = GA * i;
+    sphere.push({ x: Math.cos(th) * rad, y, z: Math.sin(th) * rad, tw: Math.random() * Math.PI * 2 });
+  }
 
-// ---- Interactive dials ----
-(function dials() {
-  const inputs = {
-    floor:  document.getElementById('i-floor'),
-    wealth: document.getElementById('i-wealth'),
-    mil:    document.getElementById('i-mil'),
-    food:   document.getElementById('i-food'),
-  };
-  if (!inputs.floor) return;
+  // background dust
+  const DUST = Array.from({length: 170}, () => ({
+    x: Math.random(), y: Math.random(),
+    s: Math.random() * 1.3 + 0.3,
+    tw: Math.random() * Math.PI * 2,
+    ts: 0.0004 + Math.random() * 0.0012
+  }));
 
-  function recalc() {
-    const floor   = parseFloat(inputs.floor.value);
-    const wealth  = parseFloat(inputs.wealth.value) / 100;
-    const mil     = parseFloat(inputs.mil.value)    / 100;
-    const food    = parseFloat(inputs.food.value)   / 100;
+  // surplus emissions: particles that leave the world for an orbit
+  const FLY = [];
+  function spawnFly(t){
+    const ring = RINGS[(Math.random() * RINGS.length) | 0];
+    const th = Math.random() * Math.PI * 2, ph = Math.acos(2 * Math.random() - 1);
+    FLY.push({
+      ring,
+      sx: Math.sin(ph) * Math.cos(th), sy: Math.cos(ph), sz: Math.sin(ph) * Math.sin(th),
+      ta: Math.random() * Math.PI * 2,
+      t0: t, dur: 2600 + Math.random() * 1800
+    });
+  }
 
-    // Cost: universal floor for every human.
-    const cost      = floor * D.pop * 365;
-    const costShare = cost / D.gdp_usd;
+  // gentle parallax toward the cursor
+  let mx = 0, my = 0, smx = 0, smy = 0;
+  addEventListener('pointermove', e => {
+    mx = (e.clientX / W - 0.5) * 2;
+    my = (e.clientY / H - 0.5) * 2;
+  });
 
-    // Revenue from selected sources.
-    const wealthRev = wealth * D.wealth_above_1m_usd;
-    const milRev    = mil    * D.military_usd;
-    const totalRev  = wealthRev + milRev;
-    const revShare  = totalRev / D.gdp_usd;
+  const TILT = 0.36; // axial tilt of the whole system
 
-    // Food recovered: kcal per person per day from x% of the 32% wasted.
-    // Current supply 2,950 kcal/person/day. 32% waste means an additional
-    // 2,950 * (0.32 / 0.68) ≈ 1,388 kcal/person/day is wasted upstream.
-    // Recover fraction `food` of that wasted amount.
-    const wastedKcalPerPerson = D.kcal_supply * (D.food_waste_share / (1 - D.food_waste_share));
-    const recovered = food * wastedKcalPerPerson;
+  function project(x, y, z){
+    // world-space rotation: yaw handled per-object; here apply tilt + parallax pitch
+    const py = TILT + smy * 0.12;
+    let yy = y * Math.cos(py) - z * Math.sin(py);
+    let zz = y * Math.sin(py) + z * Math.cos(py);
+    const px = smx * 0.10;
+    let xx = x * Math.cos(px) + zz * Math.sin(px);
+    zz = -x * Math.sin(px) + zz * Math.cos(px);
+    const persp = 900 / (900 + zz);
+    return { x: CX + xx * persp, y: CY + yy * persp, d: persp, z: zz };
+  }
 
-    // Gap.
-    const gap = cost - totalRev;
-    const gapShare = gap / D.gdp_usd;
+  function frame(t){
+    smx += (mx - smx) * 0.04; smy += (my - smy) * 0.04;
+    ctx.clearRect(0, 0, W, H);
 
-    setText('d-floor',  '$' + floor.toFixed(2));
-    setText('d-wealth', wealth * 100);
-    setText('d-mil',    mil * 100);
-    setText('d-food',   food * 100);
-
-    setText('r-cost',       fmtUSD(cost));
-    setText('r-cost-share', fmtPct(costShare) + ' of world GDP');
-    setText('r-revenue',    fmtUSD(totalRev));
-    setText('r-revenue-mix',
-      'wealth tax: ' + fmtUSD(wealthRev) + ' · military redirect: ' + fmtUSD(milRev));
-    setText('r-cal', '~' + Math.round(recovered).toLocaleString() + ' kcal / person / day extra');
-    setText('r-gap', (gap >= 0 ? '' : '−') + fmtUSD(Math.abs(gap)));
-    setText('r-gap-share',
-      (gap >= 0 ? '' : 'surplus of ') + fmtPct(Math.abs(gapShare)) + ' of world GDP');
-
-    const verdictEl = document.getElementById('r-verdict');
-    let verdict, klass;
-    if (gap <= 0) {
-      verdict = 'At these dials, redirected flows fully cover the universal floor — with ' +
-                fmtUSD(-gap) + ' / year left over for healthcare, infrastructure, or debt relief.';
-      klass = 'verdict over';
-    } else if (gap < cost * 0.25) {
-      verdict = 'At these dials, redirected flows cover most of the floor. The remaining ' +
-                fmtUSD(gap) + ' is within range of additional sources — a financial-transaction tax, ' +
-                'carbon pricing, or reducing tax-haven leakage (Zucman 2024).';
-      klass = 'verdict';
-    } else {
-      verdict = 'At these dials, redirected flows cover ' +
-                fmtPct(Math.min(1, totalRev/cost)) +
-                ' of the floor cost. The remainder requires additional revenue, ' +
-                'deficit financing, or a lower floor.';
-      klass = 'verdict short';
+    // dust
+    ctx.globalCompositeOperation = 'source-over';
+    for (const d of DUST){
+      const a = 0.10 + 0.14 * (0.5 + 0.5 * Math.sin(d.tw + t * d.ts));
+      ctx.fillStyle = `rgba(233,230,223,${a})`;
+      ctx.fillRect(d.x * W, d.y * H, d.s, d.s);
     }
-    verdictEl.textContent = verdict;
-    verdictEl.className = klass;
+
+    ctx.globalCompositeOperation = 'lighter';
+
+    // orbit paths (faint)
+    for (const ring of RINGS){
+      ctx.beginPath();
+      for (let i = 0; i <= 90; i++){
+        const a = (i / 90) * Math.PI * 2;
+        let x = Math.cos(a) * ring.r, z = Math.sin(a) * ring.r, y = 0;
+        // ring inclination + yaw
+        let y2 = y * Math.cos(ring.incl) - z * Math.sin(ring.incl);
+        let z2 = y * Math.sin(ring.incl) + z * Math.cos(ring.incl);
+        let x2 = x * Math.cos(ring.yaw) + z2 * Math.sin(ring.yaw);
+        z2 = -x * Math.sin(ring.yaw) + z2 * Math.cos(ring.yaw);
+        const p = project(x2, y2, z2);
+        i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = `rgba(${ring.color},0.20)`;
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+    }
+
+    // the world
+    const rot = t * 0.00012;
+    for (const pt of sphere){
+      const c = Math.cos(rot), s = Math.sin(rot);
+      const x = (pt.x * c + pt.z * s) * R0;
+      const z = (-pt.x * s + pt.z * c) * R0;
+      const y = pt.y * R0;
+      const p = project(x, y, z);
+      const lit = Math.max(0, 1 - (z / R0 + 1) / 2);          // front-lit
+      const tw = 0.75 + 0.25 * Math.sin(pt.tw + t * 0.001);
+      const a = (0.10 + lit * 0.48) * tw;
+      // warm core, gold at the limb
+      ctx.fillStyle = lit > 0.65 ? `rgba(243,212,137,${a})` : `rgba(233,230,223,${a})`;
+      const sz = (0.9 + lit * 1.6) * p.d;
+      ctx.fillRect(p.x - sz / 2, p.y - sz / 2, sz, sz);
+    }
+    // core glow
+    const g = ctx.createRadialGradient(CX, CY, 0, CX, CY, R0 * 1.6);
+    g.addColorStop(0, 'rgba(232,182,76,0.17)');
+    g.addColorStop(1, 'rgba(232,182,76,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(CX - R0 * 2, CY - R0 * 2, R0 * 4, R0 * 4);
+
+    // orbiting surplus
+    for (const ring of RINGS){
+      for (const q of ring.p){
+        const a = q.a + t * ring.speed * q.v;
+        const rr = ring.r + q.jr;
+        let x = Math.cos(a) * rr, z = Math.sin(a) * rr, y = q.jy;
+        let y2 = y * Math.cos(ring.incl) - z * Math.sin(ring.incl);
+        let z2 = y * Math.sin(ring.incl) + z * Math.cos(ring.incl);
+        let x2 = x * Math.cos(ring.yaw) + z2 * Math.sin(ring.yaw);
+        z2 = -x * Math.sin(ring.yaw) + z2 * Math.cos(ring.yaw);
+        const p = project(x2, y2, z2);
+        const depth = 0.35 + 0.65 * ((p.d - 0.8) / 0.4);
+        ctx.fillStyle = `rgba(${ring.color},${(0.5 * depth).toFixed(3)})`;
+        const sz = q.s * p.d;
+        ctx.fillRect(p.x - sz / 2, p.y - sz / 2, sz, sz);
+      }
+    }
+
+    // emissions: the world giving off surplus
+    if (Math.random() < 0.06 && FLY.length < 42) spawnFly(t);
+    for (let i = FLY.length - 1; i >= 0; i--){
+      const f = FLY[i];
+      const p01 = (t - f.t0) / f.dur;
+      if (p01 >= 1) { FLY.splice(i, 1); continue; }
+      const e = 1 - Math.pow(1 - p01, 2);
+      // start on sphere surface, land on ring at target angle
+      let tx = Math.cos(f.ta) * f.ring.r, tz = Math.sin(f.ta) * f.ring.r, ty = 0;
+      let ty2 = ty * Math.cos(f.ring.incl) - tz * Math.sin(f.ring.incl);
+      let tz2 = ty * Math.sin(f.ring.incl) + tz * Math.cos(f.ring.incl);
+      let tx2 = tx * Math.cos(f.ring.yaw) + tz2 * Math.sin(f.ring.yaw);
+      tz2 = -tx * Math.sin(f.ring.yaw) + tz2 * Math.cos(f.ring.yaw);
+      const x = f.sx * R0 + (tx2 - f.sx * R0) * e;
+      const y = f.sy * R0 + (ty2 - f.sy * R0) * e;
+      const z = f.sz * R0 + (tz2 - f.sz * R0) * e;
+      const p = project(x, y, z);
+      const a = Math.sin(p01 * Math.PI) * 0.55;
+      ctx.fillStyle = `rgba(${f.ring.color},${a.toFixed(3)})`;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 1.3 * p.d, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    if (!reduced) requestAnimationFrame(frame);
   }
 
-  Object.values(inputs).forEach(inp => inp.addEventListener('input', recalc));
-  recalc();
+  if (reduced) { frame(1); } else { requestAnimationFrame(frame); }
 })();
-
-// Auto-expand all FAQ disclosures for printing / PDF, then restore.
-window.addEventListener('beforeprint', () => {
-  document.querySelectorAll('details').forEach(d => {
-    d.dataset.wasOpen = d.open ? '1' : '0';
-    d.open = true;
-  });
-});
-window.addEventListener('afterprint', () => {
-  document.querySelectorAll('details').forEach(d => {
-    d.open = d.dataset.wasOpen === '1';
-  });
-});
 </script>
 
 </body>
