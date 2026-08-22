@@ -53,7 +53,7 @@ d.text((64, 170),
 
 # Stat rows
 rows = [
-    ("FOOD",        "2,950 kcal / day",   "need 2,100",   "1.4×"),
+    ("FOOD",        "3,006 kcal / day",   "need 2,100",   "1.4×"),
     ("WATER",       "14,367 L / day",     "WHO basic 50", "287×"),
     ("ELECTRICITY", "3,927 kWh / year",   "min 1,000",    "3.9×"),
     ("GDP",         "$14,412 / year",     "poverty $1,095","13×"),

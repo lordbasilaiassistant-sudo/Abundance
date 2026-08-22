@@ -14,6 +14,7 @@ The single most foundational citation for the entire page. Sen's argument that f
 - **Sen, A. & Drèze, J. (1989). *Hunger and Public Action*. Oxford.** Extends entitlement theory to public policy and democratic accountability ("no famine has ever taken place in a functioning democracy").
 - **Devereux, S. (2001). 'Sen's Entitlement Approach: Critiques and Counter-Critiques.' *Oxford Development Studies* 29(3):245–263.** Honest summary of where Sen's framework has been challenged.
 - **FAO, IFAD, UNICEF, WFP, WHO (annual). *The State of Food Security and Nutrition in the World*.** [Latest: SOFI 2026](https://www.fao.org/newsroom/detail/sofi-2026--hunger-not-inevitable--fao-says-as-global-hunger-report-shows-progress/en). The canonical annual measurement.
+- **FAO (2025). *Food balance sheets 2010–2023. Global, regional and country trends*.** [FAO highlights, 28 Oct 2025](https://www.fao.org/statistics/highlights-archive/highlights-detail/food-balance-sheets-2010-2023/en) · [publication](https://doi.org/10.4060/cd7162en). Global average dietary energy supply crossed 3,000 kcal/person/day in 2023 for the first time — while FAO notes supply in Africa "remains low and stagnant." Aggregate sufficiency and distribution failure, in one dataset.
 - **FAO + UNEP (2024). *Food Waste Index Report 2024*.** [Link](https://www.fao.org/family-farming/detail/en/c/1681058/). ~32% of food production lost or wasted globally.
 
 ---
@@ -26,7 +27,7 @@ The single most foundational citation for the entire page. Sen's argument that f
 - **Zucman, G. (2015). *The Hidden Wealth of Nations: The Scourge of Tax Havens*. University of Chicago.** ~$7.6 trillion of household wealth held offshore; coordinated enforcement is a tractable policy.
 - **Tørsløv, T., Wier, L., Zucman, G. (2023). 'The Missing Profits of Nations.' *Review of Economic Studies* 90(3):1499–1534.** Multinational corporate profit-shifting to tax havens estimated at $480–700B/year.
 - **Wilkinson, R. & Pickett, K. (2009). *The Spirit Level: Why More Equal Societies Almost Always Do Better*. Allen Lane.** Cross-country evidence linking income inequality to worse outcomes on 11 social and health metrics. Has been critiqued; descriptive pattern is robust.
-- **UBS Global Wealth Report (annual). [2024 ed.](https://www.ubs.com/global/en/media/display-page-ndp/en-20240710-gwr-2024.html).** $449.9T global household wealth (2023); 58M people hold $213.8T.
+- **UBS Global Wealth Report (annual). [2024 ed.](https://www.ubs.com/global/en/media/display-page-ndp/en-20240710-gwr-2024.html).** $449.9T global household wealth (2023); 58M people hold $213.8T. Still the newest edition to publish a global aggregate: the [2026 ed.](https://www.ubs.com/us/en/wealth-management/insights/global-wealth-report.html) (June 2026) reports total personal wealth up 10.8% in USD in 2025 — the fastest in years — with the US holding 35.7% of tracked wealth and median wealth *falling* in most markets even as averages rose, but publishes no updated total.
 - **Atkinson, A.B. (2015). *Inequality: What Can Be Done?* Harvard.** Practical policy menu from a leading economist.
 
 ---

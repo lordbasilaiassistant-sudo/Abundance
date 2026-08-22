@@ -103,7 +103,7 @@ For "where do I add X?" see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Data currency
 
-Last refresh: **2026-08-13**. Headline vintages currently in use:
+Last refresh: **2026-08-22**. Headline vintages currently in use:
 
 | Figure | Value | Year | Source |
 |---|---|---|---|
@@ -111,15 +111,17 @@ Last refresh: **2026-08-13**. Headline vintages currently in use:
 | World GDP (nominal) | $118.18T | 2025 | IMF WEO, April 2026 |
 | Global electricity generation | 32,202 TWh | 2025 | Energy Institute, Statistical Review 2026 |
 | World cereal production | 3,043 Mt | 2025 | FAO Cereal Supply & Demand Brief, July 2026 |
+| Dietary energy supply | 3,006 kcal/cap/day | 2023 | FAO Food Balance Sheets 2010–2023 (Oct 2025) |
 | People in hunger | 645M | 2025 | FAO SOFI 2026 (21 July 2026) |
 | Global military spending | $2.887T | 2025 | SIPRI, April 2026 |
+| Global health spending | $10.6T | 2023 | WHO GHED, December 2025 update |
 | Internet users | 6.0B | 2025 | ITU Facts and Figures 2025 |
 
-Known stale, awaiting a verified primary figure: global household wealth
-($449.9T, UBS 2024 — GWR 2026 reports 10.8% growth in 2025 but publishes no
-aggregate we could cite), health spending (WHO, 2022), and dietary energy
-supply (FAOSTAT, 2021). Retiring a stale number requires a source link, not an
-extrapolation — see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Known stale: global household wealth ($449.9T, UBS 2024 — the newest published
+aggregate; verified against the GWR 2026 PDF directly: it reports 10.8% USD
+growth in 2025 but publishes growth rates and wealth-pyramid bands only, no
+total). Retiring a stale number requires a source link, not an extrapolation —
+see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Contributing
 

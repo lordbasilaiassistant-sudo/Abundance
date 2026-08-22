@@ -17,11 +17,14 @@ introduces <1% error in any per-capita figure.
 
 ### Food
 
-- **Numerator:** `2,950 kcal / person / day` — the global average dietary energy
-  supply, per FAOSTAT food balance sheets (2021 latest revision, [via Our World
-  in Data](https://ourworldindata.org/food-supply)). This number is the dietary
-  energy available *for human consumption* after accounting for animal feed,
-  seed, industrial use, and post-harvest loss.
+- **Numerator:** `3,006 kcal / person / day` — the global average dietary energy
+  supply, per the [FAO Food Balance Sheets 2010–2023](https://www.fao.org/statistics/highlights-archive/highlights-detail/food-balance-sheets-2010-2023/en)
+  (FAOSTAT release of 28 October 2025). In 2023 the world crossed the historic
+  milestone of 3,000 kcal/person/day for the first time (exact world value:
+  3,005.6, retrievable from [FAOSTAT](https://www.fao.org/faostat/en/#data/FBS)
+  and mirrored by [Our World in Data](https://ourworldindata.org/food-supply)).
+  This number is the dietary energy available *for human consumption* after
+  accounting for animal feed, seed, industrial use, and post-harvest loss.
 - **Denominator (need):** `2,100 kcal / person / day` — the conventional
   FAO/WHO/UNU reference for an average adult ([Human Energy Requirements,
   2001](https://www.fao.org/4/y5686e/y5686e00.htm)). Actual requirements

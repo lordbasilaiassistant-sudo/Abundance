@@ -23,7 +23,7 @@
     "year": 2023,
     "source_name": "UBS Global Wealth Report 2024",
     "source_url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20240710-gwr-2024.html",
-    "note": "47.5% of this wealth is held by the 58 million people worth >$1M."
+    "note": "47.5% of this wealth is held by the 58 million people worth >$1M. Still the newest published global aggregate: the Global Wealth Report 2026 (June 2026) reports total personal wealth grew 10.8% in USD terms in 2025 — the fastest in years — but publishes growth rates and per-band pyramid figures only, no updated total. Its other verified facts: the 56 tracked markets hold over 92% of world wealth; the US holds 35.7% of it; the US and Greater China together hold more than half; median wealth fell in most markets even as average wealth rose."
   },
   "global_military_spending_usd": {
     "value": 2887000000000,
@@ -34,12 +34,12 @@
     "note": "$2,887 billion, up 2.9% in real terms — the 11th consecutive annual increase. Military burden of 2.5% of world GDP, the highest since 2009. US spending fell 7.5%; Europe rose 14%, Asia and Oceania 8.1%."
   },
   "global_health_spending_usd": {
-    "value": 9800000000000,
+    "value": 10600000000000,
     "unit": "USD",
-    "year": 2022,
-    "source_name": "WHO Global Health Expenditure Report 2024",
-    "source_url": "https://www.who.int/teams/health-financing-and-economics/global-spending-on-health-report",
-    "note": "9.9% of GDP. High-income countries account for 79%; the US alone is 43%."
+    "year": 2023,
+    "source_name": "WHO Global Health Expenditure Database, December 2025 update",
+    "source_url": "https://apps.who.int/nha/database",
+    "note": "US$10.6 trillion in 2023, about 10% of aggregate global GDP — higher than 2022, with a recovery across all income groups after the pandemic-era per-capita peak of 2021. Aggregate stated by WHO's GHED 2025 launch presentation (Dec 2025); database covers 195 countries/territories, 2000-2023."
   },
   "world_cereal_production_tonnes": {
     "value": 3043000000,
@@ -51,12 +51,12 @@
     "note": "An all-time record: 3,043 million tonnes, 6.1% above 2024. FAO's July 2026 forecast for the 2026 harvest is 2,983 Mt — 1.9% below the record but still the second-largest on record. Cereals alone — does not include legumes, tubers, vegetables, fruit, meat, dairy, fish, oil crops."
   },
   "daily_food_supply_kcal_per_capita": {
-    "value": 2950,
+    "value": 3006,
     "unit": "kcal/person/day",
-    "year": 2021,
-    "source_name": "FAOSTAT Food Balance Sheets / Our World in Data",
-    "source_url": "https://ourworldindata.org/food-supply",
-    "note": "Total dietary energy available for human consumption. Excludes feed, seed, industrial use, and post-harvest loss."
+    "year": 2023,
+    "source_name": "FAO Food Balance Sheets 2010-2023 (FAOSTAT release, 28 October 2025)",
+    "source_url": "https://www.fao.org/statistics/highlights-archive/highlights-detail/food-balance-sheets-2010-2023/en",
+    "note": "In 2023 the global average dietary energy supply crossed 3,000 kcal/person/day for the first time (exact world value: 3,005.6). Excludes feed, seed, industrial use, and post-harvest loss. FAO notes food supply in Africa remains low and stagnant while Asia has been steadily closing the gap to the world average."
   },
   "people_in_hunger": {
     "value": 645000000,

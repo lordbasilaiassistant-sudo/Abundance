@@ -406,7 +406,7 @@
   <div class="row">
     <div class="stat">
       <div class="label">Daily food supply, global average</div>
-      <div class="value accent" id="food-supply">2,950 kcal / person / day</div>
+      <div class="value accent" id="food-supply">3,006 kcal / person / day</div>
       <div class="sub">FAOSTAT food balance sheets, 2021 latest revision</div>
     </div>
     <div class="stat">
@@ -826,12 +826,11 @@
       (<a href="https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025">SIPRI</a>) — 11th consecutive annual increase, and 2.5% of world GDP, the highest military burden since 2009.
     </li>
     <li>
-      Global health spending, 2022:
-      <span class="num">$9.8 trillion</span>
-      (<a href="https://www.who.int/teams/health-financing-and-economics/global-spending-on-health-report">WHO</a>),
-      but the US alone accounts for 43%. Per-capita health spending in
-      high-income countries is ~87× that in low-income countries — same disease,
-      different price tag.
+      Global health spending, 2023:
+      <span class="num">$10.6 trillion</span>
+      (<a href="https://apps.who.int/nha/database">WHO Global Health Expenditure Database</a>,
+      December 2025 update) — about 10% of world GDP, with spending recovering
+      in 2023 across all income groups after dipping in 2022.
     </li>
   </ul>
   <p class="small">
@@ -2007,9 +2006,9 @@ const D = {
   gdp_usd: 118175000000000,
   wealth_above_1m_usd: 213800000000000,
   military_usd: 2887000000000,
-  health_usd: 9800000000000,
+  health_usd: 10600000000000,
   cereal_t: 3043000000,
-  kcal_supply: 2950,
+  kcal_supply: 3006,
   hungry: 645000000,
   food_waste_share: 0.32,
   electricity_twh: 32202,
@@ -2234,8 +2233,8 @@ const setHTML = (id, v) => { const el = document.getElementById(id); if (el) el.
     const revShare  = totalRev / D.gdp_usd;
 
     // Food recovered: kcal per person per day from x% of the 32% wasted.
-    // Current supply 2,950 kcal/person/day. 32% waste means an additional
-    // 2,950 * (0.32 / 0.68) ≈ 1,388 kcal/person/day is wasted upstream.
+    // Current supply 3,006 kcal/person/day. 32% waste means an additional
+    // 3,006 * (0.32 / 0.68) ≈ 1,414 kcal/person/day is wasted upstream.
     // Recover fraction `food` of that wasted amount.
     const wastedKcalPerPerson = D.kcal_supply * (D.food_waste_share / (1 - D.food_waste_share));
     const recovered = food * wastedKcalPerPerson;
