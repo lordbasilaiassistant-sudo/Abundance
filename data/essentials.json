@@ -197,34 +197,35 @@
   "international_internet_bandwidth_tbps": {
     "value": 1835,
     "unit": "Tbps (terabits per second)",
-    "year": 2024,
-    "source_name": "TeleGeography, Global Bandwidth Research Service 2024",
+    "year": 2025,
+    "as_of": "mid-2025",
+    "source_name": "TeleGeography, Global Internet Geography (September 2025 update)",
     "source_url": "https://blog.telegeography.com/international-internet-bandwidth",
-    "note": "Inter-region installed capacity. CAGR 24% since 2020. Doesn't include intra-region fiber."
+    "note": "Inter-region installed international internet bandwidth, up from 1,479 Tbps in 2024 and 1,217 Tbps in 2023. TeleGeography's data are as of mid-year. Doesn't include intra-region fiber."
   },
   "global_internet_traffic_zb_per_year": {
-    "value": 7.3,
+    "value": 8.8,
     "unit": "ZB/year (zettabytes per year)",
-    "year": 2024,
-    "source_name": "ITU, Facts and Figures 2024",
-    "source_url": "https://www.itu.int/itu-d/reports/statistics/2024/11/10/ff24-internet-traffic/",
-    "note": "Fixed broadband ~6 ZB + mobile ~1.3 ZB. Per-capita averaged = ~890 GB/person/year."
+    "year": 2025,
+    "source_name": "ITU, Facts and Figures 2025 — Internet traffic chapter",
+    "source_url": "https://www.itu.int/itu-d/reports/statistics/2025/10/15/ff25-internet-traffic/",
+    "note": "Fixed broadband carried 7.3 ZB in 2025 (up from 6.2 ZB in 2024) and mobile broadband an estimated 1.5 ZB, having crossed 1 ZB in 2023. Fixed networks also carry Wi-Fi-connected phones and IoT devices. Since 2021 mobile traffic grew ~19%/year vs ~16% fixed. Averaged per person: ~1,070 GB/person/year."
   },
   "global_dtp3_immunization_coverage": {
     "value": 0.85,
     "unit": "fraction of one-year-old infants completing 3-dose DTP series",
-    "year": 2024,
-    "source_name": "WHO/UNICEF Estimates of National Immunization Coverage (WUENIC) 2024 revision",
-    "source_url": "https://www.who.int/teams/immunization-vaccines-and-biologicals/immunization-analysis-and-insights/global-monitoring/immunization-coverage/who-unicef-estimates-of-national-immunization-coverage",
-    "note": "89% got at least one dose. WHO target is 90%. ~109M children fully immunized; ~14M zero-dose."
+    "year": 2025,
+    "source_name": "WHO/UNICEF Estimates of National Immunization Coverage (WUENIC) 2025 revision, released 15 July 2026",
+    "source_url": "https://www.who.int/news/item/15-07-2026-global-childhood-immunization-coverage-inches-forward-despite-conflict-and-hesitancy---unicef--who",
+    "note": "~110 million infants completed the three-dose series in 2025; ~116 million (90%) received at least one dose. Both indicators rose one point from the previous year but remain one point below 2019 levels — coverage has hovered within the same narrow range since 2009."
   },
   "global_unvaccinated_children": {
-    "value": 14000000,
+    "value": 13500000,
     "unit": "infants worldwide with zero doses of DTP",
-    "year": 2024,
-    "source_name": "WHO + UNICEF press release, 15 July 2025",
-    "source_url": "https://www.who.int/news/item/15-07-2025-global-childhood-vaccination-coverage-holds-steady-yet-over-14-million-infants-remain-unvaccinated-who-unicef",
-    "note": "The 'zero-dose' population — never received any routine immunization. Concentrated in conflict and fragile-state contexts."
+    "year": 2025,
+    "source_name": "WHO + UNICEF joint news release, 15 July 2026 (WUENIC 2025 revision)",
+    "source_url": "https://www.who.int/news/item/15-07-2026-global-childhood-immunization-coverage-inches-forward-despite-conflict-and-hesitancy---unicef--who",
+    "note": "'Zero-dose' children — no vaccine in their first year — fell by nearly 750,000 from the previous year. More than half live in fragile or conflict-violent settings, which hold only about a third of the world's child population. Progress is offset by rising drop-outs: 7.3 million infants started the schedule but missed their first measles dose in 2025, and 57 countries reported large or disruptive measles outbreaks."
   },
   "safely_managed_sanitation_share":   {
     "value": 0.58,
@@ -251,12 +252,12 @@
     "note": "Around 2.1 billion people (about a quarter of humanity) still cook with kerosene, biomass (wood, dung, crop waste) or coal on open fires or inefficient stoves. The resulting household air pollution caused an estimated 2.9 million deaths in 2021, including over 309,000 children under 5. Clean stoves and LPG/electric cooking are mature, manufactured at scale."
   },
   "out_of_school_children":   {
-    "value": 251000000,
+    "value": 273000000,
     "unit": "children and youth out of school worldwide",
     "year": 2024,
-    "source_name": "UNESCO, Global Education Monitoring Report 2024 (UIS estimates)",
-    "source_url": "https://www.unesco.org/en/articles/251m-children-and-youth-still-out-school-despite-decades-progress-unesco-report",
-    "note": "251 million children and youth were out of school as of UNESCO's October 2024 report. The out-of-school population has fallen only about 1% in nearly a decade; 33% of school-age children in low-income countries are out of school versus 3% in high-income countries. A later 2025 UIS dashboard revision raised the count to 272 million as more data arrived."
+    "source_name": "UNESCO Institute for Statistics / GEM Report, out-of-school estimates (page updated March 2026)",
+    "source_url": "https://www.unesco.org/en/education/view/outofschool",
+    "note": "273 million children and youth were out of school as of 2024 — 79 million of primary age, 64 million of lower-secondary age, and 130 million of upper-secondary age. Numbers have fallen less than 1% since the SDG-4 baseline year 2015 (they fell 33% in 2000-2015, then rose 3%); in low-income countries the out-of-school population has increased 29% since 2015. More boys (140M) than girls (133M) are out of school."
   },
   "maternal_deaths_preventable":   {
     "value": 260000,
