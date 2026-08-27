@@ -1,6 +1,6 @@
 {
   "$schema": "Per-country primary-source data. Source: World Bank Open Data API. Re-fetched by scripts/build_countries.py.",
-  "fetched_at": "2026-06-15",
+  "fetched_at": "2026-08-27",
   "source": "World Bank Open Data API (api.worldbank.org/v2)",
   "license": "CC-BY-4.0 (World Bank Open Data terms)",
   "indicators": {
@@ -50,23 +50,23 @@
       "iso3": "USA",
       "data": {
         "population": {
-          "value": 340110988,
-          "year": "2024"
+          "value": 341784857,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 28750956130731.2,
-          "year": "2024"
+          "value": 30769700000000,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 84534.0407841548,
-          "year": "2024"
+          "value": 90026.5163005744,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 3.41921653228044,
           "year": "2024"
         },
         "electricity_kwh_per_cap": {
-          "value": 12835.2954006884,
+          "value": 12839.3419088787,
           "year": "2024"
         },
         "broadband_per_100": {
@@ -86,7 +86,7 @@
           "year": "2024"
         },
         "renewable_water_m3_pc": {
-          "value": 8436.68822791378,
+          "value": 8437.21911365822,
           "year": "2022"
         }
       },
@@ -98,16 +98,16 @@
       "iso3": "CHN",
       "data": {
         "population": {
-          "value": 1408975000,
-          "year": "2024"
+          "value": 1406585000,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 18743803170827.2,
-          "year": "2024"
+          "value": 19498039388042.6,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 13303.1481543868,
-          "year": "2024"
+          "value": 13861.970224368,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.71129740345228,
@@ -146,16 +146,16 @@
       "iso3": "IND",
       "data": {
         "population": {
-          "value": 1450935791,
-          "year": "2024"
+          "value": 1463865525,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 3909891533858.08,
-          "year": "2024"
+          "value": 3956067115771.63,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 2694.73780859961,
-          "year": "2024"
+          "value": 2702.47987141553,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.2712033218142,
@@ -194,16 +194,16 @@
       "iso3": "IDN",
       "data": {
         "population": {
-          "value": 283487931,
-          "year": "2024"
+          "value": 285721236,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 1396300098190.97,
-          "year": "2024"
+          "value": 1445642584163.81,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 4925.43048751861,
-          "year": "2024"
+          "value": 5059.62596411213,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.779216788275608,
@@ -222,8 +222,8 @@
           "year": "2023"
         },
         "poverty_pct_3usd": {
-          "value": 68.1,
-          "year": "2024"
+          "value": 65.2,
+          "year": "2025"
         },
         "life_expectancy": {
           "value": 71.288,
@@ -242,16 +242,16 @@
       "iso3": "PAK",
       "data": {
         "population": {
-          "value": 251269164,
-          "year": "2024"
+          "value": 255219554,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 371570000121.266,
-          "year": "2024"
+          "value": 407307214476.222,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 1478.77277977996,
-          "year": "2024"
+          "value": 1595.90912252837,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.66760037007452,
@@ -290,16 +290,16 @@
       "iso3": "NGA",
       "data": {
         "population": {
-          "value": 232679478,
-          "year": "2024"
+          "value": 237527782,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 252261880141.151,
-          "year": "2024"
+          "value": 290794361542.112,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 1084.16041805436,
-          "year": "2024"
+          "value": 1224.25410237743,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.555429367236392,
@@ -338,16 +338,16 @@
       "iso3": "BRA",
       "data": {
         "population": {
-          "value": 211998573,
-          "year": "2024"
+          "value": 212812405,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 2185821648943.86,
-          "year": "2024"
+          "value": 2279920092492.13,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 10310.5488778166,
-          "year": "2024"
+          "value": 10713.2856869511,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.972774559040702,
@@ -386,16 +386,16 @@
       "iso3": "BGD",
       "data": {
         "population": {
-          "value": 173562364,
-          "year": "2024"
+          "value": 175686899,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 450119432068.852,
-          "year": "2024"
+          "value": 456319229255.578,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 2593.41611680774,
-          "year": "2024"
+          "value": 2597.34352335275,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.941321120606305,
@@ -434,16 +434,16 @@
       "iso3": "RUS",
       "data": {
         "population": {
-          "value": 143533851,
-          "year": "2024"
+          "value": 143513328,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 2173835806671.66,
-          "year": "2024"
+          "value": 2561310169358.74,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 14889.0185546875,
-          "year": "2024"
+          "value": 17546.609375,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 7.05233864500366,
@@ -482,16 +482,16 @@
       "iso3": "MEX",
       "data": {
         "population": {
-          "value": 130861007,
-          "year": "2024"
+          "value": 131946900,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 1856365616165.94,
-          "year": "2024"
+          "value": 1832641364775.52,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 14185.7812248529,
-          "year": "2024"
+          "value": 13889.2339628708,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.893257529320534,
@@ -530,16 +530,16 @@
       "iso3": "JPN",
       "data": {
         "population": {
-          "value": 123975371,
-          "year": "2024"
+          "value": 123366734,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 4027597523550.58,
-          "year": "2024"
+          "value": 4435162999976.94,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 32487.0778047567,
-          "year": "2024"
+          "value": 35951.0449549304,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.37139689580634,
@@ -578,16 +578,16 @@
       "iso3": "ETH",
       "data": {
         "population": {
-          "value": 132059767,
-          "year": "2024"
+          "value": 135472051,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 149740297952.986,
-          "year": "2024"
+          "value": 126358758448.356,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 1133.88279681719,
-          "year": "2024"
+          "value": 932.729352775179,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.650506448320295,
@@ -626,16 +626,16 @@
       "iso3": "PHL",
       "data": {
         "population": {
-          "value": 115843670,
-          "year": "2024"
+          "value": 116786962,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 461617509782.355,
-          "year": "2024"
+          "value": 487086123720.417,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 3984.8315387656,
-          "year": "2024"
+          "value": 4170.72347271451,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.32426895346612,
@@ -674,16 +674,16 @@
       "iso3": "EGY",
       "data": {
         "population": {
-          "value": 116538258,
-          "year": "2024"
+          "value": 118365995,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 389059911003.566,
-          "year": "2024"
+          "value": 365254630179.737,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 3338.47371395895,
-          "year": "2024"
+          "value": 3085.80712036204,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.665263620234986,
@@ -722,16 +722,16 @@
       "iso3": "VNM",
       "data": {
         "population": {
-          "value": 100987686,
-          "year": "2024"
+          "value": 101598527,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 476388230307.175,
-          "year": "2024"
+          "value": 514697215165.065,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 4717.29028732449,
-          "year": "2024"
+          "value": 5065.99091899299,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.80650138874311,
@@ -770,16 +770,16 @@
       "iso3": "COD",
       "data": {
         "population": {
-          "value": 109276265,
-          "year": "2024"
+          "value": 112832473,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 70962185790.7094,
-          "year": "2024"
+          "value": 91030531316.9936,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 649.383338556725,
-          "year": "2024"
+          "value": 806.776000708534,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.22855267131451,
@@ -818,16 +818,16 @@
       "iso3": "IRN",
       "data": {
         "population": {
-          "value": 91567738,
-          "year": "2024"
+          "value": 92417681,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 475252089215.416,
-          "year": "2024"
+          "value": 362682115433.364,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 5190.16959024821,
-          "year": "2024"
+          "value": 3924.38017821898,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.01043175751636,
@@ -866,16 +866,16 @@
       "iso3": "TUR",
       "data": {
         "population": {
-          "value": 85518661,
-          "year": "2024"
+          "value": 85878556,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 1359123768774.12,
-          "year": "2024"
+          "value": 1597293229287,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 15892.7157287241,
-          "year": "2024"
+          "value": 18599.4420922378,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.92255231276371,
@@ -914,16 +914,16 @@
       "iso3": "DEU",
       "data": {
         "population": {
-          "value": 83516593,
-          "year": "2024"
+          "value": 83491249,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 4685592577804.69,
-          "year": "2024"
+          "value": 5050922925047.05,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 56103.7323182554,
-          "year": "2024"
+          "value": 60496.4350820414,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.89190377205494,
@@ -962,16 +962,16 @@
       "iso3": "THA",
       "data": {
         "population": {
-          "value": 71668011,
-          "year": "2024"
+          "value": 71619863,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 526517658841.684,
-          "year": "2024"
+          "value": 577009981112.015,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 7346.62022142185,
-          "year": "2024"
+          "value": 8056.56359761558,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.07876078016919,
@@ -1010,23 +1010,23 @@
       "iso3": "GBR",
       "data": {
         "population": {
-          "value": 69226000,
-          "year": "2024"
+          "value": 69487000,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 3686033044482.13,
-          "year": "2024"
+          "value": 4002587541846.01,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 53246.3676145108,
-          "year": "2024"
+          "value": 57601.9621201954,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.2786177901127,
           "year": "2024"
         },
         "electricity_kwh_per_cap": {
-          "value": 4198.22032184439,
+          "value": 4194.88748718985,
           "year": "2024"
         },
         "broadband_per_100": {
@@ -1046,7 +1046,7 @@
           "year": "2024"
         },
         "renewable_water_m3_pc": {
-          "value": 2144.84350038459,
+          "value": 2143.82873026199,
           "year": "2022"
         }
       },
@@ -1058,16 +1058,16 @@
       "iso3": "FRA",
       "data": {
         "population": {
-          "value": 68551653,
-          "year": "2024"
+          "value": 68720337,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 3160442622465.08,
-          "year": "2024"
+          "value": 3366315927447.33,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 46103.0840855884,
-          "year": "2024"
+          "value": 48985.7307807924,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.05257687860637,
@@ -1106,16 +1106,16 @@
       "iso3": "ITA",
       "data": {
         "population": {
-          "value": 58952704,
-          "year": "2024"
+          "value": 58915656,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 2380825077243.59,
-          "year": "2024"
+          "value": 2551556954100.35,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 40385.3413957669,
-          "year": "2024"
+          "value": 43308.6403060733,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.60924561245844,
@@ -1154,16 +1154,16 @@
       "iso3": "ZAF",
       "data": {
         "population": {
-          "value": 64007187,
-          "year": "2024"
+          "value": 64747319,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 401144998373.585,
-          "year": "2024"
+          "value": 427184325997.307,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 6267.186814093,
-          "year": "2024"
+          "value": 6597.71450918774,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.700150834276412,
@@ -1202,16 +1202,16 @@
       "iso3": "NOR",
       "data": {
         "population": {
-          "value": 5572279,
-          "year": "2024"
+          "value": 5610870,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 483592648313.301,
-          "year": "2024"
+          "value": 530755719438.879,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 86785.4334489176,
-          "year": "2024"
+          "value": 94594.1929573987,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.09124111193175,
@@ -1250,16 +1250,16 @@
       "iso3": "CRI",
       "data": {
         "population": {
-          "value": 5129910,
-          "year": "2024"
+          "value": 5152950,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 95350423176.5962,
-          "year": "2024"
+          "value": 102904921157.478,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 18587.1532203482,
-          "year": "2024"
+          "value": 19970.0989059622,
+          "year": "2025"
         },
         "electricity_kwh_per_cap": {
           "value": 2282.30124894979,
@@ -1274,8 +1274,8 @@
           "year": "2023"
         },
         "poverty_pct_3usd": {
-          "value": 12.6,
-          "year": "2024"
+          "value": 9.7,
+          "year": "2025"
         },
         "life_expectancy": {
           "value": 80.996,
@@ -1294,16 +1294,16 @@
       "iso3": "SAU",
       "data": {
         "population": {
-          "value": 35300280,
-          "year": "2024"
+          "value": 36973555,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 1239804533333.33,
-          "year": "2024"
+          "value": 1276942933333.33,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 35121.6628687742,
-          "year": "2024"
+          "value": 34536.6555456551,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 7.2981029390103,
@@ -1338,16 +1338,16 @@
       "iso3": "ISL",
       "data": {
         "population": {
-          "value": 386506,
-          "year": "2024"
+          "value": 392404,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 33255181468.9382,
-          "year": "2024"
+          "value": 38582528789.0033,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 86040.5309851288,
-          "year": "2024"
+          "value": 98323.4849517418,
+          "year": "2025"
         },
         "electricity_kwh_per_cap": {
           "value": 48997.9456981263,
@@ -1382,16 +1382,16 @@
       "iso3": "MUS",
       "data": {
         "population": {
-          "value": 1245779,
-          "year": "2024"
+          "value": 1243741,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 14937861786.17,
-          "year": "2024"
+          "value": 16157804491.7614,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 11990.7798944837,
-          "year": "2024"
+          "value": 12991.2935987166,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.149590857574221,
@@ -1426,16 +1426,16 @@
       "iso3": "BTN",
       "data": {
         "population": {
-          "value": 791524,
-          "year": "2024"
+          "value": 796682,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 3012896789.24928,
-          "year": "2023"
+          "value": 3579320145.13077,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 3831.32535494609,
-          "year": "2023"
+          "value": 4492.78400306618,
+          "year": "2025"
         },
         "broadband_per_100": {
           "value": 2.92069476099272,
@@ -1466,16 +1466,16 @@
       "iso3": "KEN",
       "data": {
         "population": {
-          "value": 56432944,
-          "year": "2024"
+          "value": 57532493,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 120339557905.932,
-          "year": "2024"
+          "value": 135941278878.815,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 2132.43452097647,
-          "year": "2024"
+          "value": 2362.86091198611,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.999546585264659,
@@ -1514,16 +1514,16 @@
       "iso3": "KOR",
       "data": {
         "population": {
-          "value": 51751065,
-          "year": "2024"
+          "value": 51684564,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 1875388209406.8,
-          "year": "2024"
+          "value": 1872374961553.15,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 36238.639908315,
-          "year": "2024"
+          "value": 36226.9663637512,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.56205259386748,
@@ -1562,16 +1562,16 @@
       "iso3": "BWA",
       "data": {
         "population": {
-          "value": 2521139,
-          "year": "2024"
+          "value": 2562122,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 19402063512.9066,
-          "year": "2024"
+          "value": 19928479839.4476,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 7695.75319445165,
-          "year": "2024"
+          "value": 7778.1151090571,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.83392800595041,
@@ -1606,16 +1606,16 @@
       "iso3": "FIN",
       "data": {
         "population": {
-          "value": 5619911,
-          "year": "2024"
+          "value": 5646436,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 298696961297.656,
-          "year": "2024"
+          "value": 317039368819.607,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 53149.7671934051,
-          "year": "2024"
+          "value": 56148.580949046,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.29979173712597,
@@ -1654,16 +1654,16 @@
       "iso3": "PRT",
       "data": {
         "population": {
-          "value": 10694681,
-          "year": "2024"
+          "value": 10804871,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 313271185085.102,
-          "year": "2024"
+          "value": 346639825141.821,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 29292.242104753,
-          "year": "2024"
+          "value": 32081.8106150292,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.53226822745255,
@@ -1702,16 +1702,16 @@
       "iso3": "URY",
       "data": {
         "population": {
-          "value": 3386588,
-          "year": "2024"
+          "value": 3384688,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 80961511073.5797,
-          "year": "2024"
+          "value": 85347696277.6859,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 23906.5133029408,
-          "year": "2024"
+          "value": 25215.8238152781,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.31053827798919,
@@ -1750,16 +1750,16 @@
       "iso3": "NAM",
       "data": {
         "population": {
-          "value": 3030131,
-          "year": "2024"
+          "value": 3092816,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 13372354511.716,
-          "year": "2024"
+          "value": 15080340653.5276,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 4413.12752211572,
-          "year": "2024"
+          "value": 4875.92558158247,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.73490195432496,
@@ -1794,23 +1794,23 @@
       "iso3": "CAN",
       "data": {
         "population": {
-          "value": 41288599,
-          "year": "2024"
+          "value": 41651653,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 2243636826633.76,
-          "year": "2024"
+          "value": 2319899772425.92,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 54340.3477224733,
-          "year": "2024"
+          "value": 55697.6639660837,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.31303419578919,
           "year": "2024"
         },
         "electricity_kwh_per_cap": {
-          "value": 14084.4933973177,
+          "value": 14093.4604054948,
           "year": "2024"
         },
         "broadband_per_100": {
@@ -1830,7 +1830,7 @@
           "year": "2024"
         },
         "renewable_water_m3_pc": {
-          "value": 73197.1653742787,
+          "value": 73170.4837354595,
           "year": "2022"
         }
       },
@@ -1842,23 +1842,23 @@
       "iso3": "AUS",
       "data": {
         "population": {
-          "value": 27196812,
-          "year": "2024"
+          "value": 27614411,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 1757022451652.83,
-          "year": "2024"
+          "value": 1798518933689.21,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 64603.9856308464,
-          "year": "2024"
+          "value": 65129.7227990563,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.8837883329175,
           "year": "2024"
         },
         "electricity_kwh_per_cap": {
-          "value": 9800.04568182477,
+          "value": 9800.95598023791,
           "year": "2024"
         },
         "broadband_per_100": {
@@ -1890,16 +1890,16 @@
       "iso3": "ESP",
       "data": {
         "population": {
-          "value": 48848840,
-          "year": "2024"
+          "value": 49355143,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 1725671652742.19,
-          "year": "2024"
+          "value": 1906453309985.88,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 35326.7683069278,
-          "year": "2024"
+          "value": 38627.2472148623,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.43210737406914,
@@ -1938,16 +1938,16 @@
       "iso3": "NLD",
       "data": {
         "population": {
-          "value": 17993485,
-          "year": "2024"
+          "value": 18087633,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 1214927698572.66,
-          "year": "2024"
+          "value": 1332767651100.39,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 67520.4218956281,
-          "year": "2024"
+          "value": 73683.917132794,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.91642541759119,
@@ -1986,16 +1986,16 @@
       "iso3": "SWE",
       "data": {
         "population": {
-          "value": 10569709,
-          "year": "2024"
+          "value": 10596620,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 603715224265.798,
-          "year": "2024"
+          "value": 668998664082.081,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 57117.4877440616,
-          "year": "2024"
+          "value": 63133.2126736715,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.99771738810168,
@@ -2034,16 +2034,16 @@
       "iso3": "CHE",
       "data": {
         "population": {
-          "value": 9005582,
-          "year": "2024"
+          "value": 9092436,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 936564198048.516,
-          "year": "2024"
+          "value": 1043529899250.92,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 103998.186685604,
-          "year": "2024"
+          "value": 114769.012314293,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.717812077671144,
@@ -2082,23 +2082,23 @@
       "iso3": "NZL",
       "data": {
         "population": {
-          "value": 5287500,
-          "year": "2024"
+          "value": 5324700,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 260172385097.616,
-          "year": "2024"
+          "value": 264057413739.965,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 49205.1792146792,
-          "year": "2024"
+          "value": 49591.0405731713,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.19404695449297,
           "year": "2024"
         },
         "electricity_kwh_per_cap": {
-          "value": 7992.62411347518,
+          "value": 7988.84688090737,
           "year": "2024"
         },
         "broadband_per_100": {
@@ -2126,16 +2126,16 @@
       "iso3": "IRL",
       "data": {
         "population": {
-          "value": 5395790,
-          "year": "2024"
+          "value": 5484367,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 609157459747.205,
-          "year": "2024"
+          "value": 721701359046.313,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 112894.953240805,
-          "year": "2024"
+          "value": 131592.462547877,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.239096332495524,
@@ -2174,16 +2174,16 @@
       "iso3": "DNK",
       "data": {
         "population": {
-          "value": 5976992,
-          "year": "2024"
+          "value": 6009169,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 424524722037.047,
-          "year": "2024"
+          "value": 462526660468.393,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 71026.4832271897,
-          "year": "2024"
+          "value": 76970.1535217919,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.41617454160591,
@@ -2222,16 +2222,16 @@
       "iso3": "BEL",
       "data": {
         "population": {
-          "value": 11858610,
-          "year": "2024"
+          "value": 11941781,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 671370081636.406,
-          "year": "2024"
+          "value": 725466462859.646,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 56614.5679499036,
-          "year": "2024"
+          "value": 60750.2735864647,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.2770531266155,
@@ -2270,16 +2270,16 @@
       "iso3": "AUT",
       "data": {
         "population": {
-          "value": 9177982,
-          "year": "2024"
+          "value": 9208163,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 534790720466.822,
-          "year": "2024"
+          "value": 579470021095.418,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 58268.8787651601,
-          "year": "2024"
+          "value": 62930.0351324599,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.999843177036641,
@@ -2318,16 +2318,16 @@
       "iso3": "GRC",
       "data": {
         "population": {
-          "value": 10405134,
-          "year": "2024"
+          "value": 10413962,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 256238371778.118,
-          "year": "2024"
+          "value": 280635521324.441,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 24626.1481858973,
-          "year": "2024"
+          "value": 26948.0070432791,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 3.12797536550149,
@@ -2354,7 +2354,7 @@
           "year": "2024"
         },
         "renewable_water_m3_pc": {
-          "value": 5557.21526793155,
+          "value": 5556.72385142278,
           "year": "2022"
         }
       },
@@ -2366,16 +2366,16 @@
       "iso3": "POL",
       "data": {
         "population": {
-          "value": 36559233,
-          "year": "2024"
+          "value": 36435861,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 917767106146.761,
-          "year": "2024"
+          "value": 1035491784197.44,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 25103.565661423,
-          "year": "2024"
+          "value": 28419.5777395638,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 4.15439387975356,
@@ -2414,16 +2414,16 @@
       "iso3": "CZE",
       "data": {
         "population": {
-          "value": 10905028,
-          "year": "2024"
+          "value": 10886878,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 347034062928.479,
-          "year": "2024"
+          "value": 391026962800.475,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 31823.3078290564,
-          "year": "2024"
+          "value": 35917.2724081665,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.91680849222604,
@@ -2462,16 +2462,16 @@
       "iso3": "ROU",
       "data": {
         "population": {
-          "value": 19051804,
-          "year": "2024"
+          "value": 19020271,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 382564217988.866,
-          "year": "2024"
+          "value": 428677977854.826,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 20080.2096215595,
-          "year": "2024"
+          "value": 22537.9532108047,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.29815245791591,
@@ -2510,16 +2510,16 @@
       "iso3": "UKR",
       "data": {
         "population": {
-          "value": 37860221,
-          "year": "2024"
+          "value": 38980376,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 190741262414.705,
-          "year": "2024"
+          "value": 214233312784.397,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 5389.47314453125,
-          "year": "2024"
+          "value": 5865.884765625,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 34.4815297701892,
@@ -2558,16 +2558,16 @@
       "iso3": "KAZ",
       "data": {
         "population": {
-          "value": 20592571,
-          "year": "2024"
+          "value": 20843754,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 291480274648.826,
-          "year": "2024"
+          "value": 306239209650.024,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 14154.6324958076,
-          "year": "2024"
+          "value": 14692.1331757237,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.42842846956594,
@@ -2606,16 +2606,16 @@
       "iso3": "SGP",
       "data": {
         "population": {
-          "value": 6036860,
-          "year": "2024"
+          "value": 6111175,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 547386645891.847,
-          "year": "2024"
+          "value": 603869516998.738,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 90674.066632628,
-          "year": "2024"
+          "value": 98813.9788172877,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.8417655746547,
@@ -2650,16 +2650,16 @@
       "iso3": "MYS",
       "data": {
         "population": {
-          "value": 35557673,
-          "year": "2024"
+          "value": 35977838,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 422227005428.688,
-          "year": "2024"
+          "value": 472193128644.597,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 11874.4273684245,
-          "year": "2024"
+          "value": 13124.5554178269,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.987556748730683,
@@ -2698,16 +2698,16 @@
       "iso3": "LKA",
       "data": {
         "population": {
-          "value": 21916000,
-          "year": "2024"
+          "value": 21756000,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 98963185509.6499,
-          "year": "2024"
+          "value": 108825231671.196,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 4515.56787322732,
-          "year": "2024"
+          "value": 5002.07904353724,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.42539087177796,
@@ -2746,16 +2746,16 @@
       "iso3": "NPL",
       "data": {
         "population": {
-          "value": 29651054,
-          "year": "2024"
+          "value": 29618118,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 42914268286.7109,
-          "year": "2024"
+          "value": 45489810283.1132,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 1447.31004458428,
-          "year": "2024"
+          "value": 1535.87781246307,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.979452474186084,
@@ -2794,16 +2794,16 @@
       "iso3": "KHM",
       "data": {
         "population": {
-          "value": 17638801,
-          "year": "2024"
+          "value": 17847982,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 46352647037.2406,
-          "year": "2024"
+          "value": 51267065842.9641,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 2627.87969756224,
-          "year": "2024"
+          "value": 2872.42926639909,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.52066451977199,
@@ -2838,16 +2838,16 @@
       "iso3": "MMR",
       "data": {
         "population": {
-          "value": 54500091,
-          "year": "2024"
+          "value": 54850648,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 74068349523.8095,
-          "year": "2024"
+          "value": 81665773809.5238,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 1359.05001560107,
-          "year": "2024"
+          "value": 1488.87527836542,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 6.79452485229039,
@@ -2882,16 +2882,16 @@
       "iso3": "AFG",
       "data": {
         "population": {
-          "value": 42647492,
-          "year": "2024"
+          "value": 43844111,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 17152234636.8715,
-          "year": "2023"
+          "value": 17778508875.7396,
+          "year": "2024"
         },
         "gdp_per_capita_usd": {
-          "value": 413.757894705303,
-          "year": "2023"
+          "value": 416.871146273728,
+          "year": "2024"
         },
         "military_pct_gdp": {
           "value": 1.827933856217,
@@ -2922,8 +2922,8 @@
       "iso3": "YEM",
       "data": {
         "population": {
-          "value": 40583164,
-          "year": "2024"
+          "value": 41773878,
+          "year": "2025"
         },
         "gdp_usd": {
           "value": 21606160663.0318,
@@ -2962,16 +2962,16 @@
       "iso3": "IRQ",
       "data": {
         "population": {
-          "value": 46042015,
-          "year": "2024"
+          "value": 47020774,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 279641257615.385,
-          "year": "2024"
+          "value": 254367293538.462,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 6073.61032342708,
-          "year": "2024"
+          "value": 5409.67899716967,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.35714058035714,
@@ -3010,16 +3010,16 @@
       "iso3": "PER",
       "data": {
         "population": {
-          "value": 34217848,
-          "year": "2024"
+          "value": 34576665,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 289221969062.941,
-          "year": "2024"
+          "value": 334854659181.893,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 8452.37167056621,
-          "year": "2024"
+          "value": 9684.41170314988,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.909288680359786,
@@ -3058,16 +3058,16 @@
       "iso3": "CHL",
       "data": {
         "population": {
-          "value": 19764771,
-          "year": "2024"
+          "value": 19859921,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 330267137371.592,
-          "year": "2024"
+          "value": 357371159574.862,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 16709.8893972307,
-          "year": "2024"
+          "value": 17994.5911957485,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.57780388625485,
@@ -3106,16 +3106,16 @@
       "iso3": "COL",
       "data": {
         "population": {
-          "value": 52886363,
-          "year": "2024"
+          "value": 53425635,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 418818154879.271,
-          "year": "2024"
+          "value": 457410034202.523,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 7919.20886825345,
-          "year": "2024"
+          "value": 8561.62091854449,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 3.35903368303836,
@@ -3154,16 +3154,16 @@
       "iso3": "ARG",
       "data": {
         "population": {
-          "value": 45696159,
-          "year": "2024"
+          "value": 45851378,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 638365455340.04,
-          "year": "2024"
+          "value": 683097891618.597,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 13969.7836603737,
-          "year": "2024"
+          "value": 14898.0885943842,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.618350391157195,
@@ -3202,16 +3202,16 @@
       "iso3": "VEN",
       "data": {
         "population": {
-          "value": 28405543,
-          "year": "2024"
+          "value": 28516896,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 119802963257.783,
-          "year": "2024"
+          "value": 99661244155.6306,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 4217.59102643391,
-          "year": "2024"
+          "value": 3494.8138870244,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.500704497643446,
@@ -3246,16 +3246,16 @@
       "iso3": "GTM",
       "data": {
         "population": {
-          "value": 18406359,
-          "year": "2024"
+          "value": 18687881,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 113199581158.203,
-          "year": "2024"
+          "value": 123306008821.471,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 6150.02571438505,
-          "year": "2024"
+          "value": 6598.18032988711,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.367622067360881,
@@ -3294,16 +3294,16 @@
       "iso3": "BOL",
       "data": {
         "population": {
-          "value": 12413315,
-          "year": "2024"
+          "value": 12581843,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 54881327452.9667,
-          "year": "2024"
+          "value": 64768947525.3256,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 4421.16609889999,
-          "year": "2024"
+          "value": 5147.81081955367,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.37066364312669,
@@ -3342,16 +3342,16 @@
       "iso3": "ECU",
       "data": {
         "population": {
-          "value": 18135478,
-          "year": "2024"
+          "value": 18289896,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 124676074700,
-          "year": "2024"
+          "value": 130320560400,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 6874.705739766,
-          "year": "2024"
+          "value": 7125.27618527738,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.22194770434425,
@@ -3370,8 +3370,8 @@
           "year": "2023"
         },
         "poverty_pct_3usd": {
-          "value": 32.6,
-          "year": "2024"
+          "value": 30.1,
+          "year": "2025"
         },
         "life_expectancy": {
           "value": 77.579,
@@ -3390,16 +3390,16 @@
       "iso3": "HTI",
       "data": {
         "population": {
-          "value": 11772557,
-          "year": "2024"
+          "value": 11906095,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 25224154990.7946,
-          "year": "2024"
+          "value": 32077278409.2339,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 2142.62330526788,
-          "year": "2024"
+          "value": 2694.18969101404,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.068443100204951,
@@ -3434,16 +3434,16 @@
       "iso3": "GHA",
       "data": {
         "population": {
-          "value": 34427414,
-          "year": "2024"
+          "value": 35064272,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 82308110386.4641,
-          "year": "2024"
+          "value": 114209905278.717,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 2390.77237652715,
-          "year": "2024"
+          "value": 3257.1588903576,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.383994182354107,
@@ -3478,16 +3478,16 @@
       "iso3": "TZA",
       "data": {
         "population": {
-          "value": 68560157,
-          "year": "2024"
+          "value": 70545865,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 78844405385.2195,
-          "year": "2024"
+          "value": 90143496090.4411,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 1186.71691894531,
-          "year": "2024"
+          "value": 1318.81921386719,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.154617473534,
@@ -3526,16 +3526,16 @@
       "iso3": "UGA",
       "data": {
         "population": {
-          "value": 50015092,
-          "year": "2024"
+          "value": 51384894,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 53911907086.1525,
-          "year": "2024"
+          "value": 61985829288.1496,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 1077.91278452817,
-          "year": "2024"
+          "value": 1206.30450825002,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.88159798311992,
@@ -3574,16 +3574,16 @@
       "iso3": "RWA",
       "data": {
         "population": {
-          "value": 14256567,
-          "year": "2024"
+          "value": 14569341,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 14251642235.0968,
-          "year": "2024"
+          "value": 16372132990.2271,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 999.65456165547,
-          "year": "2024"
+          "value": 1123.73874633225,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.24772078121775,
@@ -3622,16 +3622,16 @@
       "iso3": "SEN",
       "data": {
         "population": {
-          "value": 18501984,
-          "year": "2024"
+          "value": 18931966,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 32808056600.9436,
-          "year": "2024"
+          "value": 37006536238.3731,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 1773.21829923448,
-          "year": "2024"
+          "value": 1954.71174194867,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.56647768181405,
@@ -3670,16 +3670,16 @@
       "iso3": "CIV",
       "data": {
         "population": {
-          "value": 31934230,
-          "year": "2024"
+          "value": 32711547,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 87113179149.284,
-          "year": "2024"
+          "value": 99773555666.1988,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 2727.8935220697,
-          "year": "2024"
+          "value": 3050.10202257321,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.762358993041457,
@@ -3718,16 +3718,16 @@
       "iso3": "AGO",
       "data": {
         "population": {
-          "value": 37885849,
-          "year": "2024"
+          "value": 39040039,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 100998916781.079,
-          "year": "2024"
+          "value": 122174889423.635,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 2665.87444776753,
-          "year": "2024"
+          "value": 3129.47662331063,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.00049213337543,
@@ -3766,16 +3766,16 @@
       "iso3": "MOZ",
       "data": {
         "population": {
-          "value": 34631766,
-          "year": "2024"
+          "value": 35631653,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 22745341305.0622,
-          "year": "2024"
+          "value": 22337997046.1913,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 656.776824637306,
-          "year": "2024"
+          "value": 626.914419215727,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.99330115632931,
@@ -3814,16 +3814,16 @@
       "iso3": "ZMB",
       "data": {
         "population": {
-          "value": 21314956,
-          "year": "2024"
+          "value": 21913874,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 25303185342.2511,
-          "year": "2024"
+          "value": 28879806220.1264,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 1187.10943350064,
-          "year": "2024"
+          "value": 1317.87771619597,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.33268361976463,
@@ -3862,16 +3862,16 @@
       "iso3": "ZWE",
       "data": {
         "population": {
-          "value": 16634373,
-          "year": "2024"
+          "value": 16950795,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 41539411516.4448,
-          "year": "2024"
+          "value": 51215643905.5886,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 2497.20332208763,
-          "year": "2024"
+          "value": 3021.43019873632,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.351195023855751,
@@ -3910,16 +3910,16 @@
       "iso3": "MWI",
       "data": {
         "population": {
-          "value": 21655286,
-          "year": "2024"
+          "value": 22216120,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 11316411329.4619,
-          "year": "2024"
+          "value": 14918276698.303,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 522.570393642547,
-          "year": "2024"
+          "value": 671.506847203876,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.02496048269861,
@@ -3954,16 +3954,16 @@
       "iso3": "DZA",
       "data": {
         "population": {
-          "value": 46814308,
-          "year": "2024"
+          "value": 47435312,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 269322281664.773,
-          "year": "2024"
+          "value": 287031225987.736,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 5752.99076651465,
-          "year": "2024"
+          "value": 6051.00322704182,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 7.97145723551219,
@@ -3998,16 +3998,16 @@
       "iso3": "MAR",
       "data": {
         "population": {
-          "value": 38081173,
-          "year": "2024"
+          "value": 38430770,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 160610994054.734,
-          "year": "2024"
+          "value": 182374250612.28,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 4153.1943359375,
-          "year": "2024"
+          "value": 4672.46826171875,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 3.51575374206256,
@@ -4042,16 +4042,16 @@
       "iso3": "TUN",
       "data": {
         "population": {
-          "value": 12277109,
-          "year": "2024"
+          "value": 12348573,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 51332285656.5422,
-          "year": "2024"
+          "value": 57502836548.0878,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 4181.13789301228,
-          "year": "2024"
+          "value": 4656.63818386852,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 2.50636792573464,
@@ -4090,16 +4090,16 @@
       "iso3": "SDN",
       "data": {
         "population": {
-          "value": 50448963,
-          "year": "2024"
+          "value": 51662147,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 49672435513.1126,
-          "year": "2024"
+          "value": 60162634574.4689,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 984.607666015625,
-          "year": "2024"
+          "value": 1164.53991699219,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 0.925377247984565,
@@ -4134,16 +4134,16 @@
       "iso3": "SOM",
       "data": {
         "population": {
-          "value": 19009151,
-          "year": "2024"
+          "value": 19654739,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 11967000000,
-          "year": "2024"
+          "value": 12995200000.2658,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 629.538899449007,
-          "year": "2024"
+          "value": 661.173877723116,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 1.58578050121769,
@@ -4174,16 +4174,16 @@
       "iso3": "QAT",
       "data": {
         "population": {
-          "value": 2857822,
-          "year": "2024"
+          "value": 2972215,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 219162637362.637,
-          "year": "2024"
+          "value": 215559615384.615,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 76688.6941743178,
-          "year": "2024"
+          "value": 72524.9066385222,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 6.50020565272303,
@@ -4218,15 +4218,15 @@
       "iso3": "ARE",
       "data": {
         "population": {
-          "value": 10986400,
-          "year": "2024"
+          "value": 11513149,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 552324846834.581,
+          "value": 552324919095.872,
           "year": "2024"
         },
         "gdp_per_capita_usd": {
-          "value": 50273.5060469837,
+          "value": 50273.5126243239,
           "year": "2024"
         },
         "electricity_kwh_per_cap": {
@@ -4262,23 +4262,23 @@
       "iso3": "ISR",
       "data": {
         "population": {
-          "value": 9974400,
-          "year": "2024"
+          "value": 10122800,
+          "year": "2025"
         },
         "gdp_usd": {
-          "value": 540379921261.681,
-          "year": "2024"
+          "value": 610777842873.595,
+          "year": "2025"
         },
         "gdp_per_capita_usd": {
-          "value": 54176.6844383302,
-          "year": "2024"
+          "value": 60336.8477964194,
+          "year": "2025"
         },
         "military_pct_gdp": {
           "value": 8.77671668977531,
           "year": "2024"
         },
         "electricity_kwh_per_cap": {
-          "value": 7206.44850818094,
+          "value": 7186.41898782268,
           "year": "2024"
         },
         "broadband_per_100": {

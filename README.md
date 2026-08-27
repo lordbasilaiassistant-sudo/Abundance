@@ -103,7 +103,7 @@ For "where do I add X?" see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Data currency
 
-Last refresh: **2026-08-22**. Headline vintages currently in use:
+Last refresh: **2026-08-27**. Headline vintages currently in use:
 
 | Figure | Value | Year | Source |
 |---|---|---|---|
@@ -116,12 +116,16 @@ Last refresh: **2026-08-22**. Headline vintages currently in use:
 | Global military spending | $2.887T | 2025 | SIPRI, April 2026 |
 | Global health spending | $10.6T | 2023 | WHO GHED, December 2025 update |
 | Internet users | 6.0B | 2025 | ITU Facts and Figures 2025 |
+| Global household wealth (56-market sample) | $517.7T | 2025 | UBS Global Wealth Report 2026 |
+| Of which held by 58M adults worth >$1M | $250.6T | 2025 | UBS GWR 2026 wealth pyramid |
+| People cooking with polluting fuels | 2.0B | 2024 | Tracking SDG7 2026 |
+| People without electricity | 655M | 2024 | Tracking SDG7 2026 |
 
-Known stale: global household wealth ($449.9T, UBS 2024 — the newest published
-aggregate; verified against the GWR 2026 PDF directly: it reports 10.8% USD
-growth in 2025 but publishes growth rates and wealth-pyramid bands only, no
-total). Retiring a stale number requires a source link, not an extrapolation —
-see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+The GWR 2026 pyramid is the newest published wealth stock: UBS no longer
+prints a single world-aggregate total, so the site cites the sum of the four
+published bands for the 56-market sample (over 92% of world wealth) rather
+than extrapolating. Methodology was updated between GWR 2024 and 2026, so
+$517.7T is not a continuation of the 2023 $449.9T world aggregate.
 
 ## Contributing
 
