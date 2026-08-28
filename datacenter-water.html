@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waste heat into drinking water — a datacenter design note · Abundance</title>
+<meta name="description" content="Every watt a datacenter computes becomes low-grade heat. Warm-water liquid cooling plus membrane distillation turns that heat into desalinated drinking water. An honest, fully-arithmetic-ed design note with a buildable desktop proof — modeled numbers labeled as modeled. CC0.">
+<meta name="keywords" content="datacenter waste heat, membrane distillation, desalination, warm-water cooling, liquid cooling, heat reuse, water scarcity, drinking water, thermal desalination, abundance">
+<meta name="author" content="Eli Vargas (lordbasilaiassistant-sudo)">
+<meta name="theme-color" content="#0a0b0e">
+<link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/datacenter-water.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- OpenGraph -->
+<meta property="og:title" content="Waste heat into drinking water — a datacenter design note.">
+<meta property="og:description" content="Every watt of compute becomes heat. This design note runs the arithmetic: how much drinking water could a datacenter's garbage heat make, what the desktop proof rig costs, and what would kill the idea. Modeled numbers labeled as modeled.">
+<meta property="og:type" content="article">
+<meta property="og:url" href="https://lordbasilaiassistant-sudo.github.io/Abundance/datacenter-water.html">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Abundance">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Waste heat into drinking water: a datacenter design note",
+  "description": "Engineering arithmetic for coupling warm-water datacenter liquid cooling to membrane-distillation desalination, with an interactive model and a desktop-scale experimental protocol.",
+  "author": { "@type": "Person", "name": "Eli Vargas (lordbasilaiassistant-sudo)" },
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "isAccessibleForFree": true,
+  "citation": [
+    "NIST Chemistry WebBook, water saturation properties",
+    "Alkhudhiri, Darwish & Hilal (2012) Membrane distillation: A comprehensive review, Desalination 287:2-18",
+    "IEA (2025) Energy and AI",
+    "Howard & Bartram (2003) Domestic water quantity, service level and health, WHO"
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ── page-scoped styles (dw- prefix) ─────────────────────────── */
+.dw-panel{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+  position:relative;
+  overflow:hidden;
+}
+.dw-grid-bg{
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:28px 28px;
+  background-position:center;
+}
+.dw-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none}
+.dw-glow.warm{background:rgba(248,197,116,.14);width:340px;height:340px;left:-80px;top:-80px}
+.dw-glow.cool{background:rgba(92,214,239,.10);width:300px;height:300px;right:-60px;bottom:-90px}
+
+figure.dw-diagram{margin:22px 0 6px}
+figure.dw-diagram svg{display:block;width:100%;height:auto}
+
+/* pipes */
+.pipe{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.pipe-hot   {stroke:#ef8b6b;stroke-width:5}
+.pipe-warm  {stroke:#f8c574;stroke-width:4.5}
+.pipe-clean {stroke:#5cd6ef;stroke-width:5}
+.pipe-cold  {stroke:#4a9db8;stroke-width:4.5}
+.pipe-brine {stroke:#8b86a8;stroke-width:4.5;stroke-dasharray:2 7}
+.flow{stroke-dasharray:3 11;animation:dwdash 1.1s linear infinite}
+@keyframes dwdash{to{stroke-dashoffset:-14}}
+@media (prefers-reduced-motion: reduce){.flow{animation:none}}
+
+/* nodes */
+.node rect.body{fill:var(--bg-3);stroke:var(--line-2);rx:10}
+.node.hot rect.body{stroke:#a06a45}
+.node.clean rect.body{stroke:#2f7f96}
+.node{cursor:pointer}
+.node .lbl{font-family:ui-monospace,Menlo,Consolas,monospace;fill:var(--fg)}
+.node .sub{font-family:var(--sans);fill:var(--fg-3)}
+.node:hover rect.body,.node:focus rect.body{stroke:var(--fg);stroke-width:1.6}
+.node:focus{outline:none}
+text.dw-temp{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;fill:var(--warn)}
+text.dw-temp.cooltxt{fill:#5cd6ef}
+
+/* stage legend chips */
+.dw-chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+.dw-chip{
+  font-family:var(--sans);font-size:13px;color:var(--fg-2);
+  border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;
+  cursor:pointer;background:transparent;
+}
+.dw-chip[aria-pressed="true"]{color:var(--bg);background:var(--accent);border-color:var(--accent);font-weight:600}
+.dw-stagecard{border-left:3px solid var(--accent);padding:2px 0 2px 16px;margin-top:10px}
+.dw-stagecard h4{margin:0 0 6px;font-size:17px;color:var(--fg)}
+.dw-stagecard p{margin:0;color:var(--fg-2);font-size:15px;line-height:1.55}
+.dw-stagecard .nums{font-family:var(--mono);font-size:13px;color:var(--accent);margin-top:8px;display:block}
+
+/* calculator */
+.dw-dials{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;margin-top:18px}
+input[type=range]{width:100%;accent-color:#6ee0b0}
+.dw-readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:22px}
+.dw-stat{
+  background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+}
+.dw-stat .v{font-family:var(--mono);font-size:26px;color:var(--accent);letter-spacing:-.5px}
+.dw-stat .l{font-size:12.5px;color:var(--fg-3);margin-top:4px;text-transform:uppercase;letter-spacing:.08em}
+.dw-formula{
+  font-family:var(--mono);font-size:12.5px;color:var(--fg-3);
+  background:var(--bg);border:1px solid var(--line);border-radius:8px;
+  padding:10px 14px;margin:14px 0 0;overflow-x:auto;line-height:1.7;
+}
+.dw-formula b{color:var(--fg-2);font-weight:600}
+
+/* BOM table */
+table.dw-bom{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:14px}
+table.dw-bom th{
+  text-align:left;font-family:var(--sans);font-weight:600;font-size:12px;text-transform:uppercase;
+  letter-spacing:.07em;color:var(--fg-3);padding:8px 10px;border-bottom:1px solid var(--line-2);
+}
+table.dw-bom td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--fg-2)}
+table.dw-bom td:first-child{font-family:var(--mono);color:var(--warn);white-space:nowrap}
+table.dw-bom td.cost{font-family:var(--mono);color:var(--fg);white-space:nowrap}
+table.dw-bom tr.total td{border-bottom:none;color:var(--fg);font-weight:600}
+table.dw-bom tr.total td.cost{color:var(--accent)}
+
+/* misc */
+.dw-kicker{font-family:var(--mono);font-size:12.5px;color:var(--warn);text-transform:uppercase;letter-spacing:.14em}
+.dw-two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:800px){.dw-two-col{grid-template-columns:1fr}}
+details.dw-limit{border-bottom:1px solid var(--line);padding:4px 0}
+details.dw-limit summary{cursor:pointer;padding:12px 0;color:var(--fg);font-weight:600}
+details.dw-limit p{color:var(--fg-2);font-size:15px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="masthead">
+  <div class="eyebrow"><a href="index.html">Abundance</a> · a design note</div>
+  <div class="dw-kicker">modeled, not measured — until someone builds the desk rig</div>
+  <h1>Garbage heat is a <em>water plant.</em></h1>
+  <p class="lede">
+    Every watt a datacenter spends on computing comes out as heat — about
+    <strong>415 TWh of electricity in 2024</strong>, essentially all of it ending up warm.
+    Run the machines warm enough (liquid cooling, 40–60&nbsp;°C) and that heat is exactly
+    what membrane distillation needs to pull fresh water out of seawater or brackish wells.
+    The machines get cheaper cooling; the coast gets drinking water.
+    This page runs the arithmetic honestly: what the numbers say at full scale,
+    what a <strong>$200 desk rig</strong> would prove first, and every reason the idea might die.
+    Constants are cited; projections are labeled as models.
+  </p>
+  <p class="small" style="margin-top:8px;">
+    ← <a href="index.html">Back to the arithmetic</a> ·
+    <a href="essay.html#scarcity">kinds of scarcity</a> ·
+    <a href="bibliography.md">bibliography</a>
+  </p>
+</header>
+
+<main>
+
+<!-- ══════════════ 1. THE PHYSICS ══════════════ -->
+<section aria-labelledby="physics-h">
+<h2 id="physics-h">The whole trick in three sentences</h2>
+<p>
+  Water evaporates at any temperature above freezing — cooler water just evaporates more slowly,
+  and its vapor carries <strong>zero salts, zero minerals, zero microbes</strong>. A hydrophobic membrane
+  with pores around 0.2&nbsp;µm lets vapor through but refuses liquid water, so a warm saline stream on
+  one side and a cool surface on the other produces distilled water at temperatures no ordinary engine
+  would call useful. That process is called <strong>membrane distillation (MD)</strong>, and its fuel is precisely
+  the grade of heat a liquid-cooled computer throws away.
+</p>
+<div class="dw-two-col">
+  <div class="stat">
+    <div class="label">Latent heat of vaporization @ 50 °C</div>
+    <div class="value">2,383 kJ/kg<span class="sub">≈ 0.66 kWh per liter distilled — the thermodynamic bill every method must pay</span></div>
+    <p class="src"><a href="https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&amp;Mask=4#Thermo-Phase">NIST Chemistry WebBook, saturation properties of water</a></p>
+  </div>
+  <div class="stat">
+    <div class="label">What MD actually rejects</div>
+    <div class="value">&gt;99.9% salts<span class="sub">non-volatile solutes cannot cross the dry membrane; volatile contaminants partly carry over (see limits)</span></div>
+    <p class="src"><a href="https://doi.org/10.1016/j.desal.2011.11.033">Alkhudhiri, Darwish &amp; Hilal (2012), Desalination 287:2–18</a></p>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════ 2. FULL-SCALE DIAGRAM ══════════════ -->
+<section aria-labelledby="system-h">
+<h2 id="system-h">How the built-properly version works</h2>
+<p>
+  Click any part of the system. Ember is heat in motion, blue-green is clean water,
+  grey dashed is brine. The two loops never mix — heat crosses metal walls, purity crosses membranes,
+  and nothing crosses that shouldn't.
+</p>
+
+<figure class="dw-diagram">
+  <div class="dw-panel dw-grid-bg" style="padding:10px">
+    <div class="dw-glow warm"></div><div class="dw-glow cool"></div>
+    <svg viewBox="0 0 1040 600" role="img" aria-label="System diagram: datacenter heats a coolant loop; heat exchanger transfers heat to filtered seawater; membrane distillation stack splits it into fresh water and brine; cooled coolant returns to the datacenter; optional district-heating branch">
+      <defs>
+        <marker id="arr-hot" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ef8b6b"/></marker>
+        <marker id="arr-clean" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5cd6ef"/></marker>
+        <marker id="arr-cold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a9db8"/></marker>
+        <marker id="arr-brine" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8b86a8"/></marker>
+      </defs>
+
+      <!-- ══ DATACENTER (left) ══ -->
+      <g class="node hot" id="st-dc" tabindex="0" role="button" aria-label="Data center">
+        <rect class="body" x="30" y="180" width="210" height="240" rx="12"/>
+        <!-- racks -->
+        <g fill="#13151a" stroke="#2b3140">
+          <rect x="52" y="205" width="42" height="150" rx="4"/>
+          <rect x="106" y="205" width="42" height="150" rx="4"/>
+          <rect x="160" y="205" width="42" height="150" rx="4"/>
+        </g>
+        <g stroke="#f8c574" opacity=".85">
+          <line x1="58" y1="222" x2="88" y2="222"/><line x1="58" y1="238" x2="88" y2="238"/>
+          <line x1="112" y1="222" x2="142" y2="222"/><line x1="112" y1="238" x2="142" y2="238"/>
+          <line x1="166" y1="222" x2="196" y2="222"/><line x1="166" y1="254" x2="196" y2="254"/>
+        </g>
+        <text class="lbl" x="135" y="385" text-anchor="middle" font-size="15">DATA CENTER</text>
+        <text class="sub" x="135" y="404" text-anchor="middle" font-size="12.5">warm-water liquid cooling</text>
+        <text class="sub" x="135" y="419" text-anchor="middle" font-size="11.5">P<tspan baseline-shift="sub" font-size="9">IT</tspan> → almost all becomes heat</text>
+      </g>
+
+      <!-- ══ PLATE HEAT EXCHANGER ══ -->
+      <g class="node" id="st-hx" tabindex="0" role="button" aria-label="Plate heat exchanger">
+        <rect class="body" x="360" y="230" width="96" height="140" rx="10"/>
+        <g stroke="#4a9db8" stroke-width="2.5" opacity=".9">
+          <line x1="372" y1="245" x2="444" y2="355"/>
+          <line x1="380" y1="245" x2="452" y2="355" transform="translate(-16,0)"/>
+          <line x1="396" y1="245" x2="444" y2="339"/>
+          <line x1="412" y1="245" x2="444" y2="307"/>
+          <line x1="428" y1="245" x2="444" y2="275"/>
+        </g>
+        <text class="lbl" x="408" y="395" text-anchor="middle" font-size="14">HEAT EXCHANGER</text>
+        <text class="sub" x="408" y="412" text-anchor="middle" font-size="11.5">coolant heat → feed water</text>
+      </g>
+
+      <!-- ══ PREFILTER on feed line ══ -->
+      <g class="node" id="st-filter" tabindex="0" role="button" aria-label="Prefilter">
+        <circle cx="330" cy="520" r="24" fill="#13151a" stroke="#2b3140"/>
+        <g stroke="#717885" stroke-width="2">
+          <line x1="318" y1="508" x2="342" y2="532"/>
+          <line x1="342" y1="508" x2="318" y2="532"/>
+          <line x1="315" y1="520" x2="345" y2="520"/>
+        </g>
+        <text class="sub" x="330" y="562" text-anchor="middle" font-size="11.5">5 µm prefilter</text>
+      </g>
+
+      <!-- ══ MEMBRANE DISTILLATION STACK ══ -->
+      <g class="node clean" id="st-md" tabindex="0" role="button" aria-label="Membrane distillation stack">
+        <rect class="body" x="600" y="170" width="170" height="260" rx="12"/>
+        <!-- alternating channels -->
+        <g font-family="ui-monospace,Menlo,monospace" font-size="11">
+          <rect x="618" y="192" width="134" height="26" rx="5" fill="rgba(248,197,116,.16)" stroke="#a06a45"/>
+          <text x="685" y="209" text-anchor="middle" fill="#f8c574">hot feed 50 °C</text>
+          <rect x="618" y="228" width="134" height="26" rx="5" fill="rgba(92,214,239,.10)" stroke="#2f7f96"/>
+          <text x="685" y="245" text-anchor="middle" fill="#5cd6ef">cold permeate 22 °C</text>
+          <rect x="618" y="264" width="134" height="26" rx="5" fill="rgba(248,197,116,.16)" stroke="#a06a45"/>
+          <text x="685" y="281" text-anchor="middle" fill="#f8c574">hot feed 50 °C</text>
+          <rect x="618" y="300" width="134" height="26" rx="5" fill="rgba(92,214,239,.10)" stroke="#2f7f96"/>
+          <text x="685" y="317" text-anchor="middle" fill="#5cd6ef">cold permeate 22 °C</text>
+          <!-- membrane lines -->
+          <g stroke="#f0f3f7" stroke-width="1.6" stroke-dasharray="4 4" opacity=".75">
+            <line x1="618" y1="226" x2="752" y2="226"/>
+            <line x1="618" y1="298" x2="752" y2="298"/>
+            <line x1="618" y1="362" x2="752" y2="362"/>
+          </g>
+        </g>
+        <text class="lbl" x="685" y="400" text-anchor="middle" font-size="14">MD STACK</text>
+        <text class="sub" x="685" y="417" text-anchor="middle" font-size="11.5">vapor only crosses the membrane</text>
+      </g>
+
+      <!-- ══ PERMEATE TANK (top right) ══ -->
+      <g class="node clean" id="st-perm" tabindex="0" role="button" aria-label="Fresh water output">
+        <rect class="body" x="880" y="60" width="130" height="110" rx="12"/>
+        <path d="M892 118 q53 26 106 0 v40 a10 10 0 0 1 -10 10 h-86 a10 10 0 0 1 -10 -10 z" fill="rgba(92,214,239,.28)" stroke="#5cd6ef" stroke-width="1.5"/>
+        <text class="lbl" x="945" y="90" text-anchor="middle" font-size="14">FRESH WATER</text>
+        <text class="sub" x="945" y="105" text-anchor="middle" font-size="11">&lt;10 ppm TDS · mineralize · drink</text>
+      </g>
+
+      <!-- ══ BRINE OUT (bottom right) ══ -->
+      <g class="node" id="st-brine" tabindex="0" role="button" aria-label="Brine return">
+        <rect class="body" x="880" y="480" width="130" height="76" rx="12"/>
+        <text class="lbl" x="945" y="512" text-anchor="middle" font-size="13">BRINE OUT</text>
+        <text class="sub" x="945" y="530" text-anchor="middle" font-size="11">saltier than the sea · diffuse or harvest</text>
+      </g>
+
+      <!-- ══ COLD SINK (far right middle) ══ -->
+      <g class="node" id="st-cold" tabindex="0" role="button" aria-label="Cold sink">
+        <rect class="body" x="880" y="250" width="130" height="100" rx="12"/>
+        <g stroke="#4a9db8" stroke-width="2" fill="none">
+          <path d="M898 330 l10 -22 8 12 10 -20 8 12 10 -20 8 12 10 -20 8 12 10 -18"/>
+          <path d="M898 345 h94" opacity=".5"/>
+        </g>
+        <text class="lbl" x="945" y="278" text-anchor="middle" font-size="13">COLD SINK</text>
+        <text class="sub" x="945" y="293" text-anchor="middle" font-size="10.5">sea / lake / night air</text>
+      </g>
+
+      <!-- ══ DISTRICT HEATING branch (top left) ══ -->
+      <g class="node" id="st-heat" tabindex="0" role="button" aria-label="District heating branch">
+        <rect class="body" x="60" y="40" width="150" height="84" rx="12"/>
+        <text class="lbl" x="135" y="72" text-anchor="middle" font-size="13">DISTRICT HEAT</text>
+        <text class="sub" x="135" y="89" text-anchor="middle" font-size="10.5">optional winter mode:</text>
+        <text class="sub" x="135" y="103" text-anchor="middle" font-size="10.5">warm buildings instead</text>
+      </g>
+
+      <!-- ── PIPES ── -->
+      <!-- hot coolant: DC -> HX -->
+      <path class="pipe pipe-hot flow" marker-end="url(#arr-hot)" d="M240 220 C 300 220, 310 250, 358 258"/>
+      <path class="pipe pipe-hot" opacity=".28" d="M240 220 C 300 220, 310 250, 358 258"/>
+      <text class="dw-temp" x="272" y="212">45–60 °C</text>
+      <!-- return coolant: HX -> DC -->
+      <path class="pipe pipe-cold flow" marker-end="url(#arr-cold)" d="M358 350 C 305 350, 300 370, 242 372"/>
+      <text class="dw-temp cooltxt" x="252" y="392" >~30 °C back</text>
+      <!-- district heating tee -->
+      <path class="pipe pipe-warm" d="M270 220 C 280 160, 250 120, 212 108" marker-end="url(#arr-hot)" opacity=".8"/>
+
+      <!-- hot feed: HX -> MD -->
+      <path class="pipe pipe-hot flow" marker-end="url(#arr-hot)" d="M456 262 C 520 255, 540 235, 598 225"/>
+      <text class="dw-temp" x="492" y="238">heated feed</text>
+      <!-- concentrated brine: MD -> brine -->
+      <path class="pipe pipe-brine flow" marker-end="url(#arr-brine)" d="M770 380 C 830 420, 848 470, 878 500"/>
+      <text class="dw-temp" x="792" y="468" transform="rotate(24 792 468)" fill="#8b86a8">brine</text>
+      <!-- permeate: MD -> tank -->
+      <path class="pipe pipe-clean flow" marker-end="url(#arr-clean)" d="M770 200 C 820 165, 838 130, 878 102"/>
+      <!-- cold sink -> MD permeate side -->
+      <path class="pipe pipe-cold flow" marker-end="url(#arr-cold)" d="M878 290 C 830 290, 810 300, 772 308"/>
+      <text class="dw-temp cooltxt" x="788" y="282">chills permeate side</text>
+      <!-- seawater intake -> filter -> HX -->
+      <path class="pipe pipe-cold flow" marker-end="url(#arr-cold)" d="M60 520 C 150 520, 220 520, 304 520"/>
+      <path class="pipe pipe-cold flow" marker-end="url(#arr-cold)" d="M354 520 C 400 520, 430 430, 396 372"/>
+      <text class="dw-temp cooltxt" x="120" y="505">seawater / brackish in</text>
+
+      <!-- labels -->
+      <text class="sub" x="520" y="580" text-anchor="middle" font-size="12">heat crosses metal · vapor crosses membrane · the loops never mix</text>
+    </svg>
+  </div>
+  <figcaption class="src" style="padding:8px 6px 0">
+    Architecture: warm-water liquid cooling coupled to direct-contact membrane distillation (DCMD)
+    with counter-current heat recovery. Precedent pieces all exist separately — see sources below.
+  </figcaption>
+</figure>
+
+<div class="dw-chips" role="group" aria-label="Explain a stage">
+  <button class="dw-chip" data-stage="st-dc" aria-pressed="true">1 · The machines</button>
+  <button class="dw-chip" data-stage="st-hx" aria-pressed="false">2 · Heat exchanger</button>
+  <button class="dw-chip" data-stage="st-md" aria-pressed="false">3 · MD stack</button>
+  <button class="dw-chip" data-stage="st-perm" aria-pressed="false">4 · Fresh water out</button>
+  <button class="dw-chip" data-stage="st-brine" aria-pressed="false">5 · Brine</button>
+  <button class="dw-chip" data-stage="st-cold" aria-pressed="false">6 · Cold sink</button>
+  <button class="dw-chip" data-stage="st-heat" aria-pressed="false">7 · Winter mode</button>
+  <button class="dw-chip" data-stage="st-filter" aria-pressed="false">8 · Intake care</button>
+</div>
+<div class="dw-stagecard" id="stage-card" aria-live="polite">
+  <h4>The machines</h4>
+  <p>A modern GPU rack converts essentially 100% of its electrical draw into heat. Air cooling dumps it into the sky at ~25 °C — too cold to be good for anything. Liquid cooling carries it away at 40–60 °C instead, which costs the datacenter less chilling (often none, “free cooling”) and upgrades the heat from trash to fuel.</p>
+  <span class="nums">thermal output ≈ IT load · e.g. a 10 MW hall radiates ~10 MW continuously</span>
+</div>
+</section>
+
+<!-- ══════════════ 3. CALCULATOR ══════════════ -->
+<section aria-labelledby="calc-h">
+<h2 id="calc-h">Run your own numbers</h2>
+<p>
+  Every figure below is computed live from four dials and two published constants
+  (<strong>latent heat 2,383 kJ/kg</strong> at 50 °C from steam tables; the <strong>energy-recovery factor
+  “GOR”</strong>, a standard MD performance metric — lab stacks run 1–6). Nothing here is measured
+  at our scale yet; that is what the desk rig is for.
+</p>
+
+<div class="dw-panel">
+  <div class="dw-dials">
+    <div class="dial">
+      <div class="dial-name">Datacenter IT load</div>
+      <div class="dial-value" id="v-mw">10 MW</div>
+      <input type="range" id="in-mw" min="1" max="200" step="1" value="10" aria-label="Datacenter IT load in megawatts">
+      <div class="dial-note">one mid-size AI cluster today: 10–150 MW</div>
+    </div>
+    <div class="dial">
+      <div class="dial-name">Heat actually captured</div>
+      <div class="dial-value" id="v-cap">60%</div>
+      <input type="range" id="in-cap" min="10" max="95" step="5" value="60" aria-label="Percent of IT load captured as usable heat">
+      <div class="dial-note">losses to pumps, ducting, standby chillers</div>
+    </div>
+    <div class="dial">
+      <div class="dial-name">Coolant supply temperature</div>
+      <div class="dial-value" id="v-t">50 °C</div>
+      <input type="range" id="in-t" min="35" max="70" step="1" value="50" aria-label="Coolant supply temperature in degrees Celsius">
+      <div class="dial-note">higher ΔT ⇒ higher flux, more free-cooling hours</div>
+    </div>
+    <div class="dial">
+      <div class="dial-name">Stack efficiency (GOR)</div>
+      <div class="dial-value" id="v-gor">3.0×</div>
+      <input type="range" id="in-gor" min="1" max="6" step="0.5" value="3" aria-label="Gained output ratio">
+      <div class="dial-note">1 = no heat recovery · well-designed lab stacks: 3–6</div>
+    </div>
+  </div>
+
+  <div class="dw-readout">
+    <div class="dw-stat"><div class="v" id="o-therm">6.0 MW</div><div class="l">usable thermal power</div></div>
+    <div class="dw-stat"><div class="v" id="o-lpd">652,700 L</div><div class="l">fresh water per day</div></div>
+    <div class="dw-stat"><div class="v" id="o-people">13,054</div><div class="l">people at WHO 50 L/day basic need</div></div>
+    <div class="dw-stat"><div class="v" id="o-pools">0.26</div><div class="l">olympic pools per day</div></div>
+  </div>
+
+  <div class="verdict" id="calc-verdict" style="margin-top:18px"></div>
+
+  <div class="dw-formula" id="formula-box">
+    <b>litres/day</b> = P<sub>IT</sub> × capture × 86,400 s × GOR ÷ 2,383,000 J/kg<br>
+    <b>specific energy</b> = 2,383 kJ/kg ÷ GOR = <span id="f-spe">0.221 kWh/L</span>
+    (compare reverse osmosis ≈ 0.003–0.005 kWh/L of pure electricity — see limits)<br>
+    <b>per megawatt of compute</b> = <span id="f-permw">65,270 L/day</span> at current dials
+  </div>
+</div>
+
+<h3 style="margin-top:34px">And if the whole sector did this?</h3>
+<p>
+  The world’s datacenters drew roughly <strong>415 TWh in 2024</strong> — an average continuous draw near
+  47 GW, essentially all leaving as heat. Same arithmetic, planetary scale (uses your capture and GOR dials):
+</p>
+<div class="dw-readout">
+  <div class="dw-stat"><div class="v" id="o-glpd">3.09 B L</div><div class="l">billion litres / day, whole sector</div></div>
+  <div class="dw-stat"><div class="v" id="o-gdrink">12.6%</div><div class="l">of humanity’s direct drinking need (~24.6 B L/day)</div></div>
+  <div class="dw-stat"><div class="v" id="o-gbasic">0.75%</div><div class="l">of WHO 50 L/person/day for all 8.2 B of us</div></div>
+</div>
+<p class="small" style="margin-top:10px">
+  Read that honestly: even perfect deployment covers a meaningful slice of <em>drinking</em> water —
+  humanity’s total water withdrawal is ~4,000× larger — but a slice of drinking water is exactly the slice
+  that is hardest to get where it matters. And it arrives attached to a business case (cooling), not charity.
+  Source: <a href="https://www.iea.org/reports/energy-and-ai">IEA (2025), <i>Energy and AI</i></a>;
+  population divisor UN WPP 2024; WHO minimum from Howard &amp; Bartram (2003).
+</p>
+</section>
+
+<!-- ══════════════ 4. MICRO RIG ══════════════ -->
+<section aria-labelledby="micro-h">
+<h2 id="micro-h">The desk rig — prove it for ~$200 before believing anything</h2>
+<p>
+  The full-scale page you are reading is <em>modeled</em>. This rig replaces its central assumption
+  (litres of water per kilowatt-hour of 50 °C heat) with <strong>our own measurement</strong>.
+  It stands a mini PC in for the datacenter: same physics, same membrane, one ten-thousandth the stakes.
+</p>
+
+<figure class="dw-diagram">
+  <div class="dw-panel dw-grid-bg" style="padding:10px">
+    <svg viewBox="0 0 980 430" role="img" aria-label="Desktop rig: mini PC with CPU waterblock pumps warm coolant into the hot half of a membrane cell; an ice-water bath chills the cold half; vapor crosses the membrane and condensed distillate drips into a beaker on a scale; four temperature sensors log everything">
+      <!-- MINI PC -->
+      <g class="node hot">
+        <rect class="body" x="24" y="120" width="200" height="180" rx="10"/>
+        <rect x="44" y="145" width="70" height="46" rx="5" fill="#13151a" stroke="#a06a45"/>
+        <text class="sub" x="79" y="172" text-anchor="middle" font-size="10">CPU + block</text>
+        <rect x="132" y="145" width="66" height="46" rx="5" fill="#13151a" stroke="#2b3140"/>
+        <text class="sub" x="165" y="168" text-anchor="middle" font-size="9">pump</text>
+        <text class="sub" x="165" y="181" text-anchor="middle" font-size="9">+reservoir</text>
+        <text class="lbl" x="124" y="230" text-anchor="middle" font-size="14">MINI PC</text>
+        <text class="sub" x="124" y="248" text-anchor="middle" font-size="11">stress test = the “datacenter”</text>
+        <text class="sub" x="124" y="262" text-anchor="middle" font-size="10.5">wall meter reads true watts</text>
+      </g>
+      <!-- MD CELL -->
+      <g class="node clean">
+        <rect x="380" y="110" width="120" height="200" rx="8" fill="rgba(248,197,116,.10)" stroke="#a06a45"/>
+        <rect x="500" y="110" width="120" height="200" rx="8" fill="rgba(92,214,239,.10)" stroke="#2f7f96"/>
+        <line x1="500" y1="115" x2="500" y2="305" stroke="#f0f3f7" stroke-width="2" stroke-dasharray="5 5"/>
+        <text class="lbl" x="440" y="215" text-anchor="middle" font-size="12" fill="#f8c574">hot feed</text>
+        <text class="sub" x="440" y="232" text-anchor="middle" font-size="10">salt water, 45–55 °C</text>
+        <text class="lbl" x="560" y="215" text-anchor="middle" font-size="12" fill="#5cd6ef">cold wall</text>
+        <text class="sub" x="560" y="232" text-anchor="middle" font-size="10">ice water, ~5–15 °C</text>
+        <text class="sub" x="500" y="330" text-anchor="middle" font-size="11">PTFE membrane 0.22 µm · 200–400 cm²</text>
+      </g>
+      <!-- ICE BATH -->
+      <g class="node">
+        <rect class="body" x="720" y="230" width="150" height="110" rx="10"/>
+        <path d="M732 268 h126 v58 a8 8 0 0 1 -8 8 h-110 a8 8 0 0 1 -8 -8 z" fill="rgba(74,157,184,.30)" stroke="#4a9db8"/>
+        <g stroke="#cfe9f2" stroke-width="2" opacity=".9">
+          <path d="M752 258 l6 -10 m-3 0 l6 2 m-9 8 l10 2"/>
+          <path d="M812 256 l6 -10 m-3 0 l6 2 m-9 8 l10 2"/>
+        </g>
+        <text class="lbl" x="795" y="252" text-anchor="middle" font-size="13">ICE-WATER BATH</text>
+        <text class="sub" x="795" y="286" text-anchor="middle" font-size="10.5">the “ocean”, replaced as needed</text>
+      </g>
+      <!-- BEAKER ON SCALE -->
+      <g class="node clean">
+        <path d="M760 60 h90 v54 a45 22 0 0 1 -90 0 z" fill="rgba(92,214,239,.22)" stroke="#5cd6ef"/>
+        <ellipse cx="805" cy="60" rx="45" ry="8" fill="none" stroke="#5cd6ef"/>
+        <rect x="750" y="122" width="110" height="26" rx="5" fill="#13151a" stroke="#2b3140"/>
+        <text class="sub" x="805" y="139" text-anchor="middle" font-size="10">scale logs grams vs time</text>
+        <text class="lbl" x="805" y="176" text-anchor="middle" font-size="13">DISTILLATE</text>
+      </g>
+      <!-- drip -->
+      <g class="flow" stroke="#5cd6ef" stroke-width="3" fill="none">
+        <line x1="560" y1="312" x2="560" y2="352" opacity=".9"/>
+        <path d="M560 380 C 620 400, 700 120, 780 62" stroke-dasharray="none" stroke-width="0" />
+      </g>
+      <!-- PIPES -->
+      <path class="pipe pipe-hot flow" d="M224 175 C 290 175, 320 165, 378 160"/>
+      <text class="dw-temp" x="252" y="162">~50 °C</text>
+      <path class="pipe pipe-cold flow" d="M378 260 C 300 262, 280 275, 226 272"/>
+      <text class="dw-temp cooltxt" x="240" y="296">cooled back</text>
+      <path class="pipe pipe-cold flow" d="M718 300 C 660 300, 650 290, 622 280"/>
+      <path class="pipe pipe-cold flow" d="M622 150 C 660 142, 680 138, 718 252" opacity=".55"/>
+      <!-- FEED RESERVOIR -->
+      <g class="node">
+        <rect class="body" x="300" y="330" width="120" height="64" rx="10"/>
+        <path d="M312 356 h96 v26 a8 8 0 0 1 -8 8 h-80 a8 8 0 0 1 -8 -8 z" fill="rgba(248,197,116,.25)" stroke="#a06a45"/>
+        <text class="sub" x="360" y="348" text-anchor="middle" font-size="10.5">feed reservoir · 35 g/L salt</text>
+      </g>
+      <path class="pipe pipe-warm flow" d="M360 328 C 380 310, 390 300, 400 296"/>
+      <!-- SENSORS -->
+      <g font-family="ui-monospace,Menlo,monospace" font-size="10.5" fill="#f8c574">
+        <circle cx="240" cy="175" r="5" fill="#f8c574"/><text x="234" y="188">T1</text>
+        <circle cx="252" cy="272" r="5" fill="#4a9db8"/><text x="246" y="290" fill="#4a9db8">T2</text>
+        <circle cx="404" cy="150" r="5" fill="#f8c574"/><text x="396" y="142">T3</text>
+        <circle cx="640" cy="146" r="5" fill="#4a9db8"/><text x="632" y="138" fill="#4a9db8">T4</text>
+      </g>
+      <text class="sub" x="490" y="412" text-anchor="middle" font-size="12">ESP32 logs T1–T4 every second · scale + stopwatch give mass flow · bucket-and-stopwatch gives loop flow</text>
+    </svg>
+  </div>
+</figure>
+
+<table class="dw-bom" aria-label="Bill of materials for the desktop membrane distillation rig">
+  <thead><tr><th>#</th><th>Part</th><th>Spec that matters</th><th>Est. USD</th></tr></thead>
+  <tbody>
+    <tr><td>①</td><td>Mini PC (or any spare PC)</td><td>runs a stress test; wall-meter reads its true watts — this is the measured heat budget</td><td class="cost">$0–150</td></tr>
+    <tr><td>②</td><td>CPU water block + 12 V pump/res combo</td><td>standard PC liquid-cooling parts; any used AM4/LGA block works</td><td class="cost">$40–65</td></tr>
+    <tr><td>③</td><td>PVDF/PTFE hydrophobic membrane</td><td>pore 0.22 µm, hydrophobic contact angle &gt;90°; 47 mm lab discs ×25 or a cut sheet ≥200 cm²</td><td class="cost">$40–90</td></tr>
+    <tr><td>④</td><td>Two-chamber acrylic cell</td><td>laser-cut or hand-made; silicone gaskets; chambers clamp membrane between them</td><td class="cost">$15–30</td></tr>
+    <tr><td>⑤</td><td>Ice-water bath + small pump</td><td>chills the permeate-side wall; the stand-in for sea/night air</td><td class="cost">$15–25</td></tr>
+    <tr><td>⑥</td><td>4× DS18B20 sensors + ESP32</td><td>T1 coolant out · T2 coolant return · T3 feed · T4 cold wall; 1 Hz CSV to serial</td><td class="cost">$12–18</td></tr>
+    <tr><td>⑦</td><td>Kitchen scale (0.1 g) + TDS meter</td><td>distillate mass vs time = flux; TDS in/out = rejection</td><td class="cost">$25–30</td></tr>
+    <tr><td>⑧</td><td>Tubing, fittings, epoxy, hose clamps</td><td>saline-wetted parts plastic/epoxy only — hot saltwater eats metals</td><td class="cost">$20–30</td></tr>
+    <tr class="total"><td></td><td>Total, new</td><td>roughly half if any old gaming PC parts are in a drawer</td><td class="cost">≈$170–440</td></tr>
+  </tbody>
+</table>
+
+<h3 style="margin-top:30px">Test protocol — and the pass gate</h3>
+<div class="dw-two-col">
+  <div>
+    <ol style="color:var(--fg-2);font-size:15px;line-height:1.7;padding-left:20px">
+      <li><strong>Control run first:</strong> aquarium heater as heat source instead of the PC. Separates “MD works” from “PC heat works”.</li>
+      <li><strong>Salt run:</strong> feed at 35 g/L NaCl (seawater). Log scale mass every minute; TDS of feed and distillate hourly.</li>
+      <li><strong>PC run:</strong> swap in the mini-PC loop. Wall meter gives true input watts; T1−T2 and loop flow give recovered watts.</li>
+      <li><strong>24 h soak:</strong> wetting failures show up as a sudden TDS jump in the distillate — that’s the killer mode, so watch for it.</li>
+      <li><strong>Compute:</strong> flux (L/m²·h), rejection %, GOR = (kg distillate × 2,383 kJ) ÷ recovered kJ.</li>
+    </ol>
+  </div>
+  <div>
+    <div class="card tinted-warm" style="padding:16px 18px">
+      <h4 style="margin-top:0">Pass = all four</h4>
+      <ul style="color:var(--fg-2);font-size:15px;line-height:1.7;padding-left:18px;margin:6px 0 0">
+        <li>salt rejection &gt; 99% sustained (distillate &lt; 350 ppm from 35,000 ppm)</li>
+        <li>stable flux ≥ 1 L/m²·h at ≤ 55 °C feed</li>
+        <li>GOR ≥ 0.4 measured, not assumed</li>
+        <li>no wetting event across 24 h</li>
+      </ul>
+      <p class="src" style="margin-top:12px">Whatever GOR comes out goes straight into the calculator above as the measured preset — the model then stops being a model.</p>
+    </div>
+  </div>
+</div>
+
+<div class="disclaim" style="margin-top:22px">
+  <p><strong>Do not drink the early batches.</strong> A TDS meter proves salt left, not that water is potable — microbes need sterilization, and MD partially passes volatile organics (solvents, some fuels): superb for seawater and brackish groundwater, unsafe next to industry without lab testing. Re-mineralize before anyone sips anything, ever. Membrane must stay dry-sided; one wetting event ends rejection instantly.</p>
+</div>
+</section>
+
+<!-- ══════════════ 5. LIMITS ══════════════ -->
+<section aria-labelledby="limits-h">
+<h2 id="limits-h">What would kill this — the steelman</h2>
+<p>
+  The main thesis of this site survives on taking the strongest objection seriously. Here it is, unedited:
+</p>
+<details class="dw-limit" open>
+  <summary>Reverse osmosis is ~50× more energy-efficient. Why bother?</summary>
+  <p>True and decisive — where grid electricity is cheap and reliable. RO needs ~3–5 kWh of <em>electricity</em> per m³; MD needs ~200–600 kWh of <em>low-grade heat</em> per m³, but heat that would otherwise warm a river has zero opportunity cost. MD only wins where three conditions coincide: waste heat exists anyway (it does, inside every datacenter), water is scarce or expensive, and the heat would otherwise be thrown away. That intersection is real — Gulf coasts, arid coastlines with new AI buildouts — but it is a niche strategy, not a replacement for RO.</p>
+</details>
+<details class="dw-limit">
+  <summary>District heating often pays more for the same heat.</summary>
+  <p>In Helsinki or Stockholm, a megawatt-hour of heat sold to buildings earns cash and displaces fossil boilers — usually a better deal than making water. But district heating only pencils in dense cold cities. In hot, dry, coastal regions — exactly where water stress bites and heating demand is nil — water is the highest-value use of the heat. The geography sorts itself.</p>
+</details>
+<details class="dw-limit">
+  <summary>Fouling, scaling, and wetting are brutal with real seawater.</summary>
+  <p>Warm saline surfaces scale fast (carbonates drop out at elevated temperature), biofilms grow, and a single surfactant event wets the membrane and destroys rejection until it is dried and restarted. Pretreatment adds cost and complexity the tidy diagram hides. Lab reviews call this the central engineering problem of MD; the desk rig’s 24-hour soak test is a miniature rehearsal of it.</p>
+</details>
+<details class="dw-limit">
+  <summary>Nobody at the datacenter gets paid for making water.</summary>
+  <p>The operator optimizes cooling cost, not community water output. Without a water utility partner, a water credit, or a heat-purchase contract, the water side stays a slide in a deck. This is a distribution problem — the site’s home turf — and it is political-economic, not thermodynamic.</p>
+</details>
+<details class="dw-limit">
+  <summary>All the numbers on this page are modeled.</summary>
+  <p>Yes — flagged throughout. Latent heat is a physical constant; fluxes and GOR ranges come from peer-reviewed lab literature, not field deployments at datacenter scale. The honest sequence is: desk rig measures GOR → a single-rack pilot measures integration cost → only then does any regional number deserve belief. Until then this page is arithmetic, not evidence.</p>
+</details>
+</section>
+
+<!-- ══════════════ SOURCES ══════════════ -->
+<section aria-labelledby="src-h">
+<h2 id="src-h">Sources</h2>
+<ul style="color:var(--fg-2);font-size:15px;line-height:1.9">
+  <li>NIST Chemistry WebBook — saturation properties of water (h<sub>fg</sub> = 2,383 kJ/kg at 50 °C). <a href="https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&amp;Mask=4#Thermo-Phase">webbook.nist.gov</a></li>
+  <li>Alkhudhiri, A., Darwish, N., Hilal, N. (2012). “Membrane distillation: A comprehensive review.” <i>Desalination</i> 287:2–18. <a href="https://doi.org/10.1016/j.desal.2011.11.033">doi:10.1016/j.desal.2011.11.033</a></li>
+  <li>International Energy Agency (2025). <i>Energy and AI</i> — datacentre electricity consumption ≈415 TWh in 2024. <a href="https://www.iea.org/reports/energy-and-ai">iea.org/reports/energy-and-ai</a></li>
+  <li>Howard, G. &amp; Bartram, J. (2003). <i>Domestic water quantity, service level and health.</i> World Health Organization (50 L/person/day as the basic-access level).</li>
+  <li>United Nations (2024). <i>World Population Prospects 2024</i> — 8.2 billion mid-2024 divisor.</li>
+  <li>Google Data Centers — cooling with reclaimed (treated wastewater) sources at Douglas County, GA. <a href="https://www.google.com/about/datacenters/sustainability/">google.com/about/datacenters/sustainability</a></li>
+  <li>Stockholm Data Parks — datacentre heat recovery feeding city district heating. <a href="https://stockholmdataparks.com/">stockholmdataparks.com</a></li>
+  <li>Qarnot Computing — datacentre waste heat warming social housing, France. <a href="https://qarnot.com/en/">qarnot.com</a></li>
+</ul>
+</section>
+
+</main>
+
+<footer>
+  <p class="b2b-attrib">
+    Part of <a href="index.html">Abundance</a> — a primary-sourced arithmetic of what humanity already
+    produces. Public domain (<a href="LICENSE">CC0</a>). Made by
+    <a href="https://broke2builtai.com">Broke to Built</a>.
+  </p>
+</footer>
+
+</div>
+
+<script>
+(() => {
+  'use strict';
+
+  /* ── stage cards ────────────────────────────── */
+  const STAGES = {
+    'st-dc': {
+      t: 'The machines',
+      p: 'A modern GPU rack converts essentially 100% of its electrical draw into heat. Air cooling dumps it into the sky at ~25 °C — too cold to be good for anything. Liquid cooling carries it away at 40–60 °C instead, which costs the datacenter less chilling (often none, “free cooling”) and upgrades the heat from trash to fuel.',
+      n: 'thermal output ≈ IT load · e.g. a 10 MW hall radiates ~10 MW continuously'
+    },
+    'st-hx': {
+      t: 'Plate heat exchanger',
+      p: 'A stainless plate stack: coolant on one side, filtered seawater on the other, thin metal walls between. Heat crosses; fluids never do. The coolant leaves ~15–20 °C cooler and returns to the racks ready to absorb more.',
+      n: 'counter-flow plate HX effectiveness ≈ 80–90% · off-the-shelf component'
+    },
+    'st-md': {
+      t: 'Membrane distillation stack',
+      p: 'Alternating channels of 50 °C saline feed and 22 °C permeate, separated by hydrophobic 0.2 µm membranes. Only vapor crosses — and vapor carries no salts. Counter-current routing lets outgoing warm streams pre-heat incoming ones, which is what pushes efficiency (GOR) above 1.',
+      n: 'lab flux 1–30 L/m²·h depending on ΔT · GOR 1–6 · Alkhudhiri et al. 2012'
+    },
+    'st-perm': {
+      t: 'Fresh water out',
+      p: 'Distillate condenses on the cold wall at <10 ppm TDS — cleaner than most municipal supplies. A pinch of minerals is added back for taste and pipes, then it goes to cistern, irrigation, or drinking.',
+      n: 'WHO basic access: 50 L/person/day · this tank is why the rest of the diagram exists'
+    },
+    'st-brine': {
+      t: 'Brine',
+      p: 'What remains after evaporation is saltier than the source — the honest cost of distillation. Managed properly (diffusers, blending, solar ponds) it is routine; dumped carelessly it harms the local seabed. Any real project budgets for this from day one.',
+      n: 'at 50% recovery, brine ≈ 70 g/L · same disposal problem every desalination plant already solves'
+    },
+    'st-cold': {
+      t: 'Cold sink',
+      p: 'Distillation is a heat-downhill process: it needs warmth AND cold. Sea, lake, or even night air provides the cold side free. Co-siting with a cold sink is as important as co-siting with the heat source — geography is a component.',
+      n: 'permeate side held ~20–30 °C below feed · drives the vapor-pressure difference'
+    },
+    'st-heat': {
+      t: 'Winter mode: district heat',
+      p: 'In a cold city the same coolant loop can warm buildings instead — Stockholm’s datacenter heat already warms thousands of flats. Water production and heat delivery can share the loop seasonally: heat to radiators in January, heat to membranes in July.',
+      n: 'precedent: Stockholm Data Parks · Qarnot (France) · the choice between water and heat is economic, not technical'
+    },
+    'st-filter': {
+      t: 'Intake care',
+      p: 'A 5–50 µm prefilter catches grit and biota before the feed enters heated channels — scaling and fouling start here, so humility lives here. Some plants skip the ocean entirely and run on treated wastewater, as Google’s Douglas County site has done for years.',
+      n: 'pretreatment cost is the quiet variable that decides real-world economics'
+    }
+  };
+  const card = document.getElementById('stage-card');
+  const chips = document.querySelectorAll('.dw-chip');
+  function setStage(id){
+    const s = STAGES[id]; if (!s) return;
+    card.querySelector('h4').textContent = s.t;
+    card.querySelector('p').textContent = s.p;
+    card.querySelector('.nums').textContent = s.n;
+    chips.forEach(c => c.setAttribute('aria-pressed', String(c.dataset.stage === id)));
+  }
+  chips.forEach(c => c.addEventListener('click', () => setStage(c.dataset.stage)));
+  document.querySelectorAll('.node').forEach(n => {
+    if (STAGES[n.id]) {
+      n.addEventListener('click', () => setStage(n.id));
+      n.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setStage(n.id); } });
+    }
+  });
+
+  /* ── calculator ─────────────────────────────── */
+  const HFG = 2383e3;           // J/kg latent heat @ 50 °C (NIST)
+  const SEC_PER_DAY = 86400;
+  const WHO_LPD = 50;           // L/person/day basic access
+  const POP = 8.2e9;            // UN WPP 2024
+  const DC_TWH = 415;           // IEA 2024 datacentre electricity, TWh/yr
+  const DRINK_BLD = POP * 3 / 1e9;   // billion L/day, ~3 L drinking per person
+
+  const el = id => document.getElementById(id);
+  const fmt = (n, d=0) => n.toLocaleString('en-US', {maximumFractionDigits:d});
+
+  function recalc(){
+    const mw   = +el('in-mw').value;
+    const cap  = +el('in-cap').value / 100;
+    const temp = +el('in-t').value;
+    const gor  = +el('in-gor').value;
+
+    el('v-mw').textContent  = mw + ' MW';
+    el('v-cap').textContent = Math.round(cap*100) + '%';
+    el('v-t').textContent   = temp + ' °C';
+    el('v-gor').textContent = gor.toFixed(1) + '×';
+
+    const thermalKW  = mw * 1e6 * cap / 1000;
+    const lpDay      = thermalKW * SEC_PER_DAY * gor * 1000 / HFG;
+    const people     = lpDay / WHO_LPD;
+    const pools      = lpDay / 2.5e6;
+    const spe        = HFG / gor / 3.6e6;         // kWh per litre
+    const permw      = 1e6 * SEC_PER_DAY * gor / HFG * cap;
+
+    el('o-therm').textContent = fmt(mw*cap, 1) + ' MW';
+    el('o-lpd').textContent   = fmt(lpDay) + ' L';
+    el('o-people').textContent= fmt(people);
+    el('o-pools').textContent = pools.toFixed(pools < 10 ? 2 : 1);
+    el('f-spe').textContent   = spe.toFixed(3) + ' kWh/L';
+    el('f-permw').textContent = fmt(permw) + ' L/day';
+
+    let verdict;
+    if (people >= 1e6)      verdict = `At these dials one facility supplies the WHO basic water allocation for ${fmt(people/1e6,1)} million people — a mid-sized city’s entire basic need, running on heat it was born throwing away.`;
+    else if (people >= 5e4) verdict = `At these dials one facility covers the WHO basic allocation for ~${fmt(people)} people — a whole town — while its operators merely cool their computers.`;
+    else                    verdict = `At these dials one facility covers ~${fmt(people)} people at the WHO 50 L/day level. Small halls make towns’ worth of water; the arithmetic scales linearly.`;
+    el('calc-verdict').textContent = verdict;
+    el('calc-verdict').className = 'verdict' + (people >= 5e4 ? ' over' : '');
+
+    /* global roll-up */
+    const avgGW   = DC_TWH * 1e9 / 8760 / 1000;          // average GW electric
+    const gLPD    = avgGW * 1e6 * cap / 1000 * SEC_PER_DAY * gor * 1000 / HFG; // L/day
+    const gBLPD   = gLPD / 1e9;
+    el('o-glpd').textContent  = gBLPD.toFixed(2) + ' B L';
+    el('o-gdrink').textContent= (100 * gLPD / (DRINK_BLD*1e9)).toFixed(1) + '%';
+    el('o-gbasic').textContent= (100 * gLPD / (POP * WHO_LPD)).toFixed(2) + '%';
+  }
+  ['in-mw','in-cap','in-t','in-gor'].forEach(id => el(id).addEventListener('input', recalc));
+  recalc();
+})();
+</script>
+</body>
+</html>
