@@ -27,7 +27,7 @@
 <meta property="og:image:alt" content="The world already produces enough. Food 1.4x, water 287x, electricity 3.9x, GDP 13x their respective minimum-need thresholds.">
 <meta property="og:site_name" content="Abundance">
 <meta property="article:published_time" content="2026-05-15T00:00:00Z">
-<meta property="article:modified_time" content="2026-08-13T00:00:00Z">
+<meta property="article:modified_time" content="2026-08-27T00:00:00Z">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
@@ -56,7 +56,7 @@
         "height": 630
       },
       "datePublished": "2026-05-15",
-      "dateModified": "2026-08-13",
+      "dateModified": "2026-08-27",
       "author": { "@type": "Person", "name": "Eli Vargas (lordbasilaiassistant-sudo)" },
       "publisher": {
         "@type": "Organization",
@@ -103,14 +103,14 @@
       "citation": [
         "UN World Population Prospects 2024",
         "IMF World Economic Outlook April 2026",
-        "FAO Food Outlook 2024",
-        "FAO State of Food Security and Nutrition in the World 2025",
-        "IEA Electricity 2024",
-        "WHO Global Health Expenditure Report 2024",
+        "FAO Cereal Supply and Demand Brief 2026",
+        "FAO State of Food Security and Nutrition in the World 2026",
+        "Energy Institute Statistical Review of World Energy 2026",
+        "WHO Global Health Expenditure Database December 2025",
         "World Bank June 2025 Update to Global Poverty Lines",
         "UN-Habitat 2024 / UN DESA",
-        "SIPRI Trends in World Military Expenditure 2024",
-        "UBS Global Wealth Report 2024",
+        "SIPRI Trends in World Military Expenditure 2025",
+        "UBS Global Wealth Report 2026",
         "Banerjee, Faye, Krueger, Niehaus, Suri (2023) Universal Basic Income RCT, Kenya",
         "Jones & Marinescu (2022) American Economic Journal: Economic Policy 14(2):315",
         "Salehi-Isfahani & Mostafavi-Dehzooei (2018) Journal of Development Economics 135:349",
@@ -196,7 +196,7 @@
           "name": "Where would the money actually come from?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A universal $3/day floor for every human costs $8.98 trillion/year, or 7.6% of world GDP. Existing reservoirs from which it could be drawn include: global household wealth $449.9T (UBS 2024), of which $213.8T is held by ~58 million people with net worth above $1M; global military spending $2.887T/year (SIPRI 2025); and an estimated $480-700B/year lost to multinational profit-shifting to tax havens (Zucman, Tørsløv, Wier 2018+). The site's interactive calculator lets readers stress-test their own assumptions."
+            "text": "A universal $3/day floor for every human costs $8.98 trillion/year, or 7.6% of world GDP. Existing reservoirs from which it could be drawn include: $517.7T of personal wealth in UBS's 56-market sample (GWR 2026), of which $250.6T is held by ~58 million people with net worth above $1M; global military spending $2.887T/year (SIPRI 2025); and an estimated $480-700B/year lost to multinational profit-shifting to tax havens (Zucman, Tørsløv, Wier 2018+). The site's interactive calculator lets readers stress-test their own assumptions."
           }
         },
         {
@@ -258,7 +258,7 @@
 
 <header class="masthead">
   <div class="eyebrow">
-    A primary-sourced arithmetic · updated 2026-08-13
+    A primary-sourced arithmetic · updated 2026-08-27
     &nbsp;·&nbsp;
     <a href="lang/es/">Español</a>
     &nbsp;·&nbsp;
@@ -407,7 +407,7 @@
     <div class="stat">
       <div class="label">Daily food supply, global average</div>
       <div class="value accent" id="food-supply">3,006 kcal / person / day</div>
-      <div class="sub">FAOSTAT food balance sheets, 2021 latest revision</div>
+      <div class="sub">FAOSTAT food balance sheets, 2023 (Oct 2025 release)</div>
     </div>
     <div class="stat">
       <div class="label">Adult minimum need (reference)</div>
@@ -518,11 +518,22 @@
       <div class="label">Ratio: supply ÷ Modern Energy Minimum</div>
       <div class="ratio accent" id="energy-ratio-high">3.9<span class="x">×</span></div>
     </div>
+    <div class="stat">
+      <div class="label">People still without electricity, 2024</div>
+      <div class="value danger" id="energy-unserved">655 million</div>
+      <div class="sub">Tracking SDG7 2026 — 89 million gained access in 2024; population growth cut the net decline to 11.5 million.</div>
+    </div>
   </div>
+  <p>
+    Generation already clears the Modern Energy Minimum 3.9 times over, yet
+    <span class="num">655 million</span> people still have no electricity.
+    The shortfall is wires and connections, not kilowatt-hours.
+  </p>
   <p class="src">
     Sources:
     <a href="https://www.energyinst.org/statistical-review">Energy Institute Statistical Review of World Energy 2026</a> ·
     <a href="https://ember-energy.org/latest-insights/global-electricity-review-2026/">Ember Global Electricity Review 2026</a> ·
+    <a href="https://www.irena.org/Publications/2026/Jun/Tracking-SDG-7-The-Energy-Progress-Report-2026">Tracking SDG 7: The Energy Progress Report 2026</a> ·
     <a href="https://www.iea.org/articles/defining-energy-access-2020-methodology">IEA energy access definitions</a> ·
     <a href="https://www.rockefellerfoundation.org/wp-content/uploads/2020/12/Modern-Energy-Minimum-Sept30.pdf">Modern Energy Minimum (2020)</a>
   </p>
@@ -730,11 +741,11 @@
 <div class="card" id="card-clean-cooking">
   <h3>Clean cooking fuel <span class="tag uneven">distribution failure</span></h3>
   <div class="row">
-    <div class="stat"><div class="label">People still cooking with polluting fuels</div><div class="value danger" id="cooking-polluting">2.1 billion</div><div class="sub">WHO (2025), 2021 data</div></div>
-    <div class="stat"><div class="label">Deaths/year from household air pollution</div><div class="value danger" id="cooking-deaths">2.9 million</div><div class="sub">WHO (2025), 2021 data</div></div>
+    <div class="stat"><div class="label">People still cooking with polluting fuels</div><div class="value danger" id="cooking-polluting">2.0 billion</div><div class="sub">Tracking SDG7 2026, 2024 data</div></div>
+    <div class="stat"><div class="label">Deaths/year from household air pollution</div><div class="value danger" id="cooking-deaths">2.9 million</div><div class="sub">WHO, 2021 data (latest death vintage)</div></div>
   </div>
-  <p>Clean cookstoves, LPG and electric cooking are mass-produced, well-understood technologies. Yet about <span class="num">2.1 billion</span> people, roughly a quarter of humanity, still cook over open fires and inefficient stoves burning wood, dung, crop waste, coal or kerosene. The resulting household air pollution killed an estimated <span class="num">2.9 million</span> people in 2021, including over <span class="num">309,000</span> children under five. The shortfall is affordability and supply chains for fuel and stoves, not a missing invention.</p>
-  <p class="src">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health">World Health Organization (2025). Household air pollution fact sheet.</a></p>
+  <p>Clean cookstoves, LPG and electric cooking are mass-produced, well-understood technologies. Yet about <span class="num">2.0 billion</span> people, roughly a quarter of humanity, still cook over open fires and inefficient stoves burning wood, dung, crop waste, coal or kerosene. The resulting household air pollution killed an estimated <span class="num">2.9 million</span> people in 2021, including over <span class="num">309,000</span> children under five. The shortfall is affordability and supply chains for fuel and stoves, not a missing invention.</p>
+  <p class="src">Sources: <a href="https://www.irena.org/Publications/2026/Jun/Tracking-SDG-7-The-Energy-Progress-Report-2026">Tracking SDG 7: The Energy Progress Report 2026</a> · <a href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health">WHO household air pollution fact sheet</a> (deaths, 2021 vintage)</p>
 </div>
 
 <div class="card" id="card-education">
@@ -808,14 +819,16 @@
   <h3>Where the money already is</h3>
   <ul>
     <li>
-      Global household wealth, 2023:
-      <span class="num">$449.9 trillion</span>
-      (<a href="https://www.ubs.com/global/en/media/display-page-ndp/en-20240710-gwr-2024.html">UBS Global Wealth Report 2024</a>).
-      Of that, <span class="num">$213.8T</span> is held by the 58 million
-      people with net worth over $1M — 0.7% of humanity holding 47.5% of the wealth.
-      Cross-confirmed by the <a href="https://wid.world/">World Inequality Lab</a>
+      Personal wealth, 2025 (56-market sample covering &gt;92% of world wealth):
+      <span class="num">$517.7 trillion</span>
+      (<a href="https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf">UBS Global Wealth Report 2026</a>).
+      Of that, <span class="num">$250.6T</span> is held by the 58 million
+      adults with net worth over $1M — 1.5% of the sampled adult population
+      holding 48.4% of the sample's wealth.
+      Cross-confirmed by the <a href="https://wir2026.wid.world/insight/executive-summary/">World Inequality Report 2026</a>
       (Chancel, Piketty, Saez, Zucman): the top 10% of humanity owns roughly
-      <span class="num">75%</span> of all personal wealth, and the
+      <span class="num">75%</span> of all personal wealth, the top 1% controls
+      <span class="num">37%</span>, and the
       top 0.001% — fewer than 60,000 people — owns three times more wealth
       than the entire bottom half of humanity combined.
     </li>
@@ -1293,7 +1306,7 @@
   This widget is a calculator, not a forecast. It shows what the per-capita
   numbers become when you redirect parts of existing flows. Math is the same
   arithmetic used in §3, recomputed live; every input value is a real published
-  figure (UBS 2024, SIPRI 2025, IMF 2026, World Bank 2025).
+  figure (UBS 2026, SIPRI 2025, IMF 2026, World Bank 2025).
 </p>
 
 <div class="dials" id="dials">
@@ -1317,8 +1330,8 @@
     </div>
     <input type="range" id="i-wealth" min="0" max="10" step="0.25" value="2.0">
     <div class="dial-note">
-      Applied to the $213.8T held by ~58M people with net worth &gt;$1M
-      (UBS Global Wealth Report 2024). Capital-flight loss is not modeled —
+      Applied to the $250.6T held by ~58M adults with net worth &gt;$1M
+      (UBS Global Wealth Report 2026, 56-market sample). Capital-flight loss is not modeled —
       see "honest limits" below.
     </div>
   </div>
@@ -1357,7 +1370,7 @@
       </div>
       <div class="stat">
         <div class="label">Annual revenue from selected sources</div>
-        <div class="value" id="r-revenue">$4.56T</div>
+        <div class="value" id="r-revenue">$5.30T</div>
         <div class="sub" id="r-revenue-mix">wealth tax + military redirect</div>
       </div>
     </div>
@@ -1369,8 +1382,8 @@
       </div>
       <div class="stat">
         <div class="label">Net funding gap (positive = shortfall)</div>
-        <div class="value" id="r-gap">$4.41T</div>
-        <div class="sub" id="r-gap-share">3.7% of world GDP</div>
+        <div class="value" id="r-gap">$3.68T</div>
+        <div class="sub" id="r-gap-share">3.1% of world GDP</div>
       </div>
     </div>
     <div class="verdict" id="r-verdict">
@@ -1568,9 +1581,9 @@
     GDP. Reservoirs from which it could be drawn:
   </p>
   <ul>
-    <li>Global household wealth: <span class="num">$449.9T</span> (UBS 2024);
-      <span class="num">$213.8T</span> held by ~58M people with net worth &gt;$1M.
-      A 2% annual tax on this top tier alone yields ~$4.3T.</li>
+    <li>Personal wealth in UBS's 56-market sample: <span class="num">$517.7T</span> (GWR 2026);
+      <span class="num">$250.6T</span> held by ~58M adults with net worth &gt;$1M.
+      A 2% annual tax on this top tier alone yields ~$5.0T.</li>
     <li>Global military spending: <span class="num">$2.887T/year</span>
       (<a href="https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025">SIPRI 2025</a>);
       10% redirection = $289B/year.</li>
@@ -1916,8 +1929,8 @@
   $3/day floor — runs well under <span class="num">$1 trillion</span> a year:
   about one year’s <em>increase</em> in world military spending
   (<a href="https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025">$2.887T in 2025</a>),
-  set against the <a href="https://www.ubs.com/global/en/media/display-page-ndp/en-20240710-gwr-2024.html">$213.8T</a>
-  held by 58 million people. A dollar that is a rounding error on one balance
+  set against the <a href="https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf">$250.6T</a>
+  held by 58 million adults. A dollar that is a rounding error on one balance
   sheet is, somewhere else, medicine or a year of school.
 </p>
 <p>
@@ -2013,7 +2026,7 @@
 const D = {
   pop: 8200000000,
   gdp_usd: 118175000000000,
-  wealth_above_1m_usd: 213800000000000,
+  wealth_above_1m_usd: 250590000000000,
   military_usd: 2887000000000,
   health_usd: 10600000000000,
   cereal_t: 3043000000,

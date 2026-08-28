@@ -60,7 +60,7 @@ INDICATORS = {
 
 # Try several recent years and use the latest available — many indicators
 # have country-specific publication lag.
-YEARS = "2018:2024"
+YEARS = "2018:2025"
 
 
 def _get_json(url: str, attempts: int = 3, timeout: int = 90):
@@ -104,7 +104,7 @@ def fetch_indicator(code: str, country_list: list[str]) -> dict[str, dict]:
 def main():
     out: dict = {
         "$schema": "Per-country primary-source data. Source: World Bank Open Data API. Re-fetched by scripts/build_countries.py.",
-        "fetched_at": "2026-06-15",
+        "fetched_at": "2026-08-27",
         "source": "World Bank Open Data API (api.worldbank.org/v2)",
         "license": "CC-BY-4.0 (World Bank Open Data terms)",
         "indicators": {

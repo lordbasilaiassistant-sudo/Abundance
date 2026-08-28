@@ -18,12 +18,20 @@
     "note": "Nominal, current prices. WEO April 2026 puts the 2025 world aggregate at $118,175.485 billion (2024: $111,598.554B). PPP totals run higher."
   },
   "world_household_wealth_usd": {
-    "value": 449900000000000,
+    "value": 517690000000000,
     "unit": "USD",
-    "year": 2023,
-    "source_name": "UBS Global Wealth Report 2024",
-    "source_url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20240710-gwr-2024.html",
-    "note": "47.5% of this wealth is held by the 58 million people worth >$1M. Still the newest published global aggregate: the Global Wealth Report 2026 (June 2026) reports total personal wealth grew 10.8% in USD terms in 2025 — the fastest in years — but publishes growth rates and per-band pyramid figures only, no updated total. Its other verified facts: the 56 tracked markets hold over 92% of world wealth; the US holds 35.7% of it; the US and Greater China together hold more than half; median wealth fell in most markets even as average wealth rose."
+    "year": 2025,
+    "source_name": "UBS Global Wealth Report 2026",
+    "source_url": "https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf",
+    "note": "Sum of the four published 2025 wealth-pyramid bands for UBS's 56-market sample: >$1m $250.59T + $100k–$1m $200.72T + $10k–$100k $63.16T + <$10k $3.22T = $517.69T. UBS estimates the sample covers over 92% of world personal wealth and treats these 56 markets as 'global wealth' in this edition. Methodology was updated, so this is not comparable to GWR 2024's $449.9T world-aggregate (2023). Total personal wealth in the sample grew 10.8% in USD in 2025. Median wealth fell in most markets even as average wealth rose. Press release: https://www.ubs.com/global/en/media/display-page-ndp/en-20260630-gwr-2026.html"
+  },
+  "wealth_above_1m_usd": {
+    "value": 250590000000000,
+    "unit": "USD",
+    "year": 2025,
+    "source_name": "UBS Global Wealth Report 2026",
+    "source_url": "https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf",
+    "note": "58 million adults (1.5% of the sampled adult population) with net worth above $1 million hold $250.59 trillion — 48.4% of the 56-market sample. Same millionaire headcount as GWR 2024; the dollar stock rose from the prior published $213.8T."
   },
   "global_military_spending_usd": {
     "value": 2887000000000,
@@ -244,12 +252,20 @@
     "note": "74% had safely managed drinking water in 2024, up from 68% in 2015; 2.1 billion lacked it, including 106 million who still drink untreated surface water. This is a service-access measure and is distinct from the renewable-freshwater resource volume entry, which shows the planet has ~5,000+ m3 of renewable freshwater per person per year."
   },
   "clean_cooking_polluting_fuel_people":   {
-    "value": 2100000000,
+    "value": 2000000000,
     "unit": "people cooking with polluting fuels and open fires",
-    "year": 2021,
-    "source_name": "WHO, Household air pollution fact sheet (updated 16 December 2025)",
-    "source_url": "https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health",
-    "note": "Around 2.1 billion people (about a quarter of humanity) still cook with kerosene, biomass (wood, dung, crop waste) or coal on open fires or inefficient stoves. The resulting household air pollution caused an estimated 2.9 million deaths in 2021, including over 309,000 children under 5. Clean stoves and LPG/electric cooking are mature, manufactured at scale."
+    "year": 2024,
+    "source_name": "IEA, IRENA, UNSD, World Bank, WHO, Tracking SDG 7: The Energy Progress Report 2026",
+    "source_url": "https://www.irena.org/Publications/2026/Jun/Tracking-SDG-7-The-Energy-Progress-Report-2026",
+    "note": "Around 2.0 billion people (uncertainty 1.8–2.4B) — about a quarter of humanity — still cook with polluting fuels and technologies in 2024. 75% (71–78) of the world now relies primarily on clean cooking. Household air pollution from these fuels caused an estimated 2.9 million deaths in 2021 (WHO; still the latest published death vintage), including over 309,000 children under 5. Clean stoves and LPG/electric cooking are mature, manufactured at scale."
+  },
+  "electricity_without_access_people": {
+    "value": 655000000,
+    "unit": "people without electricity access",
+    "year": 2024,
+    "source_name": "IEA, IRENA, UNSD, World Bank, WHO, Tracking SDG 7: The Energy Progress Report 2026",
+    "source_url": "https://www.irena.org/Publications/2026/Jun/Tracking-SDG-7-The-Energy-Progress-Report-2026",
+    "note": "655 million people still lacked electricity in 2024. 89 million gained access that year, but population growth meant the number without electricity fell by only 11.5 million. The remaining gap is concentrated in Africa."
   },
   "out_of_school_children":   {
     "value": 273000000,

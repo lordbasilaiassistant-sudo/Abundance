@@ -10,7 +10,7 @@ Each file's top-level `$schema` field is a one-line description of what's in it.
 
 | File | What's in it | Updated by |
 |---|---|---|
-| [`essentials.json`](essentials.json) | World population, GDP, food kcal supply, freshwater, electricity, sanitation, drinking water, clean cooking, education, maternal mortality, essential medicines, etc. ~33 entries, each with primary-source citation. | Hand-edited; re-verify annually. |
+| [`essentials.json`](essentials.json) | World population, GDP, food kcal supply, freshwater, electricity, sanitation, drinking water, clean cooking, education, maternal mortality, essential medicines, household wealth, etc. Each entry has a primary-source citation. | Hand-edited; re-verify annually. |
 | [`pilots.json`](pilots.json) | Twelve cash-transfer evaluations: GiveDirectly Kenya RCT, Alaska Permanent Fund, Iran 2011, Stockton SEED, Brazil Bolsa Família, Cherokee casino dividend, Finland Basic Income Experiment, Baby's First Years (US), Manitoba Mincome, Mexico PROGRESA, Malawi & Zambia, SEWA/UNICEF India. Each has design + key findings + primary-source URL. | Hand-edited; add new programs as evidence accumulates. |
 | [`case-studies.json`](case-studies.json) | Eleven country-scale precedents for the Omelas pivot: Costa Rica, Norway, Iceland, Bhutan, Mauritius, Botswana, South Korea, Finland (Housing First), Portugal, Kerala, Uruguay. | Hand-edited. |
 | [`countries.json`](countries.json) | Auto-generated — 91 countries × 10 World Bank indicators. Don't hand-edit; re-run `scripts/build_countries.py` instead. | `scripts/build_countries.py` |

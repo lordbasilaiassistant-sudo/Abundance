@@ -66,7 +66,10 @@ introduces <1% error in any per-capita figure.
   ~635 EJ of primary energy in 2024; only a fraction reaches end users as
   electricity. The site focuses on electricity because the access framework
   exists there and because electrification of heat and transport is the
-  forward trajectory.
+  forward trajectory. Aggregate generation already clears the Modern Energy
+  Minimum 3.9× over, yet [Tracking SDG 7 2026](https://www.irena.org/Publications/2026/Jun/Tracking-SDG-7-The-Energy-Progress-Report-2026)
+  still counts **655 million people without electricity** in 2024 — a
+  connection problem, not a generation problem.
 
 ### Output (GDP)
 
@@ -122,10 +125,12 @@ it with citation.
 - **GDP critiques.** GDP is a flawed measure — it counts oil spills and divorce
   lawyers as growth. But it is the measure the IMF publishes. Using it does
   not endorse it.
-- **Wealth confiscation.** The site notes that $213.8T is held by 58M people
+- **Wealth confiscation.** The site notes that $250.6T is held by 58M adults
   to make a factual point about distribution. It does not claim that wealth
   should be — or could be — directly redistributed, which is a separate
-  question with separate technical answers.
+  question with separate technical answers. The $250.6T figure is the
+  published >$1M band of UBS's 56-market sample (GWR 2026), covering an
+  estimated 92%+ of world personal wealth — not a full-world extrapolation.
 - **National-level data.** Per-country breakdowns are important but out of
   scope for v1. They exist in every cited source if you want to drill in.
 

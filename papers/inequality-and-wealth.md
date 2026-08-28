@@ -4,18 +4,25 @@ Primary-source notes on how unequally the world's wealth and income are
 actually distributed, the mechanism economists propose for it, the proposed
 remedy, and the contested claim that inequality itself harms social outcomes.
 
-## The measured distribution (World Inequality Report 2022)
+## The measured distribution (World Inequality Report 2026)
 
-**Chancel, L., Piketty, T., Saez, E. & Zucman, G., eds. (2022). *World
-Inequality Report 2022.* World Inequality Lab / Harvard University Press.** The
-report assembles the *Distributional National Accounts* — survey data
+**Chancel, L., Piketty, T., Moshrif, R., Zucman, G. et al. (2026). *World
+Inequality Report 2026.* World Inequality Lab.** [Executive
+summary](https://wir2026.wid.world/insight/executive-summary/) · [global
+inequality chapter](https://wir2026.wid.world/insight/global-economic-inequity/).
+The report assembles the *Distributional National Accounts* — survey data
 reconciled with tax records and national accounts — to estimate the global
-distribution. Headline figures for 2021:
+distribution. Headline figures:
 
-- The global **top 10% receives 52% of all income**; the **bottom 50%
-  receives 8.5%**.
-- The global **top 10% owns 76% of all household wealth**; the **bottom 50%
-  owns 2%**.
+- The global **top 10% of income-earners earn more than the remaining 90%**;
+  the **bottom 50% captures less than 10%** of global income.
+- The global **top 10% owns three-quarters of all household wealth**; the
+  **bottom 50% owns 2%**.
+- The **top 1% alone controls 37%** of global wealth — more than eighteen
+  times the wealth of the entire bottom half.
+- The **top 0.001%** (about 56,000 adults) own three times more wealth than
+  the bottom half of humanity combined; their share rose from almost 4% in
+  1995 to over 6% in 2025.
 
 Wealth is roughly an order of magnitude more concentrated than income, because
 wealth compounds and is inherited while income is partly tied to current
@@ -23,6 +30,10 @@ labour. These are *estimates* built on imperfect data — especially weak in
 countries with poor tax-record coverage — but they are the most
 methodologically transparent global figures available, with sources and code
 published openly via the World Inequality Database.
+
+The previous edition (**WIR 2022**, 2021 data) put the top 10% income share at
+52%, the bottom 50% income share at 8.5%, and the top 10% wealth share at 76%.
+The direction is unchanged; the 2026 vintage is the one this site now cites.
 
 ## The proposed mechanism (Piketty)
 
@@ -68,7 +79,7 @@ outcomes better than the *level*.
 
 ## What needs a caveat
 
-**1. The inequality figures are model-based estimates.** The WIR2022 numbers
+**1. The inequality figures are model-based estimates.** The WIR 2026 numbers
 combine surveys, tax data, and national accounts via imputation; coverage and
 quality vary sharply across countries, and the very top of the distribution is
 the hardest to observe (offshore wealth, private valuations). The direction —
