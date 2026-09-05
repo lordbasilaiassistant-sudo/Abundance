@@ -93,6 +93,7 @@
   }
   footer a { color: var(--fg-2); }
 </style>
+<link rel="stylesheet" href="../styles/editorial.css">
 </head>
 <body>
 <div class="wrap">
@@ -109,11 +110,11 @@
 
   <div class="dial">
     <div class="dial-label">
-      <span class="dial-name">Income floor — daily, per person, every human</span>
+      <span class="dial-name">Illustrative cash transfer — current USD per person per day</span>
       <span class="dial-value"><span id="d-floor">$3.00</span> / day</span>
     </div>
-    <input type="range" id="i-floor" min="0" max="30" step="0.25" value="3.00">
-    <div class="dial-note">$3 = World Bank extreme-poverty line. $15 ≈ "no developed-country household lives in poverty."</div>
+    <input type="range" id="i-floor" aria-label="Daily cash transfer in current US dollars" min="0" max="30" step="0.25" value="3.00">
+    <div class="dial-note">Amounts are hypothetical current US dollars, not poverty thresholds. The World Bank's separate 3.00/day line uses 2021 PPP international dollars. This calculator does not estimate poverty exits or local purchasing power.</div>
   </div>
 
   <div class="dial">
@@ -121,7 +122,7 @@
       <span class="dial-name">Annual wealth tax above $1M net worth</span>
       <span class="dial-value"><span id="d-wealth">2.0</span> %</span>
     </div>
-    <input type="range" id="i-wealth" min="0" max="10" step="0.25" value="2.0">
+    <input type="range" id="i-wealth" aria-label="Annual wealth tax percentage" min="0" max="10" step="0.25" value="2.0">
     <div class="dial-note">Applied to $250.6T held by ~58M adults (UBS GWR 2026). Flight not modeled.</div>
   </div>
 
@@ -130,7 +131,7 @@
       <span class="dial-name">Share of global military spending redirected</span>
       <span class="dial-value"><span id="d-mil">10</span> %</span>
     </div>
-    <input type="range" id="i-mil" min="0" max="100" step="5" value="10">
+    <input type="range" id="i-mil" aria-label="Military spending redirected percentage" min="0" max="100" step="5" value="10">
     <div class="dial-note">Applied to $2.887T (SIPRI 2025).</div>
   </div>
 
@@ -139,7 +140,7 @@
       <span class="dial-name">Share of food waste/loss recovered</span>
       <span class="dial-value"><span id="d-food">20</span> %</span>
     </div>
-    <input type="range" id="i-food" min="0" max="100" step="5" value="20">
+    <input type="range" id="i-food" aria-label="Food loss and waste recovery percentage" min="0" max="100" step="5" value="20">
     <div class="dial-note">Applied to the 32% of global food production lost or wasted (FAO+UNEP 2024).</div>
   </div>
 

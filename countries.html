@@ -11,9 +11,9 @@
 <meta property="og:description" content="Per-country breakdown of the Abundance arithmetic. World Bank Open Data, primary sources, CC0.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/countries.html">
-<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og-editorial.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og-editorial.png">
 <link rel="stylesheet" href="style.css">
 <style>
   table.countries {
@@ -125,8 +125,13 @@
     min-width: 220px;
   }
 </style>
+<link rel="stylesheet" href="styles/editorial.css">
 </head>
 <body>
+<header class="ab-header">
+<a class="ab-brand" href="./" aria-label="Abundance home"><span aria-hidden="true">✳</span> abundance.</a>
+<nav aria-label="Main navigation"><a href="./#evidence">The evidence</a><a href="./#explore">Explore</a><a href="course.html">Take the course ↗</a></nav>
+</header>
 <div class="container">
 
 <header class="masthead">
@@ -366,8 +371,7 @@ function renderDetail() {
   // Narrative — facts only, all from the same JSON.
   const bits = [];
   if (gpc != null) {
-    const ratio = gpc / 1095; // $3/day * 365
-    bits.push(`<strong>${c.name}'s</strong> GDP per capita is <span class="num">$${Math.round(gpc).toLocaleString()}</span> — <span class="num">${ratio.toFixed(1)}×</span> the World Bank extreme-poverty line of $1,095/year.`);
+    bits.push(`<strong>${c.name}'s</strong> GDP per capita is <span class="num">$${Math.round(gpc).toLocaleString()}</span> in current US dollars (${yr('gdp_per_capita_usd')}). GDP measures output, not household income. The separate World Bank extreme-poverty threshold is 3.00 international dollars per person per day (2021 PPP); no ratio between these different units is calculated.`);
   }
   if (mil != null && hth != null) {
     if (mil > hth) {

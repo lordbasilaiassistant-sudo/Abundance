@@ -13,9 +13,9 @@
 <meta property="og:description" content="The world already produces enough — the 8-minute interactive version. Guess first, then see the cited numbers.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/course.html">
-<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og-editorial.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og-editorial.png">
 
 <style>
 /* ============================================================
@@ -208,13 +208,18 @@ input[type=range]:disabled::-webkit-slider-thumb{background:var(--fg-4); cursor:
 
 .noscript{max-width:var(--maxw); margin:60px auto; padding:0 24px; color:var(--fg-2)}
 </style>
+<link rel="stylesheet" href="styles/editorial.css">
 </head>
 <body>
+<header class="ab-header">
+<a class="ab-brand" href="./" aria-label="Abundance home"><span aria-hidden="true">✳</span> abundance.</a>
+<nav aria-label="Main navigation"><a href="./#evidence">The evidence</a><a href="./#explore">Explore</a><a href="course.html" aria-current="page">Take the course ↗</a></nav>
+</header>
 <div class="shell">
   <div class="topbar" id="topbar" hidden>
     <div class="topbar-row">
       <span class="brand"><b>Abundance</b> · the course</span>
-      <a class="exit" href="index.html">Full page →</a>
+      <a class="exit" href="essay.html">Full page →</a>
     </div>
     <div class="segs" id="segs" aria-hidden="true"></div>
   </div>
@@ -225,7 +230,7 @@ input[type=range]:disabled::-webkit-slider-thumb{background:var(--fg-4); cursor:
         <div class="noscript">
           <h1 style="font-family:var(--serif);font-weight:500">The Abundance Course</h1>
           <p>This interactive course needs JavaScript. The full argument — every
-          number, every citation — is on the <a href="index.html">main page</a>,
+          number, every citation — is on the <a href="essay.html">main page</a>,
           and it works without JavaScript.</p>
         </div>
       </noscript>
@@ -243,8 +248,8 @@ input[type=range]:disabled::-webkit-slider-thumb{background:var(--fg-4); cursor:
 "use strict";
 /* ------------------------------------------------------------
    Source-of-truth numbers — kept in sync with data/essentials.json
-   and index.html's D object. Ratios are COMPUTED below, never typed,
-   so the course can't drift from the cited arithmetic.
+   and the essay snapshot. Check this snapshot when refreshing the dataset.
+   Resource ratios are computed; nominal GDP is reported separately.
    ------------------------------------------------------------ */
 var D = {
   pop: 8200000000,
@@ -253,10 +258,10 @@ var D = {
   wealth_top_usd: 213800000000000,
   military_usd: 2887000000000,
   health_share: 0.099,
-  kcal_supply: 2950, kcal_need: 2100,
+  kcal_supply: 3006, kcal_need: 2100,
   freshwater_km3: 43000, water_need_l_day: 50,
   electricity_twh: 32202, tier1_kwh_yr: 100, modern_min_kwh_yr: 1000,
-  poverty_line_usd_day: 3.00,
+  illustrative_transfer_usd_day: 3.00,
   hungry: 645000000, food_waste_share: 0.32,
   insulin_cost: 0.94, insulin_us: 90.69
 };
@@ -264,13 +269,13 @@ var C = (function(){
   var waterPCday = (D.freshwater_km3*1e12)/D.pop/365;
   var energyPC = (D.electricity_twh*1e9)/D.pop;
   var gdpPC = D.gdp_usd/D.pop;
-  var ubiCost = D.poverty_line_usd_day*D.pop*365;
+  var ubiCost = D.illustrative_transfer_usd_day*D.pop*365;
   return {
     food: D.kcal_supply/D.kcal_need,
     water: waterPCday/D.water_need_l_day,
     energy: energyPC/D.modern_min_kwh_yr,
     energyLow: energyPC/D.tier1_kwh_yr,
-    gdp: gdpPC/(D.poverty_line_usd_day*365),
+    gdpPerDay: gdpPC/365,
     waterPCday: waterPCday, energyPC: energyPC, gdpPC: gdpPC,
     ubiCost: ubiCost, ubiShare: ubiCost/D.gdp_usd,
     insulinMarkup: D.insulin_us/D.insulin_cost
@@ -291,26 +296,26 @@ var STEPS = [
   { type:"cover" },
 
   // ---- Module 1 · Guess before you look ----
-  { type:"guess", mod:1, kicker:"Guess 1 of 4 · Food", cls:"g",
+  { type:"guess", mod:1, kicker:"Guess 1 of 3 · Food", cls:"g",
     q:"For every person alive today, how many times over does the world already grow <em>enough food to eat</em>?",
     real:C.food,
-    after:"About <strong>40% more calories</strong> than humanity needs. And it sits right next to hunger — roughly a third of all food is lost or wasted.",
+    after:"Global dietary energy supply is about <strong>43% above the project’s 2,100 kcal reference</strong>. Supply is not intake, needs vary, and supply already excludes feed and post-harvest losses.",
     src:'FAOSTAT food balance sheets · FAO SOFI 2026' },
-  { type:"guess", mod:1, kicker:"Guess 2 of 4 · Water", cls:"g",
+  { type:"guess", mod:1, kicker:"Guess 2 of 3 · Water", cls:"g",
     q:"And <em>renewable freshwater</em>, measured against the WHO daily minimum for drinking, cooking and hygiene?",
     real:C.water,
     after:"The one number that most deserves an asterisk: freshwater is <strong>geographically locked</strong>. The aggregate is enormous — it just isn't where the people are.",
     src:'FAO AQUASTAT · WHO domestic-water guidelines' },
-  { type:"guess", mod:1, kicker:"Guess 3 of 4 · Electricity", cls:"g",
+  { type:"guess", mod:1, kicker:"Guess 3 of 3 · Electricity", cls:"g",
     q:"How about <em>electricity generated</em>, against the Modern Energy Minimum of 1,000 kWh a year?",
     real:C.energy,
     after:"And climbing: renewables <strong>passed coal in 2025</strong> for the first time in over a century. The supply side isn't the bottleneck it was.",
     src:'Energy Institute Statistical Review 2026 · Ember 2026' },
-  { type:"guess", mod:1, kicker:"Guess 4 of 4 · Output", cls:"g",
-    q:"And <em>economic output</em> — world GDP per person, against the extreme-poverty line?",
-    real:C.gdp,
-    after:"GDP isn't income, and this isn't a claim that everyone earns it. It's how much the world <strong>produces per person</strong>, before anyone divides it up.",
-    src:'IMF WEO April 2026 · World Bank poverty line (2021 PPP)' },
+  { type:"teach", mod:1, kicker:"Output · a different kind of number", cls:"g",
+    big:"$"+C.gdpPerDay.toFixed(2), bigPlain:true,
+    head:"Economic output is not household income.",
+    body:"This is world nominal GDP per person per day, in <strong>current US dollars</strong>. The poverty line is separately defined as 3.00 international dollars in 2021 PPP. Different units: these numbers do not form an income-to-need ratio.",
+    src:'<a href="https://www.imf.org/external/datamapper/NGDPD@WEO/WEOWORLD">IMF WEO</a> · <a href="https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines">World Bank: PPP poverty line</a>' },
 
   // ---- Module 2 · The one idea ----
   { type:"teach", mod:2, kicker:"The one idea", cls:"g",
@@ -360,7 +365,7 @@ var STEPS = [
   // ---- Module 4 · The money question ----
   { type:"teach", mod:4, kicker:"“We can’t afford it”", cls:"g",
     big:C.ubiShare, bigPct:true,
-    body:"A <strong>$3-a-day floor for every human alive</strong> costs "+"$"+(C.ubiCost/1e12).toFixed(2)+" trillion a year — that share of world GDP. <strong>Less than the world already spends on healthcare</strong> (9.9%).",
+    body:"An illustrative <strong>US$3-a-day cash transfer to every person</strong> costs "+"$"+(C.ubiCost/1e12).toFixed(2)+" trillion a year — that share of world GDP. This nominal-dollar scenario is not the cost of eliminating poverty: the World Bank line uses 2021 PPP international dollars. Delivery, tax and price effects are not modeled.",
     tiles:[
       { tl:"Global household wealth", tv:"$517.7T", cls:"", ts:"$250.6T of it held by the 58M adults worth over $1M" },
       { tl:"Global military spending / yr", tv:"$2.887T", cls:"warn", ts:"11th straight annual rise" }
@@ -524,7 +529,7 @@ function renderCover(wrap){
     actions.appendChild(restart);
   }
   wrap.appendChild(actions);
-  wrap.appendChild(el("div","meta","Rather read the full, cited page? <a href=\"index.html\">Abundance →</a><br>Public domain (CC0). No tracking, no ads, nothing leaves your device."));
+  wrap.appendChild(el("div","meta","Rather read the full, cited page? <a href=\"essay.html\">Abundance →</a><br>Public domain (CC0). No tracking, no ads, nothing leaves your device."));
 }
 
 /* ---- guess ---- */
@@ -739,13 +744,14 @@ function renderFinish(wrap){
   wrap.appendChild(el("p","kicker g","You made it · lesson 7 of 7"));
   wrap.appendChild(el("h1","lead","Enough already exists. The rest is a choice."));
   var recap=el("div","recap");
-  [["food",C.food,"Food"],["water",C.water,"Water"],["energy",C.energy,"Electricity"],["gdp",C.gdp,"Output"]].forEach(function(r){
+  [["food",C.food,"Food"],["water",C.water,"Water"],["energy",C.energy,"Electricity"]].forEach(function(r){
     var d=el("div","r"); d.appendChild(el("div","rv",fmtR(r[1])+"×")); d.appendChild(el("div","rl",r[2])); recap.appendChild(d);
   });
+  recap.appendChild(el("div","r",'<div class="rv">$'+C.gdpPerDay.toFixed(2)+'</div><div class="rl">GDP / person / day</div>'));
   wrap.appendChild(recap);
   wrap.appendChild(el("p","body","The world already produces enough food, water, electricity and output to meet every human's basic needs. The shortfalls are <strong>distribution</strong> — and distribution is a choice. Every number you just saw links to a primary source. Nothing was rounded up to persuade you."));
   var links=el("div","links");
-  [["index.html","Read the full, cited page","the complete argument, ~14 essentials, all sources"],
+  [["essay.html","Read the full, cited page","the complete argument, ~14 essentials, all sources"],
    ["letter.html","The open letter","for anyone who can move resources"],
    ["tools/","Free in-browser tools","manufactured scarcity, refuted in code"]].forEach(function(l){
     var a=document.createElement("a"); a.href=l[0]; a.className="linkrow";

@@ -132,11 +132,11 @@
   },
   "extreme_poverty_line_usd_per_day": {
     "value": 3.00,
-    "unit": "USD/person/day (2021 PPP)",
+    "unit": "2021 PPP international dollars/person/day",
     "year": 2025,
     "source_name": "World Bank, June 2025 Update to Global Poverty Lines",
     "source_url": "https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines",
-    "note": "Replaces the prior $2.15/day (2017 PPP) International Poverty Line."
+    "note": "Replaces the prior $2.15/day (2017 PPP) International Poverty Line. Not current US dollars: do not divide nominal GDP by this threshold or treat it as the dollar cost of a cash transfer."
   },
   "minimum_calorie_need_kcal": {
     "value": 2100,

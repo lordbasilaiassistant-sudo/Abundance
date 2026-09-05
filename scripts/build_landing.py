@@ -1,58 +1,31 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Abundance — the world already produces enough</title>
-<meta name="description" content="Explore cited global production data for food, water and electricity, plus nominal GDP and the PPP poverty threshold as separate measures. Sources, assumptions and calculators are open. CC0.">
-<meta name="keywords" content="abundance, scarcity, per capita arithmetic, world production, global hunger, poverty line, UBI, redistribution, primary source, Amartya Sen, entitlement theory, cash transfers">
-<meta name="author" content="Eli Vargas (lordbasilaiassistant-sudo)">
-<meta name="theme-color" content="#f4f1e8">
-<link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/Abundance/">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+"""Build the static homepage and its original vector illustration. No dependencies."""
+from pathlib import Path
+from math import sqrt, sin, pi
 
-<!-- OpenGraph -->
-<meta property="og:title" content="Abundance — the world already produces enough.">
-<meta property="og:description" content="Cited global production data and open calculations. Nominal GDP and the PPP poverty threshold are separate measures, not a ratio of income to need.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/">
-<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og-editorial.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Abundance: We have more than enough. An open inquiry into resources and access, with an engraved copper planet.">
-<meta property="og:site_name" content="Abundance">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Abundance — the world already produces enough.">
-<meta name="twitter:description" content="Cited production data, open assumptions and calculators. Nominal GDP and the PPP poverty threshold are reported separately.">
-<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og-editorial.png">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/#site",
-  "name": "Abundance",
-  "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/",
-  "description": "A cited dashboard of global production per person. Nominal GDP and the PPP poverty threshold are separate measures; no income-to-need ratio is inferred.",
-  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "author": { "@type": "Person", "name": "Eli Vargas (lordbasilaiassistant-sudo)" },
-  "hasPart": [
-    { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/course.html", "name": "The 8-minute interactive course" },
-    { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/essay.html", "name": "The full essay — every number cited" },
-    { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/letter.html", "name": "An open letter to whoever can end this" },
-    { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/countries.html", "name": "Per-country drill-down" },
-    { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/case-studies.html", "name": "Country case studies" },
-    { "@type": "WebPage", "@id": "https://lordbasilaiassistant-sudo.github.io/Abundance/embed/calculator.html", "name": "Redistribution calculator" }
-  ]
-}
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="styles/landing.css">
+ROOT = Path(__file__).resolve().parents[1]
+head = (ROOT / 'index.html').read_text(encoding='utf-8').split('<style>')[0].split('<link rel="stylesheet" href="styles/landing.css">')[0]
+head = head.replace('content="#07080c"', 'content="#f4f1e8"')
+head = head.replace('Abundance: global food, water and electricity comparisons; nominal GDP per person, with no GDP-to-poverty ratio.', 'Abundance: We have more than enough. An open inquiry into resources and access, with an engraved copper planet.')
+(ROOT / 'assets').mkdir(exist_ok=True)
+lines = []
+for y in range(100, 481, 6):
+    d = sqrt(max(0, 190**2 - (y-290)**2))
+    bend = 18 * sin((y-100)/380*pi)
+    lines.append(f'<path d="M {290-d:.2f} {y} Q 290 {y+bend:.2f} {290+d:.2f} {y}"/>')
+svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 580" fill="none">
+<defs><radialGradient id="sun" cx="28%" cy="22%" r="83%"><stop stop-color="#f9cf79"/><stop offset=".52" stop-color="#e67d3e"/><stop offset="1" stop-color="#b34e29"/></radialGradient><pattern id="grain" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".65" fill="#552a19" opacity=".25"/></pattern><clipPath id="sphere"><circle cx="290" cy="290" r="190"/></clipPath></defs>
+<g stroke="#7c8571" stroke-width=".7" opacity=".35"><circle cx="290" cy="290" r="250"/><path d="M 10 290 H 570 M 290 10 V 570"/><circle cx="290" cy="290" r="230" stroke-dasharray="1 8"/></g>
+<ellipse cx="290" cy="305" rx="275" ry="83" transform="rotate(-27 290 305)" stroke="#324b35" stroke-width="1"/>
+<circle cx="290" cy="290" r="190" fill="url(#sun)"/>
+<g clip-path="url(#sphere)" stroke="#763b27" stroke-width=".85" opacity=".55">''' + ''.join(lines) + '''</g>
+<g clip-path="url(#sphere)" stroke="#773f29" opacity=".3"><ellipse cx="290" cy="290" rx="145" ry="190"/><ellipse cx="290" cy="290" rx="80" ry="190"/><path d="M290 100V480"/></g>
+<circle cx="290" cy="290" r="190" fill="url(#grain)"/>
+<path d="M 49 403 C 65 469 322 411 482 287 C 535 246 548 215 528 192" stroke="#263d2a" stroke-width="1.4"/>
+<circle cx="87" cy="420" r="8" fill="#263d2a"/><circle cx="493" cy="160" r="5" fill="#c76433"/>
+<g stroke="#263d2a"><path d="M 477 458 h 18 M486 449v18 M 88 130h12 M94 124v12"/></g>
+</svg>'''
+(ROOT / 'assets/planet.svg').write_text(svg, encoding='utf-8')
+body = '''<link rel="stylesheet" href="styles/landing.css">
 <script src="scripts/landing.js" defer></script>
 </head>
 <body>
@@ -105,3 +78,6 @@
 <footer class="site-footer wrap"><a class="brand" href="./"><span class="brand-symbol" aria-hidden="true">✳</span> abundance.</a><p>A world of enough is worth investigating.</p><nav aria-label="Footer"><a href="tools/">Free tools ↗</a><a href="https://github.com/lordbasilaiassistant-sudo/Abundance/blob/main/bibliography.md">Bibliography ↗</a><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 ↗</a></nav></footer>
 </body>
 </html>
+'''
+(ROOT / 'index.html').write_text(head + body, encoding='utf-8')
+print('Built index.html and assets/planet.svg')

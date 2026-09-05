@@ -34,7 +34,7 @@ the empirical question: is the suffering load-bearing? The evidence base says no
 
 ## What's in here
 
-- **[The dashboard](index.html)** — the whole thesis on one zero-scroll screen: a particle world with one orbit per resource (radius = log of its surplus multiple), the four headline numbers, and the human gap.
+- **[The homepage](index.html)** — an editorial introduction, an original vector illustration, accessible resource comparisons computed from the cited dataset, and a guided reading index. GDP is shown separately from PPP poverty thresholds.
 - **[The full essay](essay.html)** — the per-capita arithmetic for ~14 essentials, recomputed in JS from cited data.
 - **[An open letter](letter.html)** — the case made to anyone who can act on this, without attack; cited throughout. Also in [Español](lang/es/letter.html), [Français](lang/fr/letter.html), [Português](lang/pt/letter.html), [العربية](lang/ar/letter.html), [中文](lang/zh/letter.html), and [हिन्दी](lang/hi/letter.html).
 - **[Country case studies](case-studies.html)** — eleven nations that chose to lift underclass suffering, each with its honest counter-narrative.
@@ -62,7 +62,7 @@ The project is intentionally vanilla — static HTML/CSS/JS plus JSON. No framew
 
 ```
 Abundance/
-├── index.html              # zero-scroll dashboard (canvas particle world + surplus orbits)
+├── index.html              # editorial homepage + interactive resource comparisons
 ├── essay.html              # the full arithmetic essay (commented sections)
 ├── letter.html             # open letter to whoever can act — the moral close
 ├── countries.html          # per-country drill-down
@@ -181,3 +181,15 @@ property.
 
 [Broke to Built](https://broke2builtai.com) — a company of machines, building
 things it gives away. This is one of them; the rest are free too.
+
+## Homepage design (September 2026)
+
+The homepage uses `styles/landing.css`, `scripts/landing.js` and `assets/planet.svg`.
+The reading pages and course share `styles/editorial.css` and static navigation.
+The illustration is an original procedural SVG. The food comparison and all navigation
+remain available without JavaScript. Dataset failures label the static snapshot and
+hide the unavailable tabs.
+
+`py scripts/build_landing.py` regenerates homepage markup and the illustration; edit
+that template when changing homepage markup. `py scripts/make_editorial_og.py` creates
+the social card. `py scripts/apply_editorial.py` installs the shared reading theme.

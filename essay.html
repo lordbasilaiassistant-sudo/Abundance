@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abundance — what humanity actually produces, per person</title>
-<meta name="description" content="The world produces 1.4× the calories, 287× the water, 3.9× the electricity, and 13× the income per person that minimum needs require. A primary-sourced per-capita arithmetic of global production — anchored by Amartya Sen's Nobel-winning entitlement theory, twelve cash-transfer pilots, and meta-analyses across 279 studies. Every number cited. CC0.">
+<meta name="description" content="Explore global food, water and electricity data, cash-transfer evidence and open calculations. Nominal GDP is reported separately from the PPP poverty line.">
 <meta name="keywords" content="abundance, scarcity, universal basic income, UBI, per capita arithmetic, redistribution, world production, world GDP, global hunger, poverty line, primary source, Omelas, Amartya Sen, entitlement theory, Bengal famine, cash transfer, GiveDirectly, Alaska Permanent Fund, Bolsa Familia, Stockton SEED, World Inequality Lab, Piketty, Wilkinson Pickett, Spirit Level, Acemoglu inclusive institutions, Ostrom commons, demographic transition, food waste, freshwater scarcity, Modern Energy Minimum">
 <meta name="author" content="Eli Vargas (lordbasilaiassistant-sudo)">
 <meta name="theme-color" content="#0a0b0e">
@@ -18,13 +18,13 @@
 
 <!-- OpenGraph -->
 <meta property="og:title" content="Abundance — the world already produces enough.">
-<meta property="og:description" content="Primary-sourced per-capita arithmetic. Food 1.4×, water 287×, electricity 3.9×, GDP 13× their respective minimum-need thresholds. Every number cited. CC0.">
+<meta property="og:description" content="Explore global food, water and electricity data, cash-transfer evidence and open calculations. Nominal GDP is reported separately from the PPP poverty line.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/Abundance/essay.html">
-<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta property="og:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og-editorial.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The world already produces enough. Food 1.4x, water 287x, electricity 3.9x, GDP 13x their respective minimum-need thresholds.">
+<meta property="og:image:alt" content="Abundance: We have more than enough. An open inquiry into resources and access.">
 <meta property="og:site_name" content="Abundance">
 <meta property="article:published_time" content="2026-05-15T00:00:00Z">
 <meta property="article:modified_time" content="2026-08-27T00:00:00Z">
@@ -32,8 +32,8 @@
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Abundance — the world already produces enough.">
-<meta name="twitter:description" content="Per-capita arithmetic with primary-source citations. Food 1.4×, water 287×, electricity 3.9×, GDP 13× their thresholds.">
-<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og.png">
+<meta name="twitter:description" content="Explore global food, water and electricity data, cash-transfer evidence and open calculations. Nominal GDP is reported separately from the PPP poverty line.">
+<meta name="twitter:image" content="https://lordbasilaiassistant-sudo.github.io/Abundance/og-editorial.png">
 <meta name="twitter:image:alt" content="Headline arithmetic from the Abundance site.">
 
 <link rel="stylesheet" href="style.css">
@@ -51,7 +51,7 @@
       "description": "A single-page, fully-cited arithmetic check of whether aggregate global production of food, water, electricity, and economic output is sufficient to meet every human's documented minimum needs. Includes Sen's entitlement framing, the Omelas question, twelve cash-transfer pilots, a 114-study Bayesian meta-analysis (Crosta et al 2024), and a 165-study ODI systematic review (Bastagli et al 2016).",
       "image": {
         "@type": "ImageObject",
-        "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/og.png",
+        "url": "https://lordbasilaiassistant-sudo.github.io/Abundance/og-editorial.png",
         "width": 1200,
         "height": 630
       },
@@ -252,8 +252,13 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="styles/editorial.css">
 </head>
 <body>
+<header class="ab-header">
+<a class="ab-brand" href="./" aria-label="Abundance home"><span aria-hidden="true">✳</span> abundance.</a>
+<nav aria-label="Main navigation"><a href="./#evidence">The evidence</a><a href="./#explore">Explore</a><a href="course.html">Take the course ↗</a></nav>
+</header>
 <main class="container" role="main" itemscope itemtype="https://schema.org/Article">
 
 <header class="masthead">
@@ -266,8 +271,8 @@
   </div>
   <h1>The world already produces enough. <em>The question is whether we admit it.</em></h1>
   <p class="lede">
-    Below: four numbers. Each is global production divided by the documented
-    minimum need, per person. Every number links to a primary source —
+    Below: three resource comparisons and nominal GDP per person. GDP is
+    reported separately from the PPP poverty threshold. Every number links to a primary source —
     FAO, IEA, IMF, WHO, World Bank, UN-Habitat, SIPRI, UBS — and every
     redistribution claim cites a peer-reviewed study.
   </p>
@@ -280,7 +285,7 @@
        exactly as before. -->
   <div class="guess" id="guess" hidden>
     <div class="guess-head">
-      <span class="guess-kicker" id="guess-kicker">Before you scroll · 1 of 4</span>
+      <span class="guess-kicker" id="guess-kicker">Before you scroll · 1 of 3</span>
       <span class="guess-progress" id="guess-progress" aria-hidden="true"></span>
     </div>
     <p class="guess-q" id="guess-q"></p>
@@ -317,8 +322,8 @@
     </div>
     <div class="hero-stat">
       <div class="label">Output (GDP)</div>
-      <div class="ratio" id="hero-gdp">13<span class="x">×</span></div>
-      <div class="vs">per capita ÷ World<br>Bank poverty line</div>
+      <div class="ratio" id="hero-gdp">$39.48</div>
+      <div class="vs">current US dollars<br>per person / day</div>
     </div>
   </div>
 </header>
@@ -561,9 +566,9 @@
       <div class="sub">2021 PPP, updated June 2025</div>
     </div>
     <div class="stat">
-      <div class="label">Ratio: GDP-per-capita ÷ poverty-line annual</div>
-      <div class="ratio accent" id="gdp-ratio">13<span class="x">×</span></div>
-      <div class="sub">Global per-capita output is ~13× the line at which a human is no longer "in extreme poverty."</div>
+      <div class="label">Nominal output per person per day</div>
+      <div class="ratio accent" id="gdp-ratio">$39.48</div>
+      <div class="sub">Current US dollars. The poverty threshold uses 2021 PPP international dollars; these figures do not form a ratio.</div>
     </div>
   </div>
   <p class="src">
@@ -793,7 +798,7 @@
 </p>
 
 <div class="card">
-  <h3>Cost of a universal $3/day floor — for every human alive</h3>
+  <h3>Illustrative US$3/day universal cash transfer</h3>
   <div class="row">
     <div class="stat">
       <div class="label">Math: $3 × 8.2B × 365 days</div>
@@ -1318,8 +1323,7 @@
     </div>
     <input type="range" id="i-floor" min="0" max="30" step="0.25" value="3.00">
     <div class="dial-note">
-      Default = World Bank extreme-poverty line. $5.50 = lower-middle-income
-      poverty line. $15 ≈ "no developed-country household lives in poverty."
+      Illustrative current-US-dollar transfer, not a PPP poverty threshold. This model does not establish how much cash eliminates poverty in any country.
     </div>
   </div>
 
@@ -2068,7 +2072,7 @@ const setHTML = (id, v) => { const el = document.getElementById(id); if (el) el.
   const waterRatio      = waterPC / D.water_need_l_day;
   const energyRatioLow  = energyPC / D.tier1_kwh_yr;
   const energyRatioHigh = energyPC / D.modern_min_kwh_yr;
-  const gdpRatio        = gdpPC / (D.poverty_line_usd_day * 365);
+  const gdpPerDay       = gdpPC / 365;
   const ubiCost  = D.poverty_line_usd_day * D.pop * 365;
   const ubiShare = ubiCost / D.gdp_usd;
 
@@ -2080,7 +2084,7 @@ const setHTML = (id, v) => { const el = document.getElementById(id); if (el) el.
   setHTML('energy-ratio-low',  fmtRatio(energyRatioLow) + '<span class="x">×</span>');
   setHTML('energy-ratio-high', fmtRatio(energyRatioHigh) + '<span class="x">×</span>');
   setText('gdp-pc',      '$' + Math.round(gdpPC).toLocaleString() + ' / person / yr');
-  setHTML('gdp-ratio',   fmtRatio(gdpRatio) + '<span class="x">×</span>');
+  setHTML('gdp-ratio',   '$' + gdpPerDay.toFixed(2));
   setText('ubi-cost',    fmtUSD(ubiCost) + ' / year');
   setText('ubi-share',   fmtPct(ubiShare));
 
@@ -2088,7 +2092,7 @@ const setHTML = (id, v) => { const el = document.getElementById(id); if (el) el.
   setHTML('hero-food',   fmtRatio(foodRatio)       + '<span class="x">×</span>');
   setHTML('hero-water',  fmtRatio(waterRatio)      + '<span class="x">×</span>');
   setHTML('hero-energy', fmtRatio(energyRatioHigh) + '<span class="x">×</span>');
-  setHTML('hero-gdp',    fmtRatio(gdpRatio)        + '<span class="x">×</span>');
+  setHTML('hero-gdp',    '$' + gdpPerDay.toFixed(2));
 })();
 
 // ---- Guess-first hero ----
@@ -2115,9 +2119,7 @@ const setHTML = (id, v) => { const el = document.getElementById(id); if (el) el.
     { id: 'hero-energy',
       q: 'How about <em>electricity</em>, against the Modern Energy Minimum of 1,000 kWh a year?',
       after: 'Renewables passed coal in 2025 for the first time in over a century — the supply side is not the bottleneck it was.' },
-    { id: 'hero-gdp',
-      q: 'And <em>economic output</em> — world GDP per person, against the extreme-poverty line?',
-      after: 'GDP is not income, and this is not a claim that everyone earns that. It is a claim about how much the world produces per person, before anyone divides it.' },
+
   ];
   QS.forEach(item => { item.real = parseRatio(item.id); });
   if (QS.some(item => !isFinite(item.real) || item.real <= 0)) return;
@@ -2173,10 +2175,10 @@ const setHTML = (id, v) => { const el = document.getElementById(id); if (el) el.
     el.q.innerHTML = skipped
       ? 'All four, then — every one of them global production divided by a documented minimum need.'
       : (low >= 3
-          ? 'You guessed low on <em>' + low + ' of 4</em>. So does almost everyone — and that reflex is exactly what the rest of this page is about.'
+          ? 'You guessed low on <em>' + low + ' of 3</em>. Explore the assumptions behind these comparisons below.'
           : low === 0
             ? 'You called all four without going under. That is rare, and it means the rest of this page is confirmation rather than news.'
-            : 'You guessed low on <em>' + low + ' of 4</em> — better than most readers manage.');
+            : 'You guessed low on <em>' + low + ' of 3</em>. Explore the assumptions behind these comparisons below.');
     el.verdict.innerHTML = 'Every figure above is global production divided by a published minimum need, and each one links to its primary source. The arithmetic is the easy part. <a href="#thesis">What follows is the argument →</a>';
     el.kicker.textContent = skipped ? 'The four numbers' : 'How you did';
     el.range.parentNode.hidden = true;
@@ -2187,7 +2189,7 @@ const setHTML = (id, v) => { const el = document.getElementById(id); if (el) el.
 
   function ask() {
     const item = QS[i];
-    el.kicker.textContent = 'Before you scroll · ' + (i + 1) + ' of 4';
+    el.kicker.textContent = 'Before you scroll · ' + (i + 1) + ' of ' + QS.length;
     el.q.innerHTML = item.q;
     el.verdict.textContent = '';
     el.lock.textContent = 'Lock it in';

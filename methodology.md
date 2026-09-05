@@ -73,19 +73,22 @@ introduces <1% error in any per-capita figure.
 
 ### Output (GDP)
 
-- **Numerator:** `$118.18 trillion` — the 2025 world aggregate in the IMF World
+- **Nominal output:** `$118.18 trillion` — the 2025 world aggregate in the IMF World
   Economic Outlook, April 2026 vintage ($118,175.485 billion; 2024 was
   $111,598.554B). Nominal, current prices. PPP-adjusted world GDP runs
-  considerably higher; we use nominal because the comparison to the World Bank
-  poverty line is also in current USD.
-- **Denominator (need):** `$3.00 / day × 365 = $1,095 / year` — the World Bank's
+  considerably higher. Dividing by the site's 8.2B population gives nominal
+  output per person; it does not measure household income or purchasing power.
+- **Separate poverty threshold:** `3.00 international dollars / person / day
+  (2021 PPP)` — the World Bank's
   updated International Poverty Line ([June 2025 update](https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines)),
   which replaced the prior $2.15/day (2017 PPP) line.
-- **What this ratio misses:** GDP is not income. It includes capital
-  consumption, government spending, and net exports. A claim that "GDP per
-  capita is 13× the poverty line" is not a claim that everyone's *income* is
-  13× the line — only that the world's output, if it flowed directly to
-  households, would average that much per person.
+- **No ratio:** current US dollars and 2021 PPP international dollars are
+  different units. The former GDP-to-poverty ratio was invalid and was removed
+  on 2026-09-05. An adjustment for units would still not turn GDP into household
+  income or establish how much it costs to eliminate poverty.
+- **Calculator boundary:** cash-transfer scenarios use explicitly hypothetical
+  current-US-dollar amounts. They do not price the World Bank poverty threshold,
+  estimate poverty exits, or account for local purchasing power and delivery costs.
 
 ### Housing
 
