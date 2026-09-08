@@ -53,9 +53,11 @@ py build.py --spot 40,575,1330   # a few frames, for judging the look
 - **The Microsoft Store Blender cannot be used.** `blender.exe` under
   `WindowsApps` returns *Permission denied* to any headless invocation. This
   uses a portable build (`~/blender/blender-4.2.9-windows-x64`).
-- **`ffmpeg` on PATH here is a broken shim** — it exits 1 and writes zero bytes.
-  Encoding goes through Blender's bundled FFmpeg instead. Note that
-  `ffmpeg ... | head` hides this, because the pipe reports `head`'s exit code.
+- **`ffmpeg` on PATH here is a broken shim** — it exits 1 and writes zero bytes,
+  and `ffmpeg ... | head` hides that because the pipe reports `head`'s exit code.
+  Encoding goes through Blender's bundled FFmpeg. A real ffmpeg *is* available
+  for probing (`imageio_ffmpeg`'s bundled binary; `broketobuilt/scripts/ffmpeg-path.mjs`
+  resolves it) — that is how the shipped file's loudness was verified.
 - **The encode pass must use the `Standard` view transform.** The composited
   PNGs are already display-referred; leaving it on AgX applies the tone map a
   second time and washes the film out.
