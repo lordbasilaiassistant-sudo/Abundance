@@ -100,6 +100,12 @@ def main():
 
     if "facts" in todo:
         run([sys.executable, os.path.join(HERE, "facts.py")])
+        # master the score if a raw one is present and no master exists yet
+        raw = os.path.join(HERE, "score.wav")
+        mastered = os.path.join(HERE, "score-master.wav")
+        if os.path.exists(raw) and not os.path.exists(mastered):
+            run([sys.executable, os.path.join(HERE, "master_audio.py"),
+                 raw, mastered])
     if "3d" in todo:
         render_3d(frames, a.shards, a.samples)
     if "type" in todo:
