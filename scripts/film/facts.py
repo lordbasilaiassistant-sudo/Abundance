@@ -113,8 +113,8 @@ def build():
         if not any(w in low for w in wanted) or low.startswith("merge"):
             continue
         line = sub_.split(" (#")[0].strip()
-        if len(line) > 86:
-            line = line[:85].rstrip(" ,;:") + "…"
+        if len(line) > 72:                     # fits the column at film type size
+            line = line[:71].rstrip(" ,;:") + "…"
         if line in seen:
             continue
         seen.add(line)
