@@ -28,57 +28,26 @@ The project is intentionally vanilla — static HTML/CSS/JS plus JSON data files
 
 ## Project structure
 
+The full repository map — every directory, what it is for, which page loads which
+stylesheet, and the invariants that must not be broken — lives in one place:
+[`AGENTS.md`](AGENTS.md). A reader-facing summary of the tree is in
+[`README.md`](README.md#structure). Keeping the map in a single file is deliberate:
+three copies of a directory tree drift apart within a month.
+
+The short version: static HTML/CSS/JS plus JSON, no build step. Numbers live in
+`data/*.json`. Styles live in `styles/` (never edit `style.css`). Generated files
+(`index.html`, `assets/planet.svg`, `data/countries.json`, `og*.png`, `favicon.png`)
+are produced by `scripts/` and must not be hand-edited.
+
+## Before you open a PR
+
+```bash
+python3 scripts/check.py     # every figure cited, internal links resolve, sitemap complete
+python3 -m http.server 8000  # preview at http://localhost:8000/
 ```
-Abundance/
-├── README.md, LICENSE, CITATION.cff, CONTRIBUTING.md
-├── methodology.md            # how each number was derived
-├── bibliography.md           # ~100 academic references by topic
-├── robots.txt, sitemap.xml   # crawler hints
-├── favicon.png, apple-touch-icon.png, og.png   # branding (regen via scripts/)
-│
-├── index.html                # main page (commented section markers, single file by intent)
-├── countries.html            # per-country drill-down
-├── case-studies.html         # 11 country precedents
-├── style.css                 # imports from styles/ (do not edit directly)
-│
-├── styles/                   # ← edit CSS here
-│   ├── tokens.css            # colors, fonts, sizes
-│   ├── base.css              # resets, typography, links, headings
-│   ├── layout.css            # container, masthead, sections, hero, TOC, footer
-│   ├── components.css        # cards, pilots, stats, dials, FAQ
-│   └── print.css             # print/PDF override
-│
-├── data/                     # ← every number on the site lives here
-│   ├── README.md             # schemas + how to add an entry
-│   ├── essentials.json       # food / water / electricity / GDP / etc.
-│   ├── pilots.json           # 12 cash-transfer evaluations
-│   ├── case-studies.json     # 11 precedents (Costa Rica … Uruguay)
-│   └── countries.json        # 91 countries × 10 World Bank indicators
-│
-├── embed/
-│   ├── calculator.html       # standalone iframe-able calculator
-│   └── README.md             # embed snippet + sizing notes
-│
-├── lang/
-│   └── es/index.html         # Spanish summary; pattern for other languages
-│
-├── papers/                   # ← deep notes on specific scholarly works
-│   ├── README.md
-│   └── historical-context.md # Lee, Wiessner, Ekirch, Conard, Larsen
-│
-├── scripts/                  # ← regeneration scripts (Python 3, stdlib + Pillow)
-│   ├── README.md
-│   ├── build_countries.py    # fetches countries.json from World Bank API
-│   ├── clean_vtt.py          # cleans YouTube auto-VTT into plain text
-│   ├── make_og.py            # generates og.png from data
-│   └── make_favicon.py       # generates favicon.png + apple-touch-icon.png
-│
-├── transcripts/              # ← raw research material, not on the public site
-│   ├── README.md
-│   └── TQd2k1pEXp4.*         # transcript backing § 8 (historical context)
-│
-└── .github/workflows/pages.yml
-```
+
+`scripts/check.py` is standard-library only and is the whole test suite. It exits
+non-zero and prints each problem with its file path. Paste its output in the PR.
 
 ---
 

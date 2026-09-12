@@ -6,7 +6,7 @@ Existed?](https://www.youtube.com/watch?v=TQd2k1pEXp4) (Axen, May 2026). The
 video's anthropological claims were re-verified against the primary literature;
 this document records what survives and what doesn't.
 
-The cleaned transcript itself is at [`TQd2k1pEXp4.en.txt`](TQd2k1pEXp4.en.txt).
+The cleaned transcript itself is at [`TQd2k1pEXp4.en.txt`](../transcripts/TQd2k1pEXp4.en.txt).
 
 ## What checks out
 
