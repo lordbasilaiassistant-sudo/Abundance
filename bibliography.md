@@ -43,7 +43,7 @@ This is where the empirical pushback to "if you give people money they'll stop w
 
 ### Major individual evaluations cited on the main page
 
-- **Banerjee, A., Faye, M., Krueger, A., Niehaus, P., Suri, T. (2023). 'Universal Basic Income: Short-Term Results from a Long-Term Experiment in Kenya.'** [J-PAL PDF](https://www.povertyactionlab.org/sites/default/files/research-paper/Universal-Basic-Income-Short-Term-Results-from-a-Long-Term-Experiment-in-Kenya_BFKNS_December2023.pdf). The GiveDirectly RCT.
+- **Banerjee, A., Faye, M., Krueger, A., Niehaus, P., Suri, T. (2023). 'Universal Basic Income: Short-Term Results from a Long-Term Experiment in Kenya.'** [J-PAL PDF](https://www.povertyactionlab.org/media/file-research-paper/universal-basic-income-short-term-results-long-term-experiment-kenya). The GiveDirectly RCT.
 - **Jones, D. & Marinescu, I. (2022). 'The Labor Market Impacts of Universal and Permanent Cash Transfers: Evidence from the Alaska Permanent Fund.' *American Economic Journal: Economic Policy* 14(2):315–340.** [DOI](https://www.aeaweb.org/articles?id=10.1257/pol.20190299). 40 years of Alaska data: no aggregate labor-supply effect.
 - **Salehi-Isfahani, D. & Mostafavi-Dehzooei, M. (2018). 'Cash Transfers and Labor Supply: Evidence from a Large-Scale Program in Iran.' *Journal of Development Economics* 135:349–367.** [Link](https://www.sciencedirect.com/science/article/abs/pii/S0304387818306084). Iran 2011 program covering >70M people.
 - **West, S., Castro, A., Samra, S., Coltrera, E. (2023). 'Impact of Guaranteed Income on Health, Finances, and Agency: Findings from the Stockton Randomized Controlled Trial.' *Journal of Urban Health* 100(6):1184–1198.** [DOI](https://link.springer.com/article/10.1007/s11524-023-00723-0). Stockton SEED.

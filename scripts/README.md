@@ -7,6 +7,7 @@ All scripts are Python 3, standard-library where possible. Run them with the sys
 | Script | Output | Inputs | When to re-run |
 |---|---|---|---|
 | [`check.py`](check.py) | exit code + problem list | The repo itself | **Before every PR.** Verifies each `data/*.json` entry cites a primary source and a year, that internal links resolve, and that `sitemap.xml` matches the published pages. Standard library only. |
+| [`check_sources.py`](check_sources.py) | report on stdout (`--json` for a file) | Every source URL in `data/*.json` (`--md` adds the Markdown docs) | On a schedule, and before a release. Hits the network, so it is deliberately outside `check.py` and CI. Splits findings into DEAD (404/410 — the citation rotted and the number is now unsourced) and INCONCLUSIVE (403/429 — the publisher blocks scripts; a human must open it). |
 | [`build_landing.py`](build_landing.py) | `../index.html`, `../assets/planet.svg` | The template inside the script | When homepage markup or the illustration changes. Edit the script, never the generated files. |
 | [`build_countries.py`](build_countries.py) | `../data/countries.json` | World Bank Open Data API (live HTTP) | When you add a country to the `COUNTRIES` list, or when World Bank publishes newer indicator vintages (annually). |
 | [`apply_editorial.py`](apply_editorial.py) | Edits the reading pages in place | Its `pages` list | When you add a reading page, or change the shared editorial theme/nav. Idempotent — safe to re-run. |

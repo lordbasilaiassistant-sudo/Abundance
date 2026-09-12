@@ -151,7 +151,7 @@
     "unit": "L/person/day",
     "year": 2003,
     "source_name": "WHO, Domestic Water Quantity, Service Level and Health",
-    "source_url": "https://www.who.int/publications/i/item/WHO-SDE-WSH-03.02",
+    "source_url": "https://iris.who.int/handle/10665/67884",
     "note": "Intermediate access level: drinking, cooking, hygiene. Survival minimum is 7.5 L/day; full health protection ~100 L/day."
   },
   "tier1_electricity_kwh_per_year": {
