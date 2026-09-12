@@ -5,7 +5,8 @@
 
 Verifies the invariants that keep this site honest and unbroken:
 
-  1. Every data/*.json parses, and every fact entry carries a primary-source URL.
+  1. Every data/*.json parses, and every fact entry carries a primary-source URL
+     plus a Wayback snapshot of it.
   2. Every internal link/href/src in the HTML and Markdown resolves to a file
      that exists (external http(s) links are not fetched).
   3. Every <loc> in sitemap.xml maps to a file that exists.
@@ -73,6 +74,22 @@ def check_data() -> None:
                 problem(f"{rel} → {key}", "no primary-source URL (*_source_url / source_url)")
             if not any("year" in name or "date" in name for name in entry):
                 problem(f"{rel} → {key}", "no year/date field — stale numbers must be detectable")
+            for source_key, archived_key in (("source_url", "archived_url"), ("primary_source_url", "primary_archived_url")):
+                if source_key not in entry:
+                    continue
+                if archived_key not in entry:
+                    problem(
+                        f"{rel} → {key}",
+                        f"{source_key} has no {archived_key} — run scripts/archive_sources.py "
+                        "so the citation survives the publisher moving it",
+                    )
+                elif not entry[archived_key] and not entry.get("archive_note"):
+                    # An empty value means Wayback cannot capture this publisher.
+                    # That is allowed, but it has to be stated, not left blank.
+                    problem(
+                        f"{rel} → {key}",
+                        f"{archived_key} is empty with no archive_note saying why no snapshot exists",
+                    )
 
 
 LINK_PATTERNS = (

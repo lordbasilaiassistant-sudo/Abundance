@@ -7,6 +7,8 @@
     "as_of": "mid-2024",
     "source_name": "UN World Population Prospects 2024",
     "source_url": "https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf",
+    "archived_url": "https://web.archive.org/web/20260910094410/https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf",
+    "archived_at": "2026-09-10",
     "note": "Used as the divisor for every per-capita calculation on this site."
   },
   "world_gdp_nominal_usd": {
@@ -15,6 +17,8 @@
     "year": 2025,
     "source_name": "IMF World Economic Outlook, April 2026",
     "source_url": "https://www.imf.org/external/datamapper/NGDPD@WEO/WEOWORLD",
+    "archived_url": "https://web.archive.org/web/20260602113554/https://www.imf.org/external/datamapper/NGDPD@WEO/WEOWORLD",
+    "archived_at": "2026-06-02",
     "note": "Nominal, current prices. WEO April 2026 puts the 2025 world aggregate at $118,175.485 billion (2024: $111,598.554B). PPP totals run higher."
   },
   "world_household_wealth_usd": {
@@ -23,6 +27,8 @@
     "year": 2025,
     "source_name": "UBS Global Wealth Report 2026",
     "source_url": "https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf",
+    "archived_url": "https://web.archive.org/web/20260911070516/https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf",
+    "archived_at": "2026-09-11",
     "note": "Sum of the four published 2025 wealth-pyramid bands for UBS's 56-market sample: >$1m $250.59T + $100k–$1m $200.72T + $10k–$100k $63.16T + <$10k $3.22T = $517.69T. UBS estimates the sample covers over 92% of world personal wealth and treats these 56 markets as 'global wealth' in this edition. Methodology was updated, so this is not comparable to GWR 2024's $449.9T world-aggregate (2023). Total personal wealth in the sample grew 10.8% in USD in 2025. Median wealth fell in most markets even as average wealth rose. Press release: https://www.ubs.com/global/en/media/display-page-ndp/en-20260630-gwr-2026.html"
   },
   "wealth_above_1m_usd": {
@@ -31,6 +37,8 @@
     "year": 2025,
     "source_name": "UBS Global Wealth Report 2026",
     "source_url": "https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf",
+    "archived_url": "https://web.archive.org/web/20260911070516/https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf",
+    "archived_at": "2026-09-11",
     "note": "58 million adults (1.5% of the sampled adult population) with net worth above $1 million hold $250.59 trillion — 48.4% of the 56-market sample. Same millionaire headcount as GWR 2024; the dollar stock rose from the prior published $213.8T."
   },
   "global_military_spending_usd": {
@@ -39,6 +47,8 @@
     "year": 2025,
     "source_name": "SIPRI, Trends in World Military Expenditure 2025 (April 2026)",
     "source_url": "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025",
+    "archived_url": "https://web.archive.org/web/20260901010855/https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025",
+    "archived_at": "2026-09-01",
     "note": "$2,887 billion, up 2.9% in real terms — the 11th consecutive annual increase. Military burden of 2.5% of world GDP, the highest since 2009. US spending fell 7.5%; Europe rose 14%, Asia and Oceania 8.1%."
   },
   "global_health_spending_usd": {
@@ -47,6 +57,8 @@
     "year": 2023,
     "source_name": "WHO Global Health Expenditure Database, December 2025 update",
     "source_url": "https://apps.who.int/nha/database",
+    "archived_url": "https://web.archive.org/web/20260909160639/https://apps.who.int/nha/database/",
+    "archived_at": "2026-09-09",
     "note": "US$10.6 trillion in 2023, about 10% of aggregate global GDP — higher than 2022, with a recovery across all income groups after the pandemic-era per-capita peak of 2021. Aggregate stated by WHO's GHED 2025 launch presentation (Dec 2025); database covers 195 countries/territories, 2000-2023."
   },
   "world_cereal_production_tonnes": {
@@ -56,6 +68,8 @@
     "as_of": "2025 harvest year (FAO brief, 3 July 2026)",
     "source_name": "FAO Cereal Supply and Demand Brief",
     "source_url": "https://www.fao.org/worldfoodsituation/csdb",
+    "archived_url": "https://web.archive.org/web/20260802071646/https://www.fao.org/worldfoodsituation/csdb",
+    "archived_at": "2026-08-02",
     "note": "An all-time record: 3,043 million tonnes, 6.1% above 2024. FAO's July 2026 forecast for the 2026 harvest is 2,983 Mt — 1.9% below the record but still the second-largest on record. Cereals alone — does not include legumes, tubers, vegetables, fruit, meat, dairy, fish, oil crops."
   },
   "daily_food_supply_kcal_per_capita": {
@@ -64,6 +78,8 @@
     "year": 2023,
     "source_name": "FAO Food Balance Sheets 2010-2023 (FAOSTAT release, 28 October 2025)",
     "source_url": "https://www.fao.org/statistics/highlights-archive/highlights-detail/food-balance-sheets-2010-2023/en",
+    "archived_url": "https://web.archive.org/web/20260214031620/https://www.fao.org/statistics/highlights-archive/highlights-detail/food-balance-sheets-2010-2023/en",
+    "archived_at": "2026-02-14",
     "note": "In 2023 the global average dietary energy supply crossed 3,000 kcal/person/day for the first time (exact world value: 3,005.6). Excludes feed, seed, industrial use, and post-harvest loss. FAO notes food supply in Africa remains low and stagnant while Asia has been steadily closing the gap to the world average."
   },
   "people_in_hunger": {
@@ -72,6 +88,8 @@
     "year": 2025,
     "source_name": "FAO/IFAD/UNICEF/WFP/WHO, State of Food Security and Nutrition in the World 2026 (21 July 2026)",
     "source_url": "https://www.fao.org/newsroom/detail/sofi-2026--hunger-not-inevitable--fao-says-as-global-hunger-report-shows-progress/en",
+    "archived_url": "https://web.archive.org/web/20260810021426/https://www.fao.org/newsroom/detail/sofi-2026--hunger-not-inevitable--fao-says-as-global-hunger-report-shows-progress/en",
+    "archived_at": "2026-08-10",
     "note": "7.8% of the world population, down from 8.1% in 2024 — the third consecutive annual decline, and 43 million below the 2022 peak. For the first time, Africa hosts the largest number of people facing hunger. The decline is real but too slow for the 2030 SDG target."
   },
   "moderate_or_severe_food_insecurity_people": {
@@ -80,6 +98,8 @@
     "year": 2025,
     "source_name": "FAO/IFAD/UNICEF/WFP/WHO, State of Food Security and Nutrition in the World 2026 (21 July 2026)",
     "source_url": "https://www.who.int/news/item/21-07-2026-un-report--global-hunger-levels-ease-for-third-consecutive-year-as-regional-disparities-persist",
+    "archived_url": "https://web.archive.org/web/20260815234047/https://www.who.int/news/item/21-07-2026-un-report--global-hunger-levels-ease-for-third-consecutive-year-as-regional-disparities-persist",
+    "archived_at": "2026-08-15",
     "note": "About 2.1 billion people — roughly a quarter of humanity — lacked regular access to adequate food in 2025, 86 million fewer than a year earlier. This is the broader measure: 'hunger' (645M) counts chronic undernourishment, while this counts anyone who ran out of food or skipped meals for lack of money."
   },
   "food_loss_and_waste_share": {
@@ -88,6 +108,8 @@
     "year": 2023,
     "source_name": "FAO + UNEP Food Waste Index Report 2024",
     "source_url": "https://www.fao.org/family-farming/detail/en/c/1681058/",
+    "archived_url": "https://web.archive.org/web/20251108030342/https://www.fao.org/family-farming/detail/en/c/1681058/",
+    "archived_at": "2025-11-08",
     "note": "~13% lost post-harvest before retail; ~19% wasted at retail/food-service/household."
   },
   "global_electricity_generation_twh": {
@@ -96,6 +118,8 @@
     "year": 2025,
     "source_name": "Energy Institute, Statistical Review of World Energy 2026",
     "source_url": "https://www.energyinst.org/statistical-review",
+    "archived_url": "https://web.archive.org/web/20260821220708/https://www.energyinst.org/statistical-review",
+    "archived_at": "2026-08-21",
     "note": "32,202 TWh generated in 2025, up 857 TWh (3%) on 2024. Renewables supplied 10,749 TWh — a record 33.8% share that overtook coal (33%) for the first time in over a century (Ember, Global Electricity Review 2026). Solar alone rose 30% to 2,778 TWh."
   },
   "renewable_freshwater_km3": {
@@ -104,6 +128,8 @@
     "year": 2020,
     "source_name": "FAO AQUASTAT",
     "source_url": "https://www.fao.org/aquastat/en/overview/methodology/water-resources/",
+    "archived_url": "https://web.archive.org/web/20260726195413/https://www.fao.org/aquastat/en/overview/methodology/water-resources/",
+    "archived_at": "2026-07-26",
     "note": "Total long-term renewable internal freshwater resources globally. Distribution is geographically uneven."
   },
   "homeless_people": {
@@ -112,6 +138,8 @@
     "year": 2024,
     "source_name": "UN-Habitat / UN DESA, World Social Summit 2025 background",
     "source_url": "https://social.desa.un.org/world-summit-2025/blog/300million-people-homeless-worldwide",
+    "archived_url": "https://web.archive.org/web/20251030022402/https://social.desa.un.org/world-summit-2025/blog/300million-people-homeless-worldwide",
+    "archived_at": "2025-10-30",
     "note": "UN-Habitat acknowledges global homelessness data is incomplete and likely understated."
   },
   "inadequate_housing_people": {
@@ -120,6 +148,8 @@
     "year": 2024,
     "source_name": "UN-Habitat / UN DESA",
     "source_url": "https://social.desa.un.org/world-summit-2025/blog/300million-people-homeless-worldwide",
+    "archived_url": "https://web.archive.org/web/20251030022402/https://social.desa.un.org/world-summit-2025/blog/300million-people-homeless-worldwide",
+    "archived_at": "2025-10-30",
     "note": "Lacks access to adequate housing, secure land tenure, or basic water/sanitation services. ~40% of the global population."
   },
   "extreme_poverty_count": {
@@ -128,14 +158,18 @@
     "year": 2024,
     "source_name": "World Bank, March 2026 Global Poverty Update",
     "source_url": "https://blogs.worldbank.org/en/opendata/march-2026-global-poverty-update-from-the-world-bank--new-data-a",
+    "archived_url": "https://web.archive.org/web/20260830155519/https://blogs.worldbank.org/en/opendata/march-2026-global-poverty-update-from-the-world-bank--new-data-a",
+    "archived_at": "2026-08-30",
     "note": "Threshold raised from $2.15 (2017 PPP) to $3.00/day (2021 PPP) in June 2025."
   },
   "extreme_poverty_line_usd_per_day": {
-    "value": 3.00,
+    "value": 3.0,
     "unit": "2021 PPP international dollars/person/day",
     "year": 2025,
     "source_name": "World Bank, June 2025 Update to Global Poverty Lines",
     "source_url": "https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines",
+    "archived_url": "https://web.archive.org/web/20260906145950/https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines",
+    "archived_at": "2026-09-06",
     "note": "Replaces the prior $2.15/day (2017 PPP) International Poverty Line. Not current US dollars: do not divide nominal GDP by this threshold or treat it as the dollar cost of a cash transfer."
   },
   "minimum_calorie_need_kcal": {
@@ -144,6 +178,8 @@
     "year": 2001,
     "source_name": "FAO/WHO/UNU Joint Expert Consultation, Human Energy Requirements",
     "source_url": "https://www.fao.org/4/y5686e/y5686e00.htm",
+    "archived_url": "https://web.archive.org/web/20260905185520/https://www.fao.org/4/Y5686E/y5686e00.htm",
+    "archived_at": "2026-09-05",
     "note": "Standard reference for an average adult; varies by age, sex, body size, activity."
   },
   "minimum_water_need_l_per_day": {
@@ -152,6 +188,8 @@
     "year": 2003,
     "source_name": "WHO, Domestic Water Quantity, Service Level and Health",
     "source_url": "https://iris.who.int/handle/10665/67884",
+    "archived_url": "https://web.archive.org/web/20251027063017/https://iris.who.int/handle/10665/67884",
+    "archived_at": "2025-10-27",
     "note": "Intermediate access level: drinking, cooking, hygiene. Survival minimum is 7.5 L/day; full health protection ~100 L/day."
   },
   "tier1_electricity_kwh_per_year": {
@@ -160,6 +198,8 @@
     "year": 2020,
     "source_name": "IEA, Defining Energy Access (2020 methodology)",
     "source_url": "https://www.iea.org/articles/defining-energy-access-2020-methodology",
+    "archived_url": "https://web.archive.org/web/20260905165413/https://www.iea.org/articles/defining-energy-access-2020-methodology",
+    "archived_at": "2026-09-05",
     "note": "Urban household minimum (500 kWh/household ÷ 5). Lights, phone charging, radio, fan."
   },
   "modern_energy_minimum_kwh_per_year": {
@@ -168,6 +208,8 @@
     "year": 2020,
     "source_name": "Rockefeller Foundation / Energy for Growth Hub — Modern Energy Minimum",
     "source_url": "https://www.rockefellerfoundation.org/wp-content/uploads/2020/12/Modern-Energy-Minimum-Sept30.pdf",
+    "archived_url": "https://web.archive.org/web/20260125112428/https://www.rockefellerfoundation.org/wp-content/uploads/2020/12/Modern-Energy-Minimum-Sept30.pdf",
+    "archived_at": "2026-01-25",
     "note": "Proposed threshold including productive/commercial use, not just residential."
   },
   "insulin_generic_cost_per_pen_usd": {
@@ -176,6 +218,8 @@
     "year": 2024,
     "source_name": "Barber, Sulis et al. (2024). 'Estimated Sustainable Cost-Based Prices for Diabetes Medicines.' JAMA Network Open / MSF Access Campaign",
     "source_url": "https://msfaccess.org/jama-network-open-estimated-sustainable-cost-based-prices-diabetes-medicines",
+    "archived_url": "https://web.archive.org/web/20260716074949/https://msfaccess.org/jama-network-open-estimated-sustainable-cost-based-prices-diabetes-medicines",
+    "archived_at": "2026-07-16",
     "note": "Cost-based price (production cost + small margin) for a generic human-insulin pen. US list price for the same is ~$90."
   },
   "insulin_us_pen_price_usd": {
@@ -184,6 +228,8 @@
     "year": 2024,
     "source_name": "Barber, Sulis et al. (2024), JAMA Network Open / MSF",
     "source_url": "https://msfaccess.org/jama-network-open-estimated-sustainable-cost-based-prices-diabetes-medicines",
+    "archived_url": "https://web.archive.org/web/20260716074949/https://msfaccess.org/jama-network-open-estimated-sustainable-cost-based-prices-diabetes-medicines",
+    "archived_at": "2026-07-16",
     "note": "Same molecule as the $0.94 cost-based price. Markup ~96x."
   },
   "global_adults_with_diabetes": {
@@ -192,6 +238,8 @@
     "year": 2024,
     "source_name": "International Diabetes Federation, IDF Diabetes Atlas 11th edition (2024)",
     "source_url": "https://diabetesatlas.org/",
+    "archived_url": "https://web.archive.org/web/20260417055746/https://diabetesatlas.org/",
+    "archived_at": "2026-04-17",
     "note": "1 in 9 adults. 43% (252M) are undiagnosed. 81% live in low- and middle-income countries."
   },
   "global_internet_users": {
@@ -200,6 +248,8 @@
     "year": 2025,
     "source_name": "ITU, Facts and Figures 2025",
     "source_url": "https://www.itu.int/en/mediacentre/Pages/PR-2025-11-17-Facts-and-Figures.aspx",
+    "archived_url": "https://web.archive.org/web/20260901023054/https://www.itu.int/en/mediacentre/Pages/PR-2025-11-17-Facts-and-Figures.aspx",
+    "archived_at": "2026-09-01",
     "note": "About three quarters of humanity, up from a revised 5.8B in 2024. 2.2B remain offline, and 96% of them live in low- and middle-income countries."
   },
   "international_internet_bandwidth_tbps": {
@@ -209,6 +259,8 @@
     "as_of": "mid-2025",
     "source_name": "TeleGeography, Global Internet Geography (September 2025 update)",
     "source_url": "https://blog.telegeography.com/international-internet-bandwidth",
+    "archived_url": "https://web.archive.org/web/20251210174414/https://blog.telegeography.com/international-internet-bandwidth",
+    "archived_at": "2025-12-10",
     "note": "Inter-region installed international internet bandwidth, up from 1,479 Tbps in 2024 and 1,217 Tbps in 2023. TeleGeography's data are as of mid-year. Doesn't include intra-region fiber."
   },
   "global_internet_traffic_zb_per_year": {
@@ -217,6 +269,8 @@
     "year": 2025,
     "source_name": "ITU, Facts and Figures 2025 — Internet traffic chapter",
     "source_url": "https://www.itu.int/itu-d/reports/statistics/2025/10/15/ff25-internet-traffic/",
+    "archived_url": "https://web.archive.org/web/20260818031232/https://www.itu.int/itu-d/reports/statistics/2025/10/15/ff25-internet-traffic/",
+    "archived_at": "2026-08-18",
     "note": "Fixed broadband carried 7.3 ZB in 2025 (up from 6.2 ZB in 2024) and mobile broadband an estimated 1.5 ZB, having crossed 1 ZB in 2023. Fixed networks also carry Wi-Fi-connected phones and IoT devices. Since 2021 mobile traffic grew ~19%/year vs ~16% fixed. Averaged per person: ~1,070 GB/person/year."
   },
   "global_dtp3_immunization_coverage": {
@@ -225,6 +279,8 @@
     "year": 2025,
     "source_name": "WHO/UNICEF Estimates of National Immunization Coverage (WUENIC) 2025 revision, released 15 July 2026",
     "source_url": "https://www.who.int/news/item/15-07-2026-global-childhood-immunization-coverage-inches-forward-despite-conflict-and-hesitancy---unicef--who",
+    "archived_url": "https://web.archive.org/web/20260822020132/https://www.who.int/news/item/15-07-2026-global-childhood-immunization-coverage-inches-forward-despite-conflict-and-hesitancy---unicef--who",
+    "archived_at": "2026-08-22",
     "note": "~110 million infants completed the three-dose series in 2025; ~116 million (90%) received at least one dose. Both indicators rose one point from the previous year but remain one point below 2019 levels — coverage has hovered within the same narrow range since 2009."
   },
   "global_unvaccinated_children": {
@@ -233,30 +289,38 @@
     "year": 2025,
     "source_name": "WHO + UNICEF joint news release, 15 July 2026 (WUENIC 2025 revision)",
     "source_url": "https://www.who.int/news/item/15-07-2026-global-childhood-immunization-coverage-inches-forward-despite-conflict-and-hesitancy---unicef--who",
+    "archived_url": "https://web.archive.org/web/20260822020132/https://www.who.int/news/item/15-07-2026-global-childhood-immunization-coverage-inches-forward-despite-conflict-and-hesitancy---unicef--who",
+    "archived_at": "2026-08-22",
     "note": "'Zero-dose' children — no vaccine in their first year — fell by nearly 750,000 from the previous year. More than half live in fragile or conflict-violent settings, which hold only about a third of the world's child population. Progress is offset by rising drop-outs: 7.3 million infants started the schedule but missed their first measles dose in 2025, and 57 countries reported large or disruptive measles outbreaks."
   },
-  "safely_managed_sanitation_share":   {
+  "safely_managed_sanitation_share": {
     "value": 0.58,
     "unit": "fraction of world population using safely managed sanitation services",
     "year": 2024,
     "source_name": "WHO/UNICEF Joint Monitoring Programme (JMP), Progress on household drinking water, sanitation and hygiene 2000-2024 (2025 report)",
     "source_url": "https://washdata.org/reports/jmp-2025-wash-households",
+    "archived_url": "https://web.archive.org/web/20260905230308/https://washdata.org/reports/jmp-2025-wash-households",
+    "archived_at": "2026-09-05",
     "note": "58% (about 4.8 billion people) had safely managed sanitation in 2024, up from 48% in 2015; 3.4 billion lacked it, of whom 354 million still practise open defecation. 'Safely managed' is the highest service rung (excreta safely treated/disposed), so the share with any basic toilet is higher."
   },
-  "safely_managed_drinking_water_share":   {
+  "safely_managed_drinking_water_share": {
     "value": 0.74,
     "unit": "fraction of world population using safely managed drinking-water services",
     "year": 2024,
     "source_name": "WHO/UNICEF Joint Monitoring Programme (JMP), Progress on household drinking water, sanitation and hygiene 2000-2024 (2025 report)",
     "source_url": "https://washdata.org/reports/jmp-2025-wash-households",
+    "archived_url": "https://web.archive.org/web/20260905230308/https://washdata.org/reports/jmp-2025-wash-households",
+    "archived_at": "2026-09-05",
     "note": "74% had safely managed drinking water in 2024, up from 68% in 2015; 2.1 billion lacked it, including 106 million who still drink untreated surface water. This is a service-access measure and is distinct from the renewable-freshwater resource volume entry, which shows the planet has ~5,000+ m3 of renewable freshwater per person per year."
   },
-  "clean_cooking_polluting_fuel_people":   {
+  "clean_cooking_polluting_fuel_people": {
     "value": 2000000000,
     "unit": "people cooking with polluting fuels and open fires",
     "year": 2024,
     "source_name": "IEA, IRENA, UNSD, World Bank, WHO, Tracking SDG 7: The Energy Progress Report 2026",
     "source_url": "https://www.irena.org/Publications/2026/Jun/Tracking-SDG-7-The-Energy-Progress-Report-2026",
+    "archived_url": "",
+    "archive_note": "No Wayback capture available as of 2026-09-12: the publisher's server refuses the Internet Archive crawler and an on-demand save request was declined. Re-try with scripts/archive_sources.py --save; if this source rots before a snapshot exists, the figure must be re-sourced from the publication itself.",
     "note": "Around 2.0 billion people (uncertainty 1.8–2.4B) — about a quarter of humanity — still cook with polluting fuels and technologies in 2024. 75% (71–78) of the world now relies primarily on clean cooking. Household air pollution from these fuels caused an estimated 2.9 million deaths in 2021 (WHO; still the latest published death vintage), including over 309,000 children under 5. Clean stoves and LPG/electric cooking are mature, manufactured at scale."
   },
   "electricity_without_access_people": {
@@ -265,30 +329,38 @@
     "year": 2024,
     "source_name": "IEA, IRENA, UNSD, World Bank, WHO, Tracking SDG 7: The Energy Progress Report 2026",
     "source_url": "https://www.irena.org/Publications/2026/Jun/Tracking-SDG-7-The-Energy-Progress-Report-2026",
+    "archived_url": "",
+    "archive_note": "No Wayback capture available as of 2026-09-12: the publisher's server refuses the Internet Archive crawler and an on-demand save request was declined. Re-try with scripts/archive_sources.py --save; if this source rots before a snapshot exists, the figure must be re-sourced from the publication itself.",
     "note": "655 million people still lacked electricity in 2024. 89 million gained access that year, but population growth meant the number without electricity fell by only 11.5 million. The remaining gap is concentrated in Africa."
   },
-  "out_of_school_children":   {
+  "out_of_school_children": {
     "value": 273000000,
     "unit": "children and youth out of school worldwide",
     "year": 2024,
     "source_name": "UNESCO Institute for Statistics / GEM Report, out-of-school estimates (page updated March 2026)",
     "source_url": "https://www.unesco.org/en/education/view/outofschool",
+    "archived_url": "https://web.archive.org/web/20260907223744/https://www.unesco.org/en/education/view/outofschool",
+    "archived_at": "2026-09-07",
     "note": "273 million children and youth were out of school as of 2024 — 79 million of primary age, 64 million of lower-secondary age, and 130 million of upper-secondary age. Numbers have fallen less than 1% since the SDG-4 baseline year 2015 (they fell 33% in 2000-2015, then rose 3%); in low-income countries the out-of-school population has increased 29% since 2015. More boys (140M) than girls (133M) are out of school."
   },
-  "maternal_deaths_preventable":   {
+  "maternal_deaths_preventable": {
     "value": 260000,
     "unit": "maternal deaths worldwide in 2023, nearly all preventable",
     "year": 2023,
     "source_name": "WHO, UNICEF, UNFPA, World Bank Group and UNDESA/Population Division, Trends in Maternal Mortality 2000 to 2023 (2025)",
     "source_url": "https://www.who.int/publications/i/item/9789240108462",
+    "archived_url": "https://web.archive.org/web/20260901212711/https://www.who.int/publications/i/item/9789240108462",
+    "archived_at": "2026-09-01",
     "note": "An estimated 260,000 women died of maternal causes in 2023, about 712 per day or one roughly every two minutes, from largely preventable causes related to pregnancy and childbirth. Maternal mortality fell about 40% from 2000 to 2023. Sub-Saharan Africa and Southern Asia accounted for about 87% (225,000) of the deaths."
   },
-  "essential_medicines_public_availability":   {
+  "essential_medicines_public_availability": {
     "value": 0.378,
     "unit": "lower bound of mean generic-medicine availability in the public sector across WHO regions (range 37.8%-68.3%)",
     "year": 2025,
     "source_name": "Oldfield et al., 'Prices, availability, and affordability of adult medicines in 54 low-income and middle-income countries', Lancet Global Health (2025)",
     "source_url": "https://pubmed.ncbi.nlm.nih.gov/39706661/",
+    "archived_url": "https://web.archive.org/web/20260807045645/https://pubmed.ncbi.nlm.nih.gov/39706661/",
+    "archived_at": "2026-08-07",
     "note": "Across 54 low- and middle-income countries, mean availability of generic medicines in the public sector ranged from 37.8% to 68.3% by WHO region (private sector 42.3%-77.4%). No region's public OR private sector met WHO's 80% availability target. Patients paid 3.0-11.5 times international reference prices for the cheapest generics."
   }
 }

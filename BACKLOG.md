@@ -17,37 +17,28 @@ Rewrite the order freely; do not silently skip the top item without saying why.
 
 ## Next up
 
-1. **`S` Archive every primary source to the Wayback Machine, and record the snapshot.**
-   Two citations rotted in the first automated check of this repo. The fix that
-   scales is not vigilance, it is archival: submit each `*_source_url` to
-   `web.archive.org/save/`, store the resulting snapshot URL as `archived_url`
-   alongside it, and render it as a small "archived copy" link next to each
-   citation. Then a 404 degrades to an inconvenience instead of an unsourced
-   number. Start with `data/essentials.json` (36 entries); extend to
-   `pilots.json` and `case-studies.json` in later passes.
-
-2. **`S` Cross-check `bibliography.md` against the data files.**
+1. **`S` Cross-check `bibliography.md` against the data files.**
    The bibliography has ~112 entries; the data files carry their own
    `primary_source_name` / `primary_source_url` pairs. Nothing keeps them
    agreeing. Add a check to `scripts/check.py`: every `primary_source_url` in
    `data/pilots.json` and `data/case-studies.json` should appear somewhere in
    `bibliography.md`, and report the ones that don't. Fix the gaps it finds.
 
-3. **`S` Serve `papers/` and `transcripts/` as real URLs.**
+2. **`S` Serve `papers/` and `transcripts/` as real URLs.**
    README links `papers/` as a directory. That resolves on GitHub, but GitHub
    Pages returns 404 — there is no `index.html`. Add a small index page for
    `papers/` listing each note with its one-line summary (and decide whether
    `transcripts/` should be indexed or stay unlisted research material). Add to
    `sitemap.xml` and `llms.txt`; `scripts/check.py` will hold it in sync.
 
-4. **`M` JSON Schema for the data files.**
+3. **`M` JSON Schema for the data files.**
    `data/README.md` describes the schemas in prose and `check.py` enforces a
    thin version (source URL present, year present). Write real JSON Schema
    documents under `data/schema/`, validate against them in `check.py` with a
    stdlib validator, and let the schema — not the prose — be the contract a
    contributor or an agent reads.
 
-5. **`M` JSON-LD on the pages that lack it.**
+4. **`M` JSON-LD on the pages that lack it.**
    `index.html`, `essay.html` and `datacenter-water.html` carry structured
    data; `letter.html`, `course.html`, `countries.html` and `case-studies.html`
    do not. This site exists to be cited, and `robots.txt` invites the AI
@@ -55,14 +46,14 @@ Rewrite the order freely; do not silently skip the top item without saying why.
    every page directly serve that. Use `Article` / `Dataset` as appropriate and
    keep the claims identical to the visible page.
 
-6. **`M` Run the tools pages through the repo's own contrast checker.**
+5. **`M` Run the tools pages through the repo's own contrast checker.**
    `tools/contrast/` implements WCAG 2.1 contrast. Audit every page in the site
    against it (including `styles/tokens.css` pairings and the RTL Arabic
    letter), record the results in a short `docs/` note or an issue, and fix the
    failures. Dogfooding an accessibility tool the project ships is worth more
    than a badge.
 
-7. **`M` Port the main page into a second language.**
+6. **`M` Port the main page into a second language.**
    README calls this the highest-value contribution: the open letter exists in
    all seven languages, the arithmetic page in two. Order by reach: Hindi,
    Mandarin, Arabic, French, Portuguese. Translate prose only — numbers, source
@@ -70,24 +61,31 @@ Rewrite the order freely; do not silently skip the top item without saying why.
    clearly as the README requires, and add `hreflang` both ways, `sitemap.xml`,
    `llms.txt`, the README table and `CITATION.cff`.
 
-8. **`M` A data-provenance changelog.**
+7. **`M` A data-provenance changelog.**
    The README "Data currency" table shows the current vintage but not its
    history. A `CHANGELOG-data.md` recording each figure change — old value, new
    value, publication that superseded it, date — turns "trust us, it's current"
    into something a skeptic can audit. Backfill from git history.
 
-9. **`L` Decide whether `countries.html` should degrade without JavaScript.**
+8. **`L` Decide whether `countries.html` should degrade without JavaScript.**
    The homepage deliberately works without JS; the country drill-down fetches
    `data/countries.json` and renders client-side, so it shows nothing. Options:
    a static snapshot of the top N countries in the HTML, a generated static
    table, or an explicit "requires JavaScript, here is the raw JSON" fallback.
    Each trades bytes against reach. **Propose, get a decision, then build.**
 
-10. **`L` An `abundance.json` machine endpoint.**
+9. **`L` An `abundance.json` machine endpoint.**
     `llms.txt` indexes the site for agents; there is no single endpoint that
     returns every headline figure with its source, unit, year and per-capita
     result. The Graveyard already publishes `graves.json` in this spirit. Needs
     a decision on shape and stability guarantees before anyone builds it.
+
+10. **`S` Surface the archived copies on the pages.**
+    The snapshots now live in `data/*.json`, but a reader still sees only the
+    publisher link. Render a small dated "archived copy" link next to each
+    citation — start with `essay.html`, where the inline citations are, and the
+    `bibliography.md` entries. Mechanical but touches a lot of markup, so it is
+    its own pass.
 
 ## Candidate ideas (not yet ordered — append here)
 
@@ -100,3 +98,4 @@ Rewrite the order freely; do not silently skip the top item without saying why.
 ## Done
 
 - Repo map, `llms.txt`, self-check, citation-rot checker, two dead citations repointed — [#6](https://github.com/lordbasilaiassistant-sudo/Abundance/pull/6).
+- Wayback snapshot recorded for every primary source, enforced by `scripts/check.py` — [#6](https://github.com/lordbasilaiassistant-sudo/Abundance/pull/6). 54 of 58 citations mirrored; 4 publishers refuse the Internet Archive crawler and carry a stated `archive_note` instead.

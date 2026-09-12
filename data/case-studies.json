@@ -14,6 +14,8 @@
     ],
     "primary_source_name": "Constitution of Costa Rica, Article 12 (1949).",
     "primary_source_url": "https://www.unesco.org/en/memory-world/abolition-army-costa-rica",
+    "primary_archived_url": "https://web.archive.org/web/20260512155408/https://www.unesco.org/en/memory-world/abolition-army-costa-rica",
+    "primary_archived_at": "2026-05-12",
     "supporting_source": "UNESCO Memory of the World: 'Proclamation of the Abolition of the Army' (2017 inscription)."
   },
   "norway_pension_fund_global": {
@@ -30,6 +32,8 @@
     ],
     "primary_source_name": "Norges Bank Investment Management Annual Report 2024.",
     "primary_source_url": "https://www.nbim.no/contentassets/490f9f062cfc4694b12c45f4d04ab0a5/annual_report_2024.pdf",
+    "primary_archived_url": "https://web.archive.org/web/20260222074908/https://www.nbim.no/contentassets/490f9f062cfc4694b12c45f4d04ab0a5/annual_report_2024.pdf",
+    "primary_archived_at": "2026-02-22",
     "supporting_source": "Ministry of Finance of Norway, Annual White Paper on the Government Pension Fund."
   },
   "iceland_post_crisis": {
@@ -47,6 +51,8 @@
     ],
     "primary_source_name": "Special Investigation Commission of Iceland (Hreinsson Report), 2010.",
     "primary_source_url": "https://www.rna.is/eldri-nefndir/addragandi-og-orsakir-falls-islensku-bankanna-2008/skyrsla-nefndarinnar/english/",
+    "primary_archived_url": "https://web.archive.org/web/20260831124357/https://rna.is/eldri-nefndir/addragandi-og-orsakir-falls-islensku-bankanna-2008/skyrsla-nefndarinnar/english/",
+    "primary_archived_at": "2026-08-31",
     "supporting_source": "Library of Congress, 'Iceland: Icelandic Bankers Jailed for Fraud' (2014); RTÉ, 'Iceland's Supreme Court upholds banker convictions' (Feb 2015)."
   },
   "bhutan_gnh": {
@@ -62,6 +68,8 @@
     ],
     "primary_source_name": "Constitution of the Kingdom of Bhutan, 2008, Articles 9 and 20.",
     "primary_source_url": "https://www.nab.gov.bt/assets/uploads/docs/acts/2014/Constitution_of_Bhutan_2008.pdf",
+    "primary_archived_url": "https://web.archive.org/web/20260831231351/https://www.nab.gov.bt/assets/uploads/docs/acts/2014/Constitution_of_Bhutan_2008.pdf",
+    "primary_archived_at": "2026-08-31",
     "supporting_source": "Centre for Bhutan Studies + GNH Research; Ura, Alkire, Zangmo (2012) 'GNH and GNH Index' (OPHI working paper)."
   },
   "mauritius_diversification": {
@@ -77,9 +85,11 @@
     ],
     "primary_source_name": "Subramanian, A. & Roy, D. (2003). 'Who Can Explain the Mauritian Miracle? Meade, Romer, Sachs, or Rodrik?' IMF Working Paper 01/116.",
     "primary_source_url": "https://www.imf.org/external/pubs/ft/wp/2001/wp01116.pdf",
+    "primary_archived_url": "https://web.archive.org/web/20251207160852/https://www.imf.org/external/pubs/ft/wp/2001/wp01116.pdf",
+    "primary_archived_at": "2025-12-07",
     "supporting_source": "World Bank Open Data (mauritius indicators); Frankel, J. (2010) 'Mauritius: African Success Story', NBER WP 16569."
   },
-  "botswana_pula_fund":   {
+  "botswana_pula_fund": {
     "title": "Botswana — Pula Fund and diamond-revenue governance (1966–present)",
     "date_event": "1994-01-01",
     "actor": "Government of Botswana + Bank of Botswana (manages the Pula Fund) + Debswana (state/De Beers diamond joint venture)",
@@ -91,9 +101,11 @@
     ],
     "primary_source_name": "Bank of Botswana, 'The Pula Fund' (official page) and Annual Report 2024.",
     "primary_source_url": "https://www.bankofbotswana.bw/content/pula-fund",
+    "primary_archived_url": "https://web.archive.org/web/20260316092819/https://www.bankofbotswana.bw/content/pula-fund",
+    "primary_archived_at": "2026-03-16",
     "supporting_source": "Bank of Botswana Annual Report 2024 (https://www.bankofbotswana.bw/sites/default/files/publications/Annual%20Report%202024.pdf); World Bank, GDP per capita, Botswana (https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=BW)."
   },
-  "south_korea_land_reform":   {
+  "south_korea_land_reform": {
     "title": "South Korea — land reform and the developmental state (1948–1965)",
     "date_event": "1950-03-10",
     "actor": "Republic of Korea government (Agricultural Land Reform Act, 1949/1950) under US occupation influence; later the developmental state apparatus",
@@ -105,9 +117,11 @@
     ],
     "primary_source_name": "Yong-Ha Shin, 'Land Reform in Korea, 1950', Seoul National University (s-space repository).",
     "primary_source_url": "https://s-space.snu.ac.kr/bitstream/10371/84988/1/2.LAND_REFORM_IN_KOREA__1950%5DYong-Ha%20Shin.pdf",
+    "primary_archived_url": "https://web.archive.org/web/20240909172711/https://s-space.snu.ac.kr/bitstream/10371/84988/1/2.LAND_REFORM_IN_KOREA__1950%5DYong-Ha%20Shin.pdf",
+    "primary_archived_at": "2024-09-09",
     "supporting_source": "World Bank, GDP per capita (current US$), Korea Rep. (https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=KR); You, J. (2017) 'Demystifying the Park Chung-Hee Myth: Land Reform in the Evolution of Korea's Developmental State', Journal of Contemporary Asia 47(4)."
   },
-  "finland_housing_first":   {
+  "finland_housing_first": {
     "title": "Finland — Housing First and the near-elimination of long-term homelessness (2008–present)",
     "date_event": "2008-01-01",
     "actor": "Government of Finland + Ministry of the Environment + Y-Foundation + municipalities; data compiled by ARA / Varke (Housing Finance and Development Centre of Finland)",
@@ -119,9 +133,11 @@
     ],
     "primary_source_name": "Varke (formerly ARA), Report 2/2024: 'Homeless people 2023 — Long-term homelessness in Finland 2008–2023'.",
     "primary_source_url": "https://www.varke.fi/en/node/8/homelessness/homeless-people-2023",
+    "primary_archived_url": "https://web.archive.org/web/20250408233727/https://www.varke.fi/en/node/8/homelessness/homeless-people-2023",
+    "primary_archived_at": "2025-04-08",
     "supporting_source": "Ministry of the Environment of Finland, 'Homelessness' (https://ym.fi/en/homelessness); Varke Report 2/2024 PDF (https://www.varke.fi/en/media/101)."
   },
-  "portugal_drug_decriminalization":   {
+  "portugal_drug_decriminalization": {
     "title": "Portugal — drug decriminalization and a health-led response (2001–present)",
     "date_event": "2001-07-01",
     "actor": "Government of Portugal (Law 30/2000); later SICAD (national drug agency) and EMCDDA/EUDA monitoring",
@@ -133,9 +149,11 @@
     ],
     "primary_source_name": "EMCDDA / EUDA, 'Portugal Country Drug Report'.",
     "primary_source_url": "https://www.euda.europa.eu/publications/country-drug-reports/2019/portugal_en",
+    "primary_archived_url": "https://web.archive.org/web/20260115052634/https://www.euda.europa.eu/publications/country-drug-reports/2019/portugal_en",
+    "primary_archived_at": "2026-01-15",
     "supporting_source": "EMCDDA Portugal Country Drug Report 2017 PDF (https://www.euda.europa.eu/system/files/publications/4508/TD0116918ENN.pdf); SICAD (Serviço de Intervenção nos Comportamentos Aditivos e nas Dependências), Portugal national reports."
   },
-  "kerala_model":   {
+  "kerala_model": {
     "title": "Kerala, India — high human development at low income (the 'Kerala model')",
     "date_event": "2021-01-01",
     "actor": "Government of Kerala (successive administrations); demographic data from the Office of the Registrar General of India, Sample Registration System (SRS)",
@@ -147,9 +165,11 @@
     ],
     "primary_source_name": "Office of the Registrar General of India, Sample Registration System (SRS) — Abridged Life Tables 2017–2021 and SRS reports.",
     "primary_source_url": "https://censusindia.gov.in/nada/index.php/catalog/45558/download/49755/SRS-Abridged_Life_Tables_2017-2021.pdf",
+    "primary_archived_url": "https://web.archive.org/web/20251207064251/https://censusindia.gov.in/nada/index.php/catalog/45558/download/49755/SRS-Abridged_Life_Tables_2017-2021.pdf",
+    "primary_archived_at": "2025-12-07",
     "supporting_source": "Office of the Registrar General of India, SRS Statistical Reports (IMR); UNDP Human Development framework; Government of Kerala Economic Review."
   },
-  "uruguay_plan_de_equidad":   {
+  "uruguay_plan_de_equidad": {
     "title": "Uruguay — Plan de Equidad and structural poverty reduction (2005–2019)",
     "date_event": "2008-01-01",
     "actor": "Government of Uruguay (Frente Amplio coalition from 2005) + Ministry of Social Development (MIDES); poverty measured by INE (Instituto Nacional de Estadística) and compiled by the World Bank",
@@ -161,6 +181,8 @@
     ],
     "primary_source_name": "World Bank, Poverty & Equity Brief / Macro Poverty Outlook for Uruguay (national poverty line, INE source data).",
     "primary_source_url": "https://databankfiles.worldbank.org/public/ddpext_download/poverty/987B9C90-CB9F-4D93-AE8C-750588BF00QA/AM2020/Global_POVEQ_URY.pdf",
+    "primary_archived_url": "https://web.archive.org/web/20250908082848/https://databankfiles.worldbank.org/public/ddpext_download/poverty/987B9C90-CB9F-4D93-AE8C-750588BF00QA/AM2020/Global_POVEQ_URY.pdf",
+    "primary_archived_at": "2025-09-08",
     "supporting_source": "Instituto Nacional de Estadística (INE) Uruguay, Línea de Pobreza (https://www.ine.gub.uy/linea-de-pobreza); World Bank, Uruguay Systematic Country Diagnostic Update (2022)."
   }
 }
