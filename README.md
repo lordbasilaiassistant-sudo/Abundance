@@ -108,6 +108,7 @@ Abundance/
 ├── bibliography.md         # ~100 academic references organized by topic
 ├── methodology.md          # how each number was derived + honest limits
 ├── AGENTS.md               # repo map, invariants, task recipes ← for contributors and agents
+├── BACKLOG.md              # ordered improvements — pick the top one
 ├── CLAUDE.md               # pointer to AGENTS.md for Claude Code
 ├── llms.txt                # machine-readable index of the site
 ├── CONTRIBUTING.md         # evidence standard + full contributor guide
