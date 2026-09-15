@@ -9,6 +9,7 @@ The transcripts themselves are **not** primary sources. They are the unstructure
 | File | Source | Used by |
 |---|---|---|
 | `TQd2k1pEXp4.en.vtt` / `TQd2k1pEXp4.en.txt` | YouTube — *"What Did Ancient Humans Do All Day Before Jobs Existed?"* (Axen, May 2026) | § 8 of `index.html`. Anthropological claims sourced from this video were re-verified against Lee (1968), Wiessner (2014), Ekirch (2024), Conard (2009), Larsen (1995). See [`../papers/historical-context.md`](../papers/historical-context.md). |
+| `2GxlL5-0m_g.en.vtt` / `2GxlL5-0m_g.en.txt` | YouTube — *"Wealth Inequality in America (Updated 2026)"* (politizane, September 2026) | US wealth distribution notes in [`../papers/inequality-and-wealth.md`](../papers/inequality-and-wealth.md). Figures re-verified against the Federal Reserve Distributional Financial Accounts (2026:Q1), Norton & Ariely (2011) and Saez (2026); billionaire and percentile-floor figures that trace only to Forbes or DQYDJ are marked unverified there. The `.txt` was extracted with the [YouTube Transcript (Clean)](https://apify.com/eliai/youtube-transcript-clean) Apify actor. It was checked against the yt-dlp `.vtt` run through `scripts/clean_vtt.py`: 1,930 vs 1,931 words, 99.9% sequence match. |
 
 ## How to add a transcript
 
