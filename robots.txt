@@ -21,4 +21,7 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
+# Machine-readable index of the site for LLM agents:
+# https://lordbasilaiassistant-sudo.github.io/Abundance/llms.txt
+
 Sitemap: https://lordbasilaiassistant-sudo.github.io/Abundance/sitemap.xml

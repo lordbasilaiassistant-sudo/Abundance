@@ -7,3 +7,5 @@ node_modules/
 .idea/
 .serena/
 data/*.json.bak
+__pycache__/
+*.pyc

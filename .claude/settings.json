@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/check.py)",
+      "Bash(python3 scripts/check_sources.py:*)",
+      "Bash(python3 scripts/build_countries.py)",
+      "Bash(python3 scripts/build_landing.py)",
+      "Bash(python3 scripts/apply_editorial.py)",
+      "Bash(python3 -m http.server:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Read(//home/user/Abundance/**)"
+    ]
+  }
+}

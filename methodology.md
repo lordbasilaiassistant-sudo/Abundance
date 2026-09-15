@@ -38,7 +38,7 @@ introduces <1% error in any per-capita figure.
 
 - **Numerator:** `43,000 km³ / year` of renewable freshwater, per FAO AQUASTAT.
 - **Denominator (need):** `50 L / person / day` — the WHO "intermediate access"
-  level for drinking, cooking, and basic hygiene ([WHO 2003 guideline](https://www.who.int/publications/i/item/WHO-SDE-WSH-03.02)).
+  level for drinking, cooking, and basic hygiene ([WHO 2003 guideline](https://iris.who.int/handle/10665/67884)).
   Survival minimum is 7.5 L/day; full health protection is ~100 L/day.
 - **What this ratio misses:** the biggest limitation on this page. Renewable
   freshwater is geographically locked. The Amazon basin discharges more water
